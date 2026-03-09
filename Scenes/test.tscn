@@ -146,6 +146,8 @@
 [ext_resource type="Texture2D" uid="uid://bp6640qt24hod" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk08.png" id="144_pu5le"]
 [ext_resource type="Texture2D" uid="uid://bj6bk5hwh707i" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk09.png" id="145_6wast"]
 [ext_resource type="Texture2D" uid="uid://bjphdljjo63t1" path="res://Entities/Arrow.png" id="147_1fd1n"]
+[ext_resource type="Texture2D" uid="uid://dkrqx1e15841b" path="res://Entities/enemy.png" id="147_ff0aa"]
+[ext_resource type="Script" uid="uid://bbl16o0pnn8cp" path="res://Entities/Enemy/enemy.gd" id="148_ff0aa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8od7v"]
 animations = [{
@@ -176,7 +178,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -205,7 +207,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_left",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -234,7 +236,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_right",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -263,7 +265,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -298,7 +300,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -333,7 +335,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -368,7 +370,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -403,7 +405,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1n1e0"]
@@ -435,7 +437,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -464,7 +466,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_left",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -493,7 +495,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_right",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -522,7 +524,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -557,7 +559,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_down",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -592,7 +594,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -627,7 +629,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -662,7 +664,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1fd1n"]
@@ -676,18 +678,30 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_swhmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("147_ff0aa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Test" type="Node2D" unique_id=837400696]
+y_sort_enabled = true
 
 [node name="Elvyria" type="AnimatedSprite2D" parent="." unique_id=2106475365]
 position = Vector2(73, 47)
 sprite_frames = SubResource("SpriteFrames_8od7v")
-animation = &"idle_up"
+animation = &"idle_down"
 script = ExtResource("1_lc1oi")
 
 [node name="Ryl" type="AnimatedSprite2D" parent="." unique_id=2032424794]
 position = Vector2(129, 48)
 sprite_frames = SubResource("SpriteFrames_1n1e0")
-animation = &"idle_up"
+animation = &"idle_down"
 script = ExtResource("1_lc1oi")
 up = "r_up"
 down = "r_down"
@@ -697,3 +711,8 @@ left = "r_left"
 [node name="arrow" type="AnimatedSprite2D" parent="." unique_id=1117105415]
 position = Vector2(454, 315)
 sprite_frames = SubResource("SpriteFrames_1fd1n")
+
+[node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1647918488]
+position = Vector2(229, 142)
+sprite_frames = SubResource("SpriteFrames_swhmq")
+script = ExtResource("148_ff0aa")
