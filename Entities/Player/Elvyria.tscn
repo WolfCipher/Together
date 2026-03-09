@@ -1,0 +1,350 @@
+[gd_scene format=3 uid="uid://bb5t0ma2u778q"]
+
+[ext_resource type="Script" uid="uid://dfgmmjdh15t7o" path="res://Entities/Player/player.gd" id="1_ff1tl"]
+[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/projectile.tscn" id="2_wb426"]
+[ext_resource type="Texture2D" uid="uid://bl0im5kiwdwbr" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle0.png" id="3_keouu"]
+[ext_resource type="Texture2D" uid="uid://5xffrews3nq0" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle1.png" id="4_qctxu"]
+[ext_resource type="Texture2D" uid="uid://bcql2ewolfpim" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle2.png" id="5_bd1yr"]
+[ext_resource type="Texture2D" uid="uid://bijrs2km0xbbq" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle3.png" id="6_y3sj0"]
+[ext_resource type="Texture2D" uid="uid://bqap4ses2kvst" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle4.png" id="7_1bbfl"]
+[ext_resource type="Texture2D" uid="uid://x8y0x3se4t8" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle5.png" id="8_cjkuv"]
+[ext_resource type="Texture2D" uid="uid://df1fmsagx5mle" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle6.png" id="9_sbigi"]
+[ext_resource type="Texture2D" uid="uid://cn4wwj1d2ro23" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle7.png" id="10_54lt8"]
+[ext_resource type="Texture2D" uid="uid://blguvuqt60h4x" path="res://Entities/Player/Elvyria/Elvyria_Left_Idle/Elvyria_Left_Idle0.png" id="11_bbhbl"]
+[ext_resource type="Texture2D" uid="uid://ypwt0sh13epx" path="res://Entities/Player/Elvyria/Elvyria_Left_Idle/Elvyria_Left_Idle1.png" id="12_xsf5i"]
+[ext_resource type="Texture2D" uid="uid://ijeig6mswelt" path="res://Entities/Player/Elvyria/Elvyria_Left_Idle/Elvyria_Left_Idle2.png" id="13_aqf6m"]
+[ext_resource type="Texture2D" uid="uid://5wlr27irm7c" path="res://Entities/Player/Elvyria/Elvyria_Left_Idle/Elvyria_Left_Idle3.png" id="14_1n2gm"]
+[ext_resource type="Texture2D" uid="uid://dto4fx3io7qmy" path="res://Entities/Player/Elvyria/Elvyria_Left_Idle/Elvyria_Left_Idle4.png" id="15_dg2yp"]
+[ext_resource type="Texture2D" uid="uid://vbvoruytv4iy" path="res://Entities/Player/Elvyria/Elvyria_Left_Idle/Elvyria_Left_Idle5.png" id="16_vsxhx"]
+[ext_resource type="Texture2D" uid="uid://q5xdevum6h2d" path="res://Entities/Player/Elvyria/Elvyria_Left_Idle/Elvyria_Left_Idle6.png" id="17_nqwy3"]
+[ext_resource type="Texture2D" uid="uid://cmc8ahq1npp20" path="res://Entities/Player/Elvyria/Elvyria_Left_Idle/Elvyria_Left_Idle7.png" id="18_5h4d6"]
+[ext_resource type="Texture2D" uid="uid://boiioxfixj6q2" path="res://Entities/Player/Elvyria/Elvyria_Right_Idle/Elvyria_Right_Idle0.png" id="19_8nwjk"]
+[ext_resource type="Texture2D" uid="uid://c2dbny8dek7ao" path="res://Entities/Player/Elvyria/Elvyria_Right_Idle/Elvyria_Right_Idle1.png" id="20_e0a23"]
+[ext_resource type="Texture2D" uid="uid://dqbc4ch83g0mm" path="res://Entities/Player/Elvyria/Elvyria_Right_Idle/Elvyria_Right_Idle2.png" id="21_rdfkc"]
+[ext_resource type="Texture2D" uid="uid://tpl3x23tnubw" path="res://Entities/Player/Elvyria/Elvyria_Right_Idle/Elvyria_Right_Idle3.png" id="22_4g1bm"]
+[ext_resource type="Texture2D" uid="uid://rg0e168iwyyp" path="res://Entities/Player/Elvyria/Elvyria_Right_Idle/Elvyria_Right_Idle4.png" id="23_0vgue"]
+[ext_resource type="Texture2D" uid="uid://dt62y112mgror" path="res://Entities/Player/Elvyria/Elvyria_Right_Idle/Elvyria_Right_Idle5.png" id="24_1p14i"]
+[ext_resource type="Texture2D" uid="uid://bnnl1m8g2kqgq" path="res://Entities/Player/Elvyria/Elvyria_Right_Idle/Elvyria_Right_Idle6.png" id="25_h7yd3"]
+[ext_resource type="Texture2D" uid="uid://blyyb4a4f4tfe" path="res://Entities/Player/Elvyria/Elvyria_Right_Idle/Elvyria_Right_Idle7.png" id="26_t3vw4"]
+[ext_resource type="Texture2D" uid="uid://dhirvwl72cxpc" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle0.png" id="27_rg73i"]
+[ext_resource type="Texture2D" uid="uid://cwpbi5ki3aqij" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle1.png" id="28_0xhds"]
+[ext_resource type="Texture2D" uid="uid://dfemixvs12t8j" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle2.png" id="29_7ycno"]
+[ext_resource type="Texture2D" uid="uid://d1b7mqnswhkck" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle3.png" id="30_u1ubl"]
+[ext_resource type="Texture2D" uid="uid://bnr56iailw7td" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle4.png" id="31_4huf3"]
+[ext_resource type="Texture2D" uid="uid://b31l713sybxcd" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle5.png" id="32_kfp3u"]
+[ext_resource type="Texture2D" uid="uid://ckodod8gr3itq" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle6.png" id="33_fetk7"]
+[ext_resource type="Texture2D" uid="uid://kljrhhcsqa1x" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle7.png" id="34_bfk5j"]
+[ext_resource type="Texture2D" uid="uid://b6omy5btsruuk" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk00.png" id="35_agsvh"]
+[ext_resource type="Texture2D" uid="uid://m35xgyehnect" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk01.png" id="36_2x7sj"]
+[ext_resource type="Texture2D" uid="uid://upigrthesbua" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk02.png" id="37_fe1cu"]
+[ext_resource type="Texture2D" uid="uid://771c7refjrd2" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk03.png" id="38_dwmln"]
+[ext_resource type="Texture2D" uid="uid://xhy7bgpjf0kk" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk04.png" id="39_vtej0"]
+[ext_resource type="Texture2D" uid="uid://dcdcimpjhtvqg" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk05.png" id="40_4k86u"]
+[ext_resource type="Texture2D" uid="uid://bi2n7gvfyfo7d" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk06.png" id="41_m4o2g"]
+[ext_resource type="Texture2D" uid="uid://ck84rxyo03m0g" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk07.png" id="42_xbnt4"]
+[ext_resource type="Texture2D" uid="uid://ya1x62vnb3jh" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk08.png" id="43_v1ly1"]
+[ext_resource type="Texture2D" uid="uid://jeakv3kggry7" path="res://Entities/Player/Elvyria/Elvyria_Front_Walk/Elvyria_Front_Walk09.png" id="44_v4qol"]
+[ext_resource type="Texture2D" uid="uid://ptar2vnf5sp1" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk00.png" id="45_lhjqe"]
+[ext_resource type="Texture2D" uid="uid://dkuegw4nwncns" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk01.png" id="46_bgr2u"]
+[ext_resource type="Texture2D" uid="uid://bk8cierirgr4r" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk02.png" id="47_f6fh0"]
+[ext_resource type="Texture2D" uid="uid://cwx3psremtjmg" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk03.png" id="48_e8caj"]
+[ext_resource type="Texture2D" uid="uid://c1xcrp5wavr02" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk04.png" id="49_mw5ec"]
+[ext_resource type="Texture2D" uid="uid://bccvpljfcimmj" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk05.png" id="50_whlg6"]
+[ext_resource type="Texture2D" uid="uid://dx48uv57h452t" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk06.png" id="51_qmhus"]
+[ext_resource type="Texture2D" uid="uid://c0f0jtqdcao0t" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk07.png" id="52_4xdg7"]
+[ext_resource type="Texture2D" uid="uid://cj3ra7mefg5j8" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk08.png" id="53_aqmin"]
+[ext_resource type="Texture2D" uid="uid://xrxwrocqo7wt" path="res://Entities/Player/Elvyria/Elvyria_Left_Walk/Elvyria_Left_Walk09.png" id="54_e08d7"]
+[ext_resource type="Texture2D" uid="uid://61f2ktaecd1m" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk00.png" id="55_afkg5"]
+[ext_resource type="Texture2D" uid="uid://dmfp3e5exmt4t" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk01.png" id="56_gbu6f"]
+[ext_resource type="Texture2D" uid="uid://cmwuq6ytjqpu0" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk02.png" id="57_7xhhp"]
+[ext_resource type="Texture2D" uid="uid://ddadbm0wns40j" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk03.png" id="58_8urda"]
+[ext_resource type="Texture2D" uid="uid://dqad6ppgnw7ve" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk04.png" id="59_t8gtv"]
+[ext_resource type="Texture2D" uid="uid://buxyvdjiitur0" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk05.png" id="60_e7cqq"]
+[ext_resource type="Texture2D" uid="uid://b2odrw3giatl5" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk06.png" id="61_hwjl7"]
+[ext_resource type="Texture2D" uid="uid://tvufch5c4dee" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk07.png" id="62_i24dy"]
+[ext_resource type="Texture2D" uid="uid://balwx7wr07c1h" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk08.png" id="63_sjdtp"]
+[ext_resource type="Texture2D" uid="uid://7lpwnofvqqlf" path="res://Entities/Player/Elvyria/Elvyria_Right_Walk/Elvyria_Right_Walk09.png" id="64_8f271"]
+[ext_resource type="Texture2D" uid="uid://bbxi0lesfigah" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk00.png" id="65_yb4uu"]
+[ext_resource type="Texture2D" uid="uid://4gve286rnh7i" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk01.png" id="66_ict54"]
+[ext_resource type="Texture2D" uid="uid://dxmr5yllrbtcy" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk02.png" id="67_ct1vr"]
+[ext_resource type="Texture2D" uid="uid://573nhieq3ylc" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk03.png" id="68_oeb4t"]
+[ext_resource type="Texture2D" uid="uid://mjjkbtkyh0o5" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk04.png" id="69_k6qci"]
+[ext_resource type="Texture2D" uid="uid://6bcv1ymq1mua" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk05.png" id="70_2wn00"]
+[ext_resource type="Texture2D" uid="uid://o32hhgvcdgaf" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk06.png" id="71_f46tj"]
+[ext_resource type="Texture2D" uid="uid://blvmjivwtd7hc" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk07.png" id="72_67ro8"]
+[ext_resource type="Texture2D" uid="uid://bibhx4g3fy86o" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk08.png" id="73_1tt8o"]
+[ext_resource type="Texture2D" uid="uid://dhg2v2ks78i4a" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk09.png" id="74_2hneu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp7f4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_keouu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qctxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bd1yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y3sj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1bbfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cjkuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sbigi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_54lt8")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_bbhbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xsf5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aqf6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1n2gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dg2yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vsxhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nqwy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_5h4d6")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_8nwjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_e0a23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_rdfkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4g1bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0vgue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1p14i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h7yd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_t3vw4")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_rg73i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0xhds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7ycno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_u1ubl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_4huf3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_kfp3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_fetk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_bfk5j")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_agsvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_2x7sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_fe1cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_dwmln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_vtej0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_4k86u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_m4o2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_xbnt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_v1ly1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_v4qol")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_lhjqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_bgr2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_f6fh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_e8caj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_mw5ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_whlg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_qmhus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_4xdg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_aqmin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_e08d7")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_afkg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_gbu6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_7xhhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_8urda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_t8gtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_e7cqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_hwjl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_i24dy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_sjdtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_8f271")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_yb4uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ict54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_ct1vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_oeb4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_k6qci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_2wn00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_f46tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_67ro8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_1tt8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_2hneu")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0bce"]
+size = Vector2(54, 84)
+
+[node name="Elvyria" type="Area2D" unique_id=1671058189]
+script = ExtResource("1_ff1tl")
+projectile_scene = ExtResource("2_wb426")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1010854799]
+sprite_frames = SubResource("SpriteFrames_cp7f4")
+animation = &"idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632128170]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_j0bce")
