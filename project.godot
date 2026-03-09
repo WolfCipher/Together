@@ -24,6 +24,11 @@ folder_colors={
 "res://Sound/": "blue"
 }
 
+[global_group]
+
+"Player Attack"=""
+"Enemy Attack"=""
+
 [input]
 
 e_up={
