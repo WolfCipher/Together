@@ -1,3 +1,50 @@
 [gd_scene format=3 uid="uid://def23c04mji30"]
 
+[ext_resource type="Texture2D" uid="uid://dhirvwl72cxpc" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle0.png" id="1_2cgwh"]
+[ext_resource type="Script" uid="uid://dfgmmjdh15t7o" path="res://Entities/Player/player.gd" id="1_lc1oi"]
+[ext_resource type="Texture2D" uid="uid://cwpbi5ki3aqij" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle1.png" id="2_iaow0"]
+[ext_resource type="Texture2D" uid="uid://dfemixvs12t8j" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle2.png" id="3_qpfo2"]
+[ext_resource type="Texture2D" uid="uid://d1b7mqnswhkck" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle3.png" id="4_yb21e"]
+[ext_resource type="Texture2D" uid="uid://bnr56iailw7td" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle4.png" id="5_aees8"]
+[ext_resource type="Texture2D" uid="uid://b31l713sybxcd" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle5.png" id="6_mie3u"]
+[ext_resource type="Texture2D" uid="uid://ckodod8gr3itq" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle6.png" id="7_0qy5o"]
+[ext_resource type="Texture2D" uid="uid://kljrhhcsqa1x" path="res://Entities/Player/Elvyria/Elvyria_Back_Idle/Elvyria_Back_Idle7.png" id="8_7nf3m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8od7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2cgwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iaow0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qpfo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yb21e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aees8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mie3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0qy5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7nf3m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Test" type="Node2D" unique_id=837400696]
+
+[node name="Elvyria" type="AnimatedSprite2D" parent="." unique_id=2106475365]
+position = Vector2(73, 47)
+sprite_frames = SubResource("SpriteFrames_8od7v")
+script = ExtResource("1_lc1oi")
