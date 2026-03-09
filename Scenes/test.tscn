@@ -763,6 +763,8 @@ up = "r_up"
 down = "r_down"
 right = "r_right"
 left = "r_left"
+attack1 = "r_attack1"
+attack2 = "r_attack2"
 
 [node name="arrow" type="AnimatedSprite2D" parent="." unique_id=1117105415]
 position = Vector2(454, 315)
