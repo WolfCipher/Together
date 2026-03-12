@@ -9,7 +9,7 @@ extends Area2D
 @export var faceDir = 0 # 0=up, 1=down, 2=right, 3=left
 @export var target1: Node2D
 @export var target2: Node2D
-@export var attackDistance := 100 # distance that the enemy needs to attack
+@export var attackDistance := 300 # distance that the enemy needs to attack
 @export var attackFrequency := 1 # how frequent the attacks are
 @export var projectile_scene: PackedScene
 

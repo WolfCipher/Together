@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://def23c04mji30"]
 
 [ext_resource type="PackedScene" uid="uid://bt11repin2mba" path="res://Scenes/projectileEnemy.tscn" id="4_ys1qc"]
+[ext_resource type="AudioStream" uid="uid://bsxorsv3cuq10" path="res://Sound/Music/core_loop.mp3" id="5_35xla"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="146_pe2hm"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="147_1fd1n"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Scenes/enemy.tscn" id="148_ff0aa"]
@@ -18,5 +19,8 @@ position = Vector2(130, 47)
 position = Vector2(354, 352)
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
-attackDistance = 1000
 projectile_scene = ExtResource("4_ys1qc")
+
+[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
+stream = ExtResource("5_35xla")
+autoplay = true
