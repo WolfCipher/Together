@@ -28,6 +28,9 @@ folder_colors={
 
 "Player Attack"=""
 "Enemy Attack"=""
+Enemy=""
+Player=""
+ProjectileEnemy=""
 
 [input]
 

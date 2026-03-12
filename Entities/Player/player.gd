@@ -1,5 +1,7 @@
 extends Area2D
 
+signal game_over
+
 @onready var root: Node2D = $".."
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var animation := sprite.animation
@@ -7,6 +9,7 @@ extends Area2D
 @export var speed = 400
 # 0=up, 1=down, 2=right, 3=left; lets idle animations face the right direction
 @export var faceDir = 0
+@export var health := 10
 
 # character dependent variables
 @export var up := "e_up"
@@ -20,6 +23,7 @@ extends Area2D
 
 func _ready() -> void:
 	play()
+	add_to_group("Player")
 
 func _process(delta: float) -> void:
 	# ***** MOVEMENT ******
@@ -102,3 +106,23 @@ func animate(dir) -> void:
 func play() -> void:
 	sprite.animation = animation;
 	sprite.play()
+
+# ************************* DAMAGE ************************************
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy Attack"):
+		health = health - 1
+		damage_blink()
+	if health < 1:
+		# wait 0.5 seconds before despawning
+		await get_tree().create_timer(0.5).timeout
+		emit_signal("game_over")
+		#queue_free()
+
+func damage_blink():
+	var tween = create_tween()
+	# switch sprite between red and normal
+	if health >= 1:
+		tween.tween_property(sprite, "modulate", Color(1,0,0), 0.1)
+		tween.tween_property(sprite, "modulate", Color(1,1,1), 0.1)
+	else:
+		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)

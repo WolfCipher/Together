@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dgh6ok0g67o3f"]
+[gd_scene format=3 uid="uid://bt11repin2mba"]
 
-[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_yr2qt"]
-[ext_resource type="Texture2D" uid="uid://bjphdljjo63t1" path="res://Entities/Arrow.png" id="2_tl4hk"]
+[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_ul0yc"]
+[ext_resource type="Texture2D" uid="uid://bjphdljjo63t1" path="res://Entities/Arrow.png" id="2_l30ll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(26, 79)
@@ -10,15 +10,15 @@ size = Vector2(26, 79)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_tl4hk")
+"texture": ExtResource("2_l30ll")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Arrow" type="Area2D" unique_id=871792930 groups=["Player Attack"]]
-script = ExtResource("1_yr2qt")
+[node name="Arrow" type="Area2D" unique_id=871792930 groups=["Enemy Attack"]]
+script = ExtResource("1_ul0yc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249]
 position = Vector2(0.40000153, -0.099998474)
