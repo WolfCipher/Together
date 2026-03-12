@@ -354,3 +354,5 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632128170]
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_j0bce")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
