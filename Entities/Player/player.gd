@@ -9,7 +9,9 @@ signal game_over
 @export var speed = 400
 # 0=up, 1=down, 2=right, 3=left; lets idle animations face the right direction
 @export var faceDir = 0
-@export var health := 10
+
+@export var max_health := 10
+var health := max_health
 
 # character dependent variables
 @export var up := "e_up"
@@ -31,6 +33,7 @@ func _process(delta: float) -> void:
 	position += dir * speed * delta
 	
 	# ***** ATTACKS *****
+	# MAY NEED COOLDOWN
 	attack()
 
 	# ***** ANIMATIONS *****

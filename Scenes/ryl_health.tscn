@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://pppv0qwe6p8b"]
+
+[ext_resource type="Script" uid="uid://bwcc0u7phe8q5" path="res://Scenes/health.gd" id="1_dx5va"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rvsg"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0.5803922)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dx5va"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.15294118, 0.57254905, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[node name="RylHealth" type="ProgressBar" unique_id=199826155]
+offset_left = 967.0
+offset_top = 15.999998
+offset_right = 1273.3064
+offset_bottom = 25.0
+scale = Vector2(0.555, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_6rvsg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dx5va")
+max_value = 10.0
+step = 1.0
+value = 5.0
+show_percentage = false
+script = ExtResource("1_dx5va")
