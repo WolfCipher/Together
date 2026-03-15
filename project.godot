@@ -114,3 +114,4 @@ r_sync={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.2551411, 0.38809407, 0.20295125, 1)

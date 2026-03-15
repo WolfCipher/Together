@@ -5,7 +5,8 @@ extends Area2D
 @onready var animation := sprite.animation
 
 @export var speed = 200
-@export var health = 3
+@export var max_health := 3
+var health := max_health
 @export var faceDir = 0 # 0=up, 1=down, 2=right, 3=left
 @export var target1: Node2D
 @export var target2: Node2D
