@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://dgh6ok0g67o3f"]
 
 [ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_qbfg1"]
-[ext_resource type="Texture2D" uid="uid://bjphdljjo63t1" path="res://Entities/Player/Ryl/Ryl_Projectile/Arrow.png" id="2_0m81g"]
+[ext_resource type="Texture2D" uid="uid://ehx8d6voijly" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile0.png" id="2_bv4sg"]
+[ext_resource type="Texture2D" uid="uid://lu6cdhej2bj3" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile1.png" id="3_jx5vd"]
+[ext_resource type="Texture2D" uid="uid://j86dl1fj00d" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile2.png" id="4_e8xpc"]
+[ext_resource type="Texture2D" uid="uid://cw2fgysumklj3" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile3.png" id="5_3fed8"]
+[ext_resource type="Texture2D" uid="uid://2qbevtns6wab" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile4.png" id="6_i4swy"]
+[ext_resource type="Texture2D" uid="uid://cccyy3t00hd1e" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile5.png" id="7_7jqps"]
+[ext_resource type="Texture2D" uid="uid://dq1qxf6frc71x" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile6.png" id="8_ejqhw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(26, 79)
@@ -10,7 +16,25 @@ size = Vector2(26, 79)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_0m81g")
+"texture": ExtResource("2_bv4sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jx5vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e8xpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3fed8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i4swy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7jqps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ejqhw")
 }],
 "loop": true,
 "name": &"default",

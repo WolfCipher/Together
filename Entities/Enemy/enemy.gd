@@ -105,6 +105,8 @@ func damage_blink():
 func attack():
 	if self.is_in_group("ProjectileEnemy"):
 		shoot_projectile()
+	elif self.is_in_group("AoE_Enemy"):
+		create_AoE()
 	else:
 		print("Not projectile enemy")
 
@@ -120,6 +122,15 @@ func shoot_projectile() -> void:
 	
 	# spawn
 	get_tree().current_scene.add_child(projectile)
+
+# spawn AoE attack
+func create_AoE() -> void:
+	var AoE = projectile_scene.instantiate()
+	# position underneath enemy
+	AoE.global_position = global_position
+	
+	# spawn
+	get_tree().current_scene.add_child(AoE)
 
 # Gives the direction the player is facing
 # Ensures attacks go in the correct direction

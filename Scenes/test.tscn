@@ -5,9 +5,11 @@
 [ext_resource type="AudioStream" uid="uid://bsxorsv3cuq10" path="res://Sound/Music/core_loop.mp3" id="5_35xla"]
 [ext_resource type="PackedScene" path="res://Scenes/ryl_health.tscn" id="6_i3aeo"]
 [ext_resource type="PackedScene" path="res://Scenes/elvyria_health.tscn" id="7_5wyu1"]
+[ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/Enemy_AoE.tscn" id="9_2cgwh"]
+[ext_resource type="PackedScene" uid="uid://bc3qbgah2llsb" path="res://Scenes/AoE_Enemy.tscn" id="10_iaow0"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="146_pe2hm"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="147_1fd1n"]
-[ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Scenes/enemy.tscn" id="148_ff0aa"]
+[ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/Enemy_Projectile.tscn" id="148_ff0aa"]
 
 [node name="Test" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
@@ -39,3 +41,8 @@ character = NodePath("../Elvyria")
 stream = ExtResource("5_35xla")
 autoplay = true
 parameters/looping = true
+
+[node name="Enemy2" parent="." unique_id=1319281044 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("9_2cgwh")]
+target1 = NodePath("../Ryl")
+target2 = NodePath("../Elvyria")
+projectile_scene = ExtResource("10_iaow0")
