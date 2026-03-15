@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dgh6ok0g67o3f"]
 
-[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_yr2qt"]
-[ext_resource type="Texture2D" uid="uid://bjphdljjo63t1" path="res://Entities/Arrow.png" id="2_tl4hk"]
+[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_qbfg1"]
+[ext_resource type="Texture2D" uid="uid://bjphdljjo63t1" path="res://Entities/Player/Ryl/Ryl_Projectile/Arrow.png" id="2_0m81g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(26, 79)
@@ -10,21 +10,21 @@ size = Vector2(26, 79)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_tl4hk")
+"texture": ExtResource("2_0m81g")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Arrow" type="Area2D" unique_id=871792930 groups=["Player Attack"]]
-script = ExtResource("1_yr2qt")
+script = ExtResource("1_qbfg1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249]
 position = Vector2(0.40000153, -0.099998474)
 shape = SubResource("RectangleShape2D_d4467")
 
-[node name="arrow" type="AnimatedSprite2D" parent="." unique_id=560075531]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=560075531]
 position = Vector2(2.4000015, -1.5999985)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_e1077")

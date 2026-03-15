@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4r3kniinw78w"
-path="res://.godot/imported/Arrow0.png-13322ead0210f8455b89fe7a950f9dca.ctex"
+uid="uid://dqu5qeadw3nbe"
+path="res://.godot/imported/Elvyria_Projectile05.png-c57418b7b446a35b2da9bab27b7d3bf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Arrow0.png"
-dest_files=["res://.godot/imported/Arrow0.png-13322ead0210f8455b89fe7a950f9dca.ctex"]
+source_file="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile05.png"
+dest_files=["res://.godot/imported/Elvyria_Projectile05.png-c57418b7b446a35b2da9bab27b7d3bf6.ctex"]
 
 [params]
 

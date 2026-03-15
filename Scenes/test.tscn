@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://def23c04mji30"]
 
+[ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/projectileElvyria.tscn" id="2_i3aeo"]
 [ext_resource type="PackedScene" uid="uid://bt11repin2mba" path="res://Scenes/projectileEnemy.tscn" id="4_ys1qc"]
 [ext_resource type="AudioStream" uid="uid://bsxorsv3cuq10" path="res://Sound/Music/core_loop.mp3" id="5_35xla"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="146_pe2hm"]
@@ -11,6 +12,7 @@ y_sort_enabled = true
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("146_pe2hm")]
 position = Vector2(72, 47)
+projectile_scene = ExtResource("2_i3aeo")
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("147_1fd1n")]
 position = Vector2(130, 47)
