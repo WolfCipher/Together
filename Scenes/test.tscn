@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/projectileElvyria.tscn" id="2_i3aeo"]
 [ext_resource type="PackedScene" uid="uid://bt11repin2mba" path="res://Scenes/projectileEnemy.tscn" id="4_ys1qc"]
 [ext_resource type="AudioStream" uid="uid://bsxorsv3cuq10" path="res://Sound/Music/core_loop.mp3" id="5_35xla"]
-[ext_resource type="PackedScene" uid="uid://pppv0qwe6p8b" path="res://Scenes/ryl_health.tscn" id="6_i3aeo"]
-[ext_resource type="PackedScene" uid="uid://bcqu3ma0d0gks" path="res://Scenes/elvyria_health.tscn" id="7_5wyu1"]
+[ext_resource type="PackedScene" path="res://Scenes/ryl_health.tscn" id="6_i3aeo"]
+[ext_resource type="PackedScene" path="res://Scenes/elvyria_health.tscn" id="7_5wyu1"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="146_pe2hm"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="147_1fd1n"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Scenes/enemy.tscn" id="148_ff0aa"]
@@ -13,7 +13,7 @@
 y_sort_enabled = true
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("146_pe2hm")]
-position = Vector2(72, 47)
+position = Vector2(516, 505)
 projectile_scene = ExtResource("2_i3aeo")
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("147_1fd1n")]
