@@ -72,7 +72,7 @@
 [ext_resource type="Texture2D" uid="uid://ds7onuu56fp0n" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk06.png" id="71_a123g"]
 [ext_resource type="Texture2D" uid="uid://chjld0b61l551" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk07.png" id="72_qe1fa"]
 [ext_resource type="Texture2D" uid="uid://bp6640qt24hod" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk08.png" id="73_pfu2a"]
-[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/projectile.tscn" id="74_6s84u"]
+[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/projectileRyl.tscn" id="74_6s84u"]
 [ext_resource type="Texture2D" uid="uid://bj6bk5hwh707i" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk09.png" id="74_rrncw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6s84u"]
