@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjphdljjo63t1"
-path="res://.godot/imported/Arrow.png-50963719eef8d59d2316a96c470b592b.ctex"
+uid="uid://cpnsw1vupxsgt"
+path="res://.godot/imported/AoE_Enemy_Attack3.png-6902f47af963033fd68937fcdf2e4c0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Player/Ryl/Ryl_Projectile/Arrow.png"
-dest_files=["res://.godot/imported/Arrow.png-50963719eef8d59d2316a96c470b592b.ctex"]
+source_file="res://Entities/Enemy/AoE Enemy/AoE_Enemy_Attack/AoE_Enemy_Attack3.png"
+dest_files=["res://.godot/imported/AoE_Enemy_Attack3.png-6902f47af963033fd68937fcdf2e4c0a.ctex"]
 
 [params]
 
