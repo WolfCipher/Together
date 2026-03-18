@@ -14,6 +14,7 @@ var health := max_health
 @export var attackFrequency := 1 # how frequent the attacks are
 @export var projectile_scene: PackedScene
 @export var AoE_scene: PackedScene
+@export var melee_scene: PackedScene
 
 var attack_cooldown := 0.0
 
@@ -133,6 +134,19 @@ func create_AoE() -> void:
 	
 	# spawn
 	get_tree().current_scene.add_child(AoE)
+
+# spawn melee attack
+func attack_melee() -> void:
+	var melee = melee_scene.instantiate()
+	var dir = get_facing_vector()
+	
+	# position slightly ahead of player and move in proper direction
+	melee.global_position = global_position + dir * 30
+	melee.direction = dir
+	melee.rotation = dir.angle() + PI/2
+	
+	# spawn
+	get_tree().current_scene.add_child(melee)
 
 # Gives the direction the player is facing
 # Ensures attacks go in the correct direction

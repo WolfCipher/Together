@@ -6,7 +6,6 @@ var direction := Vector2.ZERO
 
 func _ready() -> void:
 	play()
-	pass # Replace with function body.
 
 func _process(delta: float) -> void:
 	if direction != Vector2.ZERO:
