@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dpcocehy7udm3"]
+
+[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_cbnmq"]
+[ext_resource type="Texture2D" uid="uid://gn1uj16tkxhy" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack0.png" id="2_2lis5"]
+[ext_resource type="Texture2D" uid="uid://l1tqy1haymr6" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack1.png" id="3_d3sfe"]
+[ext_resource type="Texture2D" uid="uid://n2okl308w5pi" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack2.png" id="4_g2o02"]
+[ext_resource type="Texture2D" uid="uid://bqwskbrgf3v37" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack3.png" id="5_xjr30"]
+[ext_resource type="Texture2D" uid="uid://c0bmgyc1l4x0s" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack4.png" id="6_kqrk6"]
+[ext_resource type="Texture2D" uid="uid://vsxyppk7xmpp" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack5.png" id="7_d5b3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
+size = Vector2(44, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1077"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2lis5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d3sfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g2o02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xjr30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kqrk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d5b3k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Blast" type="Area2D" unique_id=871792930 groups=["Enemy Attack"]]
+script = ExtResource("1_cbnmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249]
+position = Vector2(5, -1.5)
+shape = SubResource("RectangleShape2D_d4467")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=560075531]
+position = Vector2(2.4000015, -1.5999985)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_e1077")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
