@@ -334,7 +334,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
-size = Vector2(73, 73)
+size = Vector2(60, 85)
 
 [node name="Enemy" type="Area2D" unique_id=1136344332 groups=["Enemy"]]
 script = ExtResource("1_xte2n")
@@ -344,7 +344,7 @@ sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
-position = Vector2(6.5, 6.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1f0kj")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
