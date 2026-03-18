@@ -40,6 +40,8 @@ func _process(delta: float) -> void:
 		if waveNum >= waves.size():
 			return
 		else:
+			target1.xp += 1
+			target2.xp += 1
 			spawn()
 
 func spawn() -> void:

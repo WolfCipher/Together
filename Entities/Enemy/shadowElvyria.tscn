@@ -340,6 +340,7 @@ size = Vector2(54, 85)
 
 [node name="Enemy" type="Area2D" unique_id=1136344332 groups=["Enemy", "MeleeEnemy", "ProjectileEnemy"]]
 script = ExtResource("1_reyoy")
+max_health = 10
 projectile_scene = ExtResource("2_4y68x")
 melee_scene = ExtResource("3_isqlt")
 
