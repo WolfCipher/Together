@@ -32,6 +32,7 @@ Enemy=""
 Player=""
 ProjectileEnemy=""
 AoE_Enemy=""
+MeleeEnemy=""
 
 [input]
 

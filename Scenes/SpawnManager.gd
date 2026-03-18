@@ -12,8 +12,11 @@ extends Node
 # each outer element represents the wave
 # each inner element represents how many enemies of a particular type (a, b, c, etc.) are spawned in a wave
 @export var waves: Array = [
-	[1,1,0,0], # wave 1
-	[2,2,0,0] # wave 2
+	[1,0,0,0], # wave 1
+	[2,0,0,0], # wave 2
+	[1,1,0,0], # wave 3
+	[2,2,0,0], # wave 4
+	[0,0,1,1] # wave 5
 ]
 
 # helps with looping through the wave array and spawning the particular enemies
