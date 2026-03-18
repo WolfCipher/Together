@@ -22,6 +22,7 @@ var health := max_health
 @export var attack1 := "e_attack1"
 @export var attack2 := "e_attack2"
 @export var projectile_scene: PackedScene
+@export var melee_scene: PackedScene
 
 func _ready() -> void:
 	play()
@@ -46,7 +47,7 @@ func attack() -> void:
 	if Input.is_action_just_pressed(attack1):
 		shoot_projectile()
 	if Input.is_action_just_pressed(attack2):
-		var _x = 1 # placeholder to prevent errors
+		attack_melee()
 	
 	# Sync attacks
 	if Input.is_action_pressed("e_sync") && Input.is_action_pressed("r_sync"):
@@ -64,6 +65,19 @@ func shoot_projectile() -> void:
 	
 	# spawn
 	get_tree().current_scene.add_child(projectile)
+
+# spawn melee attack
+func attack_melee() -> void:
+	var melee = melee_scene.instantiate()
+	var dir = get_facing_vector()
+	
+	# position slightly ahead of player and move in proper direction
+	melee.global_position = global_position + dir * 30
+	melee.direction = dir
+	melee.rotation = dir.angle() + PI/2
+	
+	# spawn
+	get_tree().current_scene.add_child(melee)
 
 # Gives the direction the player is facing
 # Ensures attacks go in the correct direction
