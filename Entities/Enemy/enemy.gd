@@ -13,6 +13,7 @@ var health := max_health
 @export var attackDistance := 300 # distance that the enemy needs to attack
 @export var attackFrequency := 1 # how frequent the attacks are
 @export var projectile_scene: PackedScene
+@export var AoE_scene: PackedScene
 
 var attack_cooldown := 0.0
 
@@ -37,6 +38,7 @@ func _process(delta: float) -> void:
 	else:
 		target_pos = pos2
 	
+	# TODO some enemies attack while moving!!!!!
 	# Move enemy to target, if the enemy is not within a certain distance
 	# Otherwise, attack
 	if target_dist > attackDistance:
@@ -97,7 +99,7 @@ func damage_blink():
 	var tween = create_tween()
 	# switch sprite between red and normal
 	if health >= 1:
-		tween.tween_property(sprite, "modulate", Color(1,0,0), 0.1)
+		tween.tween_property(sprite, "modulate", Color(0.5,0,0), 0.1)
 		tween.tween_property(sprite, "modulate", Color(1,1,1), 0.1)
 	else:
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
@@ -125,7 +127,7 @@ func shoot_projectile() -> void:
 
 # spawn AoE attack
 func create_AoE() -> void:
-	var AoE = projectile_scene.instantiate()
+	var AoE = AoE_scene.instantiate()
 	# position underneath enemy
 	AoE.global_position = global_position
 	

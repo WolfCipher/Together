@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqgjxxjhy8f3b" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Front/Projectile_Enemy00.png" id="2_7vco5"]
 [ext_resource type="Script" uid="uid://bbl16o0pnn8cp" path="res://Entities/Enemy/enemy.gd" id="2_afpow"]
+[ext_resource type="PackedScene" uid="uid://bt11repin2mba" path="res://Scenes/projectileEnemy.tscn" id="2_tc8ph"]
 [ext_resource type="Texture2D" uid="uid://co37ofkvy5co3" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Front/Projectile_Enemy01.png" id="3_7xmqa"]
 [ext_resource type="Texture2D" uid="uid://cls21tjsnsy5" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Front/Projectile_Enemy02.png" id="4_8w0mm"]
 [ext_resource type="Texture2D" uid="uid://dgbuvcbm2vhe7" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Front/Projectile_Enemy03.png" id="5_ebugx"]
@@ -382,17 +383,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
-size = Vector2(73, 73)
+size = Vector2(66, 73)
 
-[node name="Enemy" type="Area2D" unique_id=1136344332 groups=["Enemy"]]
+[node name="Enemy" type="Area2D" unique_id=1136344332 groups=["Enemy", "ProjectileEnemy"]]
 script = ExtResource("2_afpow")
+projectile_scene = ExtResource("2_tc8ph")
 
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1432958030]
 sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
-position = Vector2(6.5, 6.5)
+position = Vector2(3, 6.5)
 shape = SubResource("RectangleShape2D_1f0kj")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

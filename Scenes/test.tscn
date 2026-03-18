@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://def23c04mji30"]
 
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/projectileElvyria.tscn" id="2_i3aeo"]
-[ext_resource type="PackedScene" uid="uid://bt11repin2mba" path="res://Scenes/projectileEnemy.tscn" id="4_ys1qc"]
 [ext_resource type="AudioStream" uid="uid://bsxorsv3cuq10" path="res://Sound/Music/core_loop.mp3" id="5_35xla"]
-[ext_resource type="PackedScene" path="res://Scenes/ryl_health.tscn" id="6_i3aeo"]
-[ext_resource type="PackedScene" path="res://Scenes/elvyria_health.tscn" id="7_5wyu1"]
+[ext_resource type="PackedScene" uid="uid://pppv0qwe6p8b" path="res://Scenes/ryl_health.tscn" id="6_i3aeo"]
+[ext_resource type="PackedScene" uid="uid://bcqu3ma0d0gks" path="res://Scenes/elvyria_health.tscn" id="7_5wyu1"]
 [ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/Enemy_AoE.tscn" id="9_2cgwh"]
-[ext_resource type="PackedScene" uid="uid://bc3qbgah2llsb" path="res://Scenes/AoE_Enemy.tscn" id="10_iaow0"]
+[ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/SpawnManager.gd" id="11_aees8"]
+[ext_resource type="PackedScene" uid="uid://owwcqowd8wlq" path="res://Entities/Enemy/shadowElvyria.tscn" id="12_mie3u"]
+[ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="13_0qy5o"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="146_pe2hm"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="147_1fd1n"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/Enemy_Projectile.tscn" id="148_ff0aa"]
@@ -20,12 +21,6 @@ projectile_scene = ExtResource("2_i3aeo")
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("147_1fd1n")]
 position = Vector2(574, 505)
-
-[node name="Enemy" parent="." unique_id=1136344332 node_paths=PackedStringArray("target1", "target2") groups=["ProjectileEnemy"] instance=ExtResource("148_ff0aa")]
-position = Vector2(547, 96)
-target1 = NodePath("../Elvyria")
-target2 = NodePath("../Ryl")
-projectile_scene = ExtResource("4_ys1qc")
 
 [node name="RylHealth" parent="." unique_id=199826155 node_paths=PackedStringArray("character") instance=ExtResource("6_i3aeo")]
 offset_left = 971.0
@@ -42,7 +37,11 @@ stream = ExtResource("5_35xla")
 autoplay = true
 parameters/looping = true
 
-[node name="Enemy2" parent="." unique_id=1319281044 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("9_2cgwh")]
-target1 = NodePath("../Ryl")
-target2 = NodePath("../Elvyria")
-projectile_scene = ExtResource("10_iaow0")
+[node name="SpawnManager" type="Node2D" parent="." unique_id=708660748 node_paths=PackedStringArray("target1", "target2")]
+script = ExtResource("11_aees8")
+prefab_a = ExtResource("148_ff0aa")
+prefab_b = ExtResource("9_2cgwh")
+prefab_c = ExtResource("12_mie3u")
+prefab_d = ExtResource("13_0qy5o")
+target1 = NodePath("../Elvyria")
+target2 = NodePath("../Ryl")
