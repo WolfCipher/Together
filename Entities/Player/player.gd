@@ -24,6 +24,8 @@ var health := max_health
 @export var projectile_scene: PackedScene
 @export var melee_scene: PackedScene
 
+var xp = 0; # updated in spawn manager after each wave of enemies
+
 func _ready() -> void:
 	play()
 	add_to_group("Player")
@@ -65,6 +67,31 @@ func shoot_projectile() -> void:
 	
 	# spawn
 	get_tree().current_scene.add_child(projectile)
+	
+	# with higher xp, can shoot 3 at once
+	if xp >= 2:
+		var x_change = 0.0
+		var y_change = 0.0
+		
+		if faceDir == 0:
+			x_change = -0.5
+		if faceDir == 1:
+			x_change = 0.5
+		if faceDir == 2:
+			y_change = -0.5
+		if faceDir == 3:
+			y_change = 0.5
+		
+		var projectile2 = projectile_scene.instantiate()
+		var projectile3 = projectile_scene.instantiate()
+		projectile2.global_position = projectile.global_position
+		projectile3.global_position = projectile.global_position
+		projectile2.direction = Vector2(dir.x+x_change,dir.y+y_change)
+		projectile3.direction = Vector2(dir.x-x_change,dir.y-y_change)
+		projectile2.rotation = dir.angle() + PI/3
+		projectile3.rotation = dir.angle() + 4*PI/6
+		get_tree().current_scene.add_child(projectile2)
+		get_tree().current_scene.add_child(projectile3)
 
 # spawn melee attack
 func attack_melee() -> void:
