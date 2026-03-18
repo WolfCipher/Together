@@ -31,6 +31,7 @@ folder_colors={
 Enemy=""
 Player=""
 ProjectileEnemy=""
+AoE_Enemy=""
 
 [input]
 

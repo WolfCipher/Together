@@ -1,30 +1,50 @@
 [gd_scene format=3 uid="uid://bt11repin2mba"]
 
 [ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_ul0yc"]
-[ext_resource type="Texture2D" uid="uid://bjphdljjo63t1" path="res://Entities/Arrow.png" id="2_l30ll"]
+[ext_resource type="Texture2D" uid="uid://gn1uj16tkxhy" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack0.png" id="2_ug4jx"]
+[ext_resource type="Texture2D" uid="uid://l1tqy1haymr6" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack1.png" id="3_udqkj"]
+[ext_resource type="Texture2D" uid="uid://n2okl308w5pi" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack2.png" id="4_ltlms"]
+[ext_resource type="Texture2D" uid="uid://bqwskbrgf3v37" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack3.png" id="5_f57rd"]
+[ext_resource type="Texture2D" uid="uid://c0bmgyc1l4x0s" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack4.png" id="6_xgsg6"]
+[ext_resource type="Texture2D" uid="uid://vsxyppk7xmpp" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack5.png" id="7_qbekw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
-size = Vector2(26, 79)
+size = Vector2(44, 69)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e1077"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_l30ll")
+"texture": ExtResource("2_ug4jx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_udqkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ltlms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f57rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xgsg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qbekw")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
-[node name="Arrow" type="Area2D" unique_id=871792930 groups=["Enemy Attack"]]
+[node name="Blast" type="Area2D" unique_id=871792930 groups=["Enemy Attack"]]
 script = ExtResource("1_ul0yc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249]
-position = Vector2(0.40000153, -0.099998474)
+position = Vector2(5, -1.5)
 shape = SubResource("RectangleShape2D_d4467")
 
-[node name="arrow" type="AnimatedSprite2D" parent="." unique_id=560075531]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=560075531]
 position = Vector2(2.4000015, -1.5999985)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_e1077")

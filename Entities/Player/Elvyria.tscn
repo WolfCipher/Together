@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bb5t0ma2u778q"]
 
 [ext_resource type="Script" uid="uid://dfgmmjdh15t7o" path="res://Entities/Player/player.gd" id="1_ff1tl"]
-[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/projectile.tscn" id="2_wb426"]
+[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/projectileRyl.tscn" id="2_wb426"]
 [ext_resource type="Texture2D" uid="uid://bl0im5kiwdwbr" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle0.png" id="3_keouu"]
 [ext_resource type="Texture2D" uid="uid://5xffrews3nq0" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle1.png" id="4_qctxu"]
 [ext_resource type="Texture2D" uid="uid://bcql2ewolfpim" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle2.png" id="5_bd1yr"]
