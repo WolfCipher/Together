@@ -103,6 +103,10 @@ func attack_melee() -> void:
 	melee.direction = dir
 	melee.rotation = dir.angle() + PI/2
 	
+	# given enough xp, increase size of melee
+	if xp >= 5:
+		melee.scale = Vector2(2,2)
+	
 	# spawn
 	get_tree().current_scene.add_child(melee)
 
