@@ -75,6 +75,7 @@
 [ext_resource type="Texture2D" uid="uid://blvmjivwtd7hc" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk07.png" id="72_67ro8"]
 [ext_resource type="Texture2D" uid="uid://bibhx4g3fy86o" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk08.png" id="73_1tt8o"]
 [ext_resource type="Texture2D" uid="uid://dhg2v2ks78i4a" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk09.png" id="74_2hneu"]
+[ext_resource type="AudioStream" uid="uid://chv7hqprbb7n8" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Walk/Elvyria_Walk_1.wav" id="76_vedr3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cp7f4"]
 animations = [{
@@ -350,5 +351,8 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632128170]
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_j0bce")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2105697936]
+stream = ExtResource("76_vedr3")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

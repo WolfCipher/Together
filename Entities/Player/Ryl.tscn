@@ -75,6 +75,7 @@
 [ext_resource type="Texture2D" uid="uid://bp6640qt24hod" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk08.png" id="73_pfu2a"]
 [ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/projectileRyl.tscn" id="74_6s84u"]
 [ext_resource type="Texture2D" uid="uid://bj6bk5hwh707i" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk09.png" id="74_rrncw"]
+[ext_resource type="AudioStream" uid="uid://bd853mpikwjo7" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Walk/Ryl_Walk_1.wav" id="76_keouu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6s84u"]
 animations = [{
@@ -356,5 +357,8 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632128170]
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_j0bce")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1999462974]
+stream = ExtResource("76_keouu")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
