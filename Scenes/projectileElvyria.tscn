@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://cgrboovxkxl2p" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile14.png" id="16_ehiwn"]
 [ext_resource type="Texture2D" uid="uid://1gaf1txp758i" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile15.png" id="17_egwi3"]
 [ext_resource type="Texture2D" uid="uid://bjsjuaulgv8ok" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile16.png" id="18_7rnkv"]
+[ext_resource type="AudioStream" uid="uid://celc1qwxikm0f" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Projectile/Elvyria_Projectile_1.wav" id="19_r2uyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(58, 44)
@@ -92,5 +93,8 @@ shape = SubResource("RectangleShape2D_d4467")
 position = Vector2(0, 2)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_e1077")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1812434474]
+stream = ExtResource("19_r2uyh")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
