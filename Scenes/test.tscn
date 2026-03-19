@@ -36,6 +36,7 @@ character = NodePath("../Elvyria")
 stream = ExtResource("6_qpfo2")
 volume_db = -5.0
 autoplay = true
+bus = &"Music"
 
 [node name="SpawnManager" type="Node2D" parent="." unique_id=708660748 node_paths=PackedStringArray("target1", "target2")]
 script = ExtResource("11_aees8")

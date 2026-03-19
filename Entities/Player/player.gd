@@ -157,6 +157,7 @@ func play() -> void:
 	sprite.animation = animation;
 	sprite.play()
 	
+# ***************** SOUNDS ********************
 	if animation == "walk_down" || animation ==  "walk_up" || animation == "walk_right" || animation == "walk_left":
 		if walk.playing == false:
 			walk.play()
