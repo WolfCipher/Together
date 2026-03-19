@@ -2,6 +2,8 @@ extends Area2D
 
 @export var speed := 1000.0
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+
 var direction := Vector2.ZERO
 
 func _ready() -> void:
@@ -13,6 +15,7 @@ func _process(delta: float) -> void:
 
 func play() -> void:
 	sprite.play()
+	audio.play()
 
 func _on_area_entered(area: Area2D) -> void:
 	var player_attack = self.is_in_group("Player Attack") && area.is_in_group("Enemy");

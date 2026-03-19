@@ -5,6 +5,8 @@ signal game_over
 @onready var root: Node2D = $".."
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var animation := sprite.animation
+@onready var walk: AudioStreamPlayer = $AudioStreamPlayer
+
 
 @export var speed = 400
 # 0=up, 1=down, 2=right, 3=left; lets idle animations face the right direction
@@ -154,7 +156,11 @@ func animate(dir) -> void:
 func play() -> void:
 	sprite.animation = animation;
 	sprite.play()
-
+	
+# ***************** SOUNDS ********************
+	if animation == "walk_down" || animation ==  "walk_up" || animation == "walk_right" || animation == "walk_left":
+		if walk.playing == false:
+			walk.play()
 # ************************* DAMAGE ************************************
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy Attack"):
