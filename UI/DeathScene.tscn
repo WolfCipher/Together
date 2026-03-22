@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://bm75b8svgy6au"]
+
+[ext_resource type="Texture2D" uid="uid://i2hh47upe0cf" path="res://Entities/SceneArt/menuScreen.png" id="1_3acwb"]
+[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_est4x"]
+[ext_resource type="PackedScene" uid="uid://b2pf1jf4yekyt" path="res://UI/MenuScene.tscn" id="3_3acwb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
+bg_color = Color(0.13346192, 0, 0.7465482, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.02021429, 9.62615e-08, 0.24905872, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx56i"]
+bg_color = Color(0.045101725, 9.62615e-08, 0.3707431, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.019607844, 0, 0.2509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rae6p"]
+bg_color = Color(0.0645, 4.813075e-08, 0.45324594, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.019607844, 0, 0.2509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vg0ck"]
+bg_color = Color(0.27837503, 0.17250001, 0.75, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.13346192, 0, 0.7465482, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7fmy"]
+bg_color = Color(0.13346192, 0, 0.7465482, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.90715146, 0.6109639, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MenuScene" type="Node2D" unique_id=1385909618]
+
+[node name="Image" type="Sprite2D" parent="." unique_id=223955600]
+position = Vector2(576, 324)
+texture = ExtResource("1_3acwb")
+
+[node name="Label" type="Label" parent="." unique_id=1295069426]
+z_index = 1
+offset_left = 635.0
+offset_top = 363.0
+offset_right = 1069.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(1, 0.09019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 100
+text = "Together"
+
+[node name="Button" type="Button" parent="." unique_id=300260568]
+z_index = 1
+offset_left = 644.0
+offset_top = 516.0
+offset_right = 1056.0
+offset_bottom = 613.0
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_36iol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xx56i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rae6p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
+text = "Start Game"
+script = ExtResource("2_est4x")
+next_scene = ExtResource("3_3acwb")
