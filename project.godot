@@ -41,6 +41,10 @@ Player=""
 ProjectileEnemy=""
 AoE_Enemy=""
 MeleeEnemy=""
+BoundaryLeft=""
+BoundaryRight=""
+BoundaryTop=""
+BoundaryBottom=""
 
 [inkgd]
 
