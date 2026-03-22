@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://g6l4hl6qox64"]
+
+[ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/ink_template.gd" id="1_r28ab"]
+[ext_resource type="FontFile" uid="uid://bbs5vjnj6t0fr" path="res://examples/fonts/Poppins-Medium.ttf" id="2_pyc7w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cs0ko"]
+font = ExtResource("2_pyc7w")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Ink Manager" type="Node" unique_id=1944090056]
+script = ExtResource("1_r28ab")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1119455277]
+offset_left = 235.0
+offset_top = 340.0
+offset_right = 935.0
+offset_bottom = 590.0
+
+[node name="Dialog" type="Label" parent="ColorRect" unique_id=2032860697]
+z_index = 10
+layout_mode = 0
+offset_left = 11.0
+offset_top = 13.0
+offset_right = 689.0
+offset_bottom = 240.0
+label_settings = SubResource("LabelSettings_cs0ko")
+
+[node name="Choices" type="VBoxContainer" parent="ColorRect" unique_id=1573429943]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

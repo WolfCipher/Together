@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://g6l4hl6qox64"]
+
+[ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/ink_template.gd" id="1_r28ab"]
+[ext_resource type="PackedScene" uid="uid://def23c04mji30" path="res://Scenes/test.tscn" id="2_poo3n"]
+[ext_resource type="FontFile" uid="uid://bbs5vjnj6t0fr" path="res://examples/fonts/Poppins-Medium.ttf" id="2_pyc7w"]
+[ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_w1g4e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cs0ko"]
+font = ExtResource("2_pyc7w")
+font_size = 30
+font_color = Color(0.94509804, 1, 0.9490196, 1)
+
+[node name="Ink Manager" type="Node" unique_id=1944090056]
+script = ExtResource("1_r28ab")
+next_scene = ExtResource("2_poo3n")
+
+[node name="Panel" type="Panel" parent="." unique_id=110650881]
+offset_left = 30.0
+offset_top = 340.0
+offset_right = 730.0
+offset_bottom = 590.0
+theme_override_styles/panel = ExtResource("2_w1g4e")
+
+[node name="Dialog" type="Label" parent="Panel" unique_id=2032860697]
+z_index = 10
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 678.0
+offset_bottom = 231.0
+label_settings = SubResource("LabelSettings_cs0ko")
+autowrap_mode = 2
+
+[node name="Choices" type="VBoxContainer" parent="Panel" unique_id=1573429943]
+layout_mode = 0
+offset_left = 708.0
+offset_right = 858.0
+offset_bottom = 51.0
