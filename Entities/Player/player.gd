@@ -15,6 +15,14 @@ signal game_over
 @export var max_health := 10
 var health := max_health
 
+# limiting how how different attacks can be used
+@export var shoot_recharge := 0.5
+@export var melee_recharge := 0.0
+@export var sync_recharge := 10.0
+var shoot_cooldown := 0.0
+var melee_cooldown := 0.0
+var sync_cooldown := 0.0
+
 # character dependent variables
 @export var up := "e_up"
 @export var down := "e_down"
@@ -28,14 +36,36 @@ var health := max_health
 
 var xp = 0; # updated in spawn manager after each wave of enemies
 
+# false if outside camera boundaries
+var can_move_up = true
+var can_move_down = true
+var can_move_right = true
+var can_move_left = true
+
 func _ready() -> void:
 	play()
 	add_to_group("Player")
 
 func _process(delta: float) -> void:
+	recharge(delta)
+	
 	# ***** MOVEMENT ******
 	var dir := Input.get_vector(left, right, up, down)
-	position += dir * speed * delta
+	
+	# lets us look like we're walking into things by sending dir to animation
+	# but we can't move through things by using move_dir for position
+	var move_dir = dir
+	
+	if !can_move_up && dir.y < 0:
+		move_dir.y = 0
+	if !can_move_down && dir.y > 0:
+		move_dir.y = 0
+	if !can_move_right && dir.x > 0:
+		move_dir.x = 0
+	if !can_move_left && dir.x < 0:
+		move_dir.x = 0
+	
+	position += move_dir * speed * delta
 	
 	# ***** ATTACKS *****
 	# MAY NEED COOLDOWN
@@ -45,13 +75,22 @@ func _process(delta: float) -> void:
 	animate(dir)
 
 # ******************* ATTACKS **********************
+func recharge(delta):
+	shoot_cooldown -= delta
+	melee_cooldown -= delta
+	sync_cooldown -= delta
+
 # Handling key presses
 func attack() -> void:
 	# Regular attacks
 	if Input.is_action_just_pressed(attack1):
-		shoot_projectile()
+		if shoot_cooldown <= 0:
+			shoot_projectile()
+			shoot_cooldown = shoot_recharge
 	if Input.is_action_just_pressed(attack2):
-		attack_melee()
+		if melee_cooldown <= 0:
+			attack_melee()
+			melee_cooldown = melee_recharge
 	
 	# Sync attacks
 	if Input.is_action_pressed("e_sync") && Input.is_action_pressed("r_sync"):
@@ -160,17 +199,8 @@ func play() -> void:
 	if animation == "walk_down" || animation ==  "walk_up" || animation == "walk_right" || animation == "walk_left":
 		if walk.playing == false:
 			walk.play()
-# ************************* DAMAGE ************************************
-func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Enemy Attack"):
-		health = health - area.damage
-		damage_blink()
-	if health < 1:
-		# wait 0.5 seconds before despawning
-		await get_tree().create_timer(0.5).timeout
-		emit_signal("game_over")
-		#queue_free()
 
+# ************************* DAMAGE & COLLISION ************************************
 func damage_blink():
 	var tween = create_tween()
 	# switch sprite between red and normal
@@ -179,3 +209,32 @@ func damage_blink():
 		tween.tween_property(sprite, "modulate", Color(1,1,1), 0.1)
 	else:
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemy Attack"):
+		health = health - area.damage
+		damage_blink()
+		if health < 1:
+			# wait 0.5 seconds before despawning
+			await get_tree().create_timer(0.5).timeout
+			emit_signal("game_over")
+			#queue_free()
+	else:
+		if area.is_in_group("BoundaryLeft"):
+			can_move_left = false
+		elif area.is_in_group("BoundaryRight"):
+			can_move_right = false
+		elif area.is_in_group("BoundaryTop"):
+			can_move_up = false
+		elif area.is_in_group("BoundaryBottom"):
+			can_move_down = false
+
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("BoundaryLeft"):
+		can_move_left = true
+	elif area.is_in_group("BoundaryRight"):
+		can_move_right = true
+	elif area.is_in_group("BoundaryTop"):
+		can_move_up = true
+	elif area.is_in_group("BoundaryBottom"):
+		can_move_down = true
