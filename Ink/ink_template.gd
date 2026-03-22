@@ -2,31 +2,25 @@
 
 extends Node
 
-# ############################################################################ #
-# Imports
-# ############################################################################ #
-
-# remove since given in class: var InkPlayer = load("res://addons/inkgd/ink_player.gd")
 @export var ink_script := "res://Ink/test.json"
+@export var ink_vars := [] # should be populated with the strings of Inky variable names
+@export var next_scene : PackedScene
 
-# ############################################################################ #
-# Public Nodes
-# ############################################################################ #
+# TODO Add character sprites emotions to switch between here
 
-# Alternatively, it could also be retrieved from the tree.
-# onready var _ink_player = $InkPlayer
 @onready var _ink_player = InkPlayer.new()
+@onready var choice_btn = load("res://Ink/dialog_button.tscn")
+@onready var _btns = []
 
-# ############################################################################ #
-# Lifecycle
-# ############################################################################ #
+@onready var panel = $Panel # holds everything; turn invisible when dialogue is finished
+@onready var dialog_box = $Panel/Dialog
+@onready var choices = $Panel/Choices # append buttons to this vertical box container
 
 func _ready():
 	# Adds the player to the tree.
 	add_child(_ink_player)
 
-	# Replace the example path with the path to your story.
-	# Remove this line if you set 'ink_file' in the inspector.
+	# Loads story
 	_ink_player.ink_file = load(ink_script)
 
 	# It's recommended to load the story in the background. On platforms that
@@ -48,7 +42,7 @@ func _story_loaded(successfully: bool):
 	if !successfully:
 		return
 
-	# _observe_variables()
+	_observe_variables()
 	# _bind_externals()
 
 	_continue_story()
@@ -59,29 +53,46 @@ func _story_loaded(successfully: bool):
 # ############################################################################ #
 
 func _continue_story():
+	# the text placed in the label (dialog box)
 	while _ink_player.can_continue:
 		var text = _ink_player.continue_story()
-		# This text is a line of text from the ink story.
-		# Set the text of a Label to this value to display it in your game.
-		#print(text)
-		var dialog_text = get_node("ColorRect/Dialog")
-		dialog_text.text = text
-
+		
+		dialog_box.text = text
+	
+	# button choices
 	if _ink_player.has_choices:
 		# 'current_choices' contains a list of the choices, as strings.
 		for choice in _ink_player.current_choices:
 			print(choice.text)
 			print(choice.tags)
-
-		# '_select_choice' is a function that will take the index of
-		# your selection and continue the story.
-		#_select_choice(0)
+			
+			var btn = choice_btn.instantiate()
+			btn.text = choice.text
+			
+			_btns.append(btn)
+			choices.add_child(btn)
+			
+			# button now has an index and pressing it will be recognized
+			btn.pressed.connect(self._index_choose.bind(btn))
+			
+	# This code runs when the story reaches its end.
 	else:
-		# This code runs when the story reaches its end.
-		print("The End")
+		panel.visible = false
+		get_tree().change_scene_to_packed(next_scene)
 
+# Handles getting index from button so choice can be selected
+func _index_choose(button):
+	var index = _btns.find(button)
+	if index != -1:
+		_select_choice(index)
 
 func _select_choice(index):
+	# prepare for next set of choices by removing this set of choices
+	for button in choices.get_children():
+		button.queue_free()
+	
+	_btns.clear()
+	
 	_ink_player.choose_choice_index(index)
 	_continue_story()
 
@@ -98,9 +109,11 @@ func _select_choice(index):
 
 # Uncomment to observe the variables from your ink story.
 # You can observe multiple variables by adding them in the array.
-# func _observe_variables():
-#     _ink_player.observe_variables(["var1", "var2"], self, "_variable_changed")
+func _observe_variables():
+	_ink_player.observe_variables(ink_vars, self, "_variable_changed")
 #
 #
-# func _variable_changed(variable_name, new_value):
-#     print("Variable '%s' changed to: %s" % [variable_name, new_value])
+func _variable_changed(variable_name, new_value):
+	# use if variable_name == "X" to determine what to change
+	# use new_value to determine what to change to
+	print("Variable '%s' changed to: %s" % [variable_name, new_value])

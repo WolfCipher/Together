@@ -24,63 +24,72 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	attack_cooldown -= delta
 	
-	# Determine target: follow whoever is closer
-	var pos1 = target1.global_position
-	var pos2 = target2.global_position
-	var dist1 = global_position.distance_to(pos1)
-	var dist2 = global_position.distance_to(pos2)
-	var target_dist = min(dist1, dist2)
-	var target_pos : Vector2
-	
-	if dist1 < dist2:
-		target_pos = pos1
-	else:
-		target_pos = pos2
-	
-	# TODO some enemies attack while moving!!!!!
-	# Move enemy to target, if the enemy is not within a certain distance
-	# Otherwise, attack
-	if target_dist > attackDistance:
-		global_position = global_position.move_toward(target_pos, speed*delta)
-	else:
-		if attack_cooldown <= 0:
-			attack()
-			attack_cooldown = attackFrequency
-	
-	# Determine the direction and handle animations accordingly
-	var dir = (target_pos - global_position).normalized()
-
-	# Handle animations
-	
-	if dir == Vector2.ZERO:
+	# enemy can only do something if it's not dead
+	if health > 0:
+		attack_cooldown -= delta
 		
-		match faceDir:
-			0: animation = "idle_up"
-			1: animation = "idle_down"
-			2: animation = "idle_right"
-			3: animation = "idle_left"
+		# Determine target: follow whoever is closer
+		var pos1 = target1.global_position
+		var pos2 = target2.global_position
+		var dist1 = global_position.distance_to(pos1)
+		var dist2 = global_position.distance_to(pos2)
+		var target_dist = min(dist1, dist2)
+		var target_pos : Vector2
+		
+		if dist1 < dist2:
+			target_pos = pos1
+		else:
+			target_pos = pos2
+		
+		# TODO some enemies attack while moving!!!!!
+		# Move enemy to target, if the enemy is not within a certain distance
+		# Otherwise, attack
+		
+		var too_far = target_dist > attackDistance
+		var align_dist = 40 # how far off from exactly matched a axis position can be and still hit
+		var vert_aligned = abs(global_position.y - target_pos.y) <= align_dist
+		var horiz_aligned = abs(global_position.x - target_pos.x) <= align_dist
+		
+		if too_far || (!vert_aligned && !horiz_aligned):
+			global_position = global_position.move_toward(target_pos, speed*delta)
+		else:
+			if attack_cooldown <= 0:
+				attack()
+				attack_cooldown = attackFrequency
+		
+		# Determine the direction and handle animations accordingly
+		var dir = (target_pos - global_position).normalized()
+
+		# Handle animations
+		
+		if dir == Vector2.ZERO:
+			
+			match faceDir:
+				0: animation = "idle_up"
+				1: animation = "idle_down"
+				2: animation = "idle_right"
+				3: animation = "idle_left"
+			play()
+			return
+
+		# Determine animation based on direction
+		if abs(dir.y) > abs(dir.x):
+			if dir.y > 0:
+				animation = "walk_down"
+				faceDir = 1
+			else:
+				animation = "walk_up"
+				faceDir = 0
+		else:
+			if dir.x > 0:
+				animation = "walk_right"
+				faceDir = 2
+			else:
+				animation = "walk_left"
+				faceDir = 3
+
 		play()
-		return
-
-	# Determine animation based on direction
-	if abs(dir.y) > abs(dir.x):
-		if dir.y > 0:
-			animation = "walk_down"
-			faceDir = 1
-		else:
-			animation = "walk_up"
-			faceDir = 0
-	else:
-		if dir.x > 0:
-			animation = "walk_right"
-			faceDir = 2
-		else:
-			animation = "walk_left"
-			faceDir = 3
-
-	play()
 
 func play() -> void:
 	sprite.animation = animation
@@ -89,7 +98,7 @@ func play() -> void:
 # damage
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player Attack"):
-		health = health - 1
+		health = health - area.damage
 		damage_blink()
 	if health < 1:
 		# wait 0.5 seconds before despawning

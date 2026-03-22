@@ -101,8 +101,7 @@ func attack_melee() -> void:
 	var dir = get_facing_vector()
 	
 	# position slightly ahead of player and move in proper direction
-	melee.global_position = global_position + dir * 30
-	melee.direction = dir
+	melee.global_position = global_position + dir * 60
 	melee.rotation = dir.angle() + PI/2
 	
 	# given enough xp, increase size of melee
@@ -164,7 +163,7 @@ func play() -> void:
 # ************************* DAMAGE ************************************
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy Attack"):
-		health = health - 1
+		health = health - area.damage
 		damage_blink()
 	if health < 1:
 		# wait 0.5 seconds before despawning

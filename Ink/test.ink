@@ -1,17 +1,30 @@
-Once upon a time...
+What were those things?
 
- * There were two choices.
- * There were four lines of content.
+ * Oh no, this is bad.
+ * I... no...
 
-- They lived happily ever after.
+- Huh?
 
- * [Test X] -> X
- * [Test Y] -> Y
+ * [This is the Dullworld, isn't it?] -> X
+ * [Where am I?] -> Y
  
  ===X===
- X
- - Hi
- -> END
+ What? I haven't heard of that place. You're in Tamewood.
+
+ -> Z
  
  ===Y===
- Y -> END
+ You're in Tamewood. -> Z
+ 
+ ===Z===
+ * Tamewood...
+ * The way back home...
+ 
+ - Com'on, let me show you around.
+ 
+ * ...
+ * OK
+ 
+ -
+ 
+-> END
