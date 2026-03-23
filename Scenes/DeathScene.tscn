@@ -69,12 +69,16 @@ corner_radius_bottom_left = 10
 position = Vector2(576, 324)
 texture = ExtResource("1_cdvjj")
 
-[node name="Label" type="Label" parent="." unique_id=320621780]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1655815681]
+offset_left = 575.0
+offset_top = 56.0
+offset_right = 1118.0
+offset_bottom = 193.0
+use_top_left = true
+
+[node name="Label" type="Label" parent="CenterContainer" unique_id=320621780]
 z_index = 1
-offset_left = 352.0
-offset_top = -7.0
-offset_right = 895.0
-offset_bottom = 130.0
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.09019608, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -85,6 +89,7 @@ theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 100
 text = "Game Over"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=45521042]
 z_index = 1
