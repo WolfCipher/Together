@@ -102,5 +102,3 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
 text = "Start Game"
 script = ExtResource("2_xx56i")
 next_scene = ExtResource("3_rae6p")
-
-[connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered" binds= [false]]

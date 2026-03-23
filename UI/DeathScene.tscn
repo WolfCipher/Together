@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bm75b8svgy6au"]
 
-[ext_resource type="Texture2D" uid="uid://s6wikn3lqb07" path="res://Entities/SceneArt/GameOverScreen.png" id="1_3acwb"]
-[ext_resource type="Script" uid="uid://sc35sfw5tfw3" path="res://UI/death_scene.gd" id="1_est4x"]
+[ext_resource type="Texture2D" uid="uid://i2hh47upe0cf" path="res://Entities/SceneArt/menuScreen.png" id="1_3acwb"]
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_est4x"]
 [ext_resource type="PackedScene" uid="uid://b2pf1jf4yekyt" path="res://UI/MenuScene.tscn" id="3_3acwb"]
 
@@ -65,8 +64,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="DeathScene" type="Node2D" unique_id=1385909618]
-script = ExtResource("1_est4x")
+[node name="MenuScene" type="Node2D" unique_id=1385909618]
 
 [node name="Image" type="Sprite2D" parent="." unique_id=223955600]
 position = Vector2(576, 324)
@@ -74,9 +72,10 @@ texture = ExtResource("1_3acwb")
 
 [node name="Label" type="Label" parent="." unique_id=1295069426]
 z_index = 1
-offset_left = 324.0
-offset_right = 867.0
-offset_bottom = 137.0
+offset_left = 635.0
+offset_top = 363.0
+offset_right = 1069.0
+offset_bottom = 500.0
 theme_override_colors/font_color = Color(1, 0.09019608, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -86,7 +85,7 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 100
-text = "Game Over"
+text = "Together"
 
 [node name="Button" type="Button" parent="." unique_id=300260568]
 z_index = 1
@@ -100,9 +99,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xx56i")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rae6p")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
-text = "Main Menu"
+text = "Start Game"
 script = ExtResource("2_est4x")
 next_scene = ExtResource("3_3acwb")
-
-[connection signal="mouse_entered" from="Button" to="Button" method="_on_mouse_entered"]
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
