@@ -1,6 +1,6 @@
 extends Area2D
 
-signal game_over
+@export var game_over : PackedScene
 
 @onready var root: Node2D = $".."
 @onready var sprite: AnimatedSprite2D = $Sprite
@@ -168,7 +168,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if health < 1:
 		# wait 0.5 seconds before despawning
 		await get_tree().create_timer(0.5).timeout
-		emit_signal("game_over")
+		get_tree().change_scene_to_packed(game_over)
 		#queue_free()
 
 func damage_blink():
