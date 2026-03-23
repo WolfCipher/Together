@@ -356,3 +356,4 @@ shape = SubResource("RectangleShape2D_j0bce")
 stream = ExtResource("76_vedr3")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
