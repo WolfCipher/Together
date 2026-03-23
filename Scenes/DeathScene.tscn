@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://s6wikn3lqb07" path="res://Entities/SceneArt/GameOverScreen.png" id="1_cdvjj"]
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_cmdrj"]
-[ext_resource type="PackedScene" uid="uid://b2pf1jf4yekyt" path="res://Scenes/MenuScene.tscn" id="3_cdvjj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5edoe"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -101,4 +100,4 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_n1chw")
 theme_override_styles/focus = SubResource("StyleBoxFlat_qnhai")
 text = "Main Menu"
 script = ExtResource("2_cmdrj")
-next_scene = ExtResource("3_cdvjj")
+next_scene = "res://Scenes/MenuScene.tscn"
