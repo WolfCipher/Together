@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://owwcqowd8wlq" path="res://Entities/Enemy/shadowElvyria.tscn" id="12_mie3u"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/camera_centered.tscn" id="12_yb21e"]
 [ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="13_0qy5o"]
+[ext_resource type="PackedScene" uid="uid://cycp817xxkhca" path="res://ground_tile.tscn" id="13_aees8"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="146_pe2hm"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="147_1fd1n"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="148_ff0aa"]
@@ -18,10 +19,12 @@ y_sort_enabled = true
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("146_pe2hm")]
 position = Vector2(516, 505)
+game_over = "res://Scenes/DeathScene.tscn"
 projectile_scene = ExtResource("2_i3aeo")
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("147_1fd1n")]
 position = Vector2(574, 505)
+game_over = "res://Scenes/DeathScene.tscn"
 
 [node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
 stream = ExtResource("6_qpfo2")
@@ -56,3 +59,5 @@ offset_top = -310.0
 offset_right = 703.3064
 offset_bottom = -301.0
 character = NodePath("../../Ryl")
+
+[node name="Ground" parent="." unique_id=1798982526 instance=ExtResource("13_aees8")]
