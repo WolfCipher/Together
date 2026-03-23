@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://b2pf1jf4yekyt"]
+[gd_scene format=3 uid="uid://dqa5fhyl3dsg1"]
 
-[ext_resource type="Texture2D" uid="uid://i2hh47upe0cf" path="res://Entities/SceneArt/menuScreen.png" id="1_36iol"]
-[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_xx56i"]
-[ext_resource type="PackedScene" uid="uid://def23c04mji30" path="res://Scenes/test.tscn" id="3_rae6p"]
+[ext_resource type="Texture2D" uid="uid://s6wikn3lqb07" path="res://Entities/SceneArt/GameOverScreen.png" id="1_cdvjj"]
+[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_cmdrj"]
+[ext_resource type="PackedScene" uid="uid://b2pf1jf4yekyt" path="res://Scenes/MenuScene.tscn" id="3_cdvjj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5edoe"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
 border_width_left = 3
 border_width_top = 3
@@ -16,7 +16,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx56i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhf65"]
 bg_color = Color(0.045101725, 9.62615e-08, 0.3707431, 1)
 border_width_left = 3
 border_width_top = 3
@@ -28,7 +28,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rae6p"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wexvb"]
 bg_color = Color(0.0645, 4.813075e-08, 0.45324594, 1)
 border_width_left = 3
 border_width_top = 3
@@ -40,7 +40,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vg0ck"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1chw"]
 bg_color = Color(0.27837503, 0.17250001, 0.75, 1)
 border_width_left = 3
 border_width_top = 3
@@ -52,7 +52,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7fmy"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnhai"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
 border_width_left = 3
 border_width_top = 3
@@ -64,18 +64,18 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="MenuScene" type="Node2D" unique_id=1385909618]
+[node name="DeathScene" type="Node2D" unique_id=239976417]
 
-[node name="Image" type="Sprite2D" parent="." unique_id=223955600]
+[node name="Image" type="Sprite2D" parent="." unique_id=1685628677]
 position = Vector2(576, 324)
-texture = ExtResource("1_36iol")
+texture = ExtResource("1_cdvjj")
 
-[node name="Label" type="Label" parent="." unique_id=1295069426]
+[node name="Label" type="Label" parent="." unique_id=320621780]
 z_index = 1
-offset_left = 635.0
-offset_top = 363.0
-offset_right = 1069.0
-offset_bottom = 500.0
+offset_left = 352.0
+offset_top = -7.0
+offset_right = 895.0
+offset_bottom = 130.0
 theme_override_colors/font_color = Color(1, 0.09019608, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -85,20 +85,20 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 100
-text = "Together"
+text = "Game Over"
 
-[node name="Button" type="Button" parent="." unique_id=300260568]
+[node name="Button" type="Button" parent="." unique_id=45521042]
 z_index = 1
 offset_left = 644.0
 offset_top = 516.0
 offset_right = 1056.0
 offset_bottom = 613.0
 theme_override_font_sizes/font_size = 63
-theme_override_styles/normal = SubResource("StyleBoxFlat_36iol")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xx56i")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rae6p")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
-theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
-text = "Start Game"
-script = ExtResource("2_xx56i")
-next_scene = ExtResource("3_rae6p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5edoe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qhf65")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wexvb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_n1chw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qnhai")
+text = "Main Menu"
+script = ExtResource("2_cmdrj")
+next_scene = ExtResource("3_cdvjj")
