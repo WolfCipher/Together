@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://btx24qpi3yp68"]
+
+[sub_resource type="FFmpegVideoStream" id="FFmpegVideoStream_7sy8m"]
+file = "res://Cutscenes/TogetherIntroduction.mp4"
+
+[node name="IntroductionCutscene" type="Node2D" unique_id=453143170]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2090393755]
+offset_right = 1152.0
+offset_bottom = 648.0
+stream = SubResource("FFmpegVideoStream_7sy8m")
+autoplay = true
+expand = true
