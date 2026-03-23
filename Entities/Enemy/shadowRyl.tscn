@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cmumeyfum7ths"]
 
 [ext_resource type="Script" uid="uid://bbl16o0pnn8cp" path="res://Entities/Enemy/enemy.gd" id="1_xte2n"]
+[ext_resource type="PackedScene" uid="uid://d38evf5uew82h" path="res://Scenes/projectileShadowRyl.tscn" id="2_bhuaw"]
 [ext_resource type="Texture2D" uid="uid://dda37t454xkh0" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle0.png" id="2_xte2n"]
 [ext_resource type="Texture2D" uid="uid://dosd5x7sqhclo" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle1.png" id="3_bhuaw"]
+[ext_resource type="PackedScene" uid="uid://c732b6bjf3b43" path="res://Scenes/meleeShadowRyl.tscn" id="3_st07f"]
 [ext_resource type="Texture2D" uid="uid://bljx2530pnfco" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle2.png" id="4_st07f"]
 [ext_resource type="Texture2D" uid="uid://chgd67xn1nhca" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle3.png" id="5_w8g1x"]
 [ext_resource type="Texture2D" uid="uid://b8lj663fm3bvn" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle4.png" id="6_40lbm"]
@@ -334,17 +336,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
-size = Vector2(73, 73)
+size = Vector2(60, 85)
 
-[node name="Enemy" type="Area2D" unique_id=1136344332 groups=["Enemy"]]
+[node name="Enemy" type="Area2D" unique_id=1136344332 groups=["Enemy", "MeleeEnemy", "ProjectileEnemy"]]
 script = ExtResource("1_xte2n")
+max_health = 10
+projectile_scene = ExtResource("2_bhuaw")
+melee_scene = ExtResource("3_st07f")
 
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1432958030]
 sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
-position = Vector2(6.5, 6.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1f0kj")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

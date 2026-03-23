@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Together"
-run/main_scene="res://Scenes/test.tscn"
+run/main_scene="uid://b2pf1jf4yekyt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+__InkRuntime="*uid://co6cdriqgy3v2"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/inkgd/plugin.cfg")
 
 [file_customization]
 
@@ -32,6 +40,15 @@ Enemy=""
 Player=""
 ProjectileEnemy=""
 AoE_Enemy=""
+MeleeEnemy=""
+BoundaryLeft=""
+BoundaryRight=""
+BoundaryTop=""
+BoundaryBottom=""
+
+[inkgd]
+
+register_templates=true
 
 [input]
 
