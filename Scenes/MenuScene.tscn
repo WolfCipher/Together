@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2pf1jf4yekyt"]
 
 [ext_resource type="Texture2D" uid="uid://i2hh47upe0cf" path="res://Entities/SceneArt/menuScreen.png" id="1_36iol"]
-[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_xx56i"]
+[ext_resource type="Script" path="res://Scenes/scene_button.gd" id="2_xx56i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -100,4 +100,4 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
 text = "Start Game"
 script = ExtResource("2_xx56i")
-next_scene = "res://Scenes/test.tscn"
+next_scene = "res://Scenes/IntroductionCutscene.tscn"
