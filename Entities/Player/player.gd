@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var game_over : PackedScene
+@export var game_over := "res://Scenes/DeathScene.tscn"
 
 @onready var root: Node2D = $".."
 @onready var sprite: AnimatedSprite2D = $Sprite
@@ -217,7 +217,7 @@ func _on_area_entered(area: Area2D) -> void:
 		if health < 1:
 			# wait 0.5 seconds before despawning
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_packed(game_over)
+			get_tree().change_scene_to_file(game_over)
 			#queue_free()
 	else:
 		if area.is_in_group("BoundaryLeft"):
