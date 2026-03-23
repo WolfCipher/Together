@@ -1,6 +1,6 @@
 extends Button
 
-@export var next_scene : PackedScene
+@export var next_scene : String
 @onready var btn_click = AudioStreamPlayer.new()
 @onready var btn_hover = AudioStreamPlayer.new()
 
@@ -21,6 +21,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_pressed() && !btn_click.playing:
 		btn_click.play()
-		get_tree().change_scene_to_packed(next_scene)
+		get_tree().change_scene_to_file(next_scene)
 	if is_hovered() && !btn_hover.playing:
 		btn_hover.play()

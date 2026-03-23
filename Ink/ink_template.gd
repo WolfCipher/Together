@@ -4,7 +4,7 @@ extends Node
 
 @export var ink_script := "res://Ink/test.json"
 @export var ink_vars := [] # should be populated with the strings of Inky variable names
-@export var next_scene : PackedScene
+@export var next_scene : String
 
 # TODO Add character sprites emotions to switch between here
 
@@ -78,7 +78,7 @@ func _continue_story():
 	# This code runs when the story reaches its end.
 	else:
 		panel.visible = false
-		get_tree().change_scene_to_packed(next_scene)
+		get_tree().change_scene_to_file(next_scene)
 
 # Handles getting index from button so choice can be selected
 func _index_choose(button):
