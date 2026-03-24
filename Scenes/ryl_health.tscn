@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://pppv0qwe6p8b"]
+[gd_scene format=3 uid="uid://dwngu08ywk4pl"]
 
-[ext_resource type="Script" uid="uid://bwcc0u7phe8q5" path="res://Scenes/health.gd" id="1_dx5va"]
+[ext_resource type="Script" path="res://Scenes/health.gd" id="1_dx5va"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rvsg"]
 content_margin_left = 2.0
@@ -31,7 +31,8 @@ offset_left = 967.0
 offset_top = 15.999998
 offset_right = 1273.3064
 offset_bottom = 25.0
-scale = Vector2(0.555, 1)
+scale = Vector2(1.11, 2)
+pivot_offset = Vector2(306.306, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_6rvsg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dx5va")
 max_value = 10.0
