@@ -18,8 +18,6 @@ var health := max_health
 @export var AoE_scene: PackedScene
 @export var melee_scene: PackedScene
 
-
-
 var attack_cooldown := 0.0
 
 func _ready() -> void:
