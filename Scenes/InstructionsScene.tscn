@@ -1,0 +1,158 @@
+[gd_scene format=4 uid="uid://d3dhoihvyh00j"]
+
+[ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="2_j725g"]
+[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_pvc5u"]
+[ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/projectileElvyria.tscn" id="3_jcrdu"]
+[ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="4_iq3ai"]
+[ext_resource type="PackedScene" uid="uid://cycp817xxkhca" path="res://ground_tile.tscn" id="5_xyd2a"]
+[ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="6_qf17h"]
+[ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="7_kn3bc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
+bg_color = Color(0.13346192, 0, 0.7465482, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.02021429, 9.62615e-08, 0.24905872, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx56i"]
+bg_color = Color(0.045101725, 9.62615e-08, 0.3707431, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.019607844, 0, 0.2509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rae6p"]
+bg_color = Color(0.0645, 4.813075e-08, 0.45324594, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.019607844, 0, 0.2509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vg0ck"]
+bg_color = Color(0.27837503, 0.17250001, 0.75, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.13346192, 0, 0.7465482, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7fmy"]
+bg_color = Color(0.13346192, 0, 0.7465482, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.90715146, 0.6109639, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="InstructionsScene" type="Node2D" unique_id=1385909618]
+
+[node name="ElvyriaText" type="Label" parent="." unique_id=644648842]
+z_index = 1
+offset_left = 66.0
+offset_top = 35.0
+offset_right = 394.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 30
+text = "Elvyria
+Movement: WASD
+Shoot: C
+Melee: V
+Together: Shift
+"
+horizontal_alignment = 1
+
+[node name="RylText" type="Label" parent="." unique_id=1295069426]
+z_index = 1
+offset_left = 1486.0
+offset_top = 35.0
+offset_right = 1874.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 30
+text = "RYL
+Movement: Arrow Keys
+Shoot: , (comma)
+Melee: . (period)
+Together: Shift
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=300260568]
+z_index = 1
+offset_left = 804.0
+offset_top = 893.0
+offset_right = 1216.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_36iol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xx56i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rae6p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
+text = "Main Menu"
+script = ExtResource("2_pvc5u")
+next_scene = "res://Scenes/MenuScene.tscn"
+
+[node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("2_j725g")]
+position = Vector2(516, 505)
+game_over = "res://Scenes/DeathScene.tscn"
+projectile_scene = ExtResource("3_jcrdu")
+
+[node name="Ryl" parent="." unique_id=491402063 instance=ExtResource("4_iq3ai")]
+position = Vector2(574, 505)
+game_over = "res://Scenes/DeathScene.tscn"
+
+[node name="GroundBoundary" parent="." unique_id=519110492 instance=ExtResource("5_xyd2a")]
+
+[node name="Path1" type="TileMapLayer" parent="." unique_id=44072543]
+z_index = -10
+tile_map_data = PackedByteArray("AAAaACMAAAAMAAAAAAAgACMAAAAGAAAAAAAmACMAAAAGAAAAAAAmAB0AAAAGAAAAAAAgAB0AAAAGAAAAAAAgABcAAAAGAAAAAAAmABcAAAAGAAAAAAAgABEAAAAGAAAAAAAmABEAAAAGAAAAAAAaAB0AAAAMAAAAAAAaABcAAAAMAAAAAAAaABEAAAAMAAAAAAAaACkAAAAMAAYAAAAgACkAAAAYAAAAAAAmACkAAAAYAAAAAAAsACkAAAASAAYAAAAsACMAAAASAAAAAAAsAB0AAAASAAAAAAAsABcAAAASAAAAAAAsABEAAAASAAAAAAAgAAsAAAAGAAAAAAAmAAsAAAAGAAAAAAAgAAUAAAAGAAAAAAAmAAUAAAAGAAAAAAAgAP//AAAGAAAAAAAmAP//AAAGAAAAAAAgAPn/AAAGAAAAAAAmAPn/AAAGAAAAAAAgAPP/AAAGAAAAAAAmAPP/AAAGAAAAAAAgAO3/AAAGAAAAAAAmAO3/AAAGAAAAAAAsAO3/AAAGAAAAAAAsAPP/AAAGAAAAAAAyAO3/AAAGAAAAAAAyAPP/AAAGAAAAAAA4AO3/AAAGAAAAAAA4APP/AAAGAAAAAAA+AO3/AAAGAAAAAAA+APP/AAAGAAAAAABEAO3/AAAGAAAAAABEAPP/AAAGAAAAAABKAO3/AAAGAAAAAABKAPP/AAAGAAAAAABQAO3/AAAGAAAAAABQAPP/AAAGAAAAAABWAO3/AAAGAAAAAABWAPP/AAAGAAAAAABcAO3/AAAGAAAAAABcAPP/AAAGAAAAAABiAO3/AAAGAAAAAABiAPP/AAAGAAAAAABoAO3/AAAGAAAAAABoAPP/AAAGAAAAAABuAO3/AAAGAAAAAABuAPP/AAAGAAAAAAB0AO3/AAAGAAAAAAB0APP/AAAGAAAAAAB6AO3/AAAGAAAAAAB6APP/AAAGAAAAAACAAO3/AAAGAAAAAACAAPP/AAAGAAAAAACGAO3/AAAGAAAAAACGAPP/AAAGAAAAAACMAO3/AAAGAAAAAACMAPP/AAAGAAAAAACSAO3/AAAGAAAAAACSAPP/AAAGAAAAAACYAO3/AAAGAAAAAACYAPP/AAAGAAAAAACeAO3/AAAGAAAAAACeAPP/AAAGAAAAAACkAO3/AAAGAAAAAACkAPP/AAAGAAAAAACqAO3/AAAGAAAAAACqAPP/AAAGAAAAAACwAO3/AAAGAAAAAACwAPP/AAAGAAAAAAC2AO3/AAAGAAAAAAC2APP/AAAGAAAAAAC8AO3/AAAGAAAAAAC8APP/AAAGAAAAAADCAO3/AAAGAAAAAADCAPP/AAAGAAAAAADIAO3/AAAGAAAAAADIAPP/AAAGAAAAAADOAO3/AAAGAAAAAADOAPP/AAAGAAAAAADUAO3/AAAGAAAAAADUAPP/AAAGAAAAAADaAO3/AAAGAAAAAADaAPP/AAAGAAAAAADgAO3/AAAGAAAAAADgAPP/AAAGAAAAAADmAO3/AAAGAAAAAADmAPP/AAAGAAAAAADsAO3/AAAGAAAAAADsAPP/AAAGAAAAAADyAO3/AAAGAAAAAADyAPP/AAAGAAAAAAAaAAsAAAAMAAAAAAAaAAUAAAAMAAAAAAAaAP//AAAMAAAAAAAaAPn/AAAMAAAAAAAaAPP/AAAMAAAAAAAaAO3/AAAMAAAAAAAaAOf/AAAGAAYAAAAgAOf/AAAeAAAAAAAmAOf/AAAeAAAAAAAsAOf/AAAeAAAAAAAyAOf/AAAeAAAAAAA4AOf/AAAeAAAAAAA+AOf/AAAeAAAAAABEAOf/AAAeAAAAAABKAOf/AAAeAAAAAABQAOf/AAAeAAAAAABWAOf/AAAeAAAAAABcAOf/AAAeAAAAAABiAOf/AAAeAAAAAABoAOf/AAAeAAAAAABuAOf/AAAeAAAAAAB0AOf/AAAeAAAAAAB6AOf/AAAeAAAAAACAAOf/AAAeAAAAAACGAOf/AAAeAAAAAACMAOf/AAAeAAAAAACSAOf/AAAeAAAAAACYAOf/AAAeAAAAAACeAOf/AAAeAAAAAACkAOf/AAAeAAAAAACqAOf/AAAeAAAAAACwAOf/AAAeAAAAAAC2AOf/AAAeAAAAAAC8AOf/AAAeAAAAAADCAOf/AAAeAAAAAADIAOf/AAAeAAAAAADOAOf/AAAeAAAAAADUAOf/AAAeAAAAAADaAOf/AAAeAAAAAADgAOf/AAAeAAAAAADmAOf/AAAeAAAAAADsAOf/AAAeAAAAAADyAOf/AAAeAAAAAAAsAAsAAAASAAAAAAAsAAUAAAASAAAAAAAsAP//AAASAAAAAADyAPn/AAAYAAAAAADsAPn/AAAYAAAAAADmAPn/AAAYAAAAAADgAPn/AAAYAAAAAADaAPn/AAAYAAAAAADUAPn/AAAYAAAAAADOAPn/AAAYAAAAAADIAPn/AAAYAAAAAADCAPn/AAAYAAAAAAC8APn/AAAYAAAAAAC2APn/AAAYAAAAAACwAPn/AAAYAAAAAACqAPn/AAAYAAAAAACkAPn/AAAYAAAAAACeAPn/AAAYAAAAAACYAPn/AAAYAAAAAACSAPn/AAAYAAAAAACMAPn/AAAYAAAAAACGAPn/AAAYAAAAAACAAPn/AAAYAAAAAAB6APn/AAAYAAAAAAB0APn/AAAYAAAAAABuAPn/AAAYAAAAAABoAPn/AAAYAAAAAABiAPn/AAAYAAAAAABcAPn/AAAYAAAAAABWAPn/AAAYAAAAAABQAPn/AAAYAAAAAABKAPn/AAAYAAAAAABEAPn/AAAYAAAAAAA+APn/AAAYAAAAAAA4APn/AAAYAAAAAAAyAPn/AAAYAAAAAAD4AOf/AAAeAAAAAAD4AO3/AAAGAAAAAAD4APP/AAAGAAAAAAD4APn/AAAYAAAAAAD+AOf/AAAeAAAAAAD+AO3/AAAGAAAAAAD+APP/AAAGAAAAAAD+APn/AAAYAAAAAAAEAef/AAAeAAAAAAAEAe3/AAAGAAAAAAAEAfP/AAAGAAAAAAAEAfn/AAAYAAAAAAAKAef/AAAeAAAAAAAKAe3/AAAGAAAAAAAKAfP/AAAGAAAAAAAKAfn/AAAYAAAAAAAQAef/AAAeAAAAAAAQAe3/AAAGAAAAAAAQAfP/AAAGAAAAAAAQAfn/AAAYAAAAAAAWAef/AAAeAAAAAAAWAe3/AAAGAAAAAAAWAfP/AAAGAAAAAAAWAfn/AAAYAAAAAAAcAef/AAAeAAAAAAAcAe3/AAAGAAAAAAAcAfP/AAAGAAAAAAAcAfn/AAAYAAAAAAAiAef/AAAeAAAAAAAiAe3/AAAGAAAAAAAiAfP/AAAGAAAAAAAiAfn/AAAYAAAAAAAoAef/AAAeAAAAAAAoAe3/AAAGAAAAAAAoAfP/AAAGAAAAAAAoAfn/AAAYAAAAAAAuAef/AAAeAAAAAAAuAe3/AAAGAAAAAAAuAfP/AAAGAAAAAAAuAfn/AAAYAAAAAAA0Aef/AAAeAAAAAAA0Ae3/AAAGAAAAAAA0AfP/AAAGAAAAAAA0Afn/AAAYAAAAAAA6Aef/AAAeAAAAAAA6Ae3/AAAGAAAAAAA6AfP/AAAGAAAAAAA6Afn/AAAYAAAAAABAAef/AAAeAAAAAABAAe3/AAAGAAAAAABAAfP/AAAGAAAAAABAAfn/AAAYAAAAAABGAef/AAAeAAAAAABGAe3/AAAGAAAAAABGAfP/AAAGAAAAAABGAfn/AAAYAAAAAABMAef/AAAeAAAAAABMAe3/AAAGAAAAAABMAfP/AAAGAAAAAABMAfn/AAAYAAAAAABSAef/AAAeAAAAAABSAe3/AAAGAAAAAABSAfP/AAAGAAAAAABSAfn/AAAYAAAAAABYAef/AAAeAAAAAABYAe3/AAAGAAAAAABYAfP/AAAGAAAAAABYAfn/AAAYAAAAAABeAef/AAAeAAAAAABeAe3/AAAGAAAAAABeAfP/AAAGAAAAAABeAfn/AAAYAAAAAABkAef/AAAeAAAAAABkAe3/AAAGAAAAAABkAfP/AAAGAAAAAABkAfn/AAAYAAAAAABqAef/AAAeAAAAAABqAe3/AAAGAAAAAABqAfP/AAAGAAAAAABqAfn/AAAYAAAAAABwAef/AAAeAAAAAABwAe3/AAAGAAAAAABwAfP/AAAGAAAAAABwAfn/AAAYAAAAAAB2Aef/AAAeAAAAAAB2Ae3/AAAGAAAAAAB2AfP/AAAGAAAAAAB2Afn/AAAYAAAAAAB8Aef/AAAeAAAAAAB8Ae3/AAAGAAAAAAB8AfP/AAAGAAAAAAB8Afn/AAAYAAAAAACCAef/AAAeAAAAAACCAe3/AAAGAAAAAACCAfP/AAAGAAAAAACCAfn/AAAYAAAAAACIAef/AAAeAAAAAACIAe3/AAAGAAAAAACIAfP/AAAGAAAAAACIAfn/AAAYAAAAAACOAef/AAAeAAAAAACOAe3/AAAGAAAAAACOAfP/AAAGAAAAAACOAfn/AAAYAAAAAACUAef/AAAeAAAAAACUAe3/AAAGAAAAAACUAfP/AAAGAAAAAACUAfn/AAAYAAAAAACaAef/AAAeAAAAAACaAe3/AAAGAAAAAACaAfP/AAAGAAAAAACaAfn/AAAYAAAAAACgAef/AAAeAAAAAACgAe3/AAAGAAAAAACgAfP/AAAGAAAAAACgAfn/AAAYAAAAAACmAef/AAAeAAAAAACmAe3/AAAGAAAAAACmAfP/AAAGAAAAAACmAfn/AAAYAAAAAACsAef/AAAAAAYAAACsAe3/AAASAAAAAACsAfP/AAASAAAAAACsAfn/AAASAAYAAAA=")
+tile_set = ExtResource("6_qf17h")
+
+[node name="Path2" type="TileMapLayer" parent="." unique_id=1556842816]
+tile_map_data = PackedByteArray("AAAsAPn/AAAeAAYAAAA=")
+tile_set = ExtResource("7_kn3bc")
+
+[node name="Flowers" type="TileMapLayer" parent="." unique_id=175648938]
+z_index = -10
+tile_map_data = PackedByteArray("AAAyABcAAAAIABoAAABUAAgAAAAIABoAAAAWACkAAAAIABoAAAAVAAQAAAAIABoAAADu/wUAAAAIABoAAADO/y0AAAAIABoAAADV/9X/AAAIABoAAACmAEQAAAAIABoAAAClAAgAAAAIABoAAAA6ALn/AAAIABoAAADNANT/AAAIABoAAAB3ABUAAAAUABQAAABUAEIAAAAUABQAAAAIABgAAAAUABQAAADk/0MAAAAUABQAAADa/xIAAAAUABQAAAAOANT/AAAUABQAAABbAN3/AAAUABQAAAB6ALj/AAAUABQAAAAHAU0AAAAUABQAAABQAR0AAAAUABQAAAAhAXb/AAAUABQAAABZAbr/AAAUABQAAADLAZz/AAAUABQAAAAoAgkAAAAUABQAAADpAUUAAAAUABQAAAArAmIAAAAUABQAAACWAe4AAAAUABQAAAAnApIBAAAUABQAAAC9AdABAAAUABQAAABLAWMBAAAUABQAAAC5AJYBAAAUABQAAACUABcBAAAUABQAAAC4/24BAAAUABQAAADo/5AAAAAUABQAAADMAKUAAAAUABQAAACX/6X/AAAUABQAAAB2//cAAAAIABoAAACA/6kBAAAIABoAAACCAH8BAAAIABoAAACCASsBAAAIABoAAAC8AFsAAAAIABoAAABJAqL/AAAIABoAAADhAIn/AAAIABoAAACD/8T/AAAIABoAAABQ/6j/AAAgABQAAABBAC4AAAAgABQAAACKADAAAAAgABQAAAAZAGsAAAAgABQAAACq/2UAAAAgABQAAABl/ywAAAAgABQAAAAVAUwAAAAgABQAAACkAd0AAAAgABQAAAA8AkIAAAAgABQAAADOAM0AAAAgABQAAACPAXMBAAAgABQAAABpAH0BAAAgABQAAACR/14BAAAgABQAAABXAu8BAAAgABQAAABXAu4BAAAgABQAAABXAu0BAAAgABQAAADOAOABAAAgABQAAABj/80BAAAgABQAAABoAIQAAAAOABoAAAANALwAAAAOABoAAAB5ANIAAAAOABoAAABPAbYAAAAOABoAAAA=")
+tile_set = ExtResource("6_qf17h")
