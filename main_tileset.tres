@@ -2,6 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://df4edxp4vrhc0" path="res://Entities/SceneArt/tileset.png" id="1_gi5ff"]
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_gi5ff"]
+tile_data = PackedInt32Array(0, 1966080, 0, 393216, 393216, 0, 786432, 393216, 0, 1179648, 1572864, 0, 6, 1966080, 0, 393222, 393216, 0, 786438, 393216, 0, 1179654, 1572864, 0, 12, 1966080, 0, 393228, 393216, 0, 786444, 393216, 0, 1179660, 1572864, 0, 18, 1966080, 0, 393234, 393216, 0, 786450, 393216, 0, 1179666, 1572864, 0, 24, 1966080, 0, 393240, 393216, 0, 786456, 393216, 0, 1179672, 1572864, 0, 30, 1966080, 0, 393246, 393216, 0, 786462, 393216, 0, 1179678, 1572864, 0)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_2a5q2"]
+tile_data = PackedInt32Array(0, 786432, 0, 393216, 786432, 0, 786432, 786432, 0, 1179648, 786432, 0, 1572864, 786432, 0, 1966080, 786432, 0, 2359296, 786432, 0, 6, 393216, 0, 393222, 393216, 0, 786438, 393216, 0, 1179654, 393216, 0, 1572870, 393216, 0, 1966086, 393216, 0, 2359302, 393216, 0, 12, 393216, 0, 393228, 393216, 0, 786444, 393216, 0, 1179660, 393216, 0, 1572876, 393216, 0, 1966092, 393216, 0, 2359308, 393216, 0, 18, 1179648, 0, 393234, 1179648, 0, 786450, 1179648, 0, 1179666, 1179648, 0, 1572882, 1179648, 0, 1966098, 1179648, 0, 2359314, 1179648, 0)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_icbku"]
+tile_data = PackedInt32Array(0, 786432, 0, 393216, 786432, 6, 6, 393216, 0, 393222, 1572864, 0, 12, 393216, 0, 393228, 1572864, 0, 18, 1179648, 0, 393234, 1179648, 6)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_hpy0s"]
+tile_data = PackedInt32Array(0, 1966080, 0, 393216, 393216, 0, 786432, 393216, 0, 1179648, 1572864, 0, 6, 0, 6, 393222, 1179648, 0, 786438, 1179648, 0, 1179654, 1179648, 6)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lm3os"]
 texture = ExtResource("1_gi5ff")
 0:0/size_in_atlas = Vector2i(6, 6)
@@ -78,12 +90,20 @@ texture = ExtResource("1_gi5ff")
 31:32/0 = 0
 0:36/size_in_atlas = Vector2i(6, 6)
 0:36/0 = 0
+0:36/0/y_sort_origin = 30
 6:36/size_in_atlas = Vector2i(6, 6)
 6:36/0 = 0
+6:36/0/y_sort_origin = 30
 12:36/size_in_atlas = Vector2i(6, 6)
 12:36/0 = 0
+12:36/0/y_sort_origin = 30
 18:36/size_in_atlas = Vector2i(6, 6)
 18:36/0 = 0
+18:36/0/y_sort_origin = 30
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_lm3os")
+pattern_0 = SubResource("TileMapPattern_gi5ff")
+pattern_1 = SubResource("TileMapPattern_2a5q2")
+pattern_2 = SubResource("TileMapPattern_icbku")
+pattern_3 = SubResource("TileMapPattern_hpy0s")
