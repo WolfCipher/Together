@@ -187,8 +187,10 @@ func spawn_death_particles():
 	death_particles.gravity = Vector2(0,0)
 	death_particles.lifetime = .4
 	death_particles.spread = 180
-	death_particles.emission_shape = CPUParticles2D.EMISSION_SHAPE_POINT
+	death_particles.emission_shape = CPUParticles2D.EMISSION_SHAPE_RING
 	death_particles.amount = 20
 	death_particles.explosiveness = 1
+	death_particles.z_index = 100 
+	death_particles.z_as_relative = false
 	death_particles.global_position = global_position
 	death_particles.emitting = true
