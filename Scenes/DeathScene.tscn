@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqa5fhyl3dsg1"]
 
 [ext_resource type="Texture2D" uid="uid://s6wikn3lqb07" path="res://Entities/SceneArt/GameOverScreen.png" id="1_cdvjj"]
-[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_cmdrj"]
+[ext_resource type="Script" path="res://Scenes/scene_button.gd" id="2_cmdrj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5edoe"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -66,19 +66,14 @@ corner_radius_bottom_left = 10
 [node name="DeathScene" type="Node2D" unique_id=239976417]
 
 [node name="Image" type="Sprite2D" parent="." unique_id=1685628677]
-position = Vector2(576, 324)
+scale = Vector2(1.6667002, 1.6667002)
 texture = ExtResource("1_cdvjj")
+offset = Vector2(576, 324)
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1655815681]
-offset_left = 575.0
-offset_top = 56.0
-offset_right = 1118.0
-offset_bottom = 193.0
-use_top_left = true
-
-[node name="Label" type="Label" parent="CenterContainer" unique_id=320621780]
+[node name="Label" type="Label" parent="." unique_id=320621780]
 z_index = 1
-layout_mode = 2
+offset_right = 1919.0
+offset_bottom = 137.0
 theme_override_colors/font_color = Color(1, 0.09019608, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -87,16 +82,16 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 125
 text = "Game Over"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=45521042]
 z_index = 1
-offset_left = 644.0
-offset_top = 516.0
-offset_right = 1056.0
-offset_bottom = 613.0
+offset_left = 770.0
+offset_top = 926.0
+offset_right = 1182.0
+offset_bottom = 1023.0
 theme_override_font_sizes/font_size = 63
 theme_override_styles/normal = SubResource("StyleBoxFlat_5edoe")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qhf65")
