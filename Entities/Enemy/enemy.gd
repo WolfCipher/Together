@@ -3,6 +3,8 @@ extends Area2D
 @onready var root: Node2D = $".."
 @onready var sprite: AnimatedSprite2D = $Enemy
 @onready var animation := sprite.animation
+@onready var death_particles := CPUParticles2D.new()
+@onready var tex := load("res://death_particle.png") 
 
 @export var speed = 200
 @export var max_health := 3
@@ -16,11 +18,15 @@ var health := max_health
 @export var AoE_scene: PackedScene
 @export var melee_scene: PackedScene
 
+
+
 var attack_cooldown := 0.0
 
 func _ready() -> void:
 	play()
 	add_to_group("Enemy")
+	add_child(death_particles)
+	death_particles.emitting = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -101,6 +107,7 @@ func _on_area_entered(area: Area2D) -> void:
 		health = health - area.damage
 		damage_blink()
 	if health < 1:
+		spawn_death_particles()
 		# wait 0.5 seconds before despawning
 		await get_tree().create_timer(0.5).timeout
 		queue_free()
@@ -166,3 +173,22 @@ func get_facing_vector() -> Vector2:
 		2: return Vector2(1,0)
 		3: return Vector2(-1,0)
 	return Vector2.ZERO
+
+#handles spawning and creation of death particles
+func spawn_death_particles():
+	# Load the image resource
+	death_particles.texture = tex
+	#define death particles
+	death_particles.one_shot = true
+	death_particles.initial_velocity_min = 400
+	death_particles.initial_velocity_max = 500
+	death_particles.scale_amount_min = 8
+	death_particles.scale_amount_max = 8
+	death_particles.gravity = Vector2(0,0)
+	death_particles.lifetime = .4
+	death_particles.spread = 180
+	death_particles.emission_shape = CPUParticles2D.EMISSION_SHAPE_POINT
+	death_particles.amount = 20
+	death_particles.explosiveness = 1
+	death_particles.global_position = global_position
+	death_particles.emitting = true
