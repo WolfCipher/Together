@@ -13,11 +13,19 @@ config_version=5
 config/name="Together"
 run/main_scene="uid://b2pf1jf4yekyt"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.8256507, 0.9999996, 0.8285515, 1)
+boot_splash/image="uid://drjgml63q7kr8"
+config/icon="uid://c0qvf0gq5idkr"
 
 [autoload]
 
 __InkRuntime="*uid://co6cdriqgy3v2"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
@@ -137,4 +145,4 @@ spacebar={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.2551411, 0.38809407, 0.20295125, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
