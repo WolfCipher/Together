@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ehxy0j6qek17"]
 
-[ext_resource type="Script" uid="uid://c14i1tymorl4y" path="res://Scenes/melee.gd" id="1_cothx"]
+[ext_resource type="Script" uid="uid://c14i1tymorl4y" path="res://Scenes/Attacks/melee.gd" id="1_cothx"]
 [ext_resource type="Texture2D" uid="uid://btlduruxcc2oc" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash0.png" id="2_tlx44"]
 [ext_resource type="Texture2D" uid="uid://bx0v5giut0a5k" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash1.png" id="3_cothx"]
 [ext_resource type="Texture2D" uid="uid://b2onsuggxkykb" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash2.png" id="4_r370w"]

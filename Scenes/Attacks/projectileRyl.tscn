@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgh6ok0g67o3f"]
 
-[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_qbfg1"]
+[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/Attacks/projectile.gd" id="1_qbfg1"]
 [ext_resource type="Texture2D" uid="uid://ehx8d6voijly" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile0.png" id="2_bv4sg"]
 [ext_resource type="Texture2D" uid="uid://lu6cdhej2bj3" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile1.png" id="3_jx5vd"]
 [ext_resource type="Texture2D" uid="uid://j86dl1fj00d" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile2.png" id="4_e8xpc"]

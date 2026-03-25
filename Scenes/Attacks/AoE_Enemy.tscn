@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bc3qbgah2llsb"]
 
-[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_u8v38"]
+[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/Attacks/projectile.gd" id="1_u8v38"]
 [ext_resource type="Texture2D" uid="uid://dlcad3552uopi" path="res://Entities/Enemy/AoE Enemy/AoE_Enemy_Attack/AoE_Enemy_Attack0.png" id="2_ncowe"]
 [ext_resource type="Texture2D" uid="uid://copauvjg0dtps" path="res://Entities/Enemy/AoE Enemy/AoE_Enemy_Attack/AoE_Enemy_Attack1.png" id="3_p44ct"]
 [ext_resource type="Texture2D" uid="uid://docgie0wpj3x5" path="res://Entities/Enemy/AoE Enemy/AoE_Enemy_Attack/AoE_Enemy_Attack2.png" id="4_2not0"]

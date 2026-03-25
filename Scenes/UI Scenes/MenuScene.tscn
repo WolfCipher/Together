@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2pf1jf4yekyt"]
 
-[ext_resource type="Texture2D" uid="uid://i2hh47upe0cf" path="res://Entities/SceneArt/menuScreen.png" id="1_36iol"]
-[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/scene_button.gd" id="2_xx56i"]
+[ext_resource type="Texture2D" uid="uid://i2hh47upe0cf" path="res://Entities/SceneArt/menuScreen.png" id="1_2cejg"]
+[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="2_me15f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -68,7 +68,7 @@ corner_radius_bottom_left = 10
 [node name="Image" type="Sprite2D" parent="." unique_id=223955600]
 position = Vector2(960.00006, 540)
 scale = Vector2(1.6666666, 1.6666667)
-texture = ExtResource("1_36iol")
+texture = ExtResource("1_2cejg")
 
 [node name="Label" type="Label" parent="." unique_id=1295069426]
 z_index = 1
@@ -100,7 +100,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rae6p")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
 text = "Start Game"
-script = ExtResource("2_xx56i")
+script = ExtResource("2_me15f")
 next_scene = "res://Cutscenes/IntroductionCutscene.tscn"
 
 [node name="Button2" type="Button" parent="." unique_id=2120987843]
@@ -116,5 +116,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rae6p")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
 text = "Instructions"
-script = ExtResource("2_xx56i")
-next_scene = "res://Scenes/InstructionsScene.tscn"
+script = ExtResource("2_me15f")
+next_scene = "res://Scenes/UI Scenes/InstructionsScene.tscn"

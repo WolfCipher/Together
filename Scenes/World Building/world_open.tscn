@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b3p0be0qdmx5n"]
 
-[ext_resource type="Script" uid="uid://cod4226rlylvl" path="res://Scenes/ground_creation.gd" id="1_lp84e"]
+[ext_resource type="Script" uid="uid://cod4226rlylvl" path="res://Scenes/World Building/ground_creation.gd" id="1_lp84e"]
 [ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="2_l560a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfdjb"]

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://4dgsu2ov4y1i"]
 
 [ext_resource type="Script" uid="uid://dfgmmjdh15t7o" path="res://Entities/Player/player.gd" id="1_wlrob"]
-[ext_resource type="PackedScene" uid="uid://dqa5fhyl3dsg1" path="res://Scenes/DeathScene.tscn" id="2_qctxu"]
-[ext_resource type="PackedScene" uid="uid://dwfmdq1gncu8q" path="res://Scenes/meleeRyl.tscn" id="3_wb426"]
+[ext_resource type="PackedScene" uid="uid://dwfmdq1gncu8q" path="res://Scenes/Attacks/meleeRyl.tscn" id="3_wb426"]
 [ext_resource type="Texture2D" uid="uid://dflrrvrqby5mf" path="res://Entities/Player/Ryl/Ryl_Front_Idle/Ryl_Front_Idle0.png" id="3_yvxam"]
 [ext_resource type="Texture2D" uid="uid://bg82k0rls4llf" path="res://Entities/Player/Ryl/Ryl_Front_Idle/Ryl_Front_Idle1.png" id="4_12riv"]
 [ext_resource type="Texture2D" uid="uid://dsjuhjrlavtj7" path="res://Entities/Player/Ryl/Ryl_Front_Idle/Ryl_Front_Idle2.png" id="5_vedr3"]
@@ -74,7 +73,7 @@
 [ext_resource type="Texture2D" uid="uid://ds7onuu56fp0n" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk06.png" id="71_a123g"]
 [ext_resource type="Texture2D" uid="uid://chjld0b61l551" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk07.png" id="72_qe1fa"]
 [ext_resource type="Texture2D" uid="uid://bp6640qt24hod" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk08.png" id="73_pfu2a"]
-[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/projectileRyl.tscn" id="74_6s84u"]
+[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="74_6s84u"]
 [ext_resource type="Texture2D" uid="uid://bj6bk5hwh707i" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk09.png" id="74_rrncw"]
 [ext_resource type="AudioStream" uid="uid://bd853mpikwjo7" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Walk/Ryl_Walk_1.wav" id="76_keouu"]
 
@@ -342,7 +341,6 @@ size = Vector2(54, 84)
 
 [node name="Ryl" type="Area2D" unique_id=1671058189]
 script = ExtResource("1_wlrob")
-game_over = ExtResource("2_qctxu")
 up = "r_up"
 down = "r_down"
 right = "r_right"
