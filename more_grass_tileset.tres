@@ -2,6 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://duo62bu6tihv8" path="res://Entities/SceneArt/tileset_more_grass.png" id="1_4f3l1"]
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_4f3l1"]
+tile_data = PackedInt32Array(0, 786432, 0, 393216, 786432, 0, 786432, 786432, 0, 1179648, 786432, 0, 1572864, 786432, 0, 1966080, 786432, 0, 2359296, 786432, 0, 2752512, 786432, 0, 6, 393216, 0, 393222, 393216, 0, 786438, 393216, 0, 1179654, 393216, 0, 1572870, 393216, 0, 1966086, 393216, 0, 2359302, 393216, 0, 2752518, 393216, 0, 12, 393216, 0, 393228, 393216, 0, 786444, 393216, 0, 1179660, 393216, 0, 1572876, 393216, 0, 1966092, 393216, 0, 2359308, 393216, 0, 2752524, 393216, 0, 18, 1179648, 0, 393234, 1179648, 0, 786450, 1179648, 0, 1179666, 1179648, 0, 1572882, 1179648, 0, 1966098, 1179648, 0, 2359314, 1179648, 0, 2752530, 1179648, 0)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_t1gbo"]
+tile_data = PackedInt32Array(0, 786432, 0, 393216, 786432, 0, 786432, 786432, 0, 1179648, 393216, 6, 6, 393216, 0, 393222, 393216, 0, 786438, 393216, 0, 1179654, 1572864, 0, 12, 393216, 0, 393228, 393216, 0, 786444, 393216, 0, 1179660, 1572864, 0, 18, 1179648, 0, 393234, 1179648, 0, 786450, 1179648, 0, 1179666, 786432, 6)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nf3m"]
 texture = ExtResource("1_4f3l1")
 0:0/size_in_atlas = Vector2i(6, 6)
@@ -76,10 +82,6 @@ texture = ExtResource("1_4f3l1")
 38:26/0 = 0
 2:32/size_in_atlas = Vector2i(2, 2)
 2:32/0 = 0
-8:32/0 = 0
-9:32/0 = 0
-8:33/size_in_atlas = Vector2i(2, 1)
-8:33/0 = 0
 14:32/size_in_atlas = Vector2i(2, 2)
 14:32/0 = 0
 20:32/size_in_atlas = Vector2i(2, 2)
@@ -102,6 +104,10 @@ texture = ExtResource("1_4f3l1")
 24:36/0 = 0
 30:36/size_in_atlas = Vector2i(5, 6)
 30:36/0 = 0
+8:32/size_in_atlas = Vector2i(2, 2)
+8:32/0 = 0
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_7nf3m")
+pattern_0 = SubResource("TileMapPattern_4f3l1")
+pattern_1 = SubResource("TileMapPattern_t1gbo")
