@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var game_over := "res://Scenes/DeathScene.tscn"
+@export var game_over := "res://Scenes/UI Scenes/DeathScene.tscn"
 
 @onready var root: Node2D = $".."
 @onready var sprite: AnimatedSprite2D = $Sprite

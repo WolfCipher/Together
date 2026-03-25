@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cmumeyfum7ths"]
 
 [ext_resource type="Script" uid="uid://bbl16o0pnn8cp" path="res://Entities/Enemy/enemy.gd" id="1_xte2n"]
-[ext_resource type="PackedScene" uid="uid://d38evf5uew82h" path="res://Scenes/projectileShadowRyl.tscn" id="2_bhuaw"]
+[ext_resource type="PackedScene" uid="uid://d38evf5uew82h" path="res://Scenes/Attacks/projectileShadowRyl.tscn" id="2_bhuaw"]
 [ext_resource type="Texture2D" uid="uid://dda37t454xkh0" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle0.png" id="2_xte2n"]
 [ext_resource type="Texture2D" uid="uid://dosd5x7sqhclo" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle1.png" id="3_bhuaw"]
-[ext_resource type="PackedScene" uid="uid://c732b6bjf3b43" path="res://Scenes/meleeShadowRyl.tscn" id="3_st07f"]
+[ext_resource type="PackedScene" uid="uid://c732b6bjf3b43" path="res://Scenes/Attacks/meleeShadowRyl.tscn" id="3_st07f"]
 [ext_resource type="Texture2D" uid="uid://bljx2530pnfco" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle2.png" id="4_st07f"]
 [ext_resource type="Texture2D" uid="uid://chgd67xn1nhca" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle3.png" id="5_w8g1x"]
 [ext_resource type="Texture2D" uid="uid://b8lj663fm3bvn" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Front_Idle/ShadowRyl_Front_Idle4.png" id="6_40lbm"]

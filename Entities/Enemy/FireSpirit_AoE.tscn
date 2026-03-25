@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbl16o0pnn8cp" path="res://Entities/Enemy/enemy.gd" id="1_3sgmk"]
 [ext_resource type="Texture2D" uid="uid://b3fas4g1qgld3" path="res://Entities/Enemy/AoE Enemy/AoE_Enemy_Front/AoE_Enemy_Front00.png" id="2_3sgmk"]
-[ext_resource type="PackedScene" uid="uid://bc3qbgah2llsb" path="res://Scenes/AoE_Enemy.tscn" id="2_8c3m6"]
+[ext_resource type="PackedScene" uid="uid://bc3qbgah2llsb" path="res://Scenes/Attacks/AoE_Enemy.tscn" id="2_8c3m6"]
 [ext_resource type="Texture2D" uid="uid://bvrqwfl55gkd7" path="res://Entities/Enemy/AoE Enemy/AoE_Enemy_Front/AoE_Enemy_Front01.png" id="3_lya4s"]
 [ext_resource type="Texture2D" uid="uid://31tjrp5mj4s4" path="res://Entities/Enemy/AoE Enemy/AoE_Enemy_Front/AoE_Enemy_Front02.png" id="4_fc8jw"]
 [ext_resource type="Texture2D" uid="uid://q6k44mc3w8vh" path="res://Entities/Enemy/AoE Enemy/AoE_Enemy_Front/AoE_Enemy_Front03.png" id="5_4wjkq"]

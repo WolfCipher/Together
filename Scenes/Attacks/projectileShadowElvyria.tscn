@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://di8i776woq08k"]
 
-[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/projectile.gd" id="1_wp4ng"]
+[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/Attacks/projectile.gd" id="1_wp4ng"]
 [ext_resource type="Texture2D" uid="uid://rtfk37pq3auo" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile00.png" id="2_4cujs"]
 [ext_resource type="Texture2D" uid="uid://bmcy3ualy0apu" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile01.png" id="3_2hcck"]
 [ext_resource type="Texture2D" uid="uid://bmg54gjjhrm8c" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile02.png" id="4_sjon1"]

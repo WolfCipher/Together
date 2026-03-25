@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4nwngki156nh"]
 
-[ext_resource type="Script" path="res://Scenes/camera_centered.gd" id="1_kl0xq"]
+[ext_resource type="Script" uid="uid://bl22njl6wd0fo" path="res://Scenes/Functionality/camera_centered.gd" id="1_kl0xq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt7se"]
 size = Vector2(1996, 60)

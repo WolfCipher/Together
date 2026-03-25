@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwngu08ywk4pl"]
 
-[ext_resource type="Script" path="res://Scenes/health.gd" id="1_dx5va"]
+[ext_resource type="Script" uid="uid://bwcc0u7phe8q5" path="res://Scenes/Functionality/health.gd" id="1_dx5va"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rvsg"]
 content_margin_left = 2.0

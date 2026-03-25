@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://owwcqowd8wlq"]
 
 [ext_resource type="Script" uid="uid://bbl16o0pnn8cp" path="res://Entities/Enemy/enemy.gd" id="1_reyoy"]
-[ext_resource type="PackedScene" uid="uid://di8i776woq08k" path="res://Scenes/projectileShadowElvyria.tscn" id="2_4y68x"]
+[ext_resource type="PackedScene" uid="uid://di8i776woq08k" path="res://Scenes/Attacks/projectileShadowElvyria.tscn" id="2_4y68x"]
 [ext_resource type="Texture2D" uid="uid://diyobeyexeytd" path="res://Entities/Enemy/Shadow Elvyria Enemy/ShadowElvyria_Front_Idle/ShadowElvyria_Front_Idle0.png" id="2_05mbt"]
 [ext_resource type="Texture2D" uid="uid://xn0cdo8l5fuu" path="res://Entities/Enemy/Shadow Elvyria Enemy/ShadowElvyria_Front_Idle/ShadowElvyria_Front_Idle1.png" id="3_4y68x"]
-[ext_resource type="PackedScene" uid="uid://bdx778hwc16p3" path="res://Scenes/meleeShadowElvyria.tscn" id="3_isqlt"]
+[ext_resource type="PackedScene" uid="uid://bdx778hwc16p3" path="res://Scenes/Attacks/meleeShadowElvyria.tscn" id="3_isqlt"]
 [ext_resource type="Texture2D" uid="uid://dqovwd4876a5p" path="res://Entities/Enemy/Shadow Elvyria Enemy/ShadowElvyria_Front_Idle/ShadowElvyria_Front_Idle2.png" id="4_isqlt"]
 [ext_resource type="Texture2D" uid="uid://v7bsjr0vxoq6" path="res://Entities/Enemy/Shadow Elvyria Enemy/ShadowElvyria_Front_Idle/ShadowElvyria_Front_Idle3.png" id="5_i5c52"]
 [ext_resource type="Texture2D" uid="uid://cafk7sirp0vim" path="res://Entities/Enemy/Shadow Elvyria Enemy/ShadowElvyria_Front_Idle/ShadowElvyria_Front_Idle4.png" id="6_jhx8o"]
