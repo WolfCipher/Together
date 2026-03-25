@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cimkgyert7ut2"]
+
+[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="1_617t6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_068ap"]
+bg_color = Color(0.13346192, 0, 0.7465482, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.02021429, 9.62615e-08, 0.24905872, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2pru"]
+bg_color = Color(0.045101725, 9.62615e-08, 0.3707431, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.019607844, 0, 0.2509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovo8a"]
+bg_color = Color(0.0645, 4.813075e-08, 0.45324594, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.019607844, 0, 0.2509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eaees"]
+bg_color = Color(0.27837503, 0.17250001, 0.75, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.13346192, 0, 0.7465482, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m417"]
+bg_color = Color(0.13346192, 0, 0.7465482, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.90715146, 0.6109639, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Victory" type="Node2D" unique_id=1205401987]
+
+[node name="VictoryText" type="Label" parent="." unique_id=1906724505]
+z_index = 100
+offset_left = 3.0
+offset_top = 35.0
+offset_right = 1916.0
+offset_bottom = 444.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 300
+text = "VICTORY!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=742920396]
+z_index = 1
+offset_left = 770.0
+offset_top = 926.0
+offset_right = 1182.0
+offset_bottom = 1023.0
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_068ap")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a2pru")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ovo8a")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_eaees")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2m417")
+text = "Main Menu"
+script = ExtResource("1_617t6")
+next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"

@@ -1,0 +1,93 @@
+[gd_scene format=4 uid="uid://up7vel5gftcu"]
+
+[ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_hpjhc"]
+[ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_56d2c"]
+[ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="3_jywle"]
+[ext_resource type="AudioStream" uid="uid://q4b4iire0ewv" path="res://Sound/SFX/Music/Demo1_Core_Loop.wav" id="4_l1hk4"]
+[ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/Functionality/SpawnManager.gd" id="5_b2fon"]
+[ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="6_jydn8"]
+[ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/FireSpirit_AoE.tscn" id="7_pwvbg"]
+[ext_resource type="PackedScene" uid="uid://owwcqowd8wlq" path="res://Entities/Enemy/shadowElvyria.tscn" id="8_bngq1"]
+[ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="9_t6y87"]
+[ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_keokt"]
+[ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health.tscn" id="11_cvw5d"]
+[ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health.tscn" id="12_hsagj"]
+[ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_0lkii"]
+[ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="15_i6j4t"]
+[ext_resource type="Script" uid="uid://dt80ui47wepai" path="res://Scenes/Functionality/sync.gd" id="16_3u6tp"]
+[ext_resource type="PackedScene" uid="uid://b3p0be0qdmx5n" path="res://Scenes/World Building/world_open.tscn" id="17_hpjhc"]
+[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="17_vt8on"]
+[ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="18_56d2c"]
+
+[node name="Main" type="Node2D" unique_id=837400696]
+y_sort_enabled = true
+
+[node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_hpjhc")]
+position = Vector2(516, 505)
+projectile_scene = ExtResource("2_56d2c")
+
+[node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_jywle")]
+position = Vector2(574, 505)
+
+[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
+stream = ExtResource("4_l1hk4")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[node name="SpawnManager" type="Node2D" parent="." unique_id=708660748 node_paths=PackedStringArray("target1", "target2")]
+script = ExtResource("5_b2fon")
+prefab_a = ExtResource("6_jydn8")
+prefab_b = ExtResource("7_pwvbg")
+prefab_c = ExtResource("8_bngq1")
+prefab_d = ExtResource("9_t6y87")
+next_scene = "res://Scenes/UI Scenes/Victory.tscn"
+target1 = NodePath("../Elvyria")
+target2 = NodePath("../Ryl")
+
+[node name="Camera_Centered" parent="." unique_id=1069394162 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("10_keokt")]
+position = Vector2(574, 505)
+target1 = NodePath("../Elvyria")
+target2 = NodePath("../Ryl")
+
+[node name="ElvyriaHealth" parent="Camera_Centered" unique_id=1729412854 node_paths=PackedStringArray("character") instance=ExtResource("11_cvw5d")]
+offset_left = -862.0
+offset_top = -475.0
+offset_right = -555.6936
+offset_bottom = -466.0
+character = NodePath("../../Elvyria")
+
+[node name="RylHealth" parent="Camera_Centered" unique_id=199826155 node_paths=PackedStringArray("character") instance=ExtResource("12_hsagj")]
+offset_left = 552.00006
+offset_top = -475.0
+offset_right = 858.30646
+offset_bottom = -466.0
+character = NodePath("../../Ryl")
+
+[node name="PauseOverlay" parent="Camera_Centered" unique_id=74393980 instance=ExtResource("13_0lkii")]
+z_index = 100
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="SyncHandler" type="Node2D" parent="." unique_id=593064739 node_paths=PackedStringArray("player1", "player2")]
+position = Vector2(1480, 900)
+script = ExtResource("16_3u6tp")
+player1 = NodePath("../Elvyria")
+player2 = NodePath("../Ryl")
+projectile1 = ExtResource("2_56d2c")
+projectile2 = ExtResource("17_vt8on")
+
+[node name="World" parent="." unique_id=519110492 instance=ExtResource("17_hpjhc")]
+
+[node name="Path" type="TileMapLayer" parent="." unique_id=227110314]
+z_index = -9
+tile_map_data = PackedByteArray("AAAaACkAAAAGAAYAAAAaACMAAAAMAAAAAAAaAB0AAAAMAAAAAAAaABcAAAAMAAAAAAAaABEAAAAMAAAAAAAaAP//AAAMAAAAAAAaAAUAAAAMAAAAAAAaAAsAAAAMAAAAAAAaAPn/AAAMAAAAAAAsACkAAAAMAAYAAAAsACMAAAASAAAAAAAsAB0AAAASAAAAAAAsABcAAAASAAAAAAAsABEAAAASAAAAAAAsAAsAAAASAAAAAAAsAAUAAAASAAAAAAAsAP//AAASAAAAAAAsAPn/AAASAAAAAAAgACkAAAAYAAAAAAAmACkAAAAYAAAAAAAgACMAAAAGAAAAAAAmACMAAAAGAAAAAAAgAB0AAAAGAAAAAAAmAB0AAAAGAAAAAAAgABEAAAAGAAAAAAAgABcAAAAGAAAAAAAmABEAAAAGAAAAAAAmABcAAAAGAAAAAAAgAAUAAAAGAAAAAAAgAAsAAAAGAAAAAAAmAAUAAAAGAAAAAAAmAAsAAAAGAAAAAAAgAPn/AAAGAAAAAAAgAP//AAAGAAAAAAAmAPn/AAAGAAAAAAAmAP//AAAGAAAAAAAsAPP/AAAeAAYAAAAmAPP/AAAGAAAAAAAgAPP/AAAGAAAAAAAaAPP/AAAMAAAAAAAaAO3/AAAMAAAAAAAgAO3/AAAGAAAAAAAmAO3/AAAGAAAAAAAsAO3/AAAGAAAAAAAsAOf/AAAGAAAAAAAmAOf/AAAGAAAAAAAaAOf/AAAMAAAAAAAgAOf/AAAGAAAAAAAaAOH/AAAAAAYAAAAgAOH/AAAeAAAAAAAmAOH/AAAeAAAAAAAsAOH/AAAeAAAAAAAyAOH/AAAeAAAAAAAyAPP/AAAYAAAAAAAyAOf/AAAGAAAAAAAyAO3/AAAGAAAAAAA4APP/AAAYAAAAAAA+APP/AAAYAAAAAABEAPP/AAAYAAAAAAA4AO3/AAAGAAAAAAA+AO3/AAAGAAAAAABEAO3/AAAGAAAAAAA4AOf/AAAGAAAAAAA+AOf/AAAGAAAAAABEAOf/AAAGAAAAAAA4AOH/AAAeAAAAAAA+AOH/AAAeAAAAAABEAOH/AAAeAAAAAABKAPP/AAAYAAAAAABKAO3/AAAGAAAAAABKAOf/AAAGAAAAAABKAOH/AAAeAAAAAABQAOH/AAAeAAAAAABQAOf/AAAGAAAAAABQAO3/AAAGAAAAAABQAPP/AAAYAAAAAABWAOH/AAAeAAAAAABWAOf/AAAGAAAAAABWAO3/AAAGAAAAAABWAPP/AAAYAAAAAABcAOH/AAAeAAAAAABcAOf/AAAGAAAAAABcAO3/AAAGAAAAAABcAPP/AAAYAAAAAABiAOH/AAAeAAAAAABiAOf/AAAGAAAAAABiAO3/AAAGAAAAAABiAPP/AAAYAAAAAABoAOH/AAAeAAAAAABoAOf/AAAGAAAAAABoAO3/AAAGAAAAAABoAPP/AAAYAAAAAABuAOH/AAAeAAAAAABuAOf/AAAGAAAAAABuAO3/AAAGAAAAAABuAPP/AAAYAAAAAAB0AOH/AAAeAAAAAAB0AOf/AAAGAAAAAAB0AO3/AAAGAAAAAAB0APP/AAAYAAAAAAB6AOH/AAAeAAAAAAB6AOf/AAAGAAAAAAB6AO3/AAAGAAAAAAB6APP/AAAYAAAAAACAAOH/AAAeAAAAAACAAOf/AAAGAAAAAACAAO3/AAAGAAAAAACAAPP/AAAYAAAAAACGAOH/AAAeAAAAAACGAOf/AAAGAAAAAACGAO3/AAAGAAAAAACGAPP/AAAYAAAAAACMAOH/AAAeAAAAAACMAOf/AAAGAAAAAACMAO3/AAAGAAAAAACMAPP/AAAYAAAAAACSAOH/AAAeAAAAAACSAOf/AAAGAAAAAACSAO3/AAAGAAAAAACSAPP/AAAYAAAAAACYAOH/AAAeAAAAAACYAOf/AAAGAAAAAACYAO3/AAAGAAAAAACYAPP/AAAYAAAAAACeAOH/AAAeAAAAAACeAOf/AAAGAAAAAACeAO3/AAAGAAAAAACeAPP/AAAYAAAAAACkAOH/AAAeAAAAAACkAOf/AAAGAAAAAACkAO3/AAAGAAAAAACkAPP/AAAYAAAAAACqAOH/AAAeAAAAAACqAOf/AAAGAAAAAACqAO3/AAAGAAAAAACqAPP/AAAYAAAAAACwAOH/AAAeAAAAAACwAOf/AAAGAAAAAACwAO3/AAAGAAAAAACwAPP/AAAYAAAAAAC2AOH/AAAeAAAAAAC2AOf/AAAGAAAAAAC2AO3/AAAGAAAAAAC2APP/AAAYAAAAAAC8AOH/AAAeAAAAAAC8AOf/AAAGAAAAAAC8AO3/AAAGAAAAAAC8APP/AAAYAAAAAADCAOH/AAAeAAAAAADCAOf/AAAGAAAAAADCAO3/AAAGAAAAAADCAPP/AAAYAAAAAADIAOH/AAAeAAAAAADIAOf/AAAGAAAAAADIAO3/AAAGAAAAAADIAPP/AAAYAAAAAADOAOH/AAAeAAAAAADOAOf/AAAGAAAAAADOAO3/AAAGAAAAAADOAPP/AAAYAAAAAADUAOH/AAAeAAAAAADUAOf/AAAGAAAAAADUAO3/AAAGAAAAAADUAPP/AAAYAAAAAADaAOH/AAAeAAAAAADaAOf/AAAGAAAAAADaAO3/AAAGAAAAAADaAPP/AAAYAAAAAADgAOH/AAAeAAAAAADgAOf/AAAGAAAAAADgAO3/AAAGAAAAAADgAPP/AAAYAAAAAADmAOH/AAAeAAAAAADmAOf/AAAGAAAAAADmAO3/AAAGAAAAAADmAPP/AAAYAAAAAADsAOH/AAAeAAAAAADsAOf/AAAGAAAAAADsAO3/AAAGAAAAAADsAPP/AAAYAAAAAADyAOH/AAAeAAAAAADyAOf/AAAGAAAAAADyAO3/AAAGAAAAAADyAPP/AAAYAAAAAAD4AOH/AAAeAAAAAAD4AOf/AAAGAAAAAAD4AO3/AAAGAAAAAAD4APP/AAAYAAAAAAD+AOH/AAAeAAAAAAD+AOf/AAAGAAAAAAD+AO3/AAAGAAAAAAD+APP/AAAYAAYAAAD+APn/AAAMAAAAAAAEAeH/AAAeAAAAAAAEAef/AAAGAAAAAAAEAe3/AAAGAAAAAAAEAfP/AAAGAAAAAAAEAfn/AAAGAAAAAAAKAeH/AAAeAAAAAAAKAef/AAAGAAAAAAAKAe3/AAAGAAAAAAAKAfP/AAAGAAAAAAAKAfn/AAAGAAAAAAAQAeH/AAAkAAAAAAAQAef/AAASAAAAAAAQAe3/AAASAAAAAAAQAfP/AAASAAAAAAAQAfn/AAASAAAAAAD+AP//AAAMAAAAAAD+AAUAAAAMAAAAAAD+AAsAAAAMAAAAAAD+ABEAAAAMAAAAAAD+ABcAAAAMAAAAAAD+AB0AAAAMAAAAAAAEAf//AAAGAAAAAAAEAQUAAAAGAAAAAAAEAQsAAAAGAAAAAAAEAREAAAAGAAAAAAAEARcAAAAGAAAAAAAEAR0AAAAGAAAAAAAKAf//AAAGAAAAAAAKAQUAAAAGAAAAAAAKAQsAAAAGAAAAAAAKAREAAAAGAAAAAAAKARcAAAAGAAAAAAAKAR0AAAAGAAAAAAAQAf//AAASAAAAAAAQAQUAAAASAAAAAAAQAQsAAAASAAAAAAAQAREAAAASAAAAAAAQARcAAAASAAAAAAAQAR0AAAASAAAAAAA=")
+tile_set = ExtResource("15_i6j4t")
+
+[node name="Flowers" type="TileMapLayer" parent="." unique_id=1821845384]
+z_index = -10
+tile_map_data = PackedByteArray("AAAyABcAAAAIABoAAABUAAgAAAAIABoAAAAWACkAAAAIABoAAAAVAAQAAAAIABoAAADu/wUAAAAIABoAAADO/y0AAAAIABoAAADV/9X/AAAIABoAAACmAEQAAAAIABoAAAClAAgAAAAIABoAAAA6ALn/AAAIABoAAADNANT/AAAIABoAAAB3ABUAAAAUABQAAABUAEIAAAAUABQAAAAIABgAAAAUABQAAADk/0MAAAAUABQAAADa/xIAAAAUABQAAAAOANT/AAAUABQAAABbAN3/AAAUABQAAAB6ALj/AAAUABQAAAAHAU0AAAAUABQAAABQAR0AAAAUABQAAAAhAXb/AAAUABQAAABZAbr/AAAUABQAAADLAZz/AAAUABQAAAAoAgkAAAAUABQAAADpAUUAAAAUABQAAAArAmIAAAAUABQAAACWAe4AAAAUABQAAAAnApIBAAAUABQAAAC9AdABAAAUABQAAABLAWMBAAAUABQAAAC5AJYBAAAUABQAAACUABcBAAAUABQAAAC4/24BAAAUABQAAADo/5AAAAAUABQAAADMAKUAAAAUABQAAACX/6X/AAAUABQAAAB2//cAAAAIABoAAACA/6kBAAAIABoAAACCAH8BAAAIABoAAACCASsBAAAIABoAAAC8AFsAAAAIABoAAABJAqL/AAAIABoAAADhAIn/AAAIABoAAACD/8T/AAAIABoAAABQ/6j/AAAgABQAAABBAC4AAAAgABQAAACKADAAAAAgABQAAAAZAGsAAAAgABQAAACq/2UAAAAgABQAAABl/ywAAAAgABQAAAAVAUwAAAAgABQAAACkAd0AAAAgABQAAAA8AkIAAAAgABQAAADOAM0AAAAgABQAAACPAXMBAAAgABQAAABpAH0BAAAgABQAAACR/14BAAAgABQAAABXAu8BAAAgABQAAABXAu4BAAAgABQAAABXAu0BAAAgABQAAADOAOABAAAgABQAAABj/80BAAAgABQAAABoAIQAAAAOABoAAAANALwAAAAOABoAAAB5ANIAAAAOABoAAABPAbYAAAAOABoAAAA=")
+tile_set = ExtResource("18_56d2c")
