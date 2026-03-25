@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_60msr"]
 [ext_resource type="PackedScene" uid="uid://cycp817xxkhca" path="res://Scenes/World Building/world_small.tscn" id="14_4xs7e"]
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="15_j5o2p"]
+[ext_resource type="Script" uid="uid://dt80ui47wepai" path="res://Scenes/Functionality/sync.gd" id="16_v3vqe"]
+[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="17_bvs0b"]
 
 [node name="Main" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
@@ -80,3 +82,11 @@ tile_set = ExtResource("15_j5o2p")
 z_index = -9
 tile_map_data = PackedByteArray("AAAZAAAAAAAIABoAAABTAAsAAAAUABoAAAALADYAAAAUABoAAABZADUAAAAgABoAAAAuAA8AAAAIACAAAAAmADoAAAAUACAAAABIACAAAAAIABoAAAA8AAYAAAAgABoAAAANABcAAAAUACAAAAA4ACwAAAAIACAAAAA=")
 tile_set = ExtResource("15_j5o2p")
+
+[node name="SyncHandler" type="Node2D" parent="." unique_id=593064739 node_paths=PackedStringArray("player1", "player2")]
+position = Vector2(1480, 900)
+script = ExtResource("16_v3vqe")
+player1 = NodePath("../Elvyria")
+player2 = NodePath("../Ryl")
+projectile1 = ExtResource("2_xe7un")
+projectile2 = ExtResource("17_bvs0b")
