@@ -92,9 +92,9 @@ func attack() -> void:
 			attack_melee()
 			melee_cooldown = melee_recharge
 	
-	# Sync attacks
-	if Input.is_action_pressed("e_sync") && Input.is_action_pressed("r_sync"):
-		var _x = 1 # placeholder to prevent errors
+	# Sync attacks HANDLED IN SYNC.GD
+	#if Input.is_action_pressed("e_sync") && Input.is_action_pressed("r_sync"):
+	#	var _x = 1 # placeholder to prevent errors
 
 # Spawn projectiles
 func shoot_projectile() -> void:
