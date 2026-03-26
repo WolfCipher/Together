@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://bklvy06n6oss2"]
+[gd_scene format=3 uid="uid://dg216exgkny3m"]
 
-[ext_resource type="StyleBox" uid="uid://qgnnq00isv8k" path="res://btn-purple-blue.tres" id="1_4ge5g"]
-[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="1_68vu5"]
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="1_4kskp"]
+[ext_resource type="StyleBox" uid="uid://qgnnq00isv8k" path="res://btn-purple-blue.tres" id="2_6vugt"]
+[ext_resource type="Texture2D" uid="uid://c8i0hv10xp17q" path="res://Entities/Player/Ryl/Ryl_Front_Idle/Ryl_Front_Idle5.png" id="3_6vugt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68vu5"]
 bg_color = Color(0.1478307, 0.1797997, 0.4194534, 1)
@@ -39,9 +40,11 @@ offset_right = 660.0
 offset_bottom = 99.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_68vu5")
+theme_override_fonts/font = ExtResource("1_4kskp")
 theme_override_font_sizes/font_size = 33
-theme_override_styles/normal = ExtResource("1_4ge5g")
+theme_override_styles/normal = ExtResource("2_6vugt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_68vu5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4ge5g")
 text = "Choice"
+icon = ExtResource("3_6vugt")
+icon_alignment = 2
