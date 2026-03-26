@@ -9,12 +9,18 @@ extends Node
 # TODO Add character sprites emotions to switch between here
 
 @onready var _ink_player = InkPlayer.new()
-@onready var choice_btn = load("res://Ink/Functionality/dialog_button.tscn")
+@onready var choice_btn
+@onready var generic_btn = load("res://Ink/Functionality/dialog_button.tscn")
+@onready var elvyria_btn = load("res://Ink/Functionality/elvyria_button.tscn")
+@onready var ryl_btn = load("res://Ink/Functionality/ryl_button.tscn")
 @onready var _btns = []
 
 @onready var panel = $Panel # holds everything; turn invisible when dialogue is finished
 @onready var dialog_box = $Panel/Dialog
 @onready var choices = $Panel/Choices # append buttons to this vertical box container
+
+var use_elvyria = true
+var use_ryl = false
 
 func _ready():
 	# Adds the player to the tree.
@@ -63,8 +69,15 @@ func _continue_story():
 	if _ink_player.has_choices:
 		# 'current_choices' contains a list of the choices, as strings.
 		for choice in _ink_player.current_choices:
-			print(choice.text)
-			print(choice.tags)
+			#print(choice.text)
+			#print(choice.tags)
+			
+			if (use_elvyria):
+				choice_btn = elvyria_btn
+			elif (use_ryl):
+				choice_btn = ryl_btn
+			else:
+				choice_btn = generic_btn
 			
 			var btn = choice_btn.instantiate()
 			btn.text = choice.text
