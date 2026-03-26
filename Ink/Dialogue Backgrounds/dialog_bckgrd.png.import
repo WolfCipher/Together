@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://04tpbk6pcmd2"
-path="res://.godot/imported/Elvyria_Neutral.png-775673c825357c73d9441f9359de8e42.ctex"
+uid="uid://yrh018uvau6b"
+path="res://.godot/imported/dialog_bckgrd.png-819db91da3e51c381fbff351ef67efb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ink/Elvyria_Neutral.png"
-dest_files=["res://.godot/imported/Elvyria_Neutral.png-775673c825357c73d9441f9359de8e42.ctex"]
+source_file="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png"
+dest_files=["res://.godot/imported/dialog_bckgrd.png-819db91da3e51c381fbff351ef67efb5.ctex"]
 
 [params]
 

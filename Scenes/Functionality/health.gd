@@ -6,5 +6,5 @@ func _ready() -> void:
 	max_value = character.max_health
 	value = character.health
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	value = character.health

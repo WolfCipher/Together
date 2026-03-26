@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rgev0rjmymds"
-path="res://.godot/imported/Ryl_Draft.png-81e011c2bcbd2e699f51f25272d19563.ctex"
+path="res://.godot/imported/Ryl_Draft.png-8cff9b7656bbcfc12e2b6fe337b50366.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ink/Ryl_Draft.png"
-dest_files=["res://.godot/imported/Ryl_Draft.png-81e011c2bcbd2e699f51f25272d19563.ctex"]
+source_file="res://Ink/Character Expressions/Ryl_Draft.png"
+dest_files=["res://.godot/imported/Ryl_Draft.png-8cff9b7656bbcfc12e2b6fe337b50366.ctex"]
 
 [params]
 
