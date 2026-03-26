@@ -4,6 +4,8 @@
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_w1g4e"]
 [ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/dialog_bckgrd.png" id="4_poo3n"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="4_w1g4e"]
+[ext_resource type="Texture2D" uid="uid://04tpbk6pcmd2" path="res://Ink/Elvyria_Neutral.png" id="5_harx1"]
+[ext_resource type="Texture2D" uid="uid://rgev0rjmymds" path="res://Ink/Ryl_Draft.png" id="6_x13jp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cs0ko"]
 font = ExtResource("4_w1g4e")
@@ -42,3 +44,15 @@ z_index = -100
 scale = Vector2(1.6666667, 1.6790123)
 texture = ExtResource("4_poo3n")
 centered = false
+
+[node name="Elvyria" type="Sprite2D" parent="." unique_id=305785085]
+z_index = -10
+position = Vector2(1500, 600)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_harx1")
+
+[node name="Ryl" type="Sprite2D" parent="." unique_id=196037725]
+z_index = -10
+position = Vector2(500, 600)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_x13jp")
