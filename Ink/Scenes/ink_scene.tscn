@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://g6l4hl6qox64"]
 
-[ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/ink_template.gd" id="1_r28ab"]
-[ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_w1g4e"]
-[ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/dialog_bckgrd.png" id="4_poo3n"]
-[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="4_w1g4e"]
-[ext_resource type="Texture2D" uid="uid://04tpbk6pcmd2" path="res://Ink/Elvyria_Neutral.png" id="5_harx1"]
-[ext_resource type="Texture2D" uid="uid://rgev0rjmymds" path="res://Ink/Ryl_Draft.png" id="6_x13jp"]
+[ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/Functionality/ink_template.gd" id="1_06462"]
+[ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_4fq0e"]
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_m4axn"]
+[ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="4_hhopj"]
+[ext_resource type="Texture2D" uid="uid://04tpbk6pcmd2" path="res://Ink/Character Expressions/Elvyria_Neutral.png" id="5_lse2l"]
+[ext_resource type="Texture2D" uid="uid://rgev0rjmymds" path="res://Ink/Character Expressions/Ryl_Draft.png" id="6_ygnwh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cs0ko"]
-font = ExtResource("4_w1g4e")
+font = ExtResource("3_m4axn")
 font_size = 50
 font_color = Color(0.94509804, 1, 0.9490196, 1)
 
 [node name="Ink Manager" type="Node" unique_id=1944090056]
-script = ExtResource("1_r28ab")
+script = ExtResource("1_06462")
+ink_script = "res://Ink/Dialogue Scripts/test.json"
 next_scene = "res://Scenes/Levels/level2.tscn"
 
 [node name="Panel" type="Panel" parent="." unique_id=110650881]
@@ -21,7 +22,7 @@ offset_left = 45.0
 offset_top = 550.0
 offset_right = 1200.0
 offset_bottom = 962.5
-theme_override_styles/panel = ExtResource("2_w1g4e")
+theme_override_styles/panel = ExtResource("2_4fq0e")
 
 [node name="Dialog" type="Label" parent="Panel" unique_id=2032860697]
 z_index = 10
@@ -42,17 +43,17 @@ offset_bottom = 51.0
 [node name="Background" type="Sprite2D" parent="." unique_id=1910788515]
 z_index = -100
 scale = Vector2(1.6666667, 1.6790123)
-texture = ExtResource("4_poo3n")
+texture = ExtResource("4_hhopj")
 centered = false
 
 [node name="Elvyria" type="Sprite2D" parent="." unique_id=305785085]
 z_index = -10
 position = Vector2(1500, 600)
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("5_harx1")
+texture = ExtResource("5_lse2l")
 
 [node name="Ryl" type="Sprite2D" parent="." unique_id=196037725]
 z_index = -10
 position = Vector2(500, 600)
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("6_x13jp")
+texture = ExtResource("6_ygnwh")

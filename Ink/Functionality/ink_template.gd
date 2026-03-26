@@ -9,7 +9,7 @@ extends Node
 # TODO Add character sprites emotions to switch between here
 
 @onready var _ink_player = InkPlayer.new()
-@onready var choice_btn = load("res://Ink/dialog_button.tscn")
+@onready var choice_btn = load("res://Ink/Functionality/dialog_button.tscn")
 @onready var _btns = []
 
 @onready var panel = $Panel # holds everything; turn invisible when dialogue is finished

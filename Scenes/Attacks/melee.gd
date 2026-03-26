@@ -6,7 +6,7 @@ extends Area2D
 func _ready() -> void:
 	play()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (sprite.frame == sprite.sprite_frames.get_frame_count("default") - 1):
 		queue_free()
 

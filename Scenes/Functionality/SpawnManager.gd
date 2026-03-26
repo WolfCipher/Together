@@ -37,12 +37,13 @@ func _ready():
 	# instantiate first wave
 	spawn()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# if current wave is over (all enemies are defeated, so self has no children), start new wave
 	if self.get_child_count() == 0:
 		# TODO handle finishing level
 		if waveNum >= waves.size():
 			if next_scene:
+				await get_tree().create_timer(1.0).timeout # wait 1.0 seconds before changing scene
 				get_tree().change_scene_to_file(next_scene)
 			return
 		else:
