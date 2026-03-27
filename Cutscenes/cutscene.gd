@@ -10,6 +10,16 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if OS.has_feature("web"):
+		# ffmpeg has no support for web right now, so skip cutscene
+		_endCutscene()
+	else:
+		# allows us to decode video file in Godot, which needs ffmpeg
+		var ffmpeg = ClassDB.instantiate("FFmpegVideoStream")
+		if ffmpeg:
+			ffmpeg.file = "res://Cutscenes/TogetherIntroduction.mp4"
+			$VideoStreamPlayer.stream = ffmpeg
+	
 	skipLabel.visible = false
 	video.play()
 	video.finished.connect(_onFinish)
