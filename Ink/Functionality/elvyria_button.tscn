@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dsms3a7xjjstm"]
+
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="1_lv32g"]
+[ext_resource type="StyleBox" uid="uid://qgnnq00isv8k" path="res://btn-purple-blue.tres" id="2_yit0c"]
+[ext_resource type="Texture2D" uid="uid://cn4wwj1d2ro23" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle7.png" id="3_lv32g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68vu5"]
+bg_color = Color(0.1478307, 0.1797997, 0.4194534, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.12508518, 0.15447283, 0.4222343, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.21504444, 0.0001523218, 0.27681413, 0.6)
+shadow_offset = Vector2(-5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ge5g"]
+bg_color = Color(0.16657162, 0.19844386, 0.45760036, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.17449105, 0.21237516, 0.54906195, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.21504444, 0.0001523218, 0.27681413, 0.6)
+shadow_offset = Vector2(-5, 5)
+
+[node name="Dialog_Button" type="Button" unique_id=2043929574]
+custom_minimum_size = Vector2(770, 99)
+offset_right = 660.0
+offset_bottom = 99.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_lv32g")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = ExtResource("2_yit0c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_68vu5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4ge5g")
+text = "Choice"
+icon = ExtResource("3_lv32g")
+icon_alignment = 2

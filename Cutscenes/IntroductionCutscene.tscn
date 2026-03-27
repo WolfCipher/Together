@@ -43,7 +43,7 @@ _data = {
 
 [node name="Cutscene" type="Node2D" unique_id=453143170]
 script = ExtResource("1_5g6uw")
-next_scene = "res://Scenes/test.tscn"
+next_scene = "res://Scenes/Levels/level1.tscn"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2090393755]
 offset_right = 1920.0

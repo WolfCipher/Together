@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://di8i776woq08k"]
+
+[ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/Attacks/projectile.gd" id="1_wp4ng"]
+[ext_resource type="Texture2D" uid="uid://rtfk37pq3auo" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile00.png" id="2_4cujs"]
+[ext_resource type="Texture2D" uid="uid://bmcy3ualy0apu" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile01.png" id="3_2hcck"]
+[ext_resource type="Texture2D" uid="uid://bmg54gjjhrm8c" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile02.png" id="4_sjon1"]
+[ext_resource type="Texture2D" uid="uid://q7c8f6bl2veo" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile03.png" id="5_ctppo"]
+[ext_resource type="Texture2D" uid="uid://dmp0hms7pf21e" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile04.png" id="6_q4rvq"]
+[ext_resource type="Texture2D" uid="uid://dqu5qeadw3nbe" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile05.png" id="7_51o5q"]
+[ext_resource type="Texture2D" uid="uid://b1fcixujmoxr8" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile06.png" id="8_df62c"]
+[ext_resource type="Texture2D" uid="uid://n14dcsq133ql" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile07.png" id="9_7oj8b"]
+[ext_resource type="Texture2D" uid="uid://bmufe1508v7sg" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile08.png" id="10_tovj0"]
+[ext_resource type="Texture2D" uid="uid://b7kjabta4ve2w" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile09.png" id="11_oxp3g"]
+[ext_resource type="Texture2D" uid="uid://c07hgd2tslo3v" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile10.png" id="12_er86c"]
+[ext_resource type="Texture2D" uid="uid://emnn6p4s47p8" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile11.png" id="13_i8cos"]
+[ext_resource type="Texture2D" uid="uid://bjiondixbhqdr" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile12.png" id="14_urfql"]
+[ext_resource type="Texture2D" uid="uid://cl438wntc8gtg" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile13.png" id="15_4dxeu"]
+[ext_resource type="Texture2D" uid="uid://cgrboovxkxl2p" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile14.png" id="16_mtpui"]
+[ext_resource type="Texture2D" uid="uid://1gaf1txp758i" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile15.png" id="17_emipw"]
+[ext_resource type="Texture2D" uid="uid://bjsjuaulgv8ok" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile16.png" id="18_i7ctf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
+size = Vector2(58, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1077"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4cujs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2hcck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sjon1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ctppo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q4rvq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_51o5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_df62c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7oj8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tovj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oxp3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_er86c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i8cos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_urfql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4dxeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mtpui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_emipw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i7ctf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Beam" type="Area2D" unique_id=871792930 groups=["Enemy Attack"]]
+script = ExtResource("1_wp4ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_d4467")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=560075531]
+position = Vector2(0, 2)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_e1077")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=573258731]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
