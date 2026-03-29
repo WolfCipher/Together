@@ -72,6 +72,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="InstructionsScene" type="Node2D" unique_id=1385909618]
+y_sort_enabled = true
 
 [node name="ElvyriaText" type="Label" parent="." unique_id=644648842]
 z_index = 100
@@ -134,7 +135,7 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
-text = "Toggle Pause Mode: Esc"
+text = "Toggle Pause Mode: Esc or Delete"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=300260568]
