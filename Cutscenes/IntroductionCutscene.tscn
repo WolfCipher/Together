@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dnlswp44gx4v7" path="res://Cutscenes/cutscene.gd" id="1_5g6uw"]
 
-[sub_resource type="FFmpegVideoStream" id="FFmpegVideoStream_7sy8m"]
-file = "res://Cutscenes/TogetherIntroduction.mp4"
-
 [sub_resource type="Animation" id="Animation_5g6uw"]
 length = 0.001
 tracks/0/type = "value"
@@ -48,7 +45,6 @@ next_scene = "res://Scenes/Levels/level1.tscn"
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2090393755]
 offset_right = 1920.0
 offset_bottom = 1080.0
-stream = SubResource("FFmpegVideoStream_7sy8m")
 autoplay = true
 expand = true
 
