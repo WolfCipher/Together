@@ -3,10 +3,8 @@
 extends Node
 
 @export var ink_script := "res://Ink/test.json"
-@export var ink_vars := [] # should be populated with the strings of Inky variable names
+@export var ink_vars := ["ryl", "elvyria", "btn1", "btn2", "btn3", "btn4"] # should be populated with the strings of Inky variable names
 @export var next_scene : String
-
-# TODO Add character sprites emotions to switch between here
 
 @onready var _ink_player = InkPlayer.new()
 @onready var choice_btn
@@ -19,8 +17,21 @@ extends Node
 @onready var dialog_box = $Panel/Dialog
 @onready var choices = $Panel/Choices # append buttons to this vertical box container
 
-var use_elvyria = true
-var use_ryl = false
+var btn_type = [0,0,0,0]
+
+# TODO Add character sprites emotions to switch between here
+@onready var ryl = $Ryl
+@onready var ryl_neutral = load("res://Ink/Character Expressions/Ryl/Ryl_Neutral.png")
+@onready var ryl_happy = load("res://Ink/Character Expressions/Ryl/Ryl_Happy.png")
+@onready var ryl_determined = load("res://Ink/Character Expressions/Ryl/Ryl_Determined.png")
+@onready var ryl_concern = load("res://Ink/Character Expressions/Ryl/Ryl_Concern.png")
+@onready var ryl_shocked = load("res://Ink/Character Expressions/Ryl/Ryl_Shocked.png")
+@onready var elvyria = $Elvyria
+@onready var elvyria_neutral = load("res://Ink/Character Expressions/Elvyria/Elvyria_Neutral.png")
+@onready var elvyria_happy = load("res://Ink/Character Expressions/Elvyria/Elvyria_Happy.png")
+@onready var elvyria_determined = load("res://Ink/Character Expressions/Elvyria/Elvyria_Determined.png")
+@onready var elvyria_concern = load("res://Ink/Character Expressions/Elvyria/Elvyria_Concern.png")
+@onready var elvyria_shocked = load("res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png")
 
 func _ready():
 	# Adds the player to the tree.
@@ -68,13 +79,14 @@ func _continue_story():
 	# button choices
 	if _ink_player.has_choices:
 		# 'current_choices' contains a list of the choices, as strings.
+		var _index = 0
 		for choice in _ink_player.current_choices:
 			#print(choice.text)
 			#print(choice.tags)
 			
-			if (use_elvyria):
+			if (btn_type[_index] == 0):
 				choice_btn = elvyria_btn
-			elif (use_ryl):
+			elif (btn_type[_index] == 1):
 				choice_btn = ryl_btn
 			else:
 				choice_btn = generic_btn
@@ -87,6 +99,8 @@ func _continue_story():
 			
 			# button now has an index and pressing it will be recognized
 			btn.pressed.connect(self._index_choose.bind(btn))
+			
+			_index += 1
 			
 	# This code runs when the story reaches its end.
 	else:
@@ -127,6 +141,38 @@ func _observe_variables():
 #
 #
 func _variable_changed(variable_name, new_value):
-	# use if variable_name == "X" to determine what to change
-	# use new_value to determine what to change to
+	
+	if (variable_name == "ryl"):
+		if (new_value == 0):
+			ryl.texture = ryl_neutral
+		elif (new_value == 1):
+			ryl.texture = ryl_happy
+		elif (new_value == 2):
+			ryl.texture = ryl_determined
+		elif (new_value == 3):
+			ryl.texture = ryl_concern
+		elif (new_value == 4):
+			ryl.texture = ryl_shocked
+	
+	if (variable_name == "elvyria"):
+		if (new_value == 0):
+			elvyria.texture = elvyria_neutral
+		elif (new_value == 1):
+			elvyria.texture = elvyria_happy
+		elif (new_value == 2):
+			elvyria.texture = elvyria_determined
+		elif (new_value == 3):
+			elvyria.texture = elvyria_concern
+		elif (new_value == 4):
+			elvyria.texture = elvyria_shocked
+	
+	if (variable_name == "btn1"):
+		btn_type[0] = new_value
+	if (variable_name == "btn2"):
+		btn_type[1] = new_value
+	if (variable_name == "btn3"):
+		btn_type[2] = new_value
+	if (variable_name == "btn4"):
+		btn_type[3] = new_value
+	
 	print("Variable '%s' changed to: %s" % [variable_name, new_value])
