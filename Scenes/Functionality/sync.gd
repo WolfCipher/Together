@@ -1,4 +1,4 @@
-extends Node2D
+extends AnimatedSprite2D
 
 @export var player1 : Node2D
 @export var player2 : Node2D
@@ -8,30 +8,38 @@ extends Node2D
 
 # how close the players must be
 @export var sync_distance := 20000.0
-# how often players can use the sync attack
-@export var sync_recharge := 10.0
-var sync_cooldown := 0.0
+# the frame rate --- how often players can use the sync attack
+# there are 10 frames, so the total number of seconds recharge takes is 10*sync_recharge
+# TODO enable items to upgrade recharge rate
+@export var sync_recharge := 1.0
+var last_frame = sprite_frames.get_frame_count("default") - 1 # final frame
 
-# determine what x and y projectiles should start at
+# TODO determine what x and y projectiles should start at
 var min_x
 var max_x
 var min_y
 var max_y
+var my_global_position
 
 
 # start between the characters
 func _ready() -> void:
 	center()
+	sprite_frames.set_animation_speed("default", sync_recharge) # frame rate
+	frame = last_frame # start with full gauge
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	center() # stay between the players
 	
-	sync_cooldown -= delta
+	if (frame == last_frame):
+		pause()
+	
+	# TODO make c'mon! sounds when only one player presses SHIFT
 	
 	var in_sync = Input.is_action_pressed("e_sync") && Input.is_action_pressed("r_sync")
 	var nearby = player1.position.distance_squared_to(player2.position) <= sync_distance
 	
-	if in_sync && nearby && sync_cooldown <= 0:
+	if in_sync && nearby && frame >= 10: # 10th frame is full but not necessarily the final frame; don't use last_frame here
 		shoot_projectile(Vector2(0,1), projectile1)
 		shoot_projectile(Vector2(0,1), projectile2)
 		shoot_projectile(Vector2(0,-1), projectile1)
@@ -41,23 +49,24 @@ func _process(delta: float) -> void:
 		shoot_projectile(Vector2(-1,0), projectile1)
 		shoot_projectile(Vector2(-1,0), projectile2)
 		
-		shoot_projectile(Vector2(0.75,0.75), projectile1)
-		shoot_projectile(Vector2(0.75,0.75), projectile2)
-		shoot_projectile(Vector2(0.75,-0.75), projectile1)
-		shoot_projectile(Vector2(0.75,-0.75), projectile2)
-		shoot_projectile(Vector2(-0.75,0.75), projectile1)
-		shoot_projectile(Vector2(-0.75,0.75), projectile2)
-		shoot_projectile(Vector2(-0.75,-0.75), projectile1)
-		shoot_projectile(Vector2(-0.75,-0.75), projectile2)
+		shoot_projectile(Vector2(1,1).normalized(), projectile1)
+		shoot_projectile(Vector2(1,1).normalized(), projectile2)
+		shoot_projectile(Vector2(1,-1).normalized(), projectile1)
+		shoot_projectile(Vector2(1,-1).normalized(), projectile2)
+		shoot_projectile(Vector2(-1,1).normalized(), projectile1)
+		shoot_projectile(Vector2(-1,1).normalized(), projectile2)
+		shoot_projectile(Vector2(-1,-1).normalized(), projectile1)
+		shoot_projectile(Vector2(-1,-1).normalized(), projectile2)
 		
-		sync_cooldown = sync_recharge
+		frame = 0
+		play()
 
 # Spawn projectiles
 func shoot_projectile(dir, projectile_scene) -> void:
 	var projectile = projectile_scene.instantiate()
 	
 	# position slightly ahead of players and move in proper direction
-	projectile.global_position = global_position + dir * 30
+	projectile.global_position = my_global_position + dir * 30
 	projectile.direction = dir
 	projectile.rotation = dir.angle() + PI/2
 	
@@ -72,7 +81,7 @@ func center() -> void:
 	var y = (pos1.y + pos2.y)/2
 	var target_pos = Vector2(x,y)
 	
-	global_position = target_pos
+	my_global_position = target_pos
 	
 	# TODO should probably make relative to global_position
 	min_x = min(pos1.x, pos2.x)

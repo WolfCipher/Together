@@ -4,28 +4,30 @@ extends Node
 
 @export var prefab_a: PackedScene # Projectile
 @export var prefab_b: PackedScene # AoE
-@export var prefab_c: PackedScene # Shadow Elvyria
-@export var prefab_d: PackedScene # Shadow Ryl
-#@export var prefab_e: PackedScene
+@export var prefab_c: PackedScene # Contact
+@export var prefab_d: PackedScene # Shadow Elvyria
+@export var prefab_e: PackedScene # Shadow Ryl
 @export var spawn_positions: Array[Vector2] = [Vector2(200, 0), Vector2(400,0), Vector2(600,0), Vector2(800,0)] # predefined locations that enemies can spawn at
 @export var next_scene : String
 
 # each outer element represents the wave
 # each inner element represents how many enemies of a particular type (a, b, c, etc.) are spawned in a wave
 @export var waves: Array = [
-	[0,1,0,0], # wave 1
-	[0,2,0,0], # wave 2
-	[1,1,0,0], # wave 3
-	[2,0,0,0], # wave 4
-	[2,2,0,0], # wave 5
-	[0,0,1,1], # wave 6
-	[1,1,1,1], # wave 7
-	[0,0,2,2], # wave 8
+	[0,0,1,0,0], # wave 1
+	[0,1,1,0,0], # wave 2
+	[0,2,0,0,0], # wave 3
+	[1,1,0,0,0], # wave 4
+	[2,0,0,0,0], # wave 5
+	[2,2,0,0,0], # wave 6
+	[1,1,1,0,0], # wave 7
+	[0,0,0,1,1], # wave 8
+	[1,1,0,1,1], # wave 9
+	[0,0,0,2,2], # wave 10
 ]
 
 # helps with looping through the wave array and spawning the particular enemies
 @onready var enemy_types: Array = [
-	prefab_a, prefab_b, prefab_c, prefab_d
+	prefab_a, prefab_b, prefab_c, prefab_d, prefab_e
 ]
 
 @export var target1: Node2D

@@ -53,6 +53,7 @@ BoundaryLeft=""
 BoundaryRight=""
 BoundaryTop=""
 BoundaryBottom=""
+DisappearOnContact=""
 
 [inkgd]
 

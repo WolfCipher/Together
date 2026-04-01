@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://rgg7otw5hjkd"]
+
+[ext_resource type="Texture2D" uid="uid://b8otg80bsl6h1" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown00.png" id="1_cgote"]
+[ext_resource type="Texture2D" uid="uid://dfvjnvr1s3fvy" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown01.png" id="2_btfw6"]
+[ext_resource type="Texture2D" uid="uid://ba5uldce1nres" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown02.png" id="3_crxrk"]
+[ext_resource type="Texture2D" uid="uid://bw0hh1aqyx8if" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown03.png" id="4_coh2q"]
+[ext_resource type="Texture2D" uid="uid://7ppngm0mt1t2" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown04.png" id="5_jksuf"]
+[ext_resource type="Texture2D" uid="uid://c6ajte1vt237d" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown05.png" id="6_xufuh"]
+[ext_resource type="Texture2D" uid="uid://cncxli6hf8op6" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown06.png" id="7_yx5cn"]
+[ext_resource type="Texture2D" uid="uid://b8ryqv5ofhx41" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown07.png" id="8_5jrt7"]
+[ext_resource type="Texture2D" uid="uid://bcitetsghexqp" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown08.png" id="9_btlwh"]
+[ext_resource type="Texture2D" uid="uid://cxvibrrj1u355" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown09.png" id="10_7mhcv"]
+[ext_resource type="Texture2D" uid="uid://lbfut3jmf18k" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown10.png" id="11_bomfn"]
+[ext_resource type="Script" uid="uid://dt80ui47wepai" path="res://Scenes/Functionality/sync.gd" id="12_btfw6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwprt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cgote")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_btfw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_crxrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_coh2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jksuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xufuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yx5cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5jrt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_btlwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7mhcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bomfn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Sync_Gauge" type="AnimatedSprite2D" unique_id=1752999985]
+z_index = 100
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_dwprt")
+offset = Vector2(0, 4000)
+script = ExtResource("12_btfw6")

@@ -385,8 +385,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0kj"]
 size = Vector2(66, 73)
 
-[node name="Enemy" type="Area2D" unique_id=1136344332 groups=["Enemy", "ProjectileEnemy"]]
+[node name="Enemy" type="Area2D" unique_id=1136344332 groups=["DisappearOnContact", "Enemy", "Enemy Attack"]]
 script = ExtResource("1_qlofn")
+speed = 300
+attackDistance = 0
 projectile_scene = ExtResource("2_ps5vw")
 
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1432958030]

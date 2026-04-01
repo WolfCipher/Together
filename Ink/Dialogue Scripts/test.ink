@@ -14,8 +14,13 @@ VAR btn2 = 0
 VAR btn3 = 0
 VAR btn4 = 0
 
+// 0: elvyria speaks
+// 1: ryl speaks
+VAR dialog = 0
+
 ~ryl = 4
 ~elvyria = 4
+~dialog = 1
 
 
 What were those things?
@@ -53,8 +58,8 @@ What were those things?
  
  
  ===Tamewood===
- * Tamewood... -> Cmon
- * The way back home... -> Cmon
+ * [Tamewood...] -> Cmon
+ * [The way back home...] -> Cmon
  
  
  ===Cmon===

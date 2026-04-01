@@ -215,6 +215,9 @@ func _on_area_entered(area: Area2D) -> void:
 		health = health - area.damage
 		damage_blink()
 		if health < 1:
+			# prevent retriggering _on_area_entered once all physics calculations finish, thereby avoiding null data.tree issues
+			$CollisionShape2D.set_deferred("disabled", true)
+			
 			# wait 0.5 seconds before despawning
 			await get_tree().create_timer(0.5).timeout
 			get_tree().change_scene_to_file(game_over)
