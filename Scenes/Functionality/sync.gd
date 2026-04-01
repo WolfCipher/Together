@@ -28,7 +28,7 @@ func _ready() -> void:
 	sprite_frames.set_animation_speed("default", sync_recharge) # frame rate
 	frame = last_frame # start with full gauge
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	center() # stay between the players
 	
 	if (frame == last_frame):

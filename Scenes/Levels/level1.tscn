@@ -7,8 +7,9 @@
 [ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/Functionality/SpawnManager.gd" id="5_syfhk"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="6_u45xj"]
 [ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/FireSpirit_AoE.tscn" id="7_ay16s"]
-[ext_resource type="PackedScene" uid="uid://owwcqowd8wlq" path="res://Entities/Enemy/shadowElvyria.tscn" id="8_6748a"]
+[ext_resource type="PackedScene" uid="uid://crtup2vlgteed" path="res://Entities/Enemy/EarthSpirit_Contact.tscn" id="8_bvs0b"]
 [ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="9_5y6uu"]
+[ext_resource type="PackedScene" uid="uid://dpcocehy7udm3" path="res://Scenes/shadowElvyria.tscn" id="9_syfhk"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_m4h5f"]
 [ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health.tscn" id="11_d2e0u"]
 [ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health.tscn" id="12_f8if4"]
@@ -38,10 +39,11 @@ bus = &"Music"
 script = ExtResource("5_syfhk")
 prefab_a = ExtResource("6_u45xj")
 prefab_b = ExtResource("7_ay16s")
-prefab_c = ExtResource("8_6748a")
-prefab_d = ExtResource("9_5y6uu")
+prefab_c = ExtResource("8_bvs0b")
+prefab_d = ExtResource("9_syfhk")
+prefab_e = ExtResource("9_5y6uu")
 next_scene = "res://Ink/Scenes/ink_scene.tscn"
-waves = [[0, 1, 0, 0], [0, 2, 0, 0], [1, 1, 0, 0], [2, 0, 0, 0], [2, 2, 0, 0]]
+waves = [[0, 1, 0, 0, 0], [0, 2, 0, 0, 0], [1, 1, 0, 0, 0], [2, 0, 0, 0, 0], [2, 2, 0, 0, 0]]
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
 

@@ -1,5 +1,6 @@
 extends Area2D
 
+# default attributes unless otherwise modified on instantiation
 @export var speed := 1000.0
 @export var damage := 1 # projectiles deal less damage than melee
 
