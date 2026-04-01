@@ -49,14 +49,14 @@ func _process(_delta: float) -> void:
 		shoot_projectile(Vector2(-1,0), projectile1)
 		shoot_projectile(Vector2(-1,0), projectile2)
 		
-		shoot_projectile(Vector2(0.75,0.75), projectile1)
-		shoot_projectile(Vector2(0.75,0.75), projectile2)
-		shoot_projectile(Vector2(0.75,-0.75), projectile1)
-		shoot_projectile(Vector2(0.75,-0.75), projectile2)
-		shoot_projectile(Vector2(-0.75,0.75), projectile1)
-		shoot_projectile(Vector2(-0.75,0.75), projectile2)
-		shoot_projectile(Vector2(-0.75,-0.75), projectile1)
-		shoot_projectile(Vector2(-0.75,-0.75), projectile2)
+		shoot_projectile(Vector2(1,1).normalized(), projectile1)
+		shoot_projectile(Vector2(1,1).normalized(), projectile2)
+		shoot_projectile(Vector2(1,-1).normalized(), projectile1)
+		shoot_projectile(Vector2(1,-1).normalized(), projectile2)
+		shoot_projectile(Vector2(-1,1).normalized(), projectile1)
+		shoot_projectile(Vector2(-1,1).normalized(), projectile2)
+		shoot_projectile(Vector2(-1,-1).normalized(), projectile1)
+		shoot_projectile(Vector2(-1,-1).normalized(), projectile2)
 		
 		frame = 0
 		play()
