@@ -3,7 +3,7 @@
 extends Node
 
 @export var ink_script := "res://Ink/test.json"
-@export var ink_vars := ["ryl", "elvyria", "btn1", "btn2", "btn3", "btn4"] # should be populated with the strings of Inky variable names
+@export var ink_vars := ["ryl", "elvyria", "btn1", "btn2", "btn3", "btn4", "dialog"] # should be populated with the strings of Inky variable names
 @export var next_scene : String
 
 @onready var _ink_player = InkPlayer.new()
@@ -16,10 +16,14 @@ extends Node
 @onready var panel = $Panel # holds everything; turn invisible when dialogue is finished
 @onready var dialog_box = $Panel/Dialog
 @onready var choices = $Panel/Choices # append buttons to this vertical box container
+@onready var speaker = $Panel/Speaker # icon chosen for dialog box
+var btn_type = [0,0,0,0] # icon chosen for each button
 
-var btn_type = [0,0,0,0]
+# icons for buttons and dialog box
+@onready var ryl_icon = load("res://Ink/Functionality/ryl_icon.png")
+@onready var elvyria_icon = load("res://Ink/Functionality/elvyria_icon.png")
 
-# TODO Add character sprites emotions to switch between here
+# Character emotions
 @onready var ryl = $Ryl
 @onready var ryl_neutral = load("res://Ink/Character Expressions/Ryl/Ryl_Neutral.png")
 @onready var ryl_happy = load("res://Ink/Character Expressions/Ryl/Ryl_Happy.png")
@@ -174,5 +178,14 @@ func _variable_changed(variable_name, new_value):
 		btn_type[2] = new_value
 	if (variable_name == "btn4"):
 		btn_type[3] = new_value
+		
+	if (variable_name == "dialog"):
+		if (new_value == 0):
+			speaker.texture = elvyria_icon
+		elif (new_value == 1):
+			speaker.texture = ryl_icon
+		else:
+			# no texture
+			speaker.texture = null
 	
 	print("Variable '%s' changed to: %s" % [variable_name, new_value])
