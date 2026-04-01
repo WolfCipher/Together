@@ -12,6 +12,7 @@ extends AnimatedSprite2D
 # there are 10 frames, so the total number of seconds recharge takes is 10*sync_recharge
 # TODO enable items to upgrade recharge rate
 @export var sync_recharge := 1.0
+var last_frame = sprite_frames.get_frame_count("default") # final frame
 
 # TODO determine what x and y projectiles should start at
 var min_x
@@ -25,12 +26,12 @@ var my_global_position
 func _ready() -> void:
 	center()
 	sprite_frames.set_animation_speed("default", sync_recharge) # frame rate
-	frame = 10 # start with full gauge
+	frame = last_frame # start with full gauge
 
 func _process(delta: float) -> void:
 	center() # stay between the players
 	
-	if (frame == 10):
+	if (frame == last_frame):
 		pause()
 	
 	# TODO make c'mon! sounds when only one player presses SHIFT
@@ -38,7 +39,7 @@ func _process(delta: float) -> void:
 	var in_sync = Input.is_action_pressed("e_sync") && Input.is_action_pressed("r_sync")
 	var nearby = player1.position.distance_squared_to(player2.position) <= sync_distance
 	
-	if in_sync && nearby && frame == 10:
+	if in_sync && nearby && frame >= 10: # 10th frame is full but not necessarily the final frame; don't use last_frame here
 		shoot_projectile(Vector2(0,1), projectile1)
 		shoot_projectile(Vector2(0,1), projectile2)
 		shoot_projectile(Vector2(0,-1), projectile1)
