@@ -12,7 +12,7 @@ extends AnimatedSprite2D
 # there are 10 frames, so the total number of seconds recharge takes is 10*sync_recharge
 # TODO enable items to upgrade recharge rate
 @export var sync_recharge := 1.0
-var last_frame = sprite_frames.get_frame_count("default") # final frame
+var last_frame = sprite_frames.get_frame_count("default") - 1 # final frame
 
 # TODO determine what x and y projectiles should start at
 var min_x
