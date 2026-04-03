@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="4_hhopj"]
 [ext_resource type="Texture2D" uid="uid://b1y3ckrnwajlu" path="res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png" id="6_4fq0e"]
 [ext_resource type="Texture2D" uid="uid://bty68oyjc7pxc" path="res://Ink/Character Expressions/Ryl/Ryl_Shocked.png" id="7_m4axn"]
+[ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="8_m4axn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cs0ko"]
 font = ExtResource("3_m4axn")
@@ -62,3 +63,5 @@ z_index = -10
 position = Vector2(500, 563)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("7_m4axn")
+
+[node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("8_m4axn")]

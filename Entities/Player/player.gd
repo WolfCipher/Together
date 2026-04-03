@@ -220,7 +220,8 @@ func _on_area_entered(area: Area2D) -> void:
 			
 			# wait 0.5 seconds before despawning
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file(game_over)
+			#get_tree().change_scene_to_file(game_over)
+			SceneCache.scene_change.emit(game_over)
 			#queue_free()
 	else:
 		if area.is_in_group("BoundaryLeft"):

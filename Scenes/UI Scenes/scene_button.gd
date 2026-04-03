@@ -22,7 +22,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if is_pressed() && !btn_click.playing:
 		btn_click.play()
-		get_tree().change_scene_to_file(next_scene)
+		#get_tree().change_scene_to_file(next_scene)
+		SceneCache.scene_change.emit(next_scene)
 	if is_hovered() && !hover_playing:
 		hover_playing = true
 		btn_hover.play()

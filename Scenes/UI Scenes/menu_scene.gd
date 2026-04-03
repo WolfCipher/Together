@@ -1,6 +1,5 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SceneCache.level1 = preload("res://Scenes/Levels/level1.tscn")

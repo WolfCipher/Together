@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="2_me15f"]
 [ext_resource type="Texture2D" uid="uid://de62n6bhl1cbp" path="res://Logos/TogetherTitle.png" id="2_tfe55"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_tfe55"]
+[ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="6_hlaro"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -97,7 +98,7 @@ theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 200
 text = "Together"
 
-[node name="Button" type="Button" parent="." unique_id=300260568]
+[node name="Start" type="Button" parent="." unique_id=300260568]
 z_index = 1
 offset_left = 1276.0
 offset_top = 857.0
@@ -114,7 +115,7 @@ text = "Start Game"
 script = ExtResource("2_me15f")
 next_scene = "res://Cutscenes/IntroductionCutscene.tscn"
 
-[node name="Button2" type="Button" parent="." unique_id=2120987843]
+[node name="Instructions" type="Button" parent="." unique_id=2120987843]
 z_index = 1
 offset_left = 1276.0
 offset_top = 967.0
@@ -130,3 +131,5 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
 text = "Instructions"
 script = ExtResource("2_me15f")
 next_scene = "res://Scenes/UI Scenes/InstructionsScene.tscn"
+
+[node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("6_hlaro")]

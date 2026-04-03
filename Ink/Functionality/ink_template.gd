@@ -118,7 +118,8 @@ func _continue_story():
 	# This code runs when the story reaches its end.
 	else:
 		panel.visible = false
-		get_tree().change_scene_to_file(next_scene)
+		#get_tree().change_scene_to_file(next_scene)
+		SceneCache.scene_change.emit(next_scene)
 	
 	print("Continue story took:", Time.get_ticks_msec() - t, "ms")
 

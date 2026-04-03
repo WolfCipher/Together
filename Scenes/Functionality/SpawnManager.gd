@@ -8,7 +8,7 @@ extends Node
 @export var prefab_d: PackedScene # Shadow Elvyria
 @export var prefab_e: PackedScene # Shadow Ryl
 @export var spawn_positions: Array[Vector2] = [Vector2(200, 0), Vector2(400,0), Vector2(600,0), Vector2(800,0)] # predefined locations that enemies can spawn at
-@export var next_scene : PackedScene
+@export var next_scene : String
 
 # each outer element represents the wave
 # each inner element represents how many enemies of a particular type (a, b, c, etc.) are spawned in a wave
@@ -45,8 +45,9 @@ func _process(_delta: float) -> void:
 		# TODO handle finishing level
 		if waveNum >= waves.size():
 			if next_scene:
-				await get_tree().create_timer(1.0).timeout # wait 1.0 seconds before changing scene
-				get_tree().change_scene_to_packed(next_scene)
+				await get_tree().create_timer(1.0).timeout # wait 0.2 seconds before changing scene
+				#get_tree().change_scene_to_file(next_scene)
+				SceneCache.scene_change.emit(next_scene)
 			return
 		else:
 			target1.xp += 1
