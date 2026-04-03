@@ -38,8 +38,6 @@ const elvyria_concern = preload("res://Ink/Character Expressions/Elvyria/Elvyria
 const elvyria_shocked = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png")
 
 func _ready():
-	print("Scene ready at:", Time.get_ticks_msec())
-	var t := Time.get_ticks_msec()
 	
 	# Adds the player to the tree.
 	add_child(_ink_player)
@@ -57,7 +55,6 @@ func _ready():
 	# continue the story.
 	
 	_ink_player.create_story()
-	print("Ink story load:", Time.get_ticks_msec() - t, "ms")
 
 
 # ############################################################################ #
@@ -79,13 +76,11 @@ func _story_loaded(successfully: bool):
 # ############################################################################ #
 
 func _continue_story():
-	var t := Time.get_ticks_msec()
 
 	# the text placed in the label (dialog box)
 	if _ink_player.can_continue:
 		var text = _ink_player.continue_story()
 		dialog_box.set_deferred("text", text)
-		print("Text update took:", Time.get_ticks_msec() - t, "ms")
 	
 	# button choices
 	if _ink_player.has_choices:
@@ -121,7 +116,6 @@ func _continue_story():
 		#get_tree().change_scene_to_file(next_scene)
 		SceneCache.scene_change.emit(next_scene)
 	
-	print("Continue story took:", Time.get_ticks_msec() - t, "ms")
 
 
 # Handles getting index from button so choice can be selected
