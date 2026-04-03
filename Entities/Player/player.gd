@@ -36,6 +36,8 @@ var sync_cooldown := 0.0
 
 var xp = 0; # updated in spawn manager after each wave of enemies
 
+var god_mode = false; # makes player invincible when shift + quote tilde pressed
+
 # false if outside camera boundaries
 var can_move_up = true
 var can_move_down = true
@@ -73,6 +75,9 @@ func _process(delta: float) -> void:
 
 	# ***** ANIMATIONS *****
 	animate(dir)
+	
+	# ***** GOD MODE *****
+	god()
 
 # ******************* ATTACKS **********************
 func recharge(delta):
@@ -159,6 +164,11 @@ func get_facing_vector() -> Vector2:
 		2: return Vector2(1,0)
 		3: return Vector2(-1,0)
 	return Vector2.ZERO
+	
+func god():
+	if Input.is_action_just_pressed('dev_key'):
+		god_mode = not god_mode
+		print("God Mode Toggled!")
 
 # ***************** ANIMATIONS ********************
 func animate(dir) -> void:
@@ -211,7 +221,7 @@ func damage_blink():
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Enemy Attack"):
+	if area.is_in_group("Enemy Attack") and god_mode == false:
 		health = health - area.damage
 		damage_blink()
 		if health < 1:
