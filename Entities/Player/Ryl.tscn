@@ -339,7 +339,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0bce"]
 size = Vector2(54, 84)
 
-[node name="Ryl" type="Area2D" unique_id=1671058189]
+[node name="Ryl" type="Area2D" unique_id=1671058189 groups=["Ryl"]]
 script = ExtResource("1_wlrob")
 up = "r_up"
 down = "r_down"
