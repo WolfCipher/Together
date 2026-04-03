@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dpcocehy7udm3" path="res://Scenes/shadowElvyria.tscn" id="9_syfhk"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_m4h5f"]
 [ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health.tscn" id="11_d2e0u"]
+[ext_resource type="PackedScene" uid="uid://g6l4hl6qox64" path="res://Ink/Scenes/ink_scene.tscn" id="11_syfhk"]
 [ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health.tscn" id="12_f8if4"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_60msr"]
 [ext_resource type="PackedScene" uid="uid://cycp817xxkhca" path="res://Scenes/World Building/world_small.tscn" id="14_4xs7e"]
@@ -42,7 +43,7 @@ prefab_b = ExtResource("7_ay16s")
 prefab_c = ExtResource("8_bvs0b")
 prefab_d = ExtResource("9_syfhk")
 prefab_e = ExtResource("9_5y6uu")
-next_scene = "res://Ink/Scenes/ink_scene.tscn"
+next_scene = ExtResource("11_syfhk")
 waves = [[0, 1, 0, 0, 0], [0, 2, 0, 0, 0], [1, 1, 0, 0, 0], [2, 0, 0, 0, 0], [2, 2, 0, 0, 0]]
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")

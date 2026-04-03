@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2pf1jf4yekyt"]
 
 [ext_resource type="Texture2D" uid="uid://i2hh47upe0cf" path="res://Entities/SceneArt/menuScreen.png" id="1_2cejg"]
+[ext_resource type="Script" uid="uid://bir16hfrrr82o" path="res://Scenes/UI Scenes/menu_scene.gd" id="1_gbywc"]
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="2_me15f"]
 [ext_resource type="Texture2D" uid="uid://de62n6bhl1cbp" path="res://Logos/TogetherTitle.png" id="2_tfe55"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_tfe55"]
@@ -66,6 +67,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="MenuScene" type="Node2D" unique_id=1385909618]
+script = ExtResource("1_gbywc")
 
 [node name="Image" type="Sprite2D" parent="." unique_id=223955600]
 position = Vector2(960.00006, 540)

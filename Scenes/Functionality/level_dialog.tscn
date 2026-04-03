@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://w3x2neih6db7"]
+
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="1_asbn3"]
+[ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_a6ahv"]
+
+[node name="Dialog" type="Node" unique_id=1820614238]
+
+[node name="Text" type="Label" parent="." unique_id=215716902]
+z_index = 10
+offset_left = 81.0
+offset_top = 12.0
+offset_right = 569.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("1_asbn3")
+theme_override_font_sizes/font_size = 25
+text = "afdsf;lkjsafd"
+
+[node name="Panel" type="Panel" parent="." unique_id=1682149292]
+offset_right = 566.0
+offset_bottom = 255.0
+scale = Vector2(1, 0.5)
+theme_override_styles/panel = ExtResource("2_a6ahv")
