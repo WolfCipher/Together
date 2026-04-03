@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btx24qpi3yp68"]
 
 [ext_resource type="Script" uid="uid://dnlswp44gx4v7" path="res://Cutscenes/cutscene.gd" id="1_5g6uw"]
+[ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="2_yxb3n"]
 
 [sub_resource type="Animation" id="Animation_5g6uw"]
 length = 0.001
@@ -62,5 +63,7 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=162027993]
 libraries/ = SubResource("AnimationLibrary_236yx")
+
+[node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("2_yxb3n")]
 
 [connection signal="timeout" from="HideTimer" to="." method="_on_HideTimer_timeout"]
