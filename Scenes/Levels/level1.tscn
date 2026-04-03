@@ -67,7 +67,6 @@ offset_bottom = -466.0
 character = NodePath("../../Ryl")
 
 [node name="PauseOverlay" parent="Camera_Centered" unique_id=74393980 instance=ExtResource("13_60msr")]
-z_index = 100
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
