@@ -40,25 +40,28 @@ func _process(_delta: float) -> void:
 	var nearby = player1.position.distance_squared_to(player2.position) <= sync_distance
 	
 	if in_sync && nearby && frame >= 10: # 10th frame is full but not necessarily the final frame; don't use last_frame here
-		shoot_projectile(Vector2(0,1), projectile1)
-		shoot_projectile(Vector2(0,1), projectile2)
-		shoot_projectile(Vector2(0,-1), projectile1)
-		shoot_projectile(Vector2(0,-1), projectile2)
-		shoot_projectile(Vector2(1,0), projectile1)
-		shoot_projectile(Vector2(1,0), projectile2)
-		shoot_projectile(Vector2(-1,0), projectile1)
-		shoot_projectile(Vector2(-1,0), projectile2)
-		
-		shoot_projectile(Vector2(1,1).normalized(), projectile1)
-		shoot_projectile(Vector2(1,1).normalized(), projectile2)
-		shoot_projectile(Vector2(1,-1).normalized(), projectile1)
-		shoot_projectile(Vector2(1,-1).normalized(), projectile2)
-		shoot_projectile(Vector2(-1,1).normalized(), projectile1)
-		shoot_projectile(Vector2(-1,1).normalized(), projectile2)
-		shoot_projectile(Vector2(-1,-1).normalized(), projectile1)
-		shoot_projectile(Vector2(-1,-1).normalized(), projectile2)
-		
 		frame = 0
+		for i in range(4):
+			await get_tree().create_timer(.1).timeout
+
+			shoot_projectile(Vector2(0,1), projectile1)
+			shoot_projectile(Vector2(0,1), projectile2)
+			shoot_projectile(Vector2(0,-1), projectile1)
+			shoot_projectile(Vector2(0,-1), projectile2)
+			shoot_projectile(Vector2(1,0), projectile1)
+			shoot_projectile(Vector2(1,0), projectile2)
+			shoot_projectile(Vector2(-1,0), projectile1)
+			shoot_projectile(Vector2(-1,0), projectile2)
+		
+			shoot_projectile(Vector2(1,1).normalized(), projectile1)
+			shoot_projectile(Vector2(1,1).normalized(), projectile2)
+			shoot_projectile(Vector2(1,-1).normalized(), projectile1)
+			shoot_projectile(Vector2(1,-1).normalized(), projectile2)
+			shoot_projectile(Vector2(-1,1).normalized(), projectile1)
+			shoot_projectile(Vector2(-1,1).normalized(), projectile2)
+			shoot_projectile(Vector2(-1,-1).normalized(), projectile1)
+			shoot_projectile(Vector2(-1,-1).normalized(), projectile2)
+			
 		play()
 
 # Spawn projectiles
@@ -72,6 +75,7 @@ func shoot_projectile(dir, projectile_scene) -> void:
 	
 	# spawn
 	get_tree().current_scene.add_child(projectile)
+
 
 # stay between the characters
 func center() -> void:

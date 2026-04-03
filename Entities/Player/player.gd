@@ -189,7 +189,7 @@ func shield() -> void:
 		invulnerable = true
 		await get_tree().create_timer(1.6).timeout
 		speed = 400
-		tween.tween_property(sprite, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.1)
+		tween.kill()
 		invulnerable = false
 
 # Gives the direction the player is facing
