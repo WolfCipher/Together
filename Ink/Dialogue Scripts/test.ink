@@ -3,8 +3,8 @@
 // 2: determined
 // 3: concerned
 // 4: shocked
-VAR ryl = 0
-VAR elvyria = 0
+VAR ryl = 4
+VAR elvyria = 4
 
 // 0: elvyria responds
 // 1: ryl responds
@@ -16,11 +16,8 @@ VAR btn4 = 0
 
 // 0: elvyria speaks
 // 1: ryl speaks
-VAR dialog = 0
-
-~ryl = 4
-~elvyria = 4
-~dialog = 1
+// anything else: blank icon
+VAR dialog = 1
 
 
 What were those things?

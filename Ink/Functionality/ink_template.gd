@@ -7,11 +7,11 @@ extends Node
 @export var next_scene : String
 
 @onready var _ink_player = InkPlayer.new()
-@onready var choice_btn
-@onready var generic_btn = load("res://Ink/Functionality/dialog_button.tscn")
-@onready var elvyria_btn = load("res://Ink/Functionality/elvyria_button.tscn")
-@onready var ryl_btn = load("res://Ink/Functionality/ryl_button.tscn")
-@onready var _btns = []
+var choice_btn
+const generic_btn = preload("res://Ink/Functionality/dialog_button.tscn")
+const elvyria_btn = preload("res://Ink/Functionality/elvyria_button.tscn")
+const ryl_btn = preload("res://Ink/Functionality/ryl_button.tscn")
+var _btns = []
 
 @onready var panel = $Panel # holds everything; turn invisible when dialogue is finished
 @onready var dialog_box = $Panel/Dialog
@@ -20,24 +20,27 @@ extends Node
 var btn_type = [0,0,0,0] # icon chosen for each button
 
 # icons for buttons and dialog box
-@onready var ryl_icon = load("res://Ink/Functionality/ryl_icon.png")
-@onready var elvyria_icon = load("res://Ink/Functionality/elvyria_icon.png")
+const ryl_icon = preload("res://Ink/Functionality/ryl_icon.png")
+const elvyria_icon = preload("res://Ink/Functionality/elvyria_icon.png")
 
 # Character emotions
 @onready var ryl = $Ryl
-@onready var ryl_neutral = load("res://Ink/Character Expressions/Ryl/Ryl_Neutral.png")
-@onready var ryl_happy = load("res://Ink/Character Expressions/Ryl/Ryl_Happy.png")
-@onready var ryl_determined = load("res://Ink/Character Expressions/Ryl/Ryl_Determined.png")
-@onready var ryl_concern = load("res://Ink/Character Expressions/Ryl/Ryl_Concern.png")
-@onready var ryl_shocked = load("res://Ink/Character Expressions/Ryl/Ryl_Shocked.png")
+const ryl_neutral = preload("res://Ink/Character Expressions/Ryl/Ryl_Neutral.png")
+const ryl_happy = preload("res://Ink/Character Expressions/Ryl/Ryl_Happy.png")
+const ryl_determined = preload("res://Ink/Character Expressions/Ryl/Ryl_Determined.png")
+const ryl_concern = preload("res://Ink/Character Expressions/Ryl/Ryl_Concern.png")
+const ryl_shocked = preload("res://Ink/Character Expressions/Ryl/Ryl_Shocked.png")
 @onready var elvyria = $Elvyria
-@onready var elvyria_neutral = load("res://Ink/Character Expressions/Elvyria/Elvyria_Neutral.png")
-@onready var elvyria_happy = load("res://Ink/Character Expressions/Elvyria/Elvyria_Happy.png")
-@onready var elvyria_determined = load("res://Ink/Character Expressions/Elvyria/Elvyria_Determined.png")
-@onready var elvyria_concern = load("res://Ink/Character Expressions/Elvyria/Elvyria_Concern.png")
-@onready var elvyria_shocked = load("res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png")
+const elvyria_neutral = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Neutral.png")
+const elvyria_happy = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Happy.png")
+const elvyria_determined = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Determined.png")
+const elvyria_concern = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Concern.png")
+const elvyria_shocked = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png")
 
 func _ready():
+	print("Scene ready at:", Time.get_ticks_msec())
+	var t := Time.get_ticks_msec()
+	
 	# Adds the player to the tree.
 	add_child(_ink_player)
 
@@ -52,7 +55,9 @@ func _ready():
 
 	# Creates the story. 'loaded' will be emitted once Ink is ready
 	# continue the story.
+	
 	_ink_player.create_story()
+	print("Ink story load:", Time.get_ticks_msec() - t, "ms")
 
 
 # ############################################################################ #
@@ -66,7 +71,7 @@ func _story_loaded(successfully: bool):
 	_observe_variables()
 	# _bind_externals()
 
-	_continue_story()
+	call_deferred("_continue_story")
 
 
 # ############################################################################ #
@@ -74,14 +79,17 @@ func _story_loaded(successfully: bool):
 # ############################################################################ #
 
 func _continue_story():
+	var t := Time.get_ticks_msec()
+
 	# the text placed in the label (dialog box)
-	while _ink_player.can_continue:
+	if _ink_player.can_continue:
 		var text = _ink_player.continue_story()
-		
-		dialog_box.text = text
+		dialog_box.set_deferred("text", text)
+		print("Text update took:", Time.get_ticks_msec() - t, "ms")
 	
 	# button choices
 	if _ink_player.has_choices:
+		
 		# 'current_choices' contains a list of the choices, as strings.
 		var _index = 0
 		for choice in _ink_player.current_choices:
@@ -105,11 +113,16 @@ func _continue_story():
 			btn.pressed.connect(self._index_choose.bind(btn))
 			
 			_index += 1
+		
 			
 	# This code runs when the story reaches its end.
 	else:
 		panel.visible = false
-		get_tree().change_scene_to_file(next_scene)
+		#get_tree().change_scene_to_file(next_scene)
+		SceneCache.scene_change.emit(next_scene)
+	
+	print("Continue story took:", Time.get_ticks_msec() - t, "ms")
+
 
 # Handles getting index from button so choice can be selected
 func _index_choose(button):
@@ -146,46 +159,33 @@ func _observe_variables():
 #
 func _variable_changed(variable_name, new_value):
 	
-	if (variable_name == "ryl"):
-		if (new_value == 0):
-			ryl.texture = ryl_neutral
-		elif (new_value == 1):
-			ryl.texture = ryl_happy
-		elif (new_value == 2):
-			ryl.texture = ryl_determined
-		elif (new_value == 3):
-			ryl.texture = ryl_concern
-		elif (new_value == 4):
-			ryl.texture = ryl_shocked
-	
-	if (variable_name == "elvyria"):
-		if (new_value == 0):
-			elvyria.texture = elvyria_neutral
-		elif (new_value == 1):
-			elvyria.texture = elvyria_happy
-		elif (new_value == 2):
-			elvyria.texture = elvyria_determined
-		elif (new_value == 3):
-			elvyria.texture = elvyria_concern
-		elif (new_value == 4):
-			elvyria.texture = elvyria_shocked
-	
-	if (variable_name == "btn1"):
-		btn_type[0] = new_value
-	if (variable_name == "btn2"):
-		btn_type[1] = new_value
-	if (variable_name == "btn3"):
-		btn_type[2] = new_value
-	if (variable_name == "btn4"):
-		btn_type[3] = new_value
-		
-	if (variable_name == "dialog"):
-		if (new_value == 0):
-			speaker.texture = elvyria_icon
-		elif (new_value == 1):
-			speaker.texture = ryl_icon
-		else:
-			# no texture
-			speaker.texture = null
+	match variable_name:
+		"ryl":
+			match new_value:
+				0: ryl.set_deferred("texture", ryl_neutral)
+				1: ryl.set_deferred("texture", ryl_happy)
+				2: ryl.set_deferred("texture", ryl_determined)
+				3: ryl.set_deferred("texture", ryl_concern)
+				4: ryl.set_deferred("texture", ryl_shocked)
+		"elvyria":
+			match new_value:
+				0: elvyria.set_deferred("texture", elvyria_neutral)
+				1: elvyria.set_deferred("texture", elvyria_happy)
+				2: elvyria.set_deferred("texture", elvyria_determined)
+				3: elvyria.set_deferred("texture", elvyria_concern)
+				4: elvyria.set_deferred("texture", elvyria_shocked)
+		"btn1":
+			btn_type[0] = new_value
+		"btn2":
+			btn_type[1] = new_value
+		"btn3":
+			btn_type[2] = new_value
+		"btn4":
+			btn_type[3] = new_value
+		"dialog":
+			match new_value:
+				0: speaker.set_deferred("texture", elvyria_icon)
+				1: speaker.set_deferred("texture", ryl_icon)
+				_: speaker.set_deferred("texture", null)
 	
 	print("Variable '%s' changed to: %s" % [variable_name, new_value])

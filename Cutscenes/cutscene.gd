@@ -54,6 +54,7 @@ func _onFinish():
 	
 func _endCutscene():
 	if next_scene:
-		get_tree().change_scene_to_file(next_scene)
+		#get_tree().change_scene_to_file(next_scene)
+		SceneCache.scene_change.emit(next_scene)
 	else:
 		push_warning("No next_scene assigned!")

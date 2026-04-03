@@ -45,8 +45,9 @@ func _process(_delta: float) -> void:
 		# TODO handle finishing level
 		if waveNum >= waves.size():
 			if next_scene:
-				await get_tree().create_timer(1.0).timeout # wait 1.0 seconds before changing scene
-				get_tree().change_scene_to_file(next_scene)
+				await get_tree().create_timer(1.0).timeout # wait 0.2 seconds before changing scene
+				#get_tree().change_scene_to_file(next_scene)
+				SceneCache.scene_change.emit(next_scene)
 			return
 		else:
 			target1.xp += 1
