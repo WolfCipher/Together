@@ -339,7 +339,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j0bce"]
 size = Vector2(54, 84)
 
-[node name="Elvyria" type="Area2D" unique_id=1671058189]
+[node name="Elvyria" type="Area2D" unique_id=1671058189 groups=["Elvyria"]]
 script = ExtResource("1_ff1tl")
 projectile_scene = ExtResource("2_wb426")
 melee_scene = ExtResource("3_12riv")
