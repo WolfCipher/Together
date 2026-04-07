@@ -6,7 +6,7 @@
 size = Vector2(1016, 3539)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm3os"]
-size = Vector2(3690, 869)
+size = Vector2(3690, 811)
 
 [node name="World" type="Node2D" unique_id=519110492]
 y_sort_enabled = true
@@ -24,6 +24,7 @@ position = Vector2(403, 517.5)
 shape = SubResource("RectangleShape2D_tfdjb")
 
 [node name="TreeLeft" type="TileMapLayer" parent="LeftBoundary" unique_id=1394172449]
+z_index = 5
 y_sort_enabled = true
 position = Vector2(4020, 7400)
 scale = Vector2(4, 4)
@@ -38,6 +39,7 @@ position = Vector2(-288, 517)
 shape = SubResource("RectangleShape2D_tfdjb")
 
 [node name="TreeRight" type="TileMapLayer" parent="RightBoundary" unique_id=1941401502]
+z_index = 5
 y_sort_enabled = true
 position = Vector2(-10870, 7400)
 scale = Vector2(4, 4)
@@ -48,7 +50,7 @@ tile_set = ExtResource("1_tfdjb")
 position = Vector2(0, -800)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary" unique_id=1322558011]
-position = Vector2(788, 339.5)
+position = Vector2(788, 310.5)
 shape = SubResource("RectangleShape2D_lm3os")
 
 [node name="TreeTop" type="TileMapLayer" parent="TopBoundary" unique_id=586569515]
@@ -62,7 +64,7 @@ tile_set = ExtResource("1_tfdjb")
 position = Vector2(0, 1900)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary" unique_id=1250788508]
-position = Vector2(788, -391)
+position = Vector2(788, -430)
 shape = SubResource("RectangleShape2D_lm3os")
 
 [node name="TreeBottom" type="TileMapLayer" parent="BottomBoundary" unique_id=1984600524]
