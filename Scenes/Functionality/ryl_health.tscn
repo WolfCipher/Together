@@ -27,6 +27,7 @@ corner_radius_bottom_left = 6
 corner_detail = 6
 
 [node name="RylHealth" type="ProgressBar" unique_id=199826155]
+z_index = 200
 offset_left = 967.0
 offset_top = 15.999998
 offset_right = 1273.3064

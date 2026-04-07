@@ -46,11 +46,15 @@ var god_mode = false; # makes player invincible when shift + quote tilde pressed
 var invulnerable = false; # makes player invulnerable for game play
 
 
-# false if outside camera boundaries
+# can_move false if hits at least one boundary in the corresponding direction
 var can_move_up = true
 var can_move_down = true
 var can_move_right = true
 var can_move_left = true
+var num_left_boundaries = 0
+var num_right_boundaries = 0
+var num_bottom_boundaries = 0
+var num_top_boundaries = 0
 
 func _ready() -> void:
 	play()
@@ -273,19 +277,31 @@ func _on_area_entered(area: Area2D) -> void:
 	else:
 		if area.is_in_group("BoundaryLeft"):
 			can_move_left = false
+			num_left_boundaries += 1
 		elif area.is_in_group("BoundaryRight"):
 			can_move_right = false
+			num_right_boundaries += 1
 		elif area.is_in_group("BoundaryTop"):
 			can_move_up = false
+			num_top_boundaries += 1
 		elif area.is_in_group("BoundaryBottom"):
 			can_move_down = false
+			num_bottom_boundaries += 1
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.is_in_group("BoundaryLeft"):
-		can_move_left = true
+		num_left_boundaries -= 1
+		if (num_left_boundaries == 0):
+			can_move_left = true
 	elif area.is_in_group("BoundaryRight"):
-		can_move_right = true
+		num_right_boundaries -= 1
+		if (num_right_boundaries == 0):
+			can_move_right = true
 	elif area.is_in_group("BoundaryTop"):
-		can_move_up = true
+		num_top_boundaries -= 1
+		if (num_top_boundaries == 0):
+			can_move_up = true
 	elif area.is_in_group("BoundaryBottom"):
-		can_move_down = true
+		num_bottom_boundaries -= 1
+		if (num_bottom_boundaries == 0):
+			can_move_down = true

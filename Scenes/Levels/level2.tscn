@@ -19,9 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://b3p0be0qdmx5n" path="res://Scenes/World Building/world_open.tscn" id="17_hpjhc"]
 [ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="17_vt8on"]
 [ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="18_56d2c"]
+[ext_resource type="PackedScene" uid="uid://ygujoeu2qodx" path="res://Scenes/World Building/trees.tscn" id="24_bngq1"]
 
 [node name="Main" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
+metadata/_edit_horizontal_guides_ = [-1552.0]
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_hpjhc")]
 position = Vector2(516, 505)
@@ -90,3 +92,23 @@ tile_set = ExtResource("15_i6j4t")
 z_index = -10
 tile_map_data = PackedByteArray("AAAyABcAAAAIABoAAABUAAgAAAAIABoAAAAWACkAAAAIABoAAAAVAAQAAAAIABoAAADu/wUAAAAIABoAAADO/y0AAAAIABoAAADV/9X/AAAIABoAAACmAEQAAAAIABoAAAClAAgAAAAIABoAAAA6ALn/AAAIABoAAADNANT/AAAIABoAAAB3ABUAAAAUABQAAABUAEIAAAAUABQAAAAIABgAAAAUABQAAADk/0MAAAAUABQAAADa/xIAAAAUABQAAAAOANT/AAAUABQAAABbAN3/AAAUABQAAAB6ALj/AAAUABQAAAAHAU0AAAAUABQAAABQAR0AAAAUABQAAAAhAXb/AAAUABQAAABZAbr/AAAUABQAAADLAZz/AAAUABQAAAAoAgkAAAAUABQAAADpAUUAAAAUABQAAAArAmIAAAAUABQAAACWAe4AAAAUABQAAAAnApIBAAAUABQAAAC9AdABAAAUABQAAABLAWMBAAAUABQAAAC5AJYBAAAUABQAAACUABcBAAAUABQAAAC4/24BAAAUABQAAADo/5AAAAAUABQAAADMAKUAAAAUABQAAACX/6X/AAAUABQAAAB2//cAAAAIABoAAACA/6kBAAAIABoAAACCAH8BAAAIABoAAACCASsBAAAIABoAAAC8AFsAAAAIABoAAABJAqL/AAAIABoAAADhAIn/AAAIABoAAACD/8T/AAAIABoAAABQ/6j/AAAgABQAAABBAC4AAAAgABQAAACKADAAAAAgABQAAAAZAGsAAAAgABQAAACq/2UAAAAgABQAAABl/ywAAAAgABQAAAAVAUwAAAAgABQAAACkAd0AAAAgABQAAAA8AkIAAAAgABQAAADOAM0AAAAgABQAAACPAXMBAAAgABQAAABpAH0BAAAgABQAAACR/14BAAAgABQAAABXAu8BAAAgABQAAABXAu4BAAAgABQAAABXAu0BAAAgABQAAADOAOABAAAgABQAAABj/80BAAAgABQAAABoAIQAAAAOABoAAAANALwAAAAOABoAAAB5ANIAAAAOABoAAABPAbYAAAAOABoAAAA=")
 tile_set = ExtResource("18_56d2c")
+
+[node name="Trees" parent="." unique_id=1722047987 instance=ExtResource("24_bngq1")]
+
+[node name="Trees2" parent="." unique_id=2094075003 instance=ExtResource("24_bngq1")]
+position = Vector2(0, 1020)
+
+[node name="Trees3" parent="." unique_id=1415190276 instance=ExtResource("24_bngq1")]
+position = Vector2(2566, 1020)
+
+[node name="Trees4" parent="." unique_id=2094670658 instance=ExtResource("24_bngq1")]
+position = Vector2(0, 2040)
+
+[node name="Trees5" parent="." unique_id=963663525 instance=ExtResource("24_bngq1")]
+position = Vector2(2570, 2040)
+
+[node name="Trees6" parent="." unique_id=1359137966 instance=ExtResource("24_bngq1")]
+position = Vector2(1024, 2167)
+
+[node name="Trees7" parent="." unique_id=1830667615 instance=ExtResource("24_bngq1")]
+position = Vector2(2049, 2168)
