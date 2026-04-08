@@ -387,6 +387,8 @@ size = Vector2(66, 73)
 
 [node name="Enemy" type="Area2D" unique_id=1136344332 groups=["AoE_Enemy", "Enemy"]]
 script = ExtResource("1_3sgmk")
+mustBeStillToAttack = false
+attackDistance = 50
 AoE_scene = ExtResource("2_8c3m6")
 
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1432958030]
