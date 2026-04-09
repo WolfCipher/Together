@@ -20,6 +20,7 @@ var health := max_health
 @export var target1: Node2D
 @export var target2: Node2D
 
+@export var mustBeStillToAttack = true # false for AoE enemy that leaves behind harmful magic
 @export var attackDistance := 300 # distance that the enemy needs to attack
 @export var attackFrequency := 1 # how frequent the attacks are
 var attack_cooldown := 0.0
@@ -62,50 +63,53 @@ func _process(delta: float) -> void:
 		var align_dist = 40 # how far off from exactly matched a axis position can be and still hit
 		var vert_aligned = abs(global_position.y - target_pos.y) <= align_dist
 		var horiz_aligned = abs(global_position.x - target_pos.x) <= align_dist
+		var continue_moving = too_far || (!vert_aligned && !horiz_aligned)
 		
-		if too_far || (!vert_aligned && !horiz_aligned):
+		if continue_moving:
 			global_position = global_position.move_toward(target_pos, speed*delta)
-		else:
+		
+		# HANDLE ANIMATIONS
+		# Determine the direction and handle animations accordingly
+		var dir = (target_pos - global_position).normalized()
+		animate(dir)
+		
+		# note: attack after handling animation to ensure faceDir is updated
+		if (!continue_moving) || (!mustBeStillToAttack):
 			if attack_cooldown <= 0:
 				attack()
 				attack_cooldown = attackFrequency
-		
-		# Determine the direction and handle animations accordingly
-		var dir = (target_pos - global_position).normalized()
-
-		# Handle animations
-		
-		if dir == Vector2.ZERO:
-			
-			match faceDir:
-				0: animation = "idle_up"
-				1: animation = "idle_down"
-				2: animation = "idle_right"
-				3: animation = "idle_left"
-			play()
-			return
-
-		# Determine animation based on direction
-		if abs(dir.y) > abs(dir.x):
-			if dir.y > 0:
-				animation = "walk_down"
-				faceDir = 1
-			else:
-				animation = "walk_up"
-				faceDir = 0
-		else:
-			if dir.x > 0:
-				animation = "walk_right"
-				faceDir = 2
-			else:
-				animation = "walk_left"
-				faceDir = 3
-
-		play()
 
 func play() -> void:
 	sprite.animation = animation
 	sprite.play()
+
+func animate(dir) -> void:
+	if dir == Vector2.ZERO:
+		match faceDir:
+			0: animation = "idle_up"
+			1: animation = "idle_down"
+			2: animation = "idle_right"
+			3: animation = "idle_left"
+		play()
+		return
+
+	# Determine animation based on direction
+	if abs(dir.y) > abs(dir.x):
+		if dir.y > 0:
+			animation = "walk_down"
+			faceDir = 1
+		else:
+			animation = "walk_up"
+			faceDir = 0
+	else:
+		if dir.x > 0:
+			animation = "walk_right"
+			faceDir = 2
+		else:
+			animation = "walk_left"
+			faceDir = 3
+
+	play()
 
 # damage
 func _on_area_entered(area: Area2D) -> void:

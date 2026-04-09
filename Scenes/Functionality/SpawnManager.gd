@@ -7,7 +7,7 @@ extends Node
 @export var prefab_c: PackedScene # Contact
 @export var prefab_d: PackedScene # Shadow Elvyria
 @export var prefab_e: PackedScene # Shadow Ryl
-@export var spawn_positions: Array[Vector2] = [Vector2(200, 0), Vector2(400,0), Vector2(600,0), Vector2(800,0)] # predefined locations that enemies can spawn at
+@export var spawn_positions: Array[Vector2] = [Vector2(750, 500), Vector2(250,500), Vector2(300,200), Vector2(700,700)] # predefined locations that enemies can spawn at
 @export var next_scene : String
 
 # each outer element represents the wave
