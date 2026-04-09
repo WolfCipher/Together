@@ -17,7 +17,7 @@ func _ready() -> void:
 		# allows us to decode video file in Godot, which needs ffmpeg
 		var ffmpeg = ClassDB.instantiate("FFmpegVideoStream")
 		if ffmpeg:
-			ffmpeg.file = "res://Cutscenes/TogetherIntroduction.mp4"
+			ffmpeg.file = "res://Cutscenes/TogetherIntroductionCompressed.mp4"
 			$VideoStreamPlayer.stream = ffmpeg
 	
 	skipLabel.visible = false
