@@ -5,4 +5,4 @@ var dialog1 : PackedScene
 var level2 : PackedScene
 
 signal scene_change(next_scene)
-signal create_dialog(character, emotion, text)
+signal create_dialog(character, emotion, text, duration)

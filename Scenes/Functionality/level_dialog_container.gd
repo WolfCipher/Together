@@ -6,9 +6,9 @@ const dialog = preload("res://Scenes/Functionality/level_dialog.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SceneCache.create_dialog.connect(on_create_dialog)
-	SceneCache.create_dialog.emit("ryl", 0, "What's the Dullworld?")
-	await get_tree().create_timer(2).timeout
-	SceneCache.create_dialog.emit("elvyria", 0, "...This world.")
+	#SceneCache.create_dialog.emit("ryl", 0, "What's the Dullworld?")
+	#await get_tree().create_timer(2).timeout
+	#SceneCache.create_dialog.emit("elvyria", 0, "...This world.")
 	pass # Replace with function body.
 
 
@@ -19,7 +19,8 @@ func _process(delta: float) -> void:
 ## character: String for animation name, used to select which character
 ## emotion: index for frame, used to select the emotion of the character
 ## text: text stated by the character
-func on_create_dialog(character, emotion, text):
+## duration: how long it lasts on screen
+func on_create_dialog(character, emotion, text, duration=5):
 	var dialog_ctrl = dialog.instantiate()
 	var dialog_text = dialog_ctrl.get_node("Text")
 	var dialog_character = dialog_ctrl.get_node("Character")
@@ -32,7 +33,6 @@ func on_create_dialog(character, emotion, text):
 	# Control how long it stays on the screen
 	dialog_ctrl.modulate = Color(1,1,1,0)
 	var fade_speed = 0.25
-	var duration = 5
 	
 	var fade_in = create_tween()
 	choices.add_child(dialog_ctrl)

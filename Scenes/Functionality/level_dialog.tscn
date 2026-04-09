@@ -25,6 +25,7 @@ animations = [{
 }]
 
 [node name="Dialog" type="Control" unique_id=396070706]
+z_index = 100
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 3
 anchors_preset = 0
