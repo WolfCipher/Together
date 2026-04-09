@@ -194,16 +194,11 @@ func spawn_dash_particles():
 	dash_particles.texture = tex
 	#define dash particles
 	dash_particles.one_shot = true
-	dash_particles.initial_velocity_min = 1
-	dash_particles.initial_velocity_max = 1
 	dash_particles.scale_amount_min = 8
 	dash_particles.scale_amount_max = 8
 	dash_particles.gravity = Vector2(0,0)
 	dash_particles.lifetime = .3
-	dash_particles.spread = 180
-	dash_particles.emission_shape = CPUParticles2D.EMISSION_SHAPE_RECTANGLE
-	dash_particles.amount = 100
-	dash_particles.explosiveness = .2
+	dash_particles.amount = 20
 	dash_particles.z_index = 100 
 	dash_particles.z_as_relative = false
 	dash_particles.global_position = global_position
