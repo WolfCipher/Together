@@ -1,22 +1,56 @@
-[gd_scene format=3 uid="uid://w3x2neih6db7"]
+[gd_scene format=3 uid="uid://c0gv6i8fdy3fh"]
 
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="1_asbn3"]
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_a6ahv"]
+[ext_resource type="Texture2D" uid="uid://bl0im5kiwdwbr" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle0.png" id="3_pxeq0"]
+[ext_resource type="Texture2D" uid="uid://dflrrvrqby5mf" path="res://Entities/Player/Ryl/Ryl_Front_Idle/Ryl_Front_Idle0.png" id="4_fag1g"]
 
-[node name="Dialog" type="Node" unique_id=1820614238]
+[sub_resource type="SpriteFrames" id="SpriteFrames_n24qb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pxeq0")
+}],
+"loop": true,
+"name": &"elvyria",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fag1g")
+}],
+"loop": true,
+"name": &"ryl",
+"speed": 5.0
+}]
+
+[node name="Dialog" type="Control" unique_id=396070706]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Text" type="Label" parent="." unique_id=215716902]
 z_index = 10
+layout_mode = 0
 offset_left = 81.0
 offset_top = 12.0
 offset_right = 569.0
-offset_bottom = 248.0
+offset_bottom = 128.0
 theme_override_fonts/font = ExtResource("1_asbn3")
 theme_override_font_sizes/font_size = 25
-text = "afdsf;lkjsafd"
+text = "example text"
 
 [node name="Panel" type="Panel" parent="." unique_id=1682149292]
+layout_mode = 0
 offset_right = 566.0
 offset_bottom = 255.0
 scale = Vector2(1, 0.5)
+size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_a6ahv")
+
+[node name="Character" type="AnimatedSprite2D" parent="." unique_id=410552112]
+position = Vector2(43, 53)
+sprite_frames = SubResource("SpriteFrames_n24qb")
+animation = &"elvyria"
