@@ -150,6 +150,7 @@ func shoot_projectile() -> void:
 	var dir = get_facing_vector()
 	
 	# position slightly ahead of player and move in proper direction
+	projectile.speed = 700
 	projectile.global_position = global_position + dir * 30
 	projectile.direction = dir
 	projectile.rotation = dir.angle() + PI/2
