@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c4nwngki156nh"]
 
 [ext_resource type="Script" uid="uid://bl22njl6wd0fo" path="res://Scenes/Functionality/camera_centered.gd" id="1_kl0xq"]
+[ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="2_hkng2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt7se"]
 size = Vector2(1996, 60)
@@ -34,3 +35,6 @@ shape = SubResource("RectangleShape2D_kl0xq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoundLeft" unique_id=752980532]
 position = Vector2(-962, 6)
 shape = SubResource("RectangleShape2D_kl0xq")
+
+[node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("2_hkng2")]
+position = Vector2(-958, -537)

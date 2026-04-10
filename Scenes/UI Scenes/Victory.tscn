@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cimkgyert7ut2"]
 
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="1_617t6"]
+[ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="2_068ap"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_068ap"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -97,3 +98,5 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_2m417")
 text = "Main Menu"
 script = ExtResource("1_617t6")
 next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"
+
+[node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("2_068ap")]

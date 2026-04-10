@@ -6,6 +6,8 @@ extends Area2D
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var animation := sprite.animation
 @onready var walk: AudioStreamPlayer = $AudioStreamPlayer
+@onready var dash_particles := CPUParticles2D.new()
+@onready var tex := load("res://death_particle.png") 
 
 
 @export var speed = 400
@@ -19,9 +21,14 @@ var health := max_health
 @export var shoot_recharge := 0.5
 @export var melee_recharge := 0.0
 @export var sync_recharge := 10.0
+@export var dash_recharge := 2
+@export var shield_recharge := 10
+
 var shoot_cooldown := 0.0
 var melee_cooldown := 0.0
 var sync_cooldown := 0.0
+var dash_cooldown := 0.0
+var shield_cooldown := 0.0
 
 # character dependent variables
 @export var up := "e_up"
@@ -36,15 +43,27 @@ var sync_cooldown := 0.0
 
 var xp = 0; # updated in spawn manager after each wave of enemies
 
-# false if outside camera boundaries
+var god_mode = false; # makes player invincible when shift + quote tilde pressed
+
+var invulnerable = false; # makes player invulnerable for game play
+
+
+# can_move false if hits at least one boundary in the corresponding direction
 var can_move_up = true
 var can_move_down = true
 var can_move_right = true
 var can_move_left = true
+var num_left_boundaries = 0
+var num_right_boundaries = 0
+var num_bottom_boundaries = 0
+var num_top_boundaries = 0
 
 func _ready() -> void:
 	play()
 	add_to_group("Player")
+	add_child(dash_particles)
+	dash_particles.emitting = false
+
 
 func _process(delta: float) -> void:
 	recharge(delta)
@@ -70,15 +89,24 @@ func _process(delta: float) -> void:
 	# ***** ATTACKS *****
 	# MAY NEED COOLDOWN
 	attack()
-
+	
+	# ***** Abilities *****
+	dash()
+	shield()
+	
 	# ***** ANIMATIONS *****
 	animate(dir)
+	
+	# ***** GOD MODE *****
+	god()
 
 # ******************* ATTACKS **********************
 func recharge(delta):
 	shoot_cooldown -= delta
 	melee_cooldown -= delta
 	sync_cooldown -= delta
+	dash_cooldown -= delta
+	shield_cooldown -= delta
 
 # Handling key presses
 func attack() -> void:
@@ -149,6 +177,46 @@ func attack_melee() -> void:
 	
 	# spawn
 	get_tree().current_scene.add_child(melee)
+	
+# allows ryl to dash
+func dash() -> void:
+	if Input.is_action_just_pressed("r_dash") and is_in_group('Ryl') and dash_cooldown <= 0:
+		spawn_dash_particles()
+		dash_cooldown = dash_recharge
+		speed = 1000
+		print("dash!!!")
+		await get_tree().create_timer(0.25).timeout
+		speed = 400
+		
+#handles spawning and creation of dash particles
+func spawn_dash_particles():
+	# Load the image resource
+	dash_particles.texture = tex
+	#define dash particles
+	dash_particles.one_shot = true
+	dash_particles.scale_amount_min = 8
+	dash_particles.scale_amount_max = 8
+	dash_particles.gravity = Vector2(0,0)
+	dash_particles.lifetime = .3
+	dash_particles.amount = 20
+	dash_particles.z_index = 100 
+	dash_particles.z_as_relative = false
+	dash_particles.global_position = global_position
+	dash_particles.emitting = true
+		
+# allows Elvyria to shield
+func shield() -> void:
+	if Input.is_action_just_pressed("e_shield") and is_in_group('Elvyria') and shield_cooldown <= 0:
+		var tween = create_tween()
+		print("shield!!!")
+		shield_cooldown = shield_recharge
+		speed = 250
+		tween.tween_property(sprite, "modulate", Color(1.0, 1.0, 0.0, 1.0), 0.1)
+		invulnerable = true
+		await get_tree().create_timer(1.6).timeout
+		speed = 400
+		tween.kill()
+		invulnerable = false
 
 # Gives the direction the player is facing
 # Ensures attacks go in the correct direction
@@ -159,6 +227,11 @@ func get_facing_vector() -> Vector2:
 		2: return Vector2(1,0)
 		3: return Vector2(-1,0)
 	return Vector2.ZERO
+	
+func god():
+	if Input.is_action_just_pressed('dev_key'):
+		god_mode = not god_mode
+		print("God Mode Toggled!")
 
 # ***************** ANIMATIONS ********************
 func animate(dir) -> void:
@@ -211,30 +284,46 @@ func damage_blink():
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Enemy Attack"):
+	if area.is_in_group("Enemy Attack") and god_mode == false and invulnerable == false:
 		health = health - area.damage
 		damage_blink()
 		if health < 1:
+			# prevent retriggering _on_area_entered once all physics calculations finish, thereby avoiding null data.tree issues
+			$CollisionShape2D.set_deferred("disabled", true)
+			
 			# wait 0.5 seconds before despawning
 			await get_tree().create_timer(0.5).timeout
-			get_tree().change_scene_to_file(game_over)
+			#get_tree().change_scene_to_file(game_over)
+			SceneCache.scene_change.emit(game_over)
 			#queue_free()
 	else:
 		if area.is_in_group("BoundaryLeft"):
 			can_move_left = false
+			num_left_boundaries += 1
 		elif area.is_in_group("BoundaryRight"):
 			can_move_right = false
+			num_right_boundaries += 1
 		elif area.is_in_group("BoundaryTop"):
 			can_move_up = false
+			num_top_boundaries += 1
 		elif area.is_in_group("BoundaryBottom"):
 			can_move_down = false
+			num_bottom_boundaries += 1
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.is_in_group("BoundaryLeft"):
-		can_move_left = true
+		num_left_boundaries -= 1
+		if (num_left_boundaries == 0):
+			can_move_left = true
 	elif area.is_in_group("BoundaryRight"):
-		can_move_right = true
+		num_right_boundaries -= 1
+		if (num_right_boundaries == 0):
+			can_move_right = true
 	elif area.is_in_group("BoundaryTop"):
-		can_move_up = true
+		num_top_boundaries -= 1
+		if (num_top_boundaries == 0):
+			can_move_up = true
 	elif area.is_in_group("BoundaryBottom"):
-		can_move_down = true
+		num_bottom_boundaries -= 1
+		if (num_bottom_boundaries == 0):
+			can_move_down = true

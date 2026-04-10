@@ -52,7 +52,6 @@ animations = [{
 [node name="Blast" type="Area2D" unique_id=871792930 groups=["Enemy Attack"]]
 z_index = -1
 script = ExtResource("1_u8v38")
-speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249 groups=["Enemy Attack"]]
 position = Vector2(2, -2)

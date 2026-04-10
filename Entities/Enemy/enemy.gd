@@ -9,16 +9,25 @@ extends Area2D
 @export var speed = 200
 @export var max_health := 3
 var health := max_health
+
+@export var damage = 1 # contact damage; must be named this, since it is accessed by this name by the player
+@export var AoE_damage = 1
+@export var projectile_damage = 1
+@export var melee_damage = 5
+
 @export var faceDir = 0 # 0=up, 1=down, 2=right, 3=left
+
 @export var target1: Node2D
 @export var target2: Node2D
+
+@export var mustBeStillToAttack = true # false for AoE enemy that leaves behind harmful magic
 @export var attackDistance := 300 # distance that the enemy needs to attack
 @export var attackFrequency := 1 # how frequent the attacks are
+var attack_cooldown := 0.0
+
 @export var projectile_scene: PackedScene
 @export var AoE_scene: PackedScene
 @export var melee_scene: PackedScene
-
-var attack_cooldown := 0.0
 
 func _ready() -> void:
 	play()
@@ -54,50 +63,53 @@ func _process(delta: float) -> void:
 		var align_dist = 40 # how far off from exactly matched a axis position can be and still hit
 		var vert_aligned = abs(global_position.y - target_pos.y) <= align_dist
 		var horiz_aligned = abs(global_position.x - target_pos.x) <= align_dist
+		var continue_moving = too_far || (!vert_aligned && !horiz_aligned)
 		
-		if too_far || (!vert_aligned && !horiz_aligned):
+		if continue_moving:
 			global_position = global_position.move_toward(target_pos, speed*delta)
-		else:
+		
+		# HANDLE ANIMATIONS
+		# Determine the direction and handle animations accordingly
+		var dir = (target_pos - global_position).normalized()
+		animate(dir)
+		
+		# note: attack after handling animation to ensure faceDir is updated
+		if (!continue_moving) || (!mustBeStillToAttack):
 			if attack_cooldown <= 0:
 				attack()
 				attack_cooldown = attackFrequency
-		
-		# Determine the direction and handle animations accordingly
-		var dir = (target_pos - global_position).normalized()
-
-		# Handle animations
-		
-		if dir == Vector2.ZERO:
-			
-			match faceDir:
-				0: animation = "idle_up"
-				1: animation = "idle_down"
-				2: animation = "idle_right"
-				3: animation = "idle_left"
-			play()
-			return
-
-		# Determine animation based on direction
-		if abs(dir.y) > abs(dir.x):
-			if dir.y > 0:
-				animation = "walk_down"
-				faceDir = 1
-			else:
-				animation = "walk_up"
-				faceDir = 0
-		else:
-			if dir.x > 0:
-				animation = "walk_right"
-				faceDir = 2
-			else:
-				animation = "walk_left"
-				faceDir = 3
-
-		play()
 
 func play() -> void:
 	sprite.animation = animation
 	sprite.play()
+
+func animate(dir) -> void:
+	if dir == Vector2.ZERO:
+		match faceDir:
+			0: animation = "idle_up"
+			1: animation = "idle_down"
+			2: animation = "idle_right"
+			3: animation = "idle_left"
+		play()
+		return
+
+	# Determine animation based on direction
+	if abs(dir.y) > abs(dir.x):
+		if dir.y > 0:
+			animation = "walk_down"
+			faceDir = 1
+		else:
+			animation = "walk_up"
+			faceDir = 0
+	else:
+		if dir.x > 0:
+			animation = "walk_right"
+			faceDir = 2
+		else:
+			animation = "walk_left"
+			faceDir = 3
+
+	play()
 
 # damage
 func _on_area_entered(area: Area2D) -> void:
@@ -108,6 +120,11 @@ func _on_area_entered(area: Area2D) -> void:
 		spawn_death_particles()
 		# wait 0.5 seconds before despawning
 		await get_tree().create_timer(0.5).timeout
+		queue_free()
+		
+	# contact enemies disappear immediately on contact with the player
+	# will only blink red when on contact with an attack
+	elif self.is_in_group("DisappearOnContact") && area.is_in_group("Player"):
 		queue_free()
 	
 func damage_blink():
@@ -133,9 +150,13 @@ func shoot_projectile() -> void:
 	var dir = get_facing_vector()
 	
 	# position slightly ahead of player and move in proper direction
+	projectile.speed = 700
 	projectile.global_position = global_position + dir * 30
 	projectile.direction = dir
 	projectile.rotation = dir.angle() + PI/2
+	
+	# use enemy's specified damage
+	projectile.damage = projectile_damage
 	
 	# spawn
 	get_tree().current_scene.add_child(projectile)
@@ -143,8 +164,12 @@ func shoot_projectile() -> void:
 # spawn AoE attack
 func create_AoE() -> void:
 	var AoE = AoE_scene.instantiate()
+	
 	# position underneath enemy
 	AoE.global_position = global_position
+	
+	# use enemy's specified damage
+	AoE.damage = AoE_damage
 	
 	# spawn
 	get_tree().current_scene.add_child(AoE)
@@ -158,6 +183,9 @@ func attack_melee() -> void:
 	melee.global_position = global_position + dir * 30
 	melee.direction = dir
 	melee.rotation = dir.angle() + PI/2
+	
+	# use enemy's specified damage
+	melee.damage = melee_damage
 	
 	# spawn
 	get_tree().current_scene.add_child(melee)

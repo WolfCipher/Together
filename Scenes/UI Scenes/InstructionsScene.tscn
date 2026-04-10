@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://d3dhoihvyh00j"]
 
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="1_dgi2s"]
-[ext_resource type="Script" uid="uid://dt80ui47wepai" path="res://Scenes/Functionality/sync.gd" id="2_6or7q"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="2_vrexv"]
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="3_6or7q"]
 [ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="4_6or7q"]
@@ -10,6 +9,10 @@
 [ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="6_u84x6"]
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="7_xweua"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="8_wbaon"]
+[ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="11_xweua"]
+[ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health.tscn" id="12_wbaon"]
+[ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health.tscn" id="13_coy2f"]
+[ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_so0q4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -74,94 +77,6 @@ corner_radius_bottom_left = 10
 [node name="InstructionsScene" type="Node2D" unique_id=1385909618]
 y_sort_enabled = true
 
-[node name="ElvyriaText" type="Label" parent="." unique_id=644648842]
-z_index = 100
-offset_left = 66.0
-offset_top = 35.0
-offset_right = 394.0
-offset_bottom = 302.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
-theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
-theme_override_constants/line_spacing = 3
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 4
-theme_override_constants/outline_size = 23
-theme_override_constants/shadow_outline_size = 60
-theme_override_font_sizes/font_size = 30
-text = "ELVYRIA
-Movement: WASD
-Shoot: C or Q
-Melee: V or E
-Together: Shift
-"
-horizontal_alignment = 1
-
-[node name="RylText" type="Label" parent="." unique_id=1295069426]
-z_index = 100
-offset_left = 1486.0
-offset_top = 35.0
-offset_right = 1874.0
-offset_bottom = 302.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
-theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
-theme_override_constants/line_spacing = 3
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 4
-theme_override_constants/outline_size = 23
-theme_override_constants/shadow_outline_size = 60
-theme_override_font_sizes/font_size = 30
-text = "RYL
-Movement: Arrow Keys
-Shoot: , (comma) or PgUp
-Melee: . (period) or PgDn
-Together: Shift
-"
-horizontal_alignment = 1
-
-[node name="PauseText" type="Label" parent="." unique_id=2068421177]
-z_index = 100
-offset_left = 66.0
-offset_top = 900.0
-offset_right = 407.0
-offset_bottom = 1167.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
-theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
-theme_override_constants/line_spacing = 3
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 4
-theme_override_constants/outline_size = 23
-theme_override_constants/shadow_outline_size = 60
-theme_override_font_sizes/font_size = 30
-text = "Toggle Pause Mode: Esc or Delete"
-horizontal_alignment = 1
-
-[node name="Button" type="Button" parent="." unique_id=300260568]
-z_index = 100
-offset_left = 1480.0
-offset_top = 900.0
-offset_right = 1892.0
-offset_bottom = 997.0
-theme_override_font_sizes/font_size = 63
-theme_override_styles/normal = SubResource("StyleBoxFlat_36iol")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xx56i")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rae6p")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
-theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
-text = "Main Menu"
-script = ExtResource("1_dgi2s")
-next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"
-
-[node name="SyncHandler" type="Node2D" parent="." unique_id=241599713 node_paths=PackedStringArray("player1", "player2")]
-position = Vector2(1480, 900)
-script = ExtResource("2_6or7q")
-player1 = NodePath("../Elvyria")
-player2 = NodePath("../Ryl")
-projectile1 = ExtResource("3_6or7q")
-projectile2 = ExtResource("4_6or7q")
-
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("2_vrexv")]
 position = Vector2(516, 505)
 projectile_scene = ExtResource("3_6or7q")
@@ -181,14 +96,131 @@ z_index = -10
 tile_map_data = PackedByteArray("AAAaACkAAAAGAAYAAAAaACMAAAAMAAAAAAAaAB0AAAAMAAAAAAAaABcAAAAMAAAAAAAaABEAAAAMAAAAAAAaAP//AAAMAAAAAAAaAAUAAAAMAAAAAAAaAAsAAAAMAAAAAAAaAPn/AAAMAAAAAAAsACkAAAAMAAYAAAAsACMAAAASAAAAAAAsAB0AAAASAAAAAAAsABcAAAASAAAAAAAsABEAAAASAAAAAAAsAAsAAAASAAAAAAAsAAUAAAASAAAAAAAsAP//AAASAAAAAAAsAPn/AAASAAAAAAAgACkAAAAYAAAAAAAmACkAAAAYAAAAAAAgACMAAAAGAAAAAAAmACMAAAAGAAAAAAAgAB0AAAAGAAAAAAAmAB0AAAAGAAAAAAAgABEAAAAGAAAAAAAgABcAAAAGAAAAAAAmABEAAAAGAAAAAAAmABcAAAAGAAAAAAAgAAUAAAAGAAAAAAAgAAsAAAAGAAAAAAAmAAUAAAAGAAAAAAAmAAsAAAAGAAAAAAAgAPn/AAAGAAAAAAAgAP//AAAGAAAAAAAmAPn/AAAGAAAAAAAmAP//AAAGAAAAAAA=")
 tile_set = ExtResource("7_xweua")
 
-[node name="PauseOverlay" parent="." unique_id=74393980 instance=ExtResource("8_wbaon")]
-z_index = 100
+[node name="Camera_Centered" parent="." unique_id=1069394162 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("11_xweua")]
+position = Vector2(574, 505)
+target1 = NodePath("../Elvyria")
+target2 = NodePath("../Ryl")
+
+[node name="ElvyriaHealth" parent="Camera_Centered" unique_id=199826155 node_paths=PackedStringArray("character") instance=ExtResource("12_wbaon")]
+offset_left = -862.0
+offset_top = -475.0
+offset_right = -555.6936
+offset_bottom = -466.0
+character = NodePath("../../Elvyria")
+
+[node name="RylHealth" parent="Camera_Centered" unique_id=1797739133 node_paths=PackedStringArray("character") instance=ExtResource("13_coy2f")]
+offset_left = 552.00006
+offset_top = -475.0
+offset_right = 858.30646
+offset_bottom = -466.0
+character = NodePath("../../Ryl")
+
+[node name="PauseOverlay" parent="Camera_Centered" unique_id=624429767 instance=ExtResource("8_wbaon")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 960.0
-offset_top = 540.0
-offset_right = 960.0
-offset_bottom = 540.0
+
+[node name="Sync_Gauge" parent="Camera_Centered" unique_id=1752999985 node_paths=PackedStringArray("player1", "player2") instance=ExtResource("14_so0q4")]
+player1 = NodePath("../../Elvyria")
+player2 = NodePath("../../Ryl")
+projectile1 = ExtResource("3_6or7q")
+projectile2 = ExtResource("4_6or7q")
+
+[node name="ElvyriaText" type="Label" parent="Camera_Centered" unique_id=644648842]
+z_index = 100
+offset_left = -857.0
+offset_top = -446.0
+offset_right = -529.0
+offset_bottom = -179.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 30
+text = "ELVYRIA
+Movement: WASD
+Shoot: C or Q
+Melee: V or E
+Shield: B or F
+"
+horizontal_alignment = 1
+
+[node name="RylText" type="Label" parent="Camera_Centered" unique_id=1295069426]
+z_index = 100
+offset_left = 490.0
+offset_top = -446.0
+offset_right = 878.0
+offset_bottom = -179.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 30
+text = "RYL
+Movement: Arrow Keys
+Shoot: , (comma) or PgUp
+Melee: . (period) or PgDn
+Dash: / or End"
+horizontal_alignment = 1
+
+[node name="ShiftText" type="Label" parent="Camera_Centered" unique_id=1920651720]
+z_index = 100
+offset_left = -310.0
+offset_top = 453.0
+offset_right = 310.0
+offset_bottom = 576.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 30
+text = "Press SHIFT together for a powerful attack!"
+horizontal_alignment = 1
+
+[node name="PauseText" type="Label" parent="Camera_Centered" unique_id=2068421177]
+z_index = 100
+offset_left = -925.0
+offset_top = 453.0
+offset_right = -443.0
+offset_bottom = 720.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 30
+text = "Toggle Pause Mode: Esc or Delete"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Camera_Centered" unique_id=300260568]
+z_index = 100
+offset_left = 482.0
+offset_top = 388.0
+offset_right = 894.0
+offset_bottom = 485.0
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_36iol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xx56i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rae6p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vg0ck")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
+text = "Main Menu"
+script = ExtResource("1_dgi2s")
+next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"

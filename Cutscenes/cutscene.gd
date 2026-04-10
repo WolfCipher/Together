@@ -17,7 +17,7 @@ func _ready() -> void:
 		# allows us to decode video file in Godot, which needs ffmpeg
 		var ffmpeg = ClassDB.instantiate("FFmpegVideoStream")
 		if ffmpeg:
-			ffmpeg.file = "res://Cutscenes/TogetherIntroduction.mp4"
+			ffmpeg.file = "res://Cutscenes/TogetherIntroductionCompressed.mp4"
 			$VideoStreamPlayer.stream = ffmpeg
 	
 	skipLabel.visible = false
@@ -54,6 +54,7 @@ func _onFinish():
 	
 func _endCutscene():
 	if next_scene:
-		get_tree().change_scene_to_file(next_scene)
+		#get_tree().change_scene_to_file(next_scene)
+		SceneCache.scene_change.emit(next_scene)
 	else:
 		push_warning("No next_scene assigned!")

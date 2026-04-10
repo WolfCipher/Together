@@ -1,0 +1,54 @@
+[gd_scene format=4 uid="uid://ygujoeu2qodx"]
+
+[ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="1_rpxiv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfdjb"]
+size = Vector2(294, 1022)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm3os"]
+size = Vector2(1139, 110.25)
+
+[node name="Trees" type="Node2D" unique_id=519110492]
+y_sort_enabled = true
+
+[node name="LeftBoundary" type="Area2D" parent="." unique_id=408109396 groups=["BoundaryLeft"]]
+position = Vector2(-819, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary" unique_id=393675208]
+position = Vector2(764, -615)
+shape = SubResource("RectangleShape2D_tfdjb")
+
+[node name="RightBoundary" type="Area2D" parent="." unique_id=1076269557 groups=["BoundaryRight"]]
+position = Vector2(2300, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary" unique_id=1208993878]
+position = Vector2(-3226, -615)
+shape = SubResource("RectangleShape2D_tfdjb")
+
+[node name="TopBoundary" type="Area2D" parent="." unique_id=1515167389 groups=["BoundaryTop"]]
+position = Vector2(0, -800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary" unique_id=1322558011]
+position = Vector2(-490, 697)
+shape = SubResource("RectangleShape2D_lm3os")
+
+[node name="BottomBoundary" type="Area2D" parent="." unique_id=1132947847 groups=["BoundaryBottom"]]
+position = Vector2(0, 1900)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary" unique_id=1250788508]
+position = Vector2(-490, -3007.875)
+shape = SubResource("RectangleShape2D_lm3os")
+
+[node name="Trees" type="TileMapLayer" parent="." unique_id=586569515]
+y_sort_enabled = true
+position = Vector2(0, 9800)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AADw/1T/AAAAACQAAADw/1b/AAAAACQAAADw/1j/AAAAACQAAADw/1r/AAAAACQAAADw/1z/AAAAACQAAADw/17/AAAAACQAAADw/2D/AAAAACQAAADw/2L/AAAAACQAAADw/2T/AAAAACQAAADy/1X/AAAAACQAAADy/1f/AAAAACQAAADy/1n/AAAAACQAAADy/1v/AAAAACQAAADy/13/AAAAACQAAADy/1//AAAAACQAAADy/2H/AAAAACQAAADy/2P/AAAAACQAAAD0/1T/AAAAACQAAAD0/1b/AAAAACQAAAD0/1j/AAAAACQAAAD0/1r/AAAAACQAAAD0/1z/AAAAACQAAAD0/17/AAAAACQAAAD0/2D/AAAAACQAAAD0/2L/AAAAACQAAAD0/2T/AAAAACQAAAD2/1X/AAAAACQAAAD2/1f/AAAAACQAAAD2/1n/AAAAACQAAAD2/1v/AAAAACQAAAD2/13/AAAAACQAAAD2/1//AAAAACQAAAD2/2H/AAAAACQAAAD2/2P/AAAAACQAAAD4/1T/AAAAACQAAAD4/1b/AAAAACQAAAD4/1j/AAAAACQAAAD4/1r/AAAAACQAAAD4/1z/AAAAACQAAAD4/17/AAAAACQAAAD4/2D/AAAAACQAAAD4/2L/AAAAACQAAAD4/2T/AAAAACQAAAD6/1X/AAAAACQAAAD6/1f/AAAAACQAAAD6/1n/AAAAACQAAAD6/1v/AAAAACQAAAD6/13/AAAAACQAAAD6/1//AAAAACQAAAD6/2H/AAAAACQAAAD6/2P/AAAAACQAAAD8/1T/AAAAACQAAAD8/1b/AAAAACQAAAD8/1j/AAAAACQAAAD8/1r/AAAAACQAAAD8/1z/AAAAACQAAAD8/17/AAAAACQAAAD8/2D/AAAAACQAAAD8/2L/AAAAACQAAAD8/2T/AAAAACQAAAD+/1X/AAAAACQAAAD+/1f/AAAAACQAAAD+/1n/AAAAACQAAAD+/1v/AAAAACQAAAD+/13/AAAAACQAAAD+/1//AAAAACQAAAD+/2H/AAAAACQAAAD+/2P/AAAAACQAAAAAAFT/AAAAACQAAAAAAFb/AAAAACQAAAAAAFj/AAAAACQAAAAAAFr/AAAAACQAAAAAAFz/AAAAACQAAAAAAF7/AAAAACQAAAAAAGD/AAAAACQAAAAAAGL/AAAAACQAAAAAAGT/AAAAACQAAAA=")
+tile_set = ExtResource("1_rpxiv")
+
+[node name="TreesOnSide_HighZIndex" type="TileMapLayer" parent="Trees" unique_id=1518041710]
+top_level = true
+z_index = 5
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AADw/1T/AAAAACQAAADw/1b/AAAAACQAAADw/1j/AAAAACQAAADw/1r/AAAAACQAAADw/1z/AAAAACQAAADw/17/AAAAACQAAADw/2D/AAAAACQAAADw/2L/AAAAACQAAAAAAFT/AAAAACQAAAAAAFb/AAAAACQAAAAAAFj/AAAAACQAAAAAAFr/AAAAACQAAAAAAFz/AAAAACQAAAAAAF7/AAAAACQAAAAAAGD/AAAAACQAAAAAAGL/AAAAACQAAAA=")
+tile_set = ExtResource("1_rpxiv")

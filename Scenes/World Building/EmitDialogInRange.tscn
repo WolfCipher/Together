@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://pgjqpf678xkx"]
+
+[ext_resource type="Script" uid="uid://d0tbwy1dec7it" path="res://Scenes/World Building/emit_dialog_in_range.gd" id="1_krfmd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f1gl3"]
+radius = 207.47289
+
+[node name="EmitDialogInRange" type="Node2D" unique_id=869890286]
+script = ExtResource("1_krfmd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=221853895]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1448401333]
+shape = SubResource("CircleShape2D_f1gl3")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

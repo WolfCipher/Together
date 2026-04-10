@@ -1,5 +1,6 @@
 extends Area2D
 
+# default attributes unless otherwise modified on instantiation
 @onready var sprite: AnimatedSprite2D = $Sprite
 @export var damage := 5 # melee deals more damage than projectiles
 

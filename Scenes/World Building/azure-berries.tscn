@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c8tlq472q0mq7"]
+
+[ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="1_gfkif"]
+
+[node name="AzureBerries" type="Node2D" unique_id=1988277302]
+z_index = -1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=914215498]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 1, 0, 25, 0, 0, 0)
+tile_set = ExtResource("1_gfkif")

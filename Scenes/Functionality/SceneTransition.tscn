@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dc7wvcnkhserj"]
+
+[ext_resource type="Script" uid="uid://bjwd1t7lc8ppp" path="res://Scenes/Functionality/scene_transition.gd" id="1_ysnyp"]
+
+[node name="SceneTransition" type="Node2D" unique_id=1801486910]
+visible = false
+z_index = 200
+script = ExtResource("1_ysnyp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=485895552]
+offset_left = -35.0
+offset_top = -44.0
+offset_right = 1954.0
+offset_bottom = 1115.0
+color = Color(0, 0, 0, 0)

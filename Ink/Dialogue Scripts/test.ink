@@ -3,8 +3,8 @@
 // 2: determined
 // 3: concerned
 // 4: shocked
-VAR ryl = 0
-VAR elvyria = 0
+VAR ryl = 4
+VAR elvyria = 4
 
 // 0: elvyria responds
 // 1: ryl responds
@@ -14,8 +14,10 @@ VAR btn2 = 0
 VAR btn3 = 0
 VAR btn4 = 0
 
-~ryl = 4
-~elvyria = 4
+// 0: elvyria speaks
+// 1: ryl speaks
+// anything else: blank icon
+VAR dialog = 1
 
 
 What were those things?
@@ -53,8 +55,8 @@ What were those things?
  
  
  ===Tamewood===
- * Tamewood... -> Cmon
- * The way back home... -> Cmon
+ * [Tamewood...] -> Cmon
+ * [The way back home...] -> Cmon
  
  
  ===Cmon===
