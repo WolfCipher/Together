@@ -22,5 +22,8 @@ func on_scene_change(next_scene):
 		var tween = create_tween()
 		tween.tween_property(color_rect, "modulate", Color(0,0,0,1), 0.4)
 		await get_tree().create_timer(0.4).timeout
-		
-	get_tree().change_scene_to_file(next_scene)
+	
+	# must check if tree is null to avoid certain errors (like both players calling game over causing null errors)
+	var tree = get_tree()
+	if (tree):
+		tree.change_scene_to_file(next_scene)

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://bxkxq5fyenfx5"]
+
+[ext_resource type="Texture2D" uid="uid://b7ym8ekii3p0g" path="res://Entities/Butterfly/butterflySprite/butterflySprite00.png" id="1_8otr4"]
+[ext_resource type="Script" uid="uid://dwo8rx361i78w" path="res://Entities/Butterfly/butterflySprite/butterfly.gd" id="1_l84fu"]
+[ext_resource type="Texture2D" uid="uid://4y5oxnkwcy1o" path="res://Entities/Butterfly/butterflySprite/butterflySprite01.png" id="2_l84fu"]
+[ext_resource type="Texture2D" uid="uid://bd7eat3v8we30" path="res://Entities/Butterfly/butterflySprite/butterflySprite02.png" id="3_sp8nl"]
+[ext_resource type="Texture2D" uid="uid://bw1du0l00dpsk" path="res://Entities/Butterfly/butterflySprite/butterflySprite13.png" id="4_qf2tp"]
+[ext_resource type="Texture2D" uid="uid://bjq2cgla4lyot" path="res://Entities/Butterfly/butterflySprite/butterflySprite14.png" id="5_e7o1d"]
+[ext_resource type="Texture2D" uid="uid://c3yxdt0lrv3rk" path="res://Entities/Butterfly/butterflySprite/butterflySprite15.png" id="6_h2d5k"]
+[ext_resource type="Texture2D" uid="uid://gcfgvqbwrncq" path="res://Entities/Butterfly/butterflySprite/butterflySprite03.png" id="7_2jkwr"]
+[ext_resource type="Texture2D" uid="uid://dk0qxbktly37m" path="res://Entities/Butterfly/butterflySprite/butterflySprite04.png" id="8_k8pvo"]
+[ext_resource type="Texture2D" uid="uid://37tq1iklks41" path="res://Entities/Butterfly/butterflySprite/butterflySprite05.png" id="9_14f8m"]
+[ext_resource type="Texture2D" uid="uid://cvayi66xerd1s" path="res://Entities/Butterfly/butterflySprite/butterflySprite06.png" id="10_rndlj"]
+[ext_resource type="Texture2D" uid="uid://denxejmuq4j0b" path="res://Entities/Butterfly/butterflySprite/butterflySprite07.png" id="11_g4sgw"]
+[ext_resource type="Texture2D" uid="uid://bmpreeimensh5" path="res://Entities/Butterfly/butterflySprite/butterflySprite08.png" id="12_r06o7"]
+[ext_resource type="Texture2D" uid="uid://dseh1nj4epc3n" path="res://Entities/Butterfly/butterflySprite/butterflySprite09.png" id="13_s2qqk"]
+[ext_resource type="Texture2D" uid="uid://bhur74eu6k38d" path="res://Entities/Butterfly/butterflySprite/butterflySprite10.png" id="14_6a8lp"]
+[ext_resource type="Texture2D" uid="uid://bpthudybocry5" path="res://Entities/Butterfly/butterflySprite/butterflySprite11.png" id="15_4xnyy"]
+[ext_resource type="Texture2D" uid="uid://bnmsy3ajlatjr" path="res://Entities/Butterfly/butterflySprite/butterflySprite12.png" id="16_lise7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fyu0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8otr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l84fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sp8nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qf2tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e7o1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h2d5k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8otr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l84fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sp8nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2jkwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k8pvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_14f8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rndlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_g4sgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_r06o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_s2qqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6a8lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4xnyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lise7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qf2tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e7o1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h2d5k")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[node name="Butterfly" type="Node2D" unique_id=1961194005]
+script = ExtResource("1_l84fu")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=834199376]
+sprite_frames = SubResource("SpriteFrames_fyu0i")

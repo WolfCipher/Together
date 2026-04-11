@@ -7,7 +7,8 @@ extends Node
 @export var prefab_c: PackedScene # Contact
 @export var prefab_d: PackedScene # Shadow Elvyria
 @export var prefab_e: PackedScene # Shadow Ryl
-@export var spawn_positions: Array[Vector2] = [Vector2(750, 500), Vector2(250,500), Vector2(300,200), Vector2(700,700)] # predefined locations that enemies can spawn at
+@export var spawn_positions: Array[Vector2] = [Vector2(750, 500), Vector2(250,500), Vector2(540,200), Vector2(540,700)] # predefined locations that enemies can spawn at
+var pos_index = 0
 @export var next_scene : String
 
 # each outer element represents the wave
@@ -56,7 +57,6 @@ func _process(_delta: float) -> void:
 
 func spawn() -> void:
 	# which spawn location to use
-	var index = 0
 	
 	var wave = waves[waveNum]
 	
@@ -73,9 +73,9 @@ func spawn() -> void:
 			
 			# choose location and add enemy to spawn manager
 			# wave is over once all enemies are dequeued from the spawn manager
-			enemy.global_position = spawn_positions[index]
+			enemy.global_position = spawn_positions[pos_index]
 			self.add_child(enemy)
 			
-			index = (index + 1) % spawn_positions.size() # go to next position for instantiation
+			pos_index = (pos_index + 1) % spawn_positions.size() # go to next position for instantiation
 	
 	waveNum += 1
