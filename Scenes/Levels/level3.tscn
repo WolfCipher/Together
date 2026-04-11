@@ -1,0 +1,220 @@
+[gd_scene format=4 uid="uid://cpt1j5cetgmmr"]
+
+[ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_v1uej"]
+[ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_f80nq"]
+[ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="3_lnl7s"]
+[ext_resource type="AudioStream" uid="uid://q4b4iire0ewv" path="res://Sound/SFX/Music/Demo1_Core_Loop.wav" id="4_kbn7v"]
+[ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/Functionality/SpawnManager.gd" id="5_laeu0"]
+[ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="6_bon45"]
+[ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/FireSpirit_AoE.tscn" id="7_xbb0r"]
+[ext_resource type="PackedScene" uid="uid://crtup2vlgteed" path="res://Entities/Enemy/EarthSpirit_Contact.tscn" id="8_35jnd"]
+[ext_resource type="PackedScene" uid="uid://owwcqowd8wlq" path="res://Entities/Enemy/shadowElvyria.tscn" id="9_ltrm1"]
+[ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="10_16bue"]
+[ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="11_rfddm"]
+[ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health.tscn" id="12_c8hbi"]
+[ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health.tscn" id="13_7mxbq"]
+[ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="14_yk4w0"]
+[ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="15_ummpp"]
+[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="16_2fc35"]
+[ext_resource type="PackedScene" uid="uid://b5prnshh5emox" path="res://Scenes/Functionality/level_dialog_control.tscn" id="17_sospo"]
+[ext_resource type="PackedScene" uid="uid://b3p0be0qdmx5n" path="res://Scenes/World Building/world_open.tscn" id="18_fl7h5"]
+[ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="19_5kt4t"]
+[ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="20_fk02w"]
+[ext_resource type="PackedScene" uid="uid://ygujoeu2qodx" path="res://Scenes/World Building/trees.tscn" id="21_46bhr"]
+[ext_resource type="PackedScene" uid="uid://u04w5akm8n1j" path="res://Scenes/World Building/treehouse_dullworld.tscn" id="22_fl5ni"]
+[ext_resource type="PackedScene" uid="uid://pgjqpf678xkx" path="res://Scenes/World Building/EmitDialogInRange.tscn" id="23_bw4uf"]
+[ext_resource type="PackedScene" uid="uid://c8tlq472q0mq7" path="res://Scenes/World Building/azure-berries.tscn" id="24_qa4jm"]
+[ext_resource type="PackedScene" uid="uid://bxkxq5fyenfx5" path="res://Entities/Butterfly/butterflySprite/butterfly.tscn" id="25_mhkwd"]
+
+[node name="Main" type="Node2D" unique_id=837400696]
+y_sort_enabled = true
+metadata/_edit_horizontal_guides_ = [-1552.0]
+
+[node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_v1uej")]
+position = Vector2(516, 505)
+projectile_scene = ExtResource("2_f80nq")
+
+[node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_lnl7s")]
+position = Vector2(574, 505)
+
+[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
+stream = ExtResource("4_kbn7v")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[node name="SpawnManager" type="Node2D" parent="." unique_id=708660748 node_paths=PackedStringArray("target1", "target2")]
+script = ExtResource("5_laeu0")
+prefab_a = ExtResource("6_bon45")
+prefab_b = ExtResource("7_xbb0r")
+prefab_c = ExtResource("8_35jnd")
+prefab_d = ExtResource("9_ltrm1")
+prefab_e = ExtResource("10_16bue")
+next_scene = "res://Scenes/UI Scenes/Victory.tscn"
+target1 = NodePath("../Elvyria")
+target2 = NodePath("../Ryl")
+
+[node name="Camera_Centered" parent="." unique_id=1069394162 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("11_rfddm")]
+position = Vector2(574, 505)
+target1 = NodePath("../Elvyria")
+target2 = NodePath("../Ryl")
+
+[node name="ElvyriaHealth" parent="Camera_Centered" unique_id=1729412854 node_paths=PackedStringArray("character") instance=ExtResource("12_c8hbi")]
+offset_left = -862.0
+offset_top = -475.0
+offset_right = -555.6936
+offset_bottom = -466.0
+character = NodePath("../../Elvyria")
+
+[node name="RylHealth" parent="Camera_Centered" unique_id=199826155 node_paths=PackedStringArray("character") instance=ExtResource("13_7mxbq")]
+offset_left = 552.00006
+offset_top = -475.0
+offset_right = 858.30646
+offset_bottom = -466.0
+character = NodePath("../../Ryl")
+
+[node name="PauseOverlay" parent="Camera_Centered" unique_id=74393980 instance=ExtResource("14_yk4w0")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Sync_Gauge" parent="Camera_Centered" unique_id=1752999985 node_paths=PackedStringArray("player1", "player2") instance=ExtResource("15_ummpp")]
+player1 = NodePath("../../Elvyria")
+player2 = NodePath("../../Ryl")
+projectile1 = ExtResource("2_f80nq")
+projectile2 = ExtResource("16_2fc35")
+
+[node name="Dialog_Control" parent="Camera_Centered" unique_id=941119838 instance=ExtResource("17_sospo")]
+offset_left = -939.0
+offset_top = -516.0
+offset_right = -939.0
+offset_bottom = -516.0
+
+[node name="World" parent="." unique_id=519110492 instance=ExtResource("18_fl7h5")]
+
+[node name="Path" type="TileMapLayer" parent="World" unique_id=227110314]
+z_index = -9
+tile_map_data = PackedByteArray("AAAaACkAAAAGAAYAAAAaACMAAAAMAAAAAAAaAB0AAAAMAAAAAAAaABcAAAAMAAAAAAAaABEAAAAMAAAAAAAaAP//AAAMAAAAAAAaAAUAAAAMAAAAAAAaAAsAAAAMAAAAAAAaAPn/AAAMAAAAAAAsACkAAAAMAAYAAAAsACMAAAASAAAAAAAsAB0AAAASAAAAAAAsABcAAAASAAAAAAAsABEAAAASAAAAAAAsAAsAAAASAAAAAAAsAAUAAAASAAAAAAAsAP//AAASAAAAAAAsAPn/AAASAAAAAAAgACkAAAAYAAAAAAAmACkAAAAYAAAAAAAgACMAAAAGAAAAAAAmACMAAAAGAAAAAAAgAB0AAAAGAAAAAAAmAB0AAAAGAAAAAAAgABEAAAAGAAAAAAAgABcAAAAGAAAAAAAmABEAAAAGAAAAAAAmABcAAAAGAAAAAAAgAAUAAAAGAAAAAAAgAAsAAAAGAAAAAAAmAAUAAAAGAAAAAAAmAAsAAAAGAAAAAAAgAPn/AAAGAAAAAAAgAP//AAAGAAAAAAAmAPn/AAAGAAAAAAAmAP//AAAGAAAAAAAsAPP/AAAeAAYAAAAmAPP/AAAGAAAAAAAgAPP/AAAGAAAAAAAaAPP/AAAMAAAAAAAaAO3/AAAMAAAAAAAgAO3/AAAGAAAAAAAmAO3/AAAGAAAAAAAsAO3/AAAGAAAAAAAsAOf/AAAGAAAAAAAmAOf/AAAGAAAAAAAaAOf/AAAMAAAAAAAgAOf/AAAGAAAAAAAaAOH/AAAAAAYAAAAgAOH/AAAeAAAAAAAmAOH/AAAeAAAAAAAsAOH/AAAeAAAAAAAyAOH/AAAeAAAAAAAyAPP/AAAYAAAAAAAyAOf/AAAGAAAAAAAyAO3/AAAGAAAAAAA4APP/AAAYAAAAAAA+APP/AAAYAAAAAABEAPP/AAAYAAAAAAA4AO3/AAAGAAAAAAA+AO3/AAAGAAAAAABEAO3/AAAGAAAAAAA4AOf/AAAGAAAAAAA+AOf/AAAGAAAAAABEAOf/AAAGAAAAAAA4AOH/AAAeAAAAAAA+AOH/AAAeAAAAAABEAOH/AAAeAAAAAABKAPP/AAAYAAAAAABKAO3/AAAGAAAAAABKAOf/AAAGAAAAAABKAOH/AAAeAAAAAABQAOH/AAAeAAAAAABQAOf/AAAGAAAAAABQAO3/AAAGAAAAAABQAPP/AAAYAAAAAABWAOH/AAAeAAAAAABWAOf/AAAGAAAAAABWAO3/AAAGAAAAAABWAPP/AAAYAAAAAABcAOH/AAAeAAAAAABcAOf/AAAGAAAAAABcAO3/AAAGAAAAAABcAPP/AAAYAAAAAABiAOH/AAAeAAAAAABiAOf/AAAGAAAAAABiAO3/AAAGAAAAAABiAPP/AAAYAAAAAABoAOH/AAAeAAAAAABoAOf/AAAGAAAAAABoAO3/AAAGAAAAAABoAPP/AAAYAAAAAABuAOH/AAAeAAAAAABuAOf/AAAGAAAAAABuAO3/AAAGAAAAAABuAPP/AAAYAAAAAAB0AOH/AAAeAAAAAAB0AOf/AAAGAAAAAAB0AO3/AAAGAAAAAAB0APP/AAAYAAAAAAB6AOH/AAAeAAAAAAB6AOf/AAAGAAAAAAB6AO3/AAAGAAAAAAB6APP/AAAYAAAAAACAAOH/AAAeAAAAAACAAOf/AAAGAAAAAACAAO3/AAAGAAAAAACAAPP/AAAYAAAAAACGAOH/AAAeAAAAAACGAOf/AAAGAAAAAACGAO3/AAAGAAAAAACGAPP/AAAYAAAAAACMAOH/AAAeAAAAAACMAOf/AAAGAAAAAACMAO3/AAAGAAAAAACMAPP/AAAYAAAAAACSAOH/AAAeAAAAAACSAOf/AAAGAAAAAACSAO3/AAAGAAAAAACSAPP/AAAYAAAAAACYAOH/AAAeAAAAAACYAOf/AAAGAAAAAACYAO3/AAAGAAAAAACYAPP/AAAYAAAAAACeAOH/AAAeAAAAAACeAOf/AAAGAAAAAACeAO3/AAAGAAAAAACeAPP/AAAYAAAAAACkAOH/AAAeAAAAAACkAOf/AAAGAAAAAACkAO3/AAAGAAAAAACkAPP/AAAYAAAAAACqAOH/AAAeAAAAAACqAOf/AAAGAAAAAACqAO3/AAAGAAAAAACqAPP/AAAYAAAAAACwAOH/AAAeAAAAAACwAOf/AAAGAAAAAACwAO3/AAAGAAAAAACwAPP/AAAYAAAAAAC2AOH/AAAeAAAAAAC2AOf/AAAGAAAAAAC2AO3/AAAGAAAAAAC2APP/AAAYAAAAAAC8AOH/AAAeAAAAAAC8AOf/AAAGAAAAAAC8AO3/AAAGAAAAAAC8APP/AAAYAAAAAADCAOH/AAAeAAAAAADCAOf/AAAGAAAAAADCAO3/AAAGAAAAAADCAPP/AAAYAAAAAADIAOH/AAAeAAAAAADIAOf/AAAGAAAAAADIAO3/AAAGAAAAAADIAPP/AAAYAAAAAADOAOH/AAAeAAAAAADOAOf/AAAGAAAAAADOAO3/AAAGAAAAAADOAPP/AAAYAAAAAADUAOH/AAAeAAAAAADUAOf/AAAGAAAAAADUAO3/AAAGAAAAAADUAPP/AAAYAAAAAADaAOH/AAAeAAAAAADaAOf/AAAGAAAAAADaAO3/AAAGAAAAAADaAPP/AAAYAAAAAADgAOH/AAAeAAAAAADgAOf/AAAGAAAAAADgAO3/AAAGAAAAAADgAPP/AAAYAAAAAADmAOH/AAAeAAAAAADmAOf/AAAGAAAAAADmAO3/AAAGAAAAAADmAPP/AAAYAAYAAADmAPn/AAAMAAAAAADsAOH/AAAeAAAAAADsAOf/AAAGAAAAAADsAO3/AAAGAAAAAADsAPP/AAAGAAAAAADsAPn/AAAGAAAAAADyAOH/AAAeAAAAAADyAOf/AAAGAAAAAADyAO3/AAAGAAAAAADyAPP/AAAGAAAAAADyAPn/AAAGAAAAAAD4AOH/AAAkAAAAAAD4AOf/AAASAAAAAAD4AO3/AAASAAAAAAD4APP/AAASAAAAAAD4APn/AAASAAAAAADmAP//AAAMAAAAAADmAAUAAAAMAAAAAADmAAsAAAAMAAAAAADmABEAAAAMAAAAAADmABcAAAAMAAAAAADmAB0AAAAMAAAAAADmACMAAAAMAAAAAADmACkAAAAMAAAAAADsAP//AAAGAAAAAADsAAUAAAAGAAAAAADsAAsAAAAGAAAAAADsABEAAAAGAAAAAADsABcAAAAGAAAAAADsAB0AAAAGAAAAAADsACMAAAAGAAAAAADsACkAAAAGAAAAAADyAP//AAAGAAAAAADyAAUAAAAGAAAAAADyAAsAAAAGAAAAAADyABEAAAAGAAAAAADyABcAAAAGAAAAAADyAB0AAAAGAAAAAADyACMAAAAGAAAAAADyACkAAAAGAAAAAAD4AP//AAASAAAAAAD4AAUAAAASAAAAAAD4AAsAAAASAAAAAAD4ABEAAAASAAAAAAD4ABcAAAASAAAAAAD4AB0AAAASAAAAAAD4ACMAAAASAAAAAAD4ACkAAAASAAAAAADmAC8AAAAMAAAAAADmADUAAAAMAAAAAADmADsAAAAMAAAAAADmAEEAAAAMAAAAAADmAEcAAAAMAAAAAADmAE0AAAAMAAAAAADsAC8AAAAGAAAAAADsADUAAAAGAAAAAADsADsAAAAGAAAAAADsAEEAAAAGAAAAAADsAEcAAAAGAAAAAADsAE0AAAAGAAAAAADyAC8AAAAGAAAAAADyADUAAAAGAAAAAADyADsAAAAGAAAAAADyAEEAAAAGAAAAAADyAEcAAAAGAAAAAADyAE0AAAAGAAAAAAD4AC8AAAASAAAAAAD4ADUAAAASAAAAAAD4ADsAAAASAAAAAAD4AEEAAAASAAAAAAD4AEcAAAASAAAAAAD4AE0AAAASAAAAAADmAFMAAAAMAAAAAADsAFMAAAAGAAAAAADyAFMAAAAGAAAAAAD4AFMAAAASAAAAAADmAFkAAAAMAAAAAADsAFkAAAAGAAAAAADyAFkAAAAGAAAAAAD4AFkAAAASAAAAAADmAF8AAAAMAAAAAADmAGUAAAAMAAAAAADmAGsAAAAMAAAAAADmAHEAAAAMAAAAAADmAHcAAAAMAAAAAADmAH0AAAAMAAAAAADmAIMAAAAMAAAAAADmAIkAAAAMAAAAAADsAF8AAAAGAAAAAADsAGUAAAAGAAAAAADsAGsAAAAGAAAAAADsAHEAAAAGAAAAAADsAHcAAAAGAAAAAADsAH0AAAAGAAAAAADsAIMAAAAGAAAAAADsAIkAAAAGAAAAAADyAF8AAAAGAAAAAADyAGUAAAAGAAAAAADyAGsAAAAGAAAAAADyAHEAAAAGAAAAAADyAHcAAAAGAAAAAADyAH0AAAAGAAAAAADyAIMAAAAGAAAAAADyAIkAAAAGAAAAAAD4AF8AAAASAAAAAAD4AGUAAAASAAAAAAD4AGsAAAASAAAAAAD4AHEAAAASAAAAAAD4AHcAAAASAAAAAAD4AH0AAAASAAAAAAD4AIMAAAASAAAAAAD4AIkAAAASAAAAAADmAI8AAAAMAAAAAADmAJUAAAAMAAAAAADmAJsAAAAMAAAAAADmAKEAAAAMAAAAAADmAKcAAAAMAAAAAADmAK0AAAAMAAAAAADmALMAAAAMAAAAAADmALkAAAAMAAAAAADsAI8AAAAGAAAAAADsAJUAAAAGAAAAAADsAJsAAAAGAAAAAADsAKEAAAAGAAAAAADsAKcAAAAGAAAAAADsAK0AAAAGAAAAAADsALMAAAAGAAAAAADsALkAAAAGAAAAAADyAI8AAAAGAAAAAADyAJUAAAAGAAAAAADyAJsAAAAGAAAAAADyAKEAAAAGAAAAAADyAKcAAAAGAAAAAADyAK0AAAAGAAAAAADyALMAAAAGAAAAAADyALkAAAAGAAAAAAD4AI8AAAASAAAAAAD4AJUAAAASAAAAAAD4AJsAAAASAAAAAAD4AKEAAAASAAAAAAD4AKcAAAASAAAAAAD4AK0AAAASAAAAAAD4ALMAAAASAAAAAAD4ALkAAAASAAAAAADmAL8AAAAMAAAAAADmAMUAAAAMAAAAAADmAMsAAAAMAAAAAADmANEAAAAMAAAAAADmANcAAAAMAAAAAADmAN0AAAAMAAAAAADmAOMAAAAMAAAAAADmAOkAAAAMAAAAAADsAL8AAAAGAAAAAADsAMUAAAAGAAAAAADsAMsAAAAGAAAAAADsANEAAAAGAAAAAADsANcAAAAGAAAAAADsAN0AAAAGAAAAAADsAOMAAAAGAAAAAADsAOkAAAAGAAAAAADyAL8AAAAGAAAAAADyAMUAAAAGAAAAAADyAMsAAAAGAAAAAADyANEAAAAGAAAAAADyANcAAAAGAAAAAADyAN0AAAAGAAAAAADyAOMAAAAGAAAAAADyAOkAAAAGAAAAAAD4AL8AAAASAAAAAAD4AMUAAAASAAAAAAD4AMsAAAASAAAAAAD4ANEAAAASAAAAAAD4ANcAAAASAAAAAAD4AN0AAAASAAAAAAD4AOMAAAASAAAAAAD4AOkAAAASAAAAAADmAO8AAAAMAAAAAADmAPUAAAAMAAAAAADmAPsAAAAMAAAAAADmAAEBAAAMAAAAAADmAAcBAAAMAAAAAADmAA0BAAAMAAAAAADsAO8AAAAGAAAAAADsAPUAAAAGAAAAAADsAPsAAAAGAAAAAADsAAEBAAAGAAAAAADsAAcBAAAGAAAAAADsAA0BAAAGAAAAAADyAO8AAAAGAAAAAADyAPUAAAAGAAAAAADyAPsAAAAGAAAAAADyAAEBAAAGAAAAAADyAAcBAAAGAAAAAADyAA0BAAAGAAAAAAD4AO8AAAASAAAAAAD4APUAAAASAAAAAAD4APsAAAASAAAAAAD4AAEBAAASAAAAAAD4AAcBAAASAAAAAAD4AA0BAAASAAAAAADyABMBAAAGAAAAAADsABMBAAAGAAAAAAD4ABMBAAASAAAAAADmABMBAAAMAAAAAADmABkBAAAMAAAAAADmAB8BAAAMAAAAAADmACUBAAAMAAAAAADmACsBAAAMAAAAAADmADEBAAAGAAYAAADsABkBAAAGAAAAAADsAB8BAAAGAAAAAADsACUBAAAGAAAAAADsACsBAAAGAAAAAADsADEBAAAYAAAAAADyABkBAAAGAAAAAADyAB8BAAAGAAAAAADyACUBAAAGAAAAAADyACsBAAAGAAAAAADyADEBAAAYAAAAAAD4ABkBAAASAAAAAAD4AB8BAAAkAAYAAAD4ACUBAAAGAAAAAAD4ACsBAAAGAAAAAAD4ADEBAAAYAAAAAAD+AB8BAAAeAAAAAAD+ACUBAAAGAAAAAAD+ACsBAAAGAAAAAAD+ADEBAAAYAAAAAAAEAR8BAAAeAAAAAAAEASUBAAAGAAAAAAAEASsBAAAGAAAAAAAEATEBAAAYAAAAAAAKAR8BAAAeAAAAAAAKASUBAAAGAAAAAAAKASsBAAAGAAAAAAAKATEBAAAYAAAAAAAQAR8BAAAeAAAAAAAQASUBAAAGAAAAAAAQASsBAAAGAAAAAAAQATEBAAAYAAAAAAAWAR8BAAAeAAAAAAAWASUBAAAGAAAAAAAWASsBAAAGAAAAAAAWATEBAAAYAAAAAAAcAR8BAAAeAAAAAAAcASUBAAAGAAAAAAAcASsBAAAGAAAAAAAcATEBAAAYAAAAAAA=")
+tile_set = ExtResource("19_5kt4t")
+
+[node name="Flowers" type="TileMapLayer" parent="World" unique_id=1821845384]
+z_index = -10
+tile_map_data = PackedByteArray("AAAyABcAAAAIABoAAABUAAgAAAAIABoAAAAWACkAAAAIABoAAAAVAAQAAAAIABoAAADu/wUAAAAIABoAAADO/y0AAAAIABoAAADV/9X/AAAIABoAAACmAEQAAAAIABoAAAClAAgAAAAIABoAAAA6ALn/AAAIABoAAADNANT/AAAIABoAAAB3ABUAAAAUABQAAABUAEIAAAAUABQAAAAIABgAAAAUABQAAADk/0MAAAAUABQAAADa/xIAAAAUABQAAAAOANT/AAAUABQAAABbAN3/AAAUABQAAAB6ALj/AAAUABQAAAAHAU0AAAAUABQAAABQAR0AAAAUABQAAAAhAXb/AAAUABQAAABZAbr/AAAUABQAAADLAZz/AAAUABQAAAAoAgkAAAAUABQAAADpAUUAAAAUABQAAAArAmIAAAAUABQAAACWAe4AAAAUABQAAAAnApIBAAAUABQAAAC9AdABAAAUABQAAABLAWMBAAAUABQAAAC5AJYBAAAUABQAAACUABcBAAAUABQAAAC4/24BAAAUABQAAADo/5AAAAAUABQAAADMAKUAAAAUABQAAACX/6X/AAAUABQAAAB2//cAAAAIABoAAACA/6kBAAAIABoAAACCAH8BAAAIABoAAACCASsBAAAIABoAAAC8AFsAAAAIABoAAABJAqL/AAAIABoAAADhAIn/AAAIABoAAACD/8T/AAAIABoAAABQ/6j/AAAgABQAAABBAC4AAAAgABQAAACKADAAAAAgABQAAAAZAGsAAAAgABQAAACq/2UAAAAgABQAAABl/ywAAAAgABQAAAAVAUwAAAAgABQAAACkAd0AAAAgABQAAAA8AkIAAAAgABQAAADOAM0AAAAgABQAAACPAXMBAAAgABQAAABpAH0BAAAgABQAAACR/14BAAAgABQAAABXAu8BAAAgABQAAABXAu4BAAAgABQAAABXAu0BAAAgABQAAADOAOABAAAgABQAAABj/80BAAAgABQAAABoAIQAAAAOABoAAAANALwAAAAOABoAAAB5ANIAAAAOABoAAABPAbYAAAAOABoAAAA=")
+tile_set = ExtResource("20_fk02w")
+
+[node name="Trees" parent="World" unique_id=1722047987 instance=ExtResource("21_46bhr")]
+
+[node name="Trees2" parent="World" unique_id=2094075003 instance=ExtResource("21_46bhr")]
+position = Vector2(0, 1020)
+
+[node name="Trees3" parent="World" unique_id=1415190276 instance=ExtResource("21_46bhr")]
+position = Vector2(2566, 1020)
+
+[node name="Trees4" parent="World" unique_id=2094670658 instance=ExtResource("21_46bhr")]
+position = Vector2(0, 2040)
+
+[node name="Trees5" parent="World" unique_id=963663525 instance=ExtResource("21_46bhr")]
+position = Vector2(2570, 2040)
+
+[node name="Trees6" parent="World" unique_id=1359137966 instance=ExtResource("21_46bhr")]
+position = Vector2(1024, 2167)
+
+[node name="Trees7" parent="World" unique_id=1830667615 instance=ExtResource("21_46bhr")]
+position = Vector2(2049, 2168)
+
+[node name="Trees8" parent="World" unique_id=1889551625 instance=ExtResource("21_46bhr")]
+position = Vector2(1024, -510)
+
+[node name="Trees9" parent="World" unique_id=562000330 instance=ExtResource("21_46bhr")]
+position = Vector2(2048, -510)
+
+[node name="Trees10" parent="World" unique_id=541579864 instance=ExtResource("21_46bhr")]
+position = Vector2(3072, -510)
+
+[node name="Trees13" parent="World" unique_id=208205679 instance=ExtResource("21_46bhr")]
+position = Vector2(4096, -510)
+
+[node name="Trees14" parent="World" unique_id=1718689997 instance=ExtResource("21_46bhr")]
+position = Vector2(5120, -510)
+
+[node name="Trees15" parent="World" unique_id=1399434835 instance=ExtResource("21_46bhr")]
+position = Vector2(5120, 510)
+
+[node name="Trees16" parent="World" unique_id=1232070343 instance=ExtResource("21_46bhr")]
+position = Vector2(5120, 1530)
+
+[node name="Trees22" parent="World" unique_id=1116418825 instance=ExtResource("21_46bhr")]
+position = Vector2(5120, 2550)
+
+[node name="Trees23" parent="World" unique_id=169079980 instance=ExtResource("21_46bhr")]
+position = Vector2(5120, 3570)
+
+[node name="Trees24" parent="World" unique_id=1438085935 instance=ExtResource("21_46bhr")]
+position = Vector2(5120, 4590)
+
+[node name="Trees11" parent="World" unique_id=107814680 instance=ExtResource("21_46bhr")]
+position = Vector2(3590, 1020)
+
+[node name="Trees12" parent="World" unique_id=837853391 instance=ExtResource("21_46bhr")]
+position = Vector2(3590, 2040)
+
+[node name="Trees17" parent="World" unique_id=427723962 instance=ExtResource("21_46bhr")]
+position = Vector2(3590, 3060)
+
+[node name="Trees18" parent="World" unique_id=282552570 instance=ExtResource("21_46bhr")]
+position = Vector2(3590, 4080)
+
+[node name="Trees19" parent="World" unique_id=990590769 instance=ExtResource("21_46bhr")]
+position = Vector2(3590, 5100)
+
+[node name="Trees20" parent="World" unique_id=31817510 instance=ExtResource("21_46bhr")]
+position = Vector2(3590, 6120)
+
+[node name="Trees21" parent="World" unique_id=1950888744 instance=ExtResource("21_46bhr")]
+position = Vector2(4614, 6120)
+
+[node name="TreehouseDullworld" parent="World" unique_id=1828220740 instance=ExtResource("22_fl5ni")]
+position = Vector2(7000, 1000)
+
+[node name="TreehouseDullworld3" parent="World" unique_id=516452252 instance=ExtResource("22_fl5ni")]
+position = Vector2(6700, 250)
+
+[node name="TreehouseDullworld5" parent="World" unique_id=359708146 instance=ExtResource("22_fl5ni")]
+position = Vector2(7000, -500)
+
+[node name="TreehouseDullworld2" parent="World" unique_id=2032103106 instance=ExtResource("22_fl5ni")]
+position = Vector2(8700, 1000)
+
+[node name="TreehouseDullworld4" parent="World" unique_id=212389072 instance=ExtResource("22_fl5ni")]
+position = Vector2(9000, 250)
+
+[node name="TreehouseDullworld6" parent="World" unique_id=46948072 instance=ExtResource("22_fl5ni")]
+position = Vector2(8700, -500)
+
+[node name="TreehouseDullworld7" parent="World" unique_id=2041368452 instance=ExtResource("22_fl5ni")]
+position = Vector2(7850, -750)
+
+[node name="EmitDialogInRange1" parent="." unique_id=869890286 instance=ExtResource("23_bw4uf")]
+position = Vector2(565, 482)
+dialog_list = [["ryl", 0, "C'mon. Let's follow the path.", 2]]
+
+[node name="EmitDialogInRange2" parent="." unique_id=443726311 instance=ExtResource("23_bw4uf")]
+position = Vector2(1528, -340)
+dialog_list = [["elvyria", 0, "Wow, so this is the Dullworld.", 5], ["ryl", 0, "Tamewood's not dull!", 3], ["elvyria", 0, "...It's what we call it back home.", 1]]
+
+[node name="EmitDialogInRange3" parent="." unique_id=189208871 instance=ExtResource("23_bw4uf")]
+position = Vector2(3831, -349)
+dialog_list = [["elvyria", 0, "That's so pretty!", 7], ["ryl", 0, "It's azureberries!", 5], ["ryl", 0, "Tamewood's fairytales reference them a lot!", 3]]
+
+[node name="AzureBerries" parent="EmitDialogInRange3" unique_id=1988277302 instance=ExtResource("24_qa4jm")]
+position = Vector2(0, -45)
+
+[node name="EmitDialogInRange" parent="." unique_id=367136165 instance=ExtResource("23_bw4uf")]
+z_index = 10
+position = Vector2(3860, 2922)
+dialog_list = [["elvyria", 0, "That's the butterfly!", 7], ["ryl", 0, "The butterfly?", 5], ["elvyria", 0, "It led me to the Sacred Gate!", 3]]
+
+[node name="Butterfly" parent="EmitDialogInRange" unique_id=1961194005 instance=ExtResource("25_mhkwd")]
+position = Vector2(188, 182)
