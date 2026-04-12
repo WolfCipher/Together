@@ -137,6 +137,8 @@ func damage_blink():
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
 
 func attack():
+	telegraph()
+	await get_tree().create_timer(0.35).timeout
 	if self.is_in_group("ProjectileEnemy"):
 		shoot_projectile()
 	elif self.is_in_group("AoE_Enemy"):
@@ -199,6 +201,15 @@ func get_facing_vector() -> Vector2:
 		2: return Vector2(1,0)
 		3: return Vector2(-1,0)
 	return Vector2.ZERO
+	
+#Squash and stretch shoot telegraph
+func telegraph():
+	
+	find_child("Enemy").scale.y = 1.1
+	find_child("Enemy").scale.x = 1.1
+	await get_tree().create_timer(0.2).timeout
+	find_child("Enemy").scale.x = 1
+	find_child("Enemy").scale.y = 1
 
 #handles spawning and creation of death particles
 func spawn_death_particles():

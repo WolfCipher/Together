@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://cutmj4fj0k3j7" path="res://Entities/Enemy/Contact Enemy/Contact_Enemy_Back/Contact_Enemy_Back09.png" id="48_2xuam"]
 [ext_resource type="Texture2D" uid="uid://chh08g8tbml8h" path="res://Entities/Enemy/Contact Enemy/Contact_Enemy_Back/Contact_Enemy_Back10.png" id="49_xggh3"]
 [ext_resource type="Texture2D" uid="uid://fpb25dtsaodv" path="res://Entities/Enemy/Contact Enemy/Contact_Enemy_Back/Contact_Enemy_Back11.png" id="50_d1g6y"]
+[ext_resource type="Script" uid="uid://dawow0gqjs5wn" path="res://Entities/Enemy/squashtest.gd" id="51_ps5vw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_287tu"]
 animations = [{
@@ -394,6 +395,7 @@ projectile_scene = ExtResource("2_ps5vw")
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1432958030]
 sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"walk_up"
+script = ExtResource("51_ps5vw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
 position = Vector2(3, 6.5)

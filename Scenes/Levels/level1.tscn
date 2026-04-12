@@ -43,7 +43,7 @@ prefab_c = ExtResource("8_bvs0b")
 prefab_d = ExtResource("9_syfhk")
 prefab_e = ExtResource("9_5y6uu")
 next_scene = "res://Ink/Scenes/ink_scene.tscn"
-waves = [[0, 1, 0, 0, 0], [0, 2, 0, 0, 0], [1, 1, 0, 0, 0], [2, 0, 0, 0, 0], [2, 2, 0, 0, 0]]
+waves = [[0, 1, 0, 0, 0], [1, 1, 0, 0, 0], [2, 0, 0, 0, 0]]
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
 

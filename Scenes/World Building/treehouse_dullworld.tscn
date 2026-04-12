@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://u04w5akm8n1j"]
+
+[ext_resource type="Texture2D" uid="uid://c7h5td6rx0oq7" path="res://Entities/SceneArt/TreeHouse.png" id="1_jo848"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo848"]
+size = Vector2(27.5, 48.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ykf6"]
+size = Vector2(604, 13.0625)
+
+[node name="TreehouseDullworld" type="Node2D" unique_id=1828220740]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1685457836]
+texture = ExtResource("1_jo848")
+offset = Vector2(0, -400)
+
+[node name="LeftBoundary" type="Area2D" parent="." unique_id=75569779 groups=["BoundaryLeft"]]
+position = Vector2(-344, 74)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary" unique_id=715724692]
+position = Vector2(643, -84.375)
+shape = SubResource("RectangleShape2D_jo848")
+
+[node name="RightBoundary" type="Area2D" parent="." unique_id=735013703 groups=["BoundaryRight"]]
+position = Vector2(2775, 74)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary" unique_id=851701930]
+position = Vector2(-3081, -84.375)
+shape = SubResource("RectangleShape2D_jo848")
+
+[node name="TopBoundary" type="Area2D" parent="." unique_id=805494896 groups=["BoundaryTop"]]
+position = Vector2(475, -726)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary" unique_id=698261604]
+position = Vector2(-477, 746.53125)
+shape = SubResource("RectangleShape2D_0ykf6")
+
+[node name="BottomBoundary" type="Area2D" parent="." unique_id=957983586 groups=["BoundaryBottom"]]
+position = Vector2(475, 1974)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary" unique_id=1402017810]
+position = Vector2(-477, -2017)
+shape = SubResource("RectangleShape2D_0ykf6")

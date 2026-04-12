@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/Functionality/ink_template.gd" id="1_06462"]
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_4fq0e"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_m4axn"]
-[ext_resource type="Texture2D" uid="uid://cbyt22vcw0t7m" path="res://Ink/Functionality/ryl_icon.png" id="4_4fq0e"]
 [ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="4_hhopj"]
+[ext_resource type="Texture2D" uid="uid://bmuw3kmlea1nn" path="res://Ink/Functionality/elvyria_icon.png" id="4_m4axn"]
 [ext_resource type="Texture2D" uid="uid://b1y3ckrnwajlu" path="res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png" id="6_4fq0e"]
 [ext_resource type="Texture2D" uid="uid://bty68oyjc7pxc" path="res://Ink/Character Expressions/Ryl/Ryl_Shocked.png" id="7_m4axn"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="8_m4axn"]
@@ -44,7 +44,7 @@ offset_bottom = 51.0
 
 [node name="Speaker" type="Sprite2D" parent="Panel" unique_id=480770149]
 position = Vector2(1000, 350)
-texture = ExtResource("4_4fq0e")
+texture = ExtResource("4_m4axn")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1910788515]
 z_index = -100
@@ -54,13 +54,13 @@ centered = false
 
 [node name="Elvyria" type="Sprite2D" parent="." unique_id=305785085]
 z_index = -10
-position = Vector2(1500, 563)
+position = Vector2(500, 563)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("6_4fq0e")
 
 [node name="Ryl" type="Sprite2D" parent="." unique_id=196037725]
 z_index = -10
-position = Vector2(500, 563)
+position = Vector2(1500, 563)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("7_m4axn")
 
