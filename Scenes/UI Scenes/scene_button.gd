@@ -1,6 +1,7 @@
 extends Button
 
-@export var next_scene : String
+@export var next_scene : String   
+@export var return_to_last_level = false # only true for continuing the game
 @onready var btn_click = AudioStreamPlayer.new()
 @onready var btn_hover = AudioStreamPlayer.new()
 
@@ -23,8 +24,11 @@ func _process(_delta: float) -> void:
 	if is_pressed() && !btn_click.playing:
 		btn_click.play()
 		#get_tree().change_scene_to_file(next_scene)
-		SceneCache.scene_change.emit(next_scene)
-	if is_hovered() && !hover_playing:
+		if (return_to_last_level):
+			SceneCache.scene_change.emit(SceneCache.curr_level)
+		else:
+			SceneCache.scene_change.emit(next_scene)
+	if is_hovered() && !hover_playing && !disabled:
 		hover_playing = true
 		btn_hover.play()
 	if !is_hovered():

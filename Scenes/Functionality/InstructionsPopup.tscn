@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://ceipl1135h55i"]
+
+[ext_resource type="PackedScene" uid="uid://b2grst0aksinp" path="res://Scenes/Functionality/keyboard.tscn" id="1_1gqp1"]
+[ext_resource type="Texture2D" uid="uid://dt31fa4pydshx" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash5.png" id="2_ge2r2"]
+[ext_resource type="Texture2D" uid="uid://rtfk37pq3auo" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile00.png" id="3_7klpb"]
+[ext_resource type="Texture2D" uid="uid://btqgitqwwy2nc" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee06.png" id="4_6etyc"]
+[ext_resource type="Texture2D" uid="uid://ehx8d6voijly" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile0.png" id="5_p7172"]
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="6_7klpb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7klpb"]
+bg_color = Color(0.5647059, 0.15686275, 0.1764706, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="InstructionsPopup" type="Node2D" unique_id=208268712]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=265768892]
+offset_right = 1380.0
+offset_bottom = 600.0
+color = Color(0.78703713, 0.7659326, 0.94287354, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=734621645]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -181.0
+offset_top = 20.0
+offset_right = 181.0
+offset_bottom = 71.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("6_7klpb")
+theme_override_font_sizes/font_size = 50
+text = "Instructions"
+horizontal_alignment = 1
+
+[node name="Keyboard" parent="." unique_id=180708723 instance=ExtResource("1_1gqp1")]
+scale = Vector2(2, 2)
+
+[node name="Key" type="Node2D" parent="." unique_id=1687899468]
+position = Vector2(67, 20)
+
+[node name="MeleeElvyria" type="Sprite2D" parent="Key" unique_id=1148312726]
+position = Vector2(616, 80)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ge2r2")
+
+[node name="ProjectileElvyria" type="Sprite2D" parent="Key" unique_id=1834750614]
+position = Vector2(364, 80)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_7klpb")
+
+[node name="MeleeRyl" type="Sprite2D" parent="Key" unique_id=1761136211]
+position = Vector2(651, 79)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_6etyc")
+
+[node name="ProjectileRyl" type="Sprite2D" parent="Key" unique_id=792127290]
+position = Vector2(399, 82)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_p7172")
+
+[node name="Sync" type="Node2D" parent="Key" unique_id=514965967]
+position = Vector2(1807, 52)
+scale = Vector2(0.1, 0.1)
+
+[node name="ProjectileElvyria3" type="Sprite2D" parent="Key/Sync" unique_id=1130093435]
+position = Vector2(-7269.999, 60)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_7klpb")
+
+[node name="ProjectileRyl3" type="Sprite2D" parent="Key/Sync" unique_id=1758782408]
+position = Vector2(-7269.999, 180)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_p7172")
+
+[node name="Projectile" type="Label" parent="Key" unique_id=1058636525]
+offset_left = 143.0
+offset_top = 66.0
+offset_right = 324.0
+offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("6_7klpb")
+theme_override_font_sizes/font_size = 30
+text = "Projectile"
+
+[node name="Melee" type="Label" parent="Key" unique_id=1572133640]
+offset_left = 500.0
+offset_top = 66.0
+offset_right = 636.0
+offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("6_7klpb")
+theme_override_font_sizes/font_size = 30
+text = "Melee"
+
+[node name="Melee2" type="Label" parent="Key" unique_id=581568624]
+offset_left = 750.0
+offset_top = 66.0
+offset_right = 1147.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("6_7klpb")
+theme_override_font_sizes/font_size = 30
+text = "Together Attack
+(Press Shift Together)"
+
+[node name="Pause" type="Panel" parent="." unique_id=1965584360]
+offset_left = 59.0
+offset_top = 97.0
+offset_right = 99.0
+offset_bottom = 137.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7klpb")
+
+[node name="Pause2" type="Panel" parent="." unique_id=404726576]
+offset_left = 1335.0
+offset_top = 101.0
+offset_right = 1375.0
+offset_bottom = 141.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7klpb")
+
+[node name="Pause3" type="Panel" parent="." unique_id=1372089432]
+offset_left = 235.0
+offset_top = 549.0
+offset_right = 275.0
+offset_bottom = 589.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7klpb")
+
+[node name="Pause4" type="Label" parent="." unique_id=1976110411]
+offset_left = 10.0
+offset_top = 552.0
+offset_right = 146.0
+offset_bottom = 594.0
+theme_override_fonts/font = ExtResource("6_7klpb")
+theme_override_font_sizes/font_size = 30
+text = "Toggle Pause
+
+"

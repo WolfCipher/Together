@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://b5prnshh5emox" path="res://Scenes/Functionality/level_dialog_control.tscn" id="17_jydn8"]
 [ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="17_vt8on"]
 [ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="18_56d2c"]
+[ext_resource type="PackedScene" uid="uid://6b4fi1o4b2y6" path="res://Entities/Animals/bunny.tscn" id="20_l1hk4"]
 [ext_resource type="PackedScene" uid="uid://pgjqpf678xkx" path="res://Scenes/World Building/EmitDialogInRange.tscn" id="21_b2fon"]
+[ext_resource type="PackedScene" uid="uid://d001gvec3jdcc" path="res://Entities/Animals/bunny_cream.tscn" id="21_jydn8"]
 [ext_resource type="PackedScene" uid="uid://u04w5akm8n1j" path="res://Scenes/World Building/treehouse_dullworld.tscn" id="22_bngq1"]
 [ext_resource type="PackedScene" uid="uid://c8tlq472q0mq7" path="res://Scenes/World Building/azure-berries.tscn" id="23_pwvbg"]
 [ext_resource type="PackedScene" uid="uid://ygujoeu2qodx" path="res://Scenes/World Building/trees.tscn" id="24_bngq1"]
@@ -165,6 +167,21 @@ position = Vector2(4869, 6120)
 [node name="Trees26" parent="WorldObjects" unique_id=519110492 instance=ExtResource("24_bngq1")]
 position = Vector2(5893, 6120)
 
+[node name="Trees27" parent="WorldObjects" unique_id=1242787308 instance=ExtResource("24_bngq1")]
+position = Vector2(6917, 6120)
+
+[node name="Trees28" parent="WorldObjects" unique_id=3228633 instance=ExtResource("24_bngq1")]
+position = Vector2(7941, 6120)
+
+[node name="Trees29" parent="WorldObjects" unique_id=1319330144 instance=ExtResource("24_bngq1")]
+position = Vector2(8965, 6120)
+
+[node name="Trees30" parent="WorldObjects" unique_id=1250717995 instance=ExtResource("24_bngq1")]
+position = Vector2(9222, 5865)
+
+[node name="Trees31" parent="WorldObjects" unique_id=2119796239 instance=ExtResource("24_bngq1")]
+position = Vector2(9478, 5481)
+
 [node name="TreehouseDullworld" parent="WorldObjects" unique_id=1828220740 instance=ExtResource("22_bngq1")]
 position = Vector2(7000, 1000)
 
@@ -189,27 +206,44 @@ position = Vector2(7850, -750)
 [node name="World" parent="." unique_id=1446317090 instance=ExtResource("17_hpjhc")]
 position = Vector2(1500, 0)
 
-[node name="EmitDialogInRange1" parent="." unique_id=869890286 instance=ExtResource("21_b2fon")]
+[node name="Bunny" parent="." unique_id=306726203 instance=ExtResource("20_l1hk4")]
+position = Vector2(8291, 4502)
+
+[node name="Dialog" type="Node2D" parent="." unique_id=1078182772]
+
+[node name="EmitDialogInRange1" parent="Dialog" unique_id=869890286 instance=ExtResource("21_b2fon")]
 position = Vector2(565, 482)
 dialog_list = [["ryl", 0, "C'mon. Let's follow the path.", 2]]
 
-[node name="EmitDialogInRange2" parent="." unique_id=443726311 instance=ExtResource("21_b2fon")]
+[node name="EmitDialogInRange2" parent="Dialog" unique_id=443726311 instance=ExtResource("21_b2fon")]
 position = Vector2(1528, -340)
 dialog_list = [["elvyria", 0, "Wow, so this is the Dullworld.", 5], ["ryl", 0, "Tamewood's not dull!", 3], ["elvyria", 0, "...It's what we call it back home.", 1]]
 
-[node name="EmitDialogInRange3" parent="." unique_id=189208871 instance=ExtResource("21_b2fon")]
-position = Vector2(4093, -303)
+[node name="AzureBerries" parent="Dialog" unique_id=1988277302 instance=ExtResource("23_pwvbg")]
+position = Vector2(4093, -348)
+
+[node name="EmitDialogInRange3" parent="Dialog/AzureBerries" unique_id=189208871 instance=ExtResource("21_b2fon")]
+position = Vector2(0, 45)
 dialog_list = [["elvyria", 0, "That's so pretty!", 10], ["ryl", 0, "It's azureberries!", 8], ["ryl", 0, "Tamewood's fairytales reference them a lot!", 6], ["ryl", 0, "They're said to have healing powers!", 4], ["ryl", 0, "...I use them for dye, though.", 2]]
 
-[node name="AzureBerries" parent="EmitDialogInRange3" unique_id=1988277302 instance=ExtResource("23_pwvbg")]
-position = Vector2(0, -45)
-
-[node name="EmitDialogInRange" parent="." unique_id=367136165 instance=ExtResource("21_b2fon")]
+[node name="Butterfly" parent="Dialog" unique_id=1961194005 instance=ExtResource("25_t6y87")]
 z_index = 10
-position = Vector2(4103, 4535)
-dialog_list = [["elvyria", 0, "That's the butterfly!", 7], ["ryl", 0, "The butterfly?", 5], ["elvyria", 0, "It led me to the Sacred Gate!", 3], ["ryl", 0, "Sacred... Gate?", 1], ["elvyria", 0, "Y'know, the gate between Mystia and the Dullworld?", 11], ["ryl", 0, "Mystia... Like in the fairytales?", 9], ["elvyria", 0, "Fairytales? Noooo?", 7], ["ryl", 0, "...We should visit someone in a nearby village. He's studied the fairytales.", 5], ["ryl", 0, "But first, let's make a stop in my village.", 3]]
-
-[node name="Butterfly" parent="EmitDialogInRange" unique_id=1961194005 instance=ExtResource("25_t6y87")]
-position = Vector2(309, -186)
+position = Vector2(4412, 4349)
 rotation = 0.4693181
 scale = Vector2(0.5, 0.5)
+
+[node name="EmitDialogInRange" parent="Dialog/Butterfly" unique_id=367136165 instance=ExtResource("21_b2fon")]
+z_index = 10
+position = Vector2(-382.93164, 611.2864)
+rotation = -0.4693181
+scale = Vector2(1.9999998, 1.9999998)
+dialog_list = [["elvyria", 0, "That's the butterfly!", 7], ["ryl", 0, "The butterfly?", 5], ["elvyria", 0, "It led me to the Sacred Gate!", 3], ["ryl", 0, "Sacred... Gate?", 1], ["elvyria", 0, "Y'know, the gate between Mystia and the Dullworld?", 11], ["ryl", 0, "Mystia... Like in the fairytales?", 9], ["elvyria", 0, "Fairytales? Noooo?", 7], ["ryl", 0, "...We should visit someone in a nearby village. He's studied the fairytales.", 5], ["ryl", 0, "But first, let's make a stop in my village.", 3]]
+
+[node name="NextScene" parent="Dialog" unique_id=1258706374 instance=ExtResource("21_b2fon")]
+position = Vector2(7864, -691)
+dialog_list = [["ryl", 0, "Here we are.", 7], ["elvyria", 0, "Who's that?", 5], ["ryl", 0, "Vyerity.", 3]]
+send_to_scene_after_completion = true
+next_scene = "res://Scenes/Levels/level3.tscn"
+
+[node name="Bunny2" parent="." unique_id=1841798880 instance=ExtResource("21_jydn8")]
+position = Vector2(8332, 4432)

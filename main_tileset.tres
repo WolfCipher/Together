@@ -96,10 +96,10 @@ texture = ExtResource("1_gi5ff")
 6:36/0/y_sort_origin = 30
 12:36/size_in_atlas = Vector2i(6, 6)
 12:36/0 = 0
-12:36/0/y_sort_origin = 30
+12:36/0/y_sort_origin = 20
 18:36/size_in_atlas = Vector2i(6, 6)
 18:36/0 = 0
-18:36/0/y_sort_origin = 30
+18:36/0/y_sort_origin = 20
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_lm3os")
