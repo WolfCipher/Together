@@ -42,6 +42,7 @@ prefab_b = ExtResource("7_ay16s")
 prefab_c = ExtResource("8_bvs0b")
 prefab_d = ExtResource("9_syfhk")
 prefab_e = ExtResource("9_5y6uu")
+spawn_positions = Array[Vector2]([Vector2(1000, 500), Vector2(250, 500), Vector2(540, 200), Vector2(540, 700)])
 next_scene = "res://Ink/Scenes/ink_scene.tscn"
 waves = [[0, 1, 0, 0, 0], [1, 1, 0, 0, 0], [2, 0, 0, 0, 0]]
 target1 = NodePath("../Elvyria")
@@ -72,6 +73,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+startsVisible = true
 
 [node name="Sync_Gauge" parent="Camera_Centered" unique_id=1752999985 node_paths=PackedStringArray("player1", "player2") instance=ExtResource("14_bvs0b")]
 player1 = NodePath("../../Elvyria")

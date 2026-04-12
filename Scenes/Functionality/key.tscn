@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cy64orbv3ee7e"]
+
+[ext_resource type="Script" uid="uid://djdl6hml6xngk" path="res://Scenes/Functionality/key.gd" id="1_dkrjb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cthyn"]
+bg_color = Color(0.70980394, 0.70980394, 0.70980394, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Key" type="Node2D" unique_id=481684012]
+script = ExtResource("1_dkrjb")
+
+[node name="Panel" type="Panel" parent="." unique_id=2061821123]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cthyn")
+
+[node name="Letter" type="Label" parent="Panel" unique_id=1336112575]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1

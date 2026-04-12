@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://s6wikn3lqb07" path="res://Entities/SceneArt/GameOverScreen.png" id="1_c5vex"]
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="2_fmfdg"]
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="2_wk20n"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="3_fmfdg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5edoe"]
@@ -87,20 +88,47 @@ theme_override_font_sizes/font_size = 125
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=45521042]
+[node name="Main Menu" type="Button" parent="." unique_id=45521042]
 z_index = 1
-offset_left = 770.0
+custom_minimum_size = Vector2(800, 0)
+offset_left = 830.0
 offset_top = 926.0
-offset_right = 1182.0
+offset_right = 1630.0
 offset_bottom = 1023.0
+theme_override_fonts/font = ExtResource("2_wk20n")
 theme_override_font_sizes/font_size = 63
 theme_override_styles/normal = SubResource("StyleBoxFlat_5edoe")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qhf65")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wexvb")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_n1chw")
 theme_override_styles/focus = SubResource("StyleBoxFlat_qnhai")
-text = "Main Menu"
+text = "Exit to Main Menu"
 script = ExtResource("2_fmfdg")
 next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"
 
+[node name="Continue" type="Button" parent="." unique_id=1293751695]
+z_index = 1
+offset_left = 330.0
+offset_top = 926.0
+offset_right = 742.0
+offset_bottom = 1023.0
+theme_override_fonts/font = ExtResource("2_wk20n")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_5edoe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qhf65")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wexvb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_n1chw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qnhai")
+text = "Retry"
+script = ExtResource("2_fmfdg")
+next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"
+return_to_last_level = true
+
 [node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("3_fmfdg")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=206498683]
+custom_minimum_size = Vector2(412, 97)
+offset_left = 960.0
+offset_top = 926.0
+offset_right = 1000.0
+offset_bottom = 966.0

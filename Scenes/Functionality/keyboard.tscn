@@ -1,0 +1,300 @@
+[gd_scene format=3 uid="uid://b2grst0aksinp"]
+
+[ext_resource type="PackedScene" uid="uid://cy64orbv3ee7e" path="res://Scenes/Functionality/key.tscn" id="1_hgq2m"]
+[ext_resource type="Texture2D" uid="uid://dt31fa4pydshx" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash5.png" id="2_d2mmd"]
+[ext_resource type="Texture2D" uid="uid://rtfk37pq3auo" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile00.png" id="3_707dp"]
+[ext_resource type="Texture2D" uid="uid://btqgitqwwy2nc" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee06.png" id="4_5usjc"]
+[ext_resource type="Texture2D" uid="uid://ehx8d6voijly" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile0.png" id="5_lr7ig"]
+
+[node name="Keyboard" type="Node2D" unique_id=180708723]
+
+[node name="Transform" type="Node2D" parent="." unique_id=354955628]
+position = Vector2(95, 80)
+
+[node name="Pause" type="Node2D" parent="Transform" unique_id=1595206055]
+
+[node name="Esc" parent="Transform/Pause" unique_id=481684012 instance=ExtResource("1_hgq2m")]
+position = Vector2(-90, -60)
+forElvyria = true
+letter = "Esc"
+
+[node name="Del" parent="Transform/Pause" unique_id=838792778 instance=ExtResource("1_hgq2m")]
+position = Vector2(550, -60)
+forRyl = true
+letter = "Del"
+
+[node name="Row" type="Node2D" parent="Transform" unique_id=1552351592]
+
+[node name="Q" parent="Transform/Row" unique_id=810402049 instance=ExtResource("1_hgq2m")]
+forElvyria = true
+letter = "Q"
+
+[node name="W" parent="Transform/Row" unique_id=1236671361 instance=ExtResource("1_hgq2m")]
+position = Vector2(40, 0)
+forElvyria = true
+letter = "W"
+
+[node name="E" parent="Transform/Row" unique_id=1835907003 instance=ExtResource("1_hgq2m")]
+position = Vector2(80, 0)
+forElvyria = true
+letter = "E"
+
+[node name="R" parent="Transform/Row" unique_id=812382983 instance=ExtResource("1_hgq2m")]
+position = Vector2(120, 0)
+letter = "R"
+
+[node name="T" parent="Transform/Row" unique_id=976946187 instance=ExtResource("1_hgq2m")]
+position = Vector2(160, 0)
+letter = "T"
+
+[node name="Y" parent="Transform/Row" unique_id=1079583389 instance=ExtResource("1_hgq2m")]
+position = Vector2(200, 0)
+letter = "Y"
+
+[node name="U" parent="Transform/Row" unique_id=824772706 instance=ExtResource("1_hgq2m")]
+position = Vector2(240, 0)
+letter = "U"
+
+[node name="I" parent="Transform/Row" unique_id=15097365 instance=ExtResource("1_hgq2m")]
+position = Vector2(280, 0)
+letter = "I"
+
+[node name="O" parent="Transform/Row" unique_id=96635584 instance=ExtResource("1_hgq2m")]
+position = Vector2(320, 0)
+letter = "O"
+
+[node name="P" parent="Transform/Row" unique_id=39028508 instance=ExtResource("1_hgq2m")]
+position = Vector2(360, 0)
+letter = "P"
+
+[node name="[" parent="Transform/Row" unique_id=557601441 instance=ExtResource("1_hgq2m")]
+position = Vector2(400, 0)
+letter = "["
+
+[node name="]" parent="Transform/Row" unique_id=1841165431 instance=ExtResource("1_hgq2m")]
+position = Vector2(440, 0)
+letter = "]"
+
+[node name="Row2" type="Node2D" parent="Transform" unique_id=458687674]
+
+[node name="A" parent="Transform/Row2" unique_id=103469126 instance=ExtResource("1_hgq2m")]
+position = Vector2(5, 40)
+forElvyria = true
+letter = "A"
+
+[node name="S" parent="Transform/Row2" unique_id=1791105560 instance=ExtResource("1_hgq2m")]
+position = Vector2(45, 40)
+forElvyria = true
+
+[node name="D" parent="Transform/Row2" unique_id=1123331964 instance=ExtResource("1_hgq2m")]
+position = Vector2(85, 40)
+forElvyria = true
+letter = "D"
+
+[node name="F" parent="Transform/Row2" unique_id=1632111465 instance=ExtResource("1_hgq2m")]
+position = Vector2(125, 40)
+letter = "F"
+
+[node name="G" parent="Transform/Row2" unique_id=1491524415 instance=ExtResource("1_hgq2m")]
+position = Vector2(165, 40)
+letter = "G"
+
+[node name="H" parent="Transform/Row2" unique_id=1974706870 instance=ExtResource("1_hgq2m")]
+position = Vector2(205, 40)
+letter = "H"
+
+[node name="J" parent="Transform/Row2" unique_id=1970179222 instance=ExtResource("1_hgq2m")]
+position = Vector2(245, 40)
+letter = "J"
+
+[node name="K" parent="Transform/Row2" unique_id=1440235933 instance=ExtResource("1_hgq2m")]
+position = Vector2(285, 40)
+letter = "K"
+
+[node name="L" parent="Transform/Row2" unique_id=381524303 instance=ExtResource("1_hgq2m")]
+position = Vector2(325, 40)
+letter = "L"
+
+[node name=";" parent="Transform/Row2" unique_id=1122848776 instance=ExtResource("1_hgq2m")]
+position = Vector2(365, 40)
+letter = ";"
+
+[node name="\'" parent="Transform/Row2" unique_id=1083731080 instance=ExtResource("1_hgq2m")]
+position = Vector2(405, 40)
+letter = "'"
+
+[node name="enter" parent="Transform/Row2" unique_id=248339548 instance=ExtResource("1_hgq2m")]
+position = Vector2(445, 40)
+letter = "enter"
+widthScale = 145
+
+[node name="Row3" type="Node2D" parent="Transform" unique_id=1287641437]
+position = Vector2(5, 40)
+
+[node name="Shift" parent="Transform/Row3" unique_id=1746362784 instance=ExtResource("1_hgq2m")]
+position = Vector2(-95, 40)
+forElvyria = true
+forRyl = true
+letter = "shift"
+widthScale = 140
+
+[node name="Z" parent="Transform/Row3" unique_id=266386648 instance=ExtResource("1_hgq2m")]
+position = Vector2(45, 40)
+letter = "Z"
+
+[node name="X" parent="Transform/Row3" unique_id=1031199051 instance=ExtResource("1_hgq2m")]
+position = Vector2(85, 40)
+letter = "X"
+
+[node name="C" parent="Transform/Row3" unique_id=1792012232 instance=ExtResource("1_hgq2m")]
+position = Vector2(125, 40)
+forElvyria = true
+letter = "C"
+
+[node name="V" parent="Transform/Row3" unique_id=1494737490 instance=ExtResource("1_hgq2m")]
+position = Vector2(165, 40)
+forElvyria = true
+letter = "V"
+
+[node name="B" parent="Transform/Row3" unique_id=1235665154 instance=ExtResource("1_hgq2m")]
+position = Vector2(205, 40)
+letter = "B"
+
+[node name="N" parent="Transform/Row3" unique_id=100478 instance=ExtResource("1_hgq2m")]
+position = Vector2(245, 40)
+letter = "N"
+
+[node name="M" parent="Transform/Row3" unique_id=725471545 instance=ExtResource("1_hgq2m")]
+position = Vector2(285, 40)
+letter = "M"
+
+[node name="," parent="Transform/Row3" unique_id=1924760382 instance=ExtResource("1_hgq2m")]
+position = Vector2(325, 40)
+forRyl = true
+letter = ","
+
+[node name="period" parent="Transform/Row3" unique_id=707112801 instance=ExtResource("1_hgq2m")]
+position = Vector2(365, 40)
+forRyl = true
+letter = "."
+
+[node name="slash" parent="Transform/Row3" unique_id=2123587725 instance=ExtResource("1_hgq2m")]
+position = Vector2(405, 40)
+letter = "/"
+
+[node name="Shift2" parent="Transform/Row3" unique_id=2114391478 instance=ExtResource("1_hgq2m")]
+position = Vector2(445, 40)
+forElvyria = true
+forRyl = true
+letter = "shift"
+widthScale = 140
+
+[node name="Row4" type="Node2D" parent="Transform" unique_id=1896802449]
+position = Vector2(4, 90)
+
+[node name="Space" parent="Transform/Row4" unique_id=924412017 instance=ExtResource("1_hgq2m")]
+position = Vector2(125, 40)
+letter = "Space"
+widthScale = 200
+
+[node name="<" parent="Transform/Row4" unique_id=1007443841 instance=ExtResource("1_hgq2m")]
+position = Vector2(425, 80)
+forRyl = true
+letter = "<"
+widthScale = 60
+
+[node name=">" parent="Transform/Row4" unique_id=1379866632 instance=ExtResource("1_hgq2m")]
+position = Vector2(525, 80)
+forRyl = true
+letter = ">"
+widthScale = 60
+
+[node name="," parent="Transform/Row4" unique_id=1633323812 instance=ExtResource("1_hgq2m")]
+position = Vector2(485, 80)
+forRyl = true
+letter = "v"
+
+[node name="PgUp" parent="Transform/Row4" unique_id=181259744 instance=ExtResource("1_hgq2m")]
+position = Vector2(425, 40)
+forRyl = true
+letter = "PgUp"
+widthScale = 60
+
+[node name="^" parent="Transform/Row4" unique_id=947810362 instance=ExtResource("1_hgq2m")]
+position = Vector2(485, 40)
+forRyl = true
+letter = "^"
+
+[node name="PgDn" parent="Transform/Row4" unique_id=1098450228 instance=ExtResource("1_hgq2m")]
+position = Vector2(525, 40)
+forRyl = true
+letter = "PgDn"
+widthScale = 60
+
+[node name="MeleeElvyria" type="Sprite2D" parent="." unique_id=987593090]
+position = Vector2(208.5, 84.5)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_d2mmd")
+
+[node name="MeleeElvyria2" type="Sprite2D" parent="." unique_id=63130706]
+position = Vector2(297.5, 166.5)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_d2mmd")
+
+[node name="ProjectileElvyria" type="Sprite2D" parent="." unique_id=1290605845]
+position = Vector2(126, 85)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_707dp")
+
+[node name="ProjectileElvyria2" type="Sprite2D" parent="." unique_id=2073577678]
+position = Vector2(256.5, 166.5)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_707dp")
+
+[node name="MeleeRyl" type="Sprite2D" parent="." unique_id=1816554725]
+position = Vector2(672.49994, 211.99998)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_5usjc")
+
+[node name="MeleeRyl2" type="Sprite2D" parent="." unique_id=613947161]
+position = Vector2(495, 166)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_5usjc")
+
+[node name="ProjectileRyl" type="Sprite2D" parent="." unique_id=467884440]
+position = Vector2(578, 229)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_lr7ig")
+
+[node name="ProjectileRyl2" type="Sprite2D" parent="." unique_id=2081341903]
+position = Vector2(457, 179)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("5_lr7ig")
+
+[node name="Sync" type="Node2D" parent="." unique_id=300087403]
+position = Vector2(495.5, 168)
+scale = Vector2(0.05, 0.05)
+
+[node name="ProjectileElvyria3" type="Sprite2D" parent="Sync" unique_id=1991732165]
+position = Vector2(-7269.999, 60)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_707dp")
+
+[node name="ProjectileRyl3" type="Sprite2D" parent="Sync" unique_id=184188511]
+position = Vector2(-7269.999, 180)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_lr7ig")
+
+[node name="Sync2" type="Node2D" parent="." unique_id=1170197945]
+position = Vector2(1033, 168.5)
+scale = Vector2(0.05, 0.05)
+
+[node name="ProjectileElvyria3" type="Sprite2D" parent="Sync2" unique_id=387870044]
+position = Vector2(-7269.999, 60)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_707dp")
+
+[node name="ProjectileRyl3" type="Sprite2D" parent="Sync2" unique_id=480119817]
+position = Vector2(-7269.999, 180)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_lr7ig")
