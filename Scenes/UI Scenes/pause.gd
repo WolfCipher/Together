@@ -1,9 +1,14 @@
 extends Control
 
+@export var startsVisible = false # only level 1 is true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	visible = false
+	visible = startsVisible
+	if startsVisible:
+		await get_tree().create_timer(0.4).timeout
+		get_tree().paused = true
+		await get_tree().create_timer(2.0).timeout
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

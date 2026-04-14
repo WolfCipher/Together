@@ -7,6 +7,9 @@ var dialog_already_played = false # ensures this only plays once
 	["ryl", 0, "...",3]
 ]
 
+@export var send_to_scene_after_completion = false
+@export var next_scene = "res://Scenes/UI Scenes/Victory.tscn"
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("Player") && !dialog_already_played):
 		dialog_already_played = true
@@ -16,3 +19,6 @@ func play_dialog():
 	for i in dialog_list.size():
 		SceneCache.create_dialog.emit(dialog_list[i][0], dialog_list[i][1], dialog_list[i][2], dialog_list[i][3])
 		await get_tree().create_timer(2).timeout
+	
+	if send_to_scene_after_completion:
+		SceneCache.scene_change.emit(next_scene)

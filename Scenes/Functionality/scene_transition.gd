@@ -18,6 +18,9 @@ func _ready() -> void:
 
 func on_scene_change(next_scene):
 	
+	if (next_scene.contains("level")):
+		SceneCache.curr_level = next_scene
+	
 	if fade_out:
 		var tween = create_tween()
 		tween.tween_property(color_rect, "modulate", Color(0,0,0,1), 0.4)

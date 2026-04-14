@@ -10,6 +10,9 @@ extends Node
 @export var spawn_positions: Array[Vector2] = [Vector2(750, 500), Vector2(250,500), Vector2(540,200), Vector2(540,700)] # predefined locations that enemies can spawn at
 var pos_index = 0
 @export var next_scene : String
+@export var goes_to_next_scene = true # false if waves occur mid-scene
+@export var can_start = true # false if needs another condition (eg players must reach a certain location)
+@export var distance_start = 500 # distance players must be from spawn manager to set can_start = true
 
 # each outer element represents the wave
 # each inner element represents how many enemies of a particular type (a, b, c, etc.) are spawned in a wave
@@ -38,22 +41,32 @@ var waveNum = 0
 
 func _ready():
 	# instantiate first wave
-	spawn()
+	if can_start:
+		spawn()
 
 func _process(_delta: float) -> void:
-	# if current wave is over (all enemies are defeated, so self has no children), start new wave
-	if self.get_child_count() == 0:
-		# TODO handle finishing level
-		if waveNum >= waves.size():
-			if next_scene:
-				await get_tree().create_timer(1.0).timeout # wait 0.2 seconds before changing scene
-				#get_tree().change_scene_to_file(next_scene)
-				SceneCache.scene_change.emit(next_scene)
-			return
-		else:
-			target1.xp += 1
-			target2.xp += 1
-			spawn()
+	if can_start:
+		# if current wave is over (all enemies are defeated, so self has no children), start new wave
+		if self.get_child_count() == 0:
+			# TODO handle finishing level
+			if waveNum >= waves.size():
+				if next_scene:
+					await get_tree().create_timer(1.0).timeout # wait 0.2 seconds before changing scene
+					#get_tree().change_scene_to_file(next_scene)
+					SceneCache.scene_change.emit(next_scene)
+				return
+			else:
+				target1.xp += 1
+				target2.xp += 1
+				spawn()
+	else:
+		var pos1 = target1.global_position
+		var pos2 = target2.global_position
+		var dist1 = self.global_position.distance_to(pos1)
+		var dist2 = self.global_position.distance_to(pos2)
+		
+		if (dist1 <= distance_start || dist2 <= distance_start):
+			can_start = true
 
 func spawn() -> void:
 	# which spawn location to use
