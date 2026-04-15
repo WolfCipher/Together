@@ -6,6 +6,8 @@ extends Area2D
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var animation := sprite.animation
 @onready var walk: AudioStreamPlayer = $AudioStreamPlayer
+@onready var dash_particles := CPUParticles2D.new()
+@onready var tex := load("res://death_particle.png") 
 
 
 @export var speed = 400
@@ -59,6 +61,9 @@ var num_top_boundaries = 0
 func _ready() -> void:
 	play()
 	add_to_group("Player")
+	add_child(dash_particles)
+	dash_particles.emitting = false
+
 
 func _process(delta: float) -> void:
 	recharge(delta)
@@ -176,11 +181,28 @@ func attack_melee() -> void:
 # allows ryl to dash
 func dash() -> void:
 	if Input.is_action_just_pressed("r_dash") and is_in_group('Ryl') and dash_cooldown <= 0:
+		spawn_dash_particles()
 		dash_cooldown = dash_recharge
 		speed = 1000
 		print("dash!!!")
 		await get_tree().create_timer(0.25).timeout
 		speed = 400
+		
+#handles spawning and creation of dash particles
+func spawn_dash_particles():
+	# Load the image resource
+	dash_particles.texture = tex
+	#define dash particles
+	dash_particles.one_shot = true
+	dash_particles.scale_amount_min = 8
+	dash_particles.scale_amount_max = 8
+	dash_particles.gravity = Vector2(0,0)
+	dash_particles.lifetime = .3
+	dash_particles.amount = 20
+	dash_particles.z_index = 100 
+	dash_particles.z_as_relative = false
+	dash_particles.global_position = global_position
+	dash_particles.emitting = true
 		
 # allows Elvyria to shield
 func shield() -> void:

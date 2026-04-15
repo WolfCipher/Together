@@ -147,6 +147,7 @@ text = "ELVYRIA
 Movement: WASD
 Shoot: C or Q
 Melee: V or E
+Shield: B or F
 "
 horizontal_alignment = 1
 
@@ -169,7 +170,7 @@ text = "RYL
 Movement: Arrow Keys
 Shoot: , (comma) or PgUp
 Melee: . (period) or PgDn
-"
+Dash: / or End"
 horizontal_alignment = 1
 
 [node name="ShiftText" type="Label" parent="Camera_Centered" unique_id=1920651720]
