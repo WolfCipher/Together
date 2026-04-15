@@ -35,11 +35,10 @@ shadow_color = Color(0.21504444, 0.0001523218, 0.27681413, 0.6)
 shadow_offset = Vector2(-5, 5)
 
 [node name="Dialog_Button" type="Button" unique_id=2043929574]
-custom_minimum_size = Vector2(770, 99)
+custom_minimum_size = Vector2(900, 99)
 offset_right = 660.0
 offset_bottom = 99.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_4kskp")
 theme_override_font_sizes/font_size = 33
 theme_override_styles/normal = ExtResource("2_6vugt")

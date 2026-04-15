@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://d001gvec3jdcc" path="res://Entities/Animals/bunny_cream.tscn" id="23_etuld"]
 [ext_resource type="PackedScene" uid="uid://u04w5akm8n1j" path="res://Scenes/World Building/treehouse_dullworld.tscn" id="23_v1uej"]
 [ext_resource type="PackedScene" uid="uid://pgjqpf678xkx" path="res://Scenes/World Building/EmitDialogInRange.tscn" id="24_etuld"]
+[ext_resource type="PackedScene" uid="uid://ct51futxpisyi" path="res://Entities/NPCs/Silas.tscn" id="26_f80nq"]
 
 [node name="Main" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
@@ -33,20 +34,17 @@ metadata/_edit_horizontal_guides_ = [-1552.0]
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_v1uej")]
 position = Vector2(516, 505)
 projectile_scene = ExtResource("2_f80nq")
+xp = 3
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_lnl7s")]
 position = Vector2(574, 505)
+xp = 3
 
 [node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
 stream = ExtResource("4_kbn7v")
 volume_db = -5.0
 autoplay = true
 bus = &"Music"
-
-[node name="EmitDialogInRange" parent="." unique_id=869890286 instance=ExtResource("24_etuld")]
-position = Vector2(4721, -1972)
-scale = Vector2(3, 3)
-dialog_list = [["ryl", 0, "Wait a moment, Elvyria. What's that ahead of us on the path?", 7], ["elvyria", 0, "Not again! Prepare yourself, Ryl!", 5], ["ryl", 0, "Grr...", 3]]
 
 [node name="SpawnManager" type="Node2D" parent="." unique_id=708660748 node_paths=PackedStringArray("target1", "target2")]
 position = Vector2(4721, -2655)
@@ -58,6 +56,7 @@ prefab_d = ExtResource("9_ltrm1")
 prefab_e = ExtResource("10_16bue")
 spawn_positions = Array[Vector2]([Vector2(0, -300), Vector2(-300, -50), Vector2(300, -50), Vector2(0, 0)])
 next_scene = "res://Scenes/UI Scenes/Victory.tscn"
+goes_to_next_scene = false
 can_start = false
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
@@ -279,3 +278,19 @@ position = Vector2(3890, 503)
 position = Vector2(3994, 508)
 scale = Vector2(2, 2)
 dialog_list = [["elvyria", 0, "Aw. They followed us here.", 7], ["ryl", 0, "...Yes. They're friends of mine.", 5], ["ryl", 0, "Please, go back to Tamewood.", 3]]
+
+[node name="Silas" parent="." unique_id=601485998 instance=ExtResource("26_f80nq")]
+position = Vector2(8411, -6270)
+
+[node name="EmitDialogInRange" parent="Silas" unique_id=584359162 instance=ExtResource("24_etuld")]
+dialog_list = [["silas", 0, "Ah, a couple of intrepid young adventurers.", 9], ["silas", 0, "Vyerity told me to expect you.", 7], ["elvyria", 0, "How'd she do that?", 5], ["ryl", 0, "She always finds a way. Should've seen this coming.", 3]]
+send_to_scene_after_completion = true
+
+[node name="EmitDialogInRange" parent="." unique_id=869890286 instance=ExtResource("24_etuld")]
+position = Vector2(4721, -1972)
+scale = Vector2(3, 3)
+dialog_list = [["ryl", 0, "Wait a moment, Elvyria. What's that ahead of us on the path?", 7], ["elvyria", 0, "Not again! Prepare yourself, Ryl!", 5], ["ryl", 0, "Grr...", 3]]
+
+[node name="EmitDialogInRange2" parent="." unique_id=1938153284 instance=ExtResource("24_etuld")]
+position = Vector2(548, 496)
+dialog_list = [["ryl", 0, "Wow, I still can't believe Vyerity lended us her gear!", 9], ["ryl", 0, "I feel stronger already!", 7], ["elvyria", 0, "Hey, thanks for coming with me, Ryl.", 5], ["ryl", 0, "No problem! I always wanted to travel!", 3]]

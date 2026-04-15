@@ -91,7 +91,7 @@ Phew...
 ~btn4 = 1
 ~dialog = 0
 
- * What? I haven't heard of that place. -> Lost
+ * What? I haven't heard of it. -> Lost
  * You're in Tamewood. -> Tamewood
  * Dullworld? Ha! -> Lost
  
@@ -147,7 +147,7 @@ Phew...
  ~dialog = 0
  
  * C'mon, let me show you around. -> Continue
- * Hey, it'll be alright. Follow me. -> Continue
+ * Hey, it'll be okay. Follow me. -> Continue
  
  
 // ELVYRIA
