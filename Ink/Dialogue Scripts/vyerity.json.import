@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://ov1igf56no8l"
+path="res://.godot/imported/vyerity.json-61f9bad4cec9340c6f5ce766f127e02c.res"
+
+[deps]
+
+source_file="res://Ink/Dialogue Scripts/vyerity.json"
+dest_files=["res://.godot/imported/vyerity.json-61f9bad4cec9340c6f5ce766f127e02c.res"]
+
+[params]
+
+compress=true

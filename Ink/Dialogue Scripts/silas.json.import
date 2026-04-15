@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://cyfginjv2b36o"
+path="res://.godot/imported/silas.json-cd517ce5fbac80f4aa02bdb0c8dc253f.res"
+
+[deps]
+
+source_file="res://Ink/Dialogue Scripts/silas.json"
+dest_files=["res://.godot/imported/silas.json-cd517ce5fbac80f4aa02bdb0c8dc253f.res"]
+
+[params]
+
+compress=true

@@ -41,7 +41,7 @@ var shield_cooldown := 0.0
 @export var projectile_scene: PackedScene
 @export var melee_scene: PackedScene
 
-var xp = 0; # updated in spawn manager after each wave of enemies
+@export var xp = 0; # originally updated in spawn manager after each wave of enemies, now set in each level
 
 var god_mode = false; # makes player invincible when shift + quote tilde pressed
 
@@ -138,7 +138,7 @@ func shoot_projectile() -> void:
 	get_tree().current_scene.add_child(projectile)
 	
 	# with higher xp, can shoot 3 at once
-	if xp >= 2:
+	if xp >= 3:
 		var x_change = 0.0
 		var y_change = 0.0
 		

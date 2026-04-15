@@ -11,6 +11,7 @@ func _ready() -> void:
 	SceneCache.level1 = preload("res://Scenes/Levels/level1.tscn")
 	SceneCache.dialog1 = preload("res://Ink/Scenes/ink_scene.tscn")
 	SceneCache.level2 = preload("res://Scenes/Levels/level2.tscn")
+	SceneCache.dialog2 = preload("res://Ink/Scenes/vyerity_dialog.tscn")
 	SceneCache.level3 = preload("res://Scenes/Levels/level3.tscn")
 	SceneCache.gameover = preload("res://Scenes/UI Scenes/DeathScene.tscn")
 

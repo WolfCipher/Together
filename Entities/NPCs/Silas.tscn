@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://ct51futxpisyi"]
+
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/Animals/animal.gd" id="1_bjjpx"]
+[ext_resource type="Texture2D" uid="uid://btwhtlhqgnsg4" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle00.png" id="2_xucks"]
+[ext_resource type="Texture2D" uid="uid://j604teoqra48" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle01.png" id="3_yk5an"]
+[ext_resource type="Texture2D" uid="uid://bpr08xguedsdf" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle02.png" id="4_e7wum"]
+[ext_resource type="Texture2D" uid="uid://biin4eu0ci1j6" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle03.png" id="5_4cn1u"]
+[ext_resource type="Texture2D" uid="uid://fg0f6vyfd3ba" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle04.png" id="6_b28u3"]
+[ext_resource type="Texture2D" uid="uid://cogarsjxop23v" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle05.png" id="7_6bwd0"]
+[ext_resource type="Texture2D" uid="uid://n04r3rorgc61" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle06.png" id="8_mb14s"]
+[ext_resource type="Texture2D" uid="uid://cembhpweggy5q" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle07.png" id="9_qwwle"]
+[ext_resource type="Texture2D" uid="uid://q6cem0bt4xcu" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle08.png" id="10_tfpg5"]
+[ext_resource type="Texture2D" uid="uid://jduy0xv1tk7m" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle09.png" id="11_hf64n"]
+[ext_resource type="Texture2D" uid="uid://b1ygoybpmtweh" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle10.png" id="12_okulv"]
+[ext_resource type="Texture2D" uid="uid://j6kcp4mfe6u2" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle11.png" id="13_d02jl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ss2n1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xucks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yk5an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e7wum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4cn1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b28u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6bwd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mb14s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qwwle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tfpg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hf64n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_okulv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d02jl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Silas" type="Node2D" unique_id=306726203]
+script = ExtResource("1_bjjpx")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1424730897]
+sprite_frames = SubResource("SpriteFrames_ss2n1")

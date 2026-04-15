@@ -18,11 +18,12 @@ font_color = Color(0.94509804, 1, 0.9490196, 1)
 script = ExtResource("1_06462")
 ink_script = "res://Ink/Dialogue Scripts/test.json"
 next_scene = "res://Scenes/Levels/level2.tscn"
+player_only_conversation = true
 
 [node name="Panel" type="Panel" parent="." unique_id=110650881]
 offset_left = 40.0
 offset_top = 550.0
-offset_right = 1090.0
+offset_right = 940.0
 offset_bottom = 962.5
 theme_override_styles/panel = ExtResource("2_4fq0e")
 
@@ -31,20 +32,20 @@ z_index = 10
 layout_mode = 0
 offset_left = 21.0
 offset_top = 15.0
-offset_right = 1105.05
+offset_right = 816.0
 offset_bottom = 371.4
 label_settings = SubResource("LabelSettings_cs0ko")
 autowrap_mode = 2
 
+[node name="Speaker" type="Sprite2D" parent="Panel" unique_id=480770149]
+position = Vector2(850, 350)
+texture = ExtResource("4_m4axn")
+
 [node name="Choices" type="VBoxContainer" parent="Panel" unique_id=1573429943]
 layout_mode = 0
-offset_left = 1070.0
-offset_right = 1220.0
+offset_left = 940.0
+offset_right = 1090.0
 offset_bottom = 51.0
-
-[node name="Speaker" type="Sprite2D" parent="Panel" unique_id=480770149]
-position = Vector2(1000, 350)
-texture = ExtResource("4_m4axn")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1910788515]
 z_index = -100

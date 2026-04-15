@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cmqirumhnlcnw"]
+
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/Animals/animal.gd" id="1_o2h6j"]
+[ext_resource type="Texture2D" uid="uid://cup8iegoycwwu" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle0.png" id="2_xy4kj"]
+[ext_resource type="Texture2D" uid="uid://b70rptmgfy0cf" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle1.png" id="3_br3er"]
+[ext_resource type="Texture2D" uid="uid://djtqqugapfo37" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle2.png" id="4_oa8w3"]
+[ext_resource type="Texture2D" uid="uid://cx82jdt41hwb3" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle3.png" id="5_dm2hu"]
+[ext_resource type="Texture2D" uid="uid://diuq0xx7ltnt1" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle4.png" id="6_084d2"]
+[ext_resource type="Texture2D" uid="uid://crgtgx44hf8on" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle5.png" id="7_1v2lm"]
+[ext_resource type="Texture2D" uid="uid://dfasn1e21ripc" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle6.png" id="8_wuhbo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pq1jv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xy4kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_br3er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oa8w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dm2hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_084d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1v2lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wuhbo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Vyerity" type="Node2D" unique_id=306726203]
+script = ExtResource("1_o2h6j")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1424730897]
+sprite_frames = SubResource("SpriteFrames_pq1jv")

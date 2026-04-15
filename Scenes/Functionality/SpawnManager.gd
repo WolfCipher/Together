@@ -50,14 +50,14 @@ func _process(_delta: float) -> void:
 		if self.get_child_count() == 0:
 			# TODO handle finishing level
 			if waveNum >= waves.size():
-				if next_scene:
+				if goes_to_next_scene:
 					await get_tree().create_timer(1.0).timeout # wait 0.2 seconds before changing scene
 					#get_tree().change_scene_to_file(next_scene)
 					SceneCache.scene_change.emit(next_scene)
 				return
 			else:
-				target1.xp += 1
-				target2.xp += 1
+				#target1.xp += 1
+				#target2.xp += 1
 				spawn()
 	else:
 		var pos1 = target1.global_position

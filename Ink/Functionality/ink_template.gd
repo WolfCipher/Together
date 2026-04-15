@@ -6,6 +6,12 @@ extends Node
 @export var ink_vars := ["ryl", "elvyria", "btn1", "btn2", "btn3", "btn4", "dialog"] # should be populated with the strings of Inky variable names
 @export var next_scene : String
 
+# handle position of dialog box if players switch speaking
+@export var player_only_conversation = false
+@export var position_index = 1 # change to match whoever speaks first
+var dialog_box_x = [40.0, 980.0]
+var button_container_x = [940.0, -940.0]
+
 @onready var _ink_player = InkPlayer.new()
 var choice_btn
 const generic_btn = preload("res://Ink/Functionality/dialog_button.tscn")
@@ -100,6 +106,7 @@ func _continue_story():
 			
 			var btn = choice_btn.instantiate()
 			btn.text = choice.text
+			#btn.size.y = 99
 			
 			_btns.append(btn)
 			choices.add_child(btn)
@@ -181,5 +188,9 @@ func _variable_changed(variable_name, new_value):
 				0: speaker.set_deferred("texture", elvyria_icon)
 				1: speaker.set_deferred("texture", ryl_icon)
 				_: speaker.set_deferred("texture", null)
+			if (player_only_conversation):
+				position_index = (position_index+1) % 2
+				panel.position.x = dialog_box_x[position_index]
+				choices.position.x = button_container_x[position_index]
 	
 	print("Variable '%s' changed to: %s" % [variable_name, new_value])
