@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cimkgyert7ut2"]
 
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="1_617t6"]
+[ext_resource type="Script" uid="uid://h48trjwfv2ix" path="res://Scenes/UI Scenes/UI.gd" id="1_a2pru"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="2_068ap"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_068ap"]
@@ -64,6 +65,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="Victory" type="Node2D" unique_id=1205401987]
+script = ExtResource("1_a2pru")
 
 [node name="VictoryText" type="Label" parent="." unique_id=1906724505]
 z_index = 100
@@ -83,7 +85,7 @@ theme_override_font_sizes/font_size = 300
 text = "VICTORY!"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="." unique_id=742920396]
+[node name="Menu" type="Button" parent="." unique_id=742920396]
 z_index = 1
 offset_left = 770.0
 offset_top = 926.0
