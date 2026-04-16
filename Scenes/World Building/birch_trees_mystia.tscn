@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://bdi6gfw14jpjo"]
+
+[ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="1_sqss2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfdjb"]
+size = Vector2(294, 1022)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm3os"]
+size = Vector2(1139, 110.25)
+
+[node name="Trees" type="Node2D" unique_id=519110492]
+y_sort_enabled = true
+
+[node name="LeftBoundary" type="Area2D" parent="." unique_id=408109396 groups=["BoundaryLeft"]]
+position = Vector2(-819, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary" unique_id=393675208]
+position = Vector2(764, -615)
+shape = SubResource("RectangleShape2D_tfdjb")
+
+[node name="RightBoundary" type="Area2D" parent="." unique_id=1076269557 groups=["BoundaryRight"]]
+position = Vector2(2300, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary" unique_id=1208993878]
+position = Vector2(-3226, -615)
+shape = SubResource("RectangleShape2D_tfdjb")
+
+[node name="TopBoundary" type="Area2D" parent="." unique_id=1515167389 groups=["BoundaryTop"]]
+position = Vector2(0, -800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary" unique_id=1322558011]
+position = Vector2(-490, 697)
+shape = SubResource("RectangleShape2D_lm3os")
+
+[node name="BottomBoundary" type="Area2D" parent="." unique_id=1132947847 groups=["BoundaryBottom"]]
+position = Vector2(0, 1900)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary" unique_id=1250788508]
+position = Vector2(-490, -3007.875)
+shape = SubResource("RectangleShape2D_lm3os")
+
+[node name="Trees" type="TileMapLayer" parent="." unique_id=586569515]
+y_sort_enabled = true
+position = Vector2(0, 9800)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AADw/1b/AAASACQAAADw/1j/AAASACQAAADw/1r/AAASACQAAADw/17/AAASACQAAADw/2D/AAASACQAAADw/2L/AAASACQAAADw/2T/AAASACQAAADy/13/AAASACQAAADy/2P/AAASACQAAAD0/1T/AAASACQAAAD0/2D/AAASACQAAAD0/2T/AAASACQAAAD2/1X/AAASACQAAAD2/1f/AAASACQAAAD2/2H/AAASACQAAAD2/2P/AAASACQAAAD4/1b/AAASACQAAAD4/2D/AAASACQAAAD6/1X/AAASACQAAAD6/1f/AAASACQAAAD6/2P/AAASACQAAAD8/1T/AAASACQAAAD8/1j/AAASACQAAAD8/2L/AAASACQAAAD8/2T/AAASACQAAAD+/1X/AAASACQAAAD+/1v/AAASACQAAAAAAFb/AAASACQAAAAAAFj/AAASACQAAAAAAFz/AAASACQAAAAAAF7/AAASACQAAAAAAGD/AAASACQAAAAAAGT/AAASACQAAAD6/1v/AAASACQAAAD0/1r/AAASACQAAAD2/1v/AAASACQAAAD0/1z/AAASACQAAADy/1X/AAASACQAAAD8/1r/AAASACQAAAD8/2D/AAASACQAAAD+/2H/AAASACQAAAD8/17/AAASACQAAAD4/17/AAASACQAAAAAAFr/AAASACQAAAA=")
+tile_set = ExtResource("1_sqss2")

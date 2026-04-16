@@ -1,0 +1,47 @@
+[gd_scene format=4 uid="uid://bvmf1yljvjgiu"]
+
+[ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="1_c6o3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfdjb"]
+size = Vector2(294, 1022)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm3os"]
+size = Vector2(1139, 110.25)
+
+[node name="Trees" type="Node2D" unique_id=519110492]
+y_sort_enabled = true
+
+[node name="LeftBoundary" type="Area2D" parent="." unique_id=408109396 groups=["BoundaryLeft"]]
+position = Vector2(-819, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary" unique_id=393675208]
+position = Vector2(764, -615)
+shape = SubResource("RectangleShape2D_tfdjb")
+
+[node name="RightBoundary" type="Area2D" parent="." unique_id=1076269557 groups=["BoundaryRight"]]
+position = Vector2(2300, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary" unique_id=1208993878]
+position = Vector2(-3226, -615)
+shape = SubResource("RectangleShape2D_tfdjb")
+
+[node name="TopBoundary" type="Area2D" parent="." unique_id=1515167389 groups=["BoundaryTop"]]
+position = Vector2(0, -800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary" unique_id=1322558011]
+position = Vector2(-490, 697)
+shape = SubResource("RectangleShape2D_lm3os")
+
+[node name="BottomBoundary" type="Area2D" parent="." unique_id=1132947847 groups=["BoundaryBottom"]]
+position = Vector2(0, 1900)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary" unique_id=1250788508]
+position = Vector2(-490, -3007.875)
+shape = SubResource("RectangleShape2D_lm3os")
+
+[node name="Trees" type="TileMapLayer" parent="." unique_id=586569515]
+y_sort_enabled = true
+position = Vector2(0, 9800)
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AADw/1T/AAAGACQAAADw/1b/AAAGACQAAADw/1j/AAAGACQAAADw/1r/AAAGACQAAADw/1z/AAAGACQAAADw/17/AAAGACQAAADw/2D/AAAGACQAAADw/2L/AAAGACQAAADw/2T/AAAGACQAAADy/1X/AAAGACQAAADy/1f/AAAGACQAAADy/1n/AAAGACQAAADy/1v/AAAGACQAAADy/13/AAAGACQAAADy/1//AAAGACQAAADy/2H/AAAGACQAAADy/2P/AAAGACQAAAD0/1T/AAAGACQAAAD0/1b/AAAGACQAAAD0/1j/AAAGACQAAAD0/1r/AAAGACQAAAD0/1z/AAAGACQAAAD0/17/AAAGACQAAAD0/2D/AAAGACQAAAD0/2L/AAAGACQAAAD0/2T/AAAGACQAAAD2/1X/AAAGACQAAAD2/1f/AAAGACQAAAD2/1n/AAAGACQAAAD2/1v/AAAGACQAAAD2/13/AAAGACQAAAD2/1//AAAGACQAAAD2/2H/AAAGACQAAAD2/2P/AAAGACQAAAD4/1T/AAAGACQAAAD4/1b/AAAGACQAAAD4/1j/AAAGACQAAAD4/1r/AAAGACQAAAD4/1z/AAAGACQAAAD4/17/AAAGACQAAAD4/2D/AAAGACQAAAD4/2L/AAAGACQAAAD4/2T/AAAGACQAAAD6/1X/AAAGACQAAAD6/1f/AAAGACQAAAD6/1n/AAAGACQAAAD6/1v/AAAGACQAAAD6/13/AAAGACQAAAD6/1//AAAGACQAAAD6/2H/AAAGACQAAAD6/2P/AAAGACQAAAD8/1T/AAAGACQAAAD8/1b/AAAGACQAAAD8/1j/AAAGACQAAAD8/1r/AAAGACQAAAD8/1z/AAAGACQAAAD8/17/AAAGACQAAAD8/2D/AAAGACQAAAD8/2L/AAAGACQAAAD8/2T/AAAGACQAAAD+/1X/AAAGACQAAAD+/1f/AAAGACQAAAD+/1n/AAAGACQAAAD+/1v/AAAGACQAAAD+/13/AAAGACQAAAD+/1//AAAGACQAAAD+/2H/AAAGACQAAAD+/2P/AAAGACQAAAAAAFT/AAAGACQAAAAAAFb/AAAGACQAAAAAAFj/AAAGACQAAAAAAFr/AAAGACQAAAAAAFz/AAAGACQAAAAAAF7/AAAGACQAAAAAAGD/AAAGACQAAAAAAGL/AAAGACQAAAAAAGT/AAAGACQAAAA=")
+tile_set = ExtResource("1_c6o3r")
