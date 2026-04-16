@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://eb7w24rk473j"]
 
-[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/Animals/animal.gd" id="1_sj15v"]
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_sj15v"]
 [ext_resource type="Texture2D" uid="uid://3ov3qv5y1f4h" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle00.png" id="2_3gjph"]
 [ext_resource type="Texture2D" uid="uid://dxpr1fmse53h3" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle01.png" id="3_08jk4"]
 [ext_resource type="Texture2D" uid="uid://bgm6vmc1l8cyn" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle02.png" id="4_vvgbf"]
