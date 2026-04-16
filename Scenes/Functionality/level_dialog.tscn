@@ -2,11 +2,22 @@
 
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="1_asbn3"]
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_a6ahv"]
+[ext_resource type="Texture2D" uid="uid://3ov3qv5y1f4h" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle00.png" id="3_aed77"]
 [ext_resource type="Texture2D" uid="uid://bl0im5kiwdwbr" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle0.png" id="3_pxeq0"]
 [ext_resource type="Texture2D" uid="uid://dflrrvrqby5mf" path="res://Entities/Player/Ryl/Ryl_Front_Idle/Ryl_Front_Idle0.png" id="4_fag1g"]
+[ext_resource type="Texture2D" uid="uid://btwhtlhqgnsg4" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle00.png" id="6_3pxdq"]
+[ext_resource type="Texture2D" uid="uid://cup8iegoycwwu" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle0.png" id="7_k71pt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n24qb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_aed77")
+}],
+"loop": true,
+"name": &"azalea",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_pxeq0")
@@ -21,6 +32,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"ryl",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3pxdq")
+}],
+"loop": true,
+"name": &"silas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_k71pt")
+}],
+"loop": true,
+"name": &"vyerity",
 "speed": 5.0
 }]
 
@@ -55,4 +82,4 @@ theme_override_styles/panel = ExtResource("2_a6ahv")
 [node name="Character" type="AnimatedSprite2D" parent="." unique_id=410552112]
 position = Vector2(43, 53)
 sprite_frames = SubResource("SpriteFrames_n24qb")
-animation = &"elvyria"
+animation = &"azalea"
