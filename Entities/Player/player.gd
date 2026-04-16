@@ -283,10 +283,16 @@ func damage_blink():
 	else:
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
 
+
+
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy Attack") and god_mode == false and invulnerable == false:
+		invulnerable = true
 		health = health - area.damage
 		damage_blink()
+		await get_tree().create_timer(0.2).timeout
+		invulnerable = false
+			
 		if health < 1:
 			# prevent retriggering _on_area_entered once all physics calculations finish, thereby avoiding null data.tree issues
 			$CollisionShape2D.set_deferred("disabled", true)
