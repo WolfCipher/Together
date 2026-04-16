@@ -285,6 +285,7 @@ position = Vector2(8411, -6270)
 [node name="EmitDialogInRange" parent="Silas" unique_id=584359162 instance=ExtResource("24_etuld")]
 dialog_list = [["silas", 0, "Ah, a couple of intrepid young adventurers.", 9], ["silas", 0, "Vyerity told me to expect you.", 7], ["elvyria", 0, "How'd she do that?", 5], ["ryl", 0, "She always finds a way. Should've seen this coming.", 3]]
 send_to_scene_after_completion = true
+next_scene = "res://Ink/Scenes/silas_dialog.tscn"
 
 [node name="EmitDialogInRange" parent="." unique_id=869890286 instance=ExtResource("24_etuld")]
 position = Vector2(4721, -1972)
