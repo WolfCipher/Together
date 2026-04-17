@@ -94,3 +94,6 @@ tile_set = ExtResource("15_j5o2p")
 z_index = -9
 tile_map_data = PackedByteArray("AAAZAAAAAAAIABoAAABTAAsAAAAUABoAAAALADYAAAAUABoAAABZADUAAAAgABoAAAAuAA8AAAAIACAAAAAmADoAAAAUACAAAABIACAAAAAIABoAAAA8AAYAAAAgABoAAAANABcAAAAUACAAAAA4ACwAAAAIACAAAAA=")
 tile_set = ExtResource("15_j5o2p")
+
+[connection signal="damaged" from="Elvyria" to="Camera_Centered" method="_on_damaged"]
+[connection signal="damaged" from="Ryl" to="Camera_Centered" method="_on_damaged"]
