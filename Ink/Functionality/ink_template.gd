@@ -116,6 +116,8 @@ func _continue_story():
 			
 			_index += 1
 		
+		# enable children to be grabbed with arrow keys
+		_btns[0].grab_focus()
 			
 	# This code runs when the story reaches its end.
 	else:
