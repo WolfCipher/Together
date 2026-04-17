@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmqirumhnlcnw"]
 
-[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/Animals/animal.gd" id="1_o2h6j"]
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_o2h6j"]
 [ext_resource type="Texture2D" uid="uid://cup8iegoycwwu" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle0.png" id="2_xy4kj"]
 [ext_resource type="Texture2D" uid="uid://b70rptmgfy0cf" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle1.png" id="3_br3er"]
 [ext_resource type="Texture2D" uid="uid://djtqqugapfo37" path="res://Entities/NPCs/Vyerity/Vyerity_Front_Idle/Vyerity_Front_Idle2.png" id="4_oa8w3"]

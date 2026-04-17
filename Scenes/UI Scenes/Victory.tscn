@@ -1,8 +1,31 @@
 [gd_scene format=3 uid="uid://cimkgyert7ut2"]
 
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="1_617t6"]
-[ext_resource type="Script" uid="uid://h48trjwfv2ix" path="res://Scenes/UI Scenes/UI.gd" id="1_a2pru"]
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_i4gl2"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="2_068ap"]
+[ext_resource type="Texture2D" uid="uid://cnfvbwecbwlfk" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen00.png" id="4_i4gl2"]
+[ext_resource type="Texture2D" uid="uid://ce8du67w6l6t2" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen01.png" id="5_llxt3"]
+[ext_resource type="Texture2D" uid="uid://dsrist8ad2mob" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen02.png" id="6_wnyl3"]
+[ext_resource type="Texture2D" uid="uid://blv5lwr27dbmn" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen03.png" id="7_itaqx"]
+[ext_resource type="Texture2D" uid="uid://x08p3ujheihk" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen04.png" id="8_uhid2"]
+[ext_resource type="Texture2D" uid="uid://bpjroqytnevpm" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen05.png" id="9_ydijd"]
+[ext_resource type="Texture2D" uid="uid://nbx137exnluv" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen06.png" id="10_lmsy1"]
+[ext_resource type="Texture2D" uid="uid://ceohfxg81j000" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen07.png" id="11_o1xpo"]
+[ext_resource type="Texture2D" uid="uid://4havj1pfycxi" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen08.png" id="12_qtxri"]
+[ext_resource type="Texture2D" uid="uid://gg3opjtmfhmg" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen09.png" id="13_wji4d"]
+[ext_resource type="Texture2D" uid="uid://bbki30smhy35" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen10.png" id="14_yg1wd"]
+[ext_resource type="Texture2D" uid="uid://b6suqnwkb30eq" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen11.png" id="15_lxdyx"]
+[ext_resource type="Texture2D" uid="uid://b8mosbmn3r3jn" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen12.png" id="16_ubby3"]
+[ext_resource type="Texture2D" uid="uid://c16ddseq6beb8" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen13.png" id="17_tqqwn"]
+[ext_resource type="Texture2D" uid="uid://qd7qswt1t87s" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen14.png" id="18_f4a35"]
+[ext_resource type="Texture2D" uid="uid://c5nvirj0xyp6f" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen15.png" id="19_vlnav"]
+[ext_resource type="Texture2D" uid="uid://dol62gi44we2n" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen16.png" id="20_tjn63"]
+[ext_resource type="Texture2D" uid="uid://dyixycq032qva" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen17.png" id="21_xdxpj"]
+[ext_resource type="Texture2D" uid="uid://dnka3pgf3dnwn" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen18.png" id="22_6nvbc"]
+[ext_resource type="Texture2D" uid="uid://bps2rx8c6j8j7" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen19.png" id="23_ejrp2"]
+[ext_resource type="Texture2D" uid="uid://d1pp7x3y226wy" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen20.png" id="24_gia21"]
+[ext_resource type="Texture2D" uid="uid://br745m6e3gj0u" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen21.png" id="25_7kuqf"]
+[ext_resource type="Texture2D" uid="uid://dksbkgukauqi4" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen22.png" id="26_ur4dw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_068ap"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -64,15 +87,92 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ur4dw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i4gl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_llxt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wnyl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_itaqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uhid2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ydijd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lmsy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o1xpo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qtxri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wji4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yg1wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lxdyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ubby3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tqqwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_f4a35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_vlnav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_tjn63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xdxpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6nvbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ejrp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_gia21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7kuqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ur4dw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="Victory" type="Node2D" unique_id=1205401987]
-script = ExtResource("1_a2pru")
+script = ExtResource("1_i4gl2")
 
 [node name="VictoryText" type="Label" parent="." unique_id=1906724505]
 z_index = 100
 offset_left = 3.0
 offset_top = 35.0
 offset_right = 1916.0
-offset_bottom = 444.0
+offset_bottom = 240.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -81,15 +181,15 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
-theme_override_font_sizes/font_size = 300
-text = "VICTORY!"
+theme_override_font_sizes/font_size = 150
+text = "The End"
 horizontal_alignment = 1
 
-[node name="Menu" type="Button" parent="." unique_id=742920396]
+[node name="Button" type="Button" parent="." unique_id=742920396]
 z_index = 1
-offset_left = 770.0
+offset_left = 1450.0
 offset_top = 926.0
-offset_right = 1182.0
+offset_right = 1862.0
 offset_bottom = 1023.0
 theme_override_font_sizes/font_size = 63
 theme_override_styles/normal = SubResource("StyleBoxFlat_068ap")
@@ -102,3 +202,8 @@ script = ExtResource("1_617t6")
 next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"
 
 [node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("2_068ap")]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1201460421]
+position = Vector2(960.04, 539.96)
+scale = Vector2(1.666597, 1.6667901)
+sprite_frames = SubResource("SpriteFrames_ur4dw")

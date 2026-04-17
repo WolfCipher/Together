@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ct51futxpisyi"]
 
-[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/Animals/animal.gd" id="1_bjjpx"]
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_bjjpx"]
 [ext_resource type="Texture2D" uid="uid://btwhtlhqgnsg4" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle00.png" id="2_xucks"]
 [ext_resource type="Texture2D" uid="uid://j604teoqra48" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle01.png" id="3_yk5an"]
 [ext_resource type="Texture2D" uid="uid://bpr08xguedsdf" path="res://Entities/NPCs/Silas/Silas_Front_Idle/Silas_Front_Idle02.png" id="4_e7wum"]
