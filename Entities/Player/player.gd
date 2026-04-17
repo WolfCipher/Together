@@ -59,6 +59,7 @@ var num_top_boundaries = 0
 
 func _ready() -> void:
 	play()
+	add_to_group("Player")
 	add_child(dash_particles)
 	dash_particles.emitting = false
 
