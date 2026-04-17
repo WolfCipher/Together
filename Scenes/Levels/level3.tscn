@@ -33,7 +33,6 @@ metadata/_edit_horizontal_guides_ = [-1552.0]
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_v1uej")]
 position = Vector2(516, 505)
-projectile_scene = ExtResource("2_f80nq")
 xp = 3
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_lnl7s")]
@@ -185,6 +184,9 @@ position = Vector2(1020, 2040)
 [node name="Trees5" parent="WorldObjects/TreeGroup" unique_id=1246714411 instance=ExtResource("21_kp1sm")]
 position = Vector2(2040, 2040)
 
+[node name="Trees42" parent="WorldObjects/TreeGroup" unique_id=1134443301 instance=ExtResource("21_kp1sm")]
+position = Vector2(2040, 1020)
+
 [node name="Trees9" parent="WorldObjects/TreeGroup" unique_id=816956586 instance=ExtResource("21_kp1sm")]
 position = Vector2(3060, 2040)
 
@@ -269,13 +271,13 @@ position = Vector2(8422, -6742)
 [node name="Animals" type="Node2D" parent="." unique_id=618024283]
 
 [node name="Bunny" parent="Animals" unique_id=306726203 instance=ExtResource("22_jedjv")]
-position = Vector2(3828, 563)
+position = Vector2(4030, 563)
 
 [node name="Bunny2" parent="Animals" unique_id=673848626 instance=ExtResource("23_etuld")]
-position = Vector2(3890, 503)
+position = Vector2(4092, 503)
 
 [node name="EmitDialogInRange" parent="Animals" unique_id=57698111 instance=ExtResource("24_etuld")]
-position = Vector2(3994, 508)
+position = Vector2(4196, 508)
 scale = Vector2(2, 2)
 dialog_list = [["elvyria", 0, "Aw. They followed us here.", 7], ["ryl", 0, "...Yes. They're friends of mine.", 5], ["ryl", 0, "Please, go back to Tamewood.", 3]]
 
@@ -294,4 +296,4 @@ dialog_list = [["ryl", 0, "Wait a moment, Elvyria. What's that ahead of us on th
 
 [node name="EmitDialogInRange2" parent="." unique_id=1938153284 instance=ExtResource("24_etuld")]
 position = Vector2(548, 496)
-dialog_list = [["ryl", 0, "Wow, I still can't believe Vyerity lended us her gear!", 9], ["ryl", 0, "I feel stronger already!", 7], ["elvyria", 0, "Hey, thanks for coming with me, Ryl.", 5], ["ryl", 0, "No problem! I always wanted to travel!", 3]]
+dialog_list = [["ryl", 0, "Wow, I still can't believe Vyerity lended us her gear! I feel stronger already!", 10], ["elvyria", 0, "Hey, thanks for coming with me, Ryl. It's nice to have a friend.", 8], ["ryl", 0, "No problem! I always wanted to travel and training with you has been fun!", 6], ["elvyria", 0, "Same here! I enjoy enhancing your arrows with my melee and vice versa!", 4], ["ryl", 0, "My favorite tactic is shooting together in all directions!", 2]]
