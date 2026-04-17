@@ -29,7 +29,6 @@ metadata/_edit_horizontal_guides_ = [-1552.0]
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_hpjhc")]
 position = Vector2(516, 505)
-projectile_scene = ExtResource("2_56d2c")
 xp = 2
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_jywle")]

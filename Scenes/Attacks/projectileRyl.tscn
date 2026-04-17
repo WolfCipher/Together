@@ -42,7 +42,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Arrow" type="Area2D" unique_id=871792930 groups=["Player Attack"]]
+[node name="Arrow" type="Area2D" unique_id=871792930 groups=["Player Attack", "RylProjectile"]]
 script = ExtResource("1_qbfg1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249]
