@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="1_4kskp"]
 [ext_resource type="StyleBox" uid="uid://qgnnq00isv8k" path="res://btn-purple-blue.tres" id="2_6vugt"]
+[ext_resource type="StyleBox" uid="uid://10y8hleaclx2" path="res://inky_btn_focus.tres" id="3_bjhcq"]
 [ext_resource type="Texture2D" uid="uid://cbyt22vcw0t7m" path="res://Ink/Functionality/ryl_icon.png" id="3_mfbwi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68vu5"]
@@ -44,6 +45,7 @@ theme_override_font_sizes/font_size = 33
 theme_override_styles/normal = ExtResource("2_6vugt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_68vu5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4ge5g")
+theme_override_styles/focus = ExtResource("3_bjhcq")
 text = "Choice"
 icon = ExtResource("3_mfbwi")
 icon_alignment = 2

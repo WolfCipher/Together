@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqa5fhyl3dsg1"]
 
-[ext_resource type="Script" uid="uid://h48trjwfv2ix" path="res://Scenes/UI Scenes/UI.gd" id="1_03ipa"]
+[ext_resource type="Script" path="res://Scenes/UI Scenes/UI.gd" id="1_03ipa"]
 [ext_resource type="Texture2D" uid="uid://s6wikn3lqb07" path="res://Entities/SceneArt/GameOverScreen.png" id="1_c5vex"]
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="2_fmfdg"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="2_wk20n"]
