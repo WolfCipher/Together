@@ -18,6 +18,8 @@ func _ready() -> void:
 	var x = (pos1.x + pos2.x)/2
 	var y = (pos1.y + pos2.y)/2
 	var target_pos = Vector2(x,y)
+	add_to_group("Cameras")
+
 	
 	
 	global_position = target_pos
