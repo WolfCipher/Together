@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://6b4fi1o4b2y6"]
 
 [ext_resource type="Texture2D" uid="uid://bc8co05xuldik" path="res://Entities/Animals/bunny_0.png" id="1_5iiqw"]
-[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/Animals/animal.gd" id="1_ryl8b"]
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_ryl8b"]
 [ext_resource type="Texture2D" uid="uid://c8dj5utsstuu4" path="res://Entities/Animals/bunny_1.png" id="2_ryl8b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rnnv1"]

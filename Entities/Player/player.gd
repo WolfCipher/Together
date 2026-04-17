@@ -47,7 +47,6 @@ var god_mode = false; # makes player invincible when shift + quote tilde pressed
 
 var invulnerable = false; # makes player invulnerable for game play
 
-
 # can_move false if hits at least one boundary in the corresponding direction
 var can_move_up = true
 var can_move_down = true
@@ -63,7 +62,6 @@ func _ready() -> void:
 	add_to_group("Player")
 	add_child(dash_particles)
 	dash_particles.emitting = false
-
 
 func _process(delta: float) -> void:
 	recharge(delta)
@@ -283,10 +281,17 @@ func damage_blink():
 	else:
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
 
+
+
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy Attack") and god_mode == false and invulnerable == false:
+		invulnerable = true
+		get_tree().call_group("Cameras", "_on_damaged")
 		health = health - area.damage
 		damage_blink()
+		await get_tree().create_timer(0.2).timeout
+		invulnerable = false
+			
 		if health < 1:
 			# prevent retriggering _on_area_entered once all physics calculations finish, thereby avoiding null data.tree issues
 			$CollisionShape2D.set_deferred("disabled", true)
