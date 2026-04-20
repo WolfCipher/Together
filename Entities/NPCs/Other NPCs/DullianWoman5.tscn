@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://drhyvfayrbau1"]
+
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_b3l4s"]
+[ext_resource type="Texture2D" uid="uid://il5yavmgn2bu" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle0.png" id="2_3jl0p"]
+[ext_resource type="Texture2D" uid="uid://bmijl02f7bnse" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle1.png" id="3_voqar"]
+[ext_resource type="Texture2D" uid="uid://b6n2kbm2jva4k" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle2.png" id="4_mwxfh"]
+[ext_resource type="Texture2D" uid="uid://d2bwlcy2nt0pv" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle3.png" id="5_inr3f"]
+[ext_resource type="Texture2D" uid="uid://ytgncpuu6xwh" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle4.png" id="6_akj6m"]
+[ext_resource type="Texture2D" uid="uid://drhmav4mobgdj" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle5.png" id="7_6cxh2"]
+[ext_resource type="Texture2D" uid="uid://xbppm7ft5vdu" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle6.png" id="8_4sako"]
+[ext_resource type="Texture2D" uid="uid://btnfg38wlpwfi" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle7.png" id="9_60u16"]
+[ext_resource type="Texture2D" uid="uid://kqeakk0f2m0g" path="res://Entities/NPCs/Other NPCs/DullianWoman5_Front_Idle/DullianWoman5_Front_Idle8.png" id="10_y5u13"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqgx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3jl0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_voqar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mwxfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_inr3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_akj6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6cxh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4sako")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_60u16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y5u13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" type="Node2D" unique_id=306726203]
+script = ExtResource("1_b3l4s")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1424730897]
+sprite_frames = SubResource("SpriteFrames_iqgx2")

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dd3wm4bouy6ro"]
+
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_5qawj"]
+[ext_resource type="Texture2D" uid="uid://3ov3qv5y1f4h" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle00.png" id="2_v21ko"]
+[ext_resource type="Texture2D" uid="uid://dxpr1fmse53h3" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle01.png" id="3_ioekt"]
+[ext_resource type="Texture2D" uid="uid://bgm6vmc1l8cyn" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle02.png" id="4_tmcg3"]
+[ext_resource type="Texture2D" uid="uid://d8c8fq3w44m2" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle03.png" id="5_ti2ov"]
+[ext_resource type="Texture2D" uid="uid://bs6r6k6uphva7" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle04.png" id="6_47ir6"]
+[ext_resource type="Texture2D" uid="uid://b50ak288u1q0l" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle05.png" id="7_4yvid"]
+[ext_resource type="Texture2D" uid="uid://b41neiudjlpf7" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle06.png" id="8_xl1w8"]
+[ext_resource type="Texture2D" uid="uid://chf0mse5sjf6q" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle07.png" id="9_nogeo"]
+[ext_resource type="Texture2D" uid="uid://offcn2bdinph" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle08.png" id="10_mhtf4"]
+[ext_resource type="Texture2D" uid="uid://dawm4on0h53em" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle09.png" id="11_mus3n"]
+[ext_resource type="Texture2D" uid="uid://chb1aduxtqgud" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle10.png" id="12_vq0hw"]
+[ext_resource type="Texture2D" uid="uid://cyg4suqqhi2vk" path="res://Entities/NPCs/Azalea/Azalea_Front_Idle/Azalea_Front_Idle11.png" id="13_2yxvh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqgx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v21ko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ioekt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tmcg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ti2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_47ir6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4yvid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xl1w8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nogeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mhtf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mus3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vq0hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2yxvh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" type="Node2D" unique_id=306726203]
+script = ExtResource("1_5qawj")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1424730897]
+sprite_frames = SubResource("SpriteFrames_iqgx2")
