@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://me7lsqk7ov3d"]
+
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_4ntni"]
+[ext_resource type="Texture2D" uid="uid://vy4s1l7xfbdm" path="res://Entities/NPCs/Other NPCs/DullianWoman1_Front_Idle/DullianWoman1_Front_Idle0.png" id="2_3amsf"]
+[ext_resource type="Texture2D" uid="uid://dp7xww4av7wds" path="res://Entities/NPCs/Other NPCs/DullianWoman1_Front_Idle/DullianWoman1_Front_Idle1.png" id="3_as3xv"]
+[ext_resource type="Texture2D" uid="uid://cs32hkahd0su4" path="res://Entities/NPCs/Other NPCs/DullianWoman1_Front_Idle/DullianWoman1_Front_Idle2.png" id="4_cnxte"]
+[ext_resource type="Texture2D" uid="uid://08402b4ji03x" path="res://Entities/NPCs/Other NPCs/DullianWoman1_Front_Idle/DullianWoman1_Front_Idle3.png" id="5_hykxn"]
+[ext_resource type="Texture2D" uid="uid://c16e4hlp6276c" path="res://Entities/NPCs/Other NPCs/DullianWoman1_Front_Idle/DullianWoman1_Front_Idle4.png" id="6_r8i3w"]
+[ext_resource type="Texture2D" uid="uid://bprgt2unw20ff" path="res://Entities/NPCs/Other NPCs/DullianWoman1_Front_Idle/DullianWoman1_Front_Idle5.png" id="7_j1t3f"]
+[ext_resource type="Texture2D" uid="uid://b2h0nu3l5v5vi" path="res://Entities/NPCs/Other NPCs/DullianWoman1_Front_Idle/DullianWoman1_Front_Idle6.png" id="8_b564t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqgx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3amsf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_as3xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cnxte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hykxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r8i3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_j1t3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b564t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" type="Node2D" unique_id=306726203]
+script = ExtResource("1_4ntni")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1424730897]
+sprite_frames = SubResource("SpriteFrames_iqgx2")
