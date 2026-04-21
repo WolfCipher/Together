@@ -16,3 +16,6 @@ data_*/
 mono_crash.*.json
 *.dll
 script_templates/ink_template_old.gd.uid
+script_templates/.gdignore
+script_templates/ink_template.gd
+script_templates/ink_template_signals.gd
