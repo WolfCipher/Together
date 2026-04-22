@@ -1,13 +1,14 @@
 extends Control
 
 @export var startsVisible = false # only level 1 is true
+var volume_change = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	visible = startsVisible
 	if startsVisible:
-		await get_tree().create_timer(0.4).timeout
 		get_tree().paused = true
+		$"../../CoreLoop".volume_db -= volume_change
 		await get_tree().create_timer(2.0).timeout
 
 
@@ -17,8 +18,10 @@ func _process(_delta: float) -> void:
 		if get_tree().paused == false:
 			visible = true
 			get_tree().paused = true
+			$"../../CoreLoop".volume_db -= volume_change
 			await get_tree().create_timer(2.0).timeout
 		else:
 			visible = false
 			get_tree().paused = false
+			$"../../CoreLoop".volume_db += volume_change
 			await get_tree().create_timer(2.0).timeout

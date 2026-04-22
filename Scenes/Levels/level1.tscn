@@ -24,7 +24,6 @@ y_sort_enabled = true
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_ryjqc")]
 position = Vector2(516, 505)
-projectile_scene = ExtResource("2_xe7un")
 xp = 1
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_v3vqe")]
@@ -32,6 +31,7 @@ position = Vector2(574, 505)
 xp = 1
 
 [node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
+process_mode = 3
 stream = ExtResource("4_bvs0b")
 volume_db = -5.0
 autoplay = true
