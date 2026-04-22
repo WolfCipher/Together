@@ -22,6 +22,7 @@ var health := max_health
 
 @export var mustBeStillToAttack = true # false for AoE enemy that leaves behind harmful magic
 @export var attackDistance := 300 # distance that the enemy needs to attack
+@export var closeAttackDistance := 100 #distance that enemy needs for secondary attack; important for shadow enemies
 @export var attackFrequency := 1 # how frequent the attacks are
 var attack_cooldown := 0.0
 
@@ -71,20 +72,20 @@ func _process(delta: float) -> void:
 		# HANDLE ANIMATIONS
 		# Determine the direction and handle animations accordingly
 		var dir = (target_pos - global_position).normalized()
-		animate(dir)
+		animate(dir, continue_moving)
 		
 		# note: attack after handling animation to ensure faceDir is updated
 		if (!continue_moving) || (!mustBeStillToAttack):
 			if attack_cooldown <= 0:
-				attack()
+				attack(target_dist)
 				attack_cooldown = attackFrequency
 
 func play() -> void:
 	sprite.animation = animation
 	sprite.play()
 
-func animate(dir) -> void:
-	if dir == Vector2.ZERO:
+func animate(dir, continue_moving) -> void:
+	if !continue_moving:
 		match faceDir:
 			0: animation = "idle_up"
 			1: animation = "idle_down"
@@ -136,10 +137,16 @@ func damage_blink():
 	else:
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
 
-func attack():
+func attack(target_dist):
 	telegraph()
+	
+	var useCloseAttack = (target_dist <= closeAttackDistance) && self.is_in_group("MeleeEnemy")
+	
 	await get_tree().create_timer(0.35).timeout
-	if self.is_in_group("ProjectileEnemy"):
+	
+	if useCloseAttack:
+		attack_melee()
+	elif self.is_in_group("ProjectileEnemy"):
 		shoot_projectile()
 	elif self.is_in_group("AoE_Enemy"):
 		create_AoE()
@@ -183,7 +190,6 @@ func attack_melee() -> void:
 	
 	# position slightly ahead of player and move in proper direction
 	melee.global_position = global_position + dir * 30
-	melee.direction = dir
 	melee.rotation = dir.angle() + PI/2
 	
 	# use enemy's specified damage
