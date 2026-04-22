@@ -1,0 +1,125 @@
+[gd_scene format=4 uid="uid://doqexuppkwryx"]
+
+[ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_ftjqm"]
+[ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="2_it513"]
+[ext_resource type="AudioStream" uid="uid://q4b4iire0ewv" path="res://Sound/SFX/Music/Demo1_Core_Loop.wav" id="3_0a0nr"]
+[ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/Functionality/SpawnManager.gd" id="4_xuud8"]
+[ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="5_xxul8"]
+[ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/FireSpirit_AoE.tscn" id="6_14je0"]
+[ext_resource type="PackedScene" uid="uid://crtup2vlgteed" path="res://Entities/Enemy/EarthSpirit_Contact.tscn" id="7_5cdvm"]
+[ext_resource type="PackedScene" uid="uid://owwcqowd8wlq" path="res://Entities/Enemy/shadowElvyria.tscn" id="8_yo7um"]
+[ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="9_xoalr"]
+[ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_upvnb"]
+[ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health.tscn" id="11_64m6q"]
+[ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health.tscn" id="12_13md8"]
+[ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_dmwli"]
+[ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_2me85"]
+[ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="15_j8h45"]
+[ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="16_roghl"]
+[ext_resource type="PackedScene" uid="uid://b5prnshh5emox" path="res://Scenes/Functionality/level_dialog_control.tscn" id="17_tq245"]
+[ext_resource type="PackedScene" uid="uid://b3p0be0qdmx5n" path="res://Scenes/World Building/world_open.tscn" id="18_xohh2"]
+[ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="19_ra2ey"]
+[ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="20_xpasf"]
+[ext_resource type="PackedScene" uid="uid://bxkxq5fyenfx5" path="res://Entities/Butterfly/butterflySprite/butterfly.tscn" id="21_hgq1i"]
+[ext_resource type="PackedScene" uid="uid://dmgvq3thfhtue" path="res://Entities/SacredGate.tscn" id="22_wbnnf"]
+
+[node name="Main" type="Node2D" unique_id=837400696]
+y_sort_enabled = true
+metadata/_edit_horizontal_guides_ = [-1552.0]
+
+[node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_ftjqm")]
+position = Vector2(516, 505)
+xp = 3
+
+[node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("2_it513")]
+position = Vector2(574, 505)
+xp = 3
+
+[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
+process_mode = 3
+stream = ExtResource("3_0a0nr")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[node name="SpawnManager" type="Node2D" parent="." unique_id=708660748 node_paths=PackedStringArray("target1", "target2")]
+position = Vector2(2802, 488)
+script = ExtResource("4_xuud8")
+prefab_a = ExtResource("5_xxul8")
+prefab_b = ExtResource("6_14je0")
+prefab_c = ExtResource("7_5cdvm")
+prefab_d = ExtResource("8_yo7um")
+prefab_e = ExtResource("9_xoalr")
+spawn_positions = Array[Vector2]([Vector2(0, -300), Vector2(-300, -50), Vector2(300, -50), Vector2(0, 0)])
+next_scene = "res://Scenes/UI Scenes/Victory.tscn"
+goes_to_next_scene = false
+can_start = false
+target1 = NodePath("../Elvyria")
+target2 = NodePath("../Ryl")
+
+[node name="Camera_Centered" parent="." unique_id=1069394162 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("10_upvnb")]
+position = Vector2(574, 505)
+target1 = NodePath("../Elvyria")
+target2 = NodePath("../Ryl")
+
+[node name="ElvyriaHealth" parent="Camera_Centered" unique_id=1729412854 node_paths=PackedStringArray("character") instance=ExtResource("11_64m6q")]
+offset_left = -862.0
+offset_top = -475.0
+offset_right = -555.6936
+offset_bottom = -466.0
+character = NodePath("../../Elvyria")
+
+[node name="RylHealth" parent="Camera_Centered" unique_id=199826155 node_paths=PackedStringArray("character") instance=ExtResource("12_13md8")]
+offset_left = 552.00006
+offset_top = -475.0
+offset_right = 858.30646
+offset_bottom = -466.0
+character = NodePath("../../Ryl")
+
+[node name="PauseOverlay" parent="Camera_Centered" unique_id=74393980 instance=ExtResource("13_dmwli")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Sync_Gauge" parent="Camera_Centered" unique_id=1752999985 node_paths=PackedStringArray("player1", "player2") instance=ExtResource("14_2me85")]
+player1 = NodePath("../../Elvyria")
+player2 = NodePath("../../Ryl")
+projectile1 = ExtResource("15_j8h45")
+projectile2 = ExtResource("16_roghl")
+
+[node name="Dialog_Control" parent="Camera_Centered" unique_id=941119838 instance=ExtResource("17_tq245")]
+offset_left = -939.0
+offset_top = -516.0
+offset_right = -939.0
+offset_bottom = -516.0
+
+[node name="World" parent="." unique_id=519110492 instance=ExtResource("18_xohh2")]
+position = Vector2(1590, -6053)
+
+[node name="WorldObjects" type="Node2D" parent="." unique_id=535180678]
+y_sort_enabled = true
+
+[node name="Flowers" type="TileMapLayer" parent="WorldObjects" unique_id=1821845384]
+z_index = -10
+position = Vector2(1590, -6053)
+tile_map_data = PackedByteArray("AAAyABcAAAAIABoAAABUAAgAAAAIABoAAAAWACkAAAAIABoAAAAVAAQAAAAIABoAAADu/wUAAAAIABoAAADO/y0AAAAIABoAAADV/9X/AAAIABoAAACmAEQAAAAIABoAAAClAAgAAAAIABoAAAA6ALn/AAAIABoAAADNANT/AAAIABoAAAB3ABUAAAAUABQAAABUAEIAAAAUABQAAAAIABgAAAAUABQAAADk/0MAAAAUABQAAADa/xIAAAAUABQAAAAOANT/AAAUABQAAABbAN3/AAAUABQAAAB6ALj/AAAUABQAAAAHAU0AAAAUABQAAABQAR0AAAAUABQAAAAhAXb/AAAUABQAAABZAbr/AAAUABQAAADLAZz/AAAUABQAAAAoAgkAAAAUABQAAADpAUUAAAAUABQAAAArAmIAAAAUABQAAACWAe4AAAAUABQAAAAnApIBAAAUABQAAAC9AdABAAAUABQAAABLAWMBAAAUABQAAAC5AJYBAAAUABQAAACUABcBAAAUABQAAAC4/24BAAAUABQAAADo/5AAAAAUABQAAADMAKUAAAAUABQAAACX/6X/AAAUABQAAAB2//cAAAAIABoAAACA/6kBAAAIABoAAACCAH8BAAAIABoAAACCASsBAAAIABoAAAC8AFsAAAAIABoAAABJAqL/AAAIABoAAADhAIn/AAAIABoAAACD/8T/AAAIABoAAABQ/6j/AAAgABQAAABBAC4AAAAgABQAAACKADAAAAAgABQAAAAZAGsAAAAgABQAAACq/2UAAAAgABQAAABl/ywAAAAgABQAAAAVAUwAAAAgABQAAACkAd0AAAAgABQAAAA8AkIAAAAgABQAAADOAM0AAAAgABQAAACPAXMBAAAgABQAAABpAH0BAAAgABQAAACR/14BAAAgABQAAABXAu8BAAAgABQAAABXAu4BAAAgABQAAABXAu0BAAAgABQAAADOAOABAAAgABQAAABj/80BAAAgABQAAABoAIQAAAAOABoAAAANALwAAAAOABoAAAB5ANIAAAAOABoAAABPAbYAAAAOABoAAADsAPP/AAAIABoAAADhAPn/AAAIABoAAADwAAIAAAAIABoAAAARAfv/AAAIABoAAADkAPD/AAAUABQAAADmAP//AAAUABQAAAAFAfr/AAAUABQAAAAMAe7/AAAUABQAAADtAPz/AAAgABQAAAD9AAQAAAAgABQAAAAMAf3/AAAgABQAAAAFAez/AAAgABQAAADmAPj/AAAgABQAAADcAPL/AAAgABQAAADYAP7/AAAgABQAAAAIAfP/AAAIABoAAAD2APn/AAANABMAAAA=")
+tile_set = ExtResource("19_ra2ey")
+
+[node name="Path" type="TileMapLayer" parent="WorldObjects" unique_id=227110314]
+z_index = -9
+position = Vector2(1604, -6053)
+tile_set = ExtResource("20_xpasf")
+
+[node name="TreeGroup" type="Node2D" parent="WorldObjects" unique_id=248913643]
+y_sort_enabled = true
+
+[node name="Butterfly" parent="." unique_id=1961194005 node_paths=PackedStringArray("target", "camera") instance=ExtResource("21_hgq1i")]
+position = Vector2(405, 248)
+scale = Vector2(-1, 1)
+target = NodePath("../SacredGate")
+camera = NodePath("../Camera_Centered")
+
+[node name="SacredGate" parent="." unique_id=1326402143 instance=ExtResource("22_wbnnf")]
+position = Vector2(10102, 248)

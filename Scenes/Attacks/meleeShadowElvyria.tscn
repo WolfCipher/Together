@@ -49,7 +49,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Slash" type="Area2D" unique_id=871792930 groups=["Player Attack"]]
+[node name="Slash" type="Area2D" unique_id=871792930 groups=["Enemy Attack"]]
 script = ExtResource("1_rke2x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249]
