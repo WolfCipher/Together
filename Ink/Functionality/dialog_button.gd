@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_pressed() && !btn_click.playing:
 		btn_click.play()
 	if is_hovered() && !hover_playing && !disabled:
