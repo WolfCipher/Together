@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://hnaaqwso7imp"]
+
+[ext_resource type="Script" uid="uid://bgmikvv1nns3u" path="res://Scenes/Functionality/healthHearts.gd" id="1_43338"]
+[ext_resource type="PackedScene" uid="uid://dns6w7ihmm1im" path="res://HUD Assets/Ryl_Heart.tscn" id="2_43338"]
+
+[node name="RylHearts" type="HBoxContainer" unique_id=1781464873]
+z_index = 200
+layout_direction = 3
+offset_left = 1920.0
+offset_right = 1920.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+script = ExtResource("1_43338")
+heart = ExtResource("2_43338")

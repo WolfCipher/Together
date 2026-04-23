@@ -10,8 +10,8 @@
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="7_xweua"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="8_wbaon"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="11_xweua"]
-[ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health.tscn" id="12_wbaon"]
-[ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health.tscn" id="13_coy2f"]
+[ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health_bar.tscn" id="12_wbaon"]
+[ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health_bar.tscn" id="13_coy2f"]
 [ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_so0q4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
@@ -79,7 +79,6 @@ y_sort_enabled = true
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("2_vrexv")]
 position = Vector2(516, 505)
-projectile_scene = ExtResource("3_6or7q")
 
 [node name="Ryl" parent="." unique_id=491402063 instance=ExtResource("4_ugllj")]
 position = Vector2(630, 505)
