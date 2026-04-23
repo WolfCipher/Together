@@ -4,6 +4,9 @@
 [ext_resource type="StyleBox" uid="uid://qgnnq00isv8k" path="res://btn-purple-blue.tres" id="2_6vugt"]
 [ext_resource type="StyleBox" uid="uid://10y8hleaclx2" path="res://inky_btn_focus.tres" id="3_bjhcq"]
 [ext_resource type="Texture2D" uid="uid://cbyt22vcw0t7m" path="res://Ink/Functionality/ryl_icon.png" id="3_mfbwi"]
+[ext_resource type="Script" uid="uid://d4m6r6e2srug5" path="res://Ink/Functionality/dialog_button.gd" id="5_dyq3x"]
+[ext_resource type="AudioStream" uid="uid://blt3bwumy1v1k" path="res://Sound/SFX/UI_Sounds/Button_Select/UI_Click_1.wav" id="5_kwukr"]
+[ext_resource type="AudioStream" uid="uid://dog8bfi5c63tl" path="res://Sound/SFX/UI_Sounds/Button_Switch/UI_Switch_1.wav" id="6_dyq3x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68vu5"]
 bg_color = Color(0.1478307, 0.1797997, 0.4194534, 1)
@@ -49,3 +52,12 @@ theme_override_styles/focus = ExtResource("3_bjhcq")
 text = "Choice"
 icon = ExtResource("3_mfbwi")
 icon_alignment = 2
+script = ExtResource("5_dyq3x")
+
+[node name="BtnClick" type="AudioStreamPlayer" parent="." unique_id=1191462592]
+stream = ExtResource("5_kwukr")
+bus = &"SFX"
+
+[node name="BtnHover" type="AudioStreamPlayer" parent="." unique_id=39087875]
+stream = ExtResource("6_dyq3x")
+bus = &"SFX"

@@ -1,64 +1,64 @@
 [gd_scene format=3 uid="uid://bdx778hwc16p3"]
 
 [ext_resource type="Script" uid="uid://c14i1tymorl4y" path="res://Scenes/Attacks/melee.gd" id="1_rke2x"]
-[ext_resource type="Texture2D" uid="uid://btlduruxcc2oc" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash0.png" id="2_hphbg"]
-[ext_resource type="Texture2D" uid="uid://bx0v5giut0a5k" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash1.png" id="3_ojy2y"]
-[ext_resource type="Texture2D" uid="uid://b2onsuggxkykb" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash2.png" id="4_j776f"]
-[ext_resource type="Texture2D" uid="uid://4me4obbfxlun" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash3.png" id="5_x3c4e"]
-[ext_resource type="Texture2D" uid="uid://duxxc0akyau3e" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash4.png" id="6_ggiai"]
-[ext_resource type="Texture2D" uid="uid://dt31fa4pydshx" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash5.png" id="7_5se7b"]
-[ext_resource type="Texture2D" uid="uid://rdxamaj7w0d" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash6.png" id="8_ts7pm"]
-[ext_resource type="Texture2D" uid="uid://ctm5q1ww76iyx" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash7.png" id="9_lg1fu"]
-[ext_resource type="Texture2D" uid="uid://n6i4q3hhp17o" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash8.png" id="10_a43tt"]
+[ext_resource type="Texture2D" uid="uid://cgxujfdsqwi2b" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee0.png" id="2_c0avf"]
+[ext_resource type="Texture2D" uid="uid://bo6x3m3j38let" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee1.png" id="3_rxfy4"]
+[ext_resource type="Texture2D" uid="uid://chwv3e1fefcay" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee2.png" id="4_1melg"]
+[ext_resource type="Texture2D" uid="uid://dav23824i1ea4" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee3.png" id="5_1xn8y"]
+[ext_resource type="Texture2D" uid="uid://cmy4bi065apqq" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee4.png" id="6_dexmf"]
+[ext_resource type="Texture2D" uid="uid://3xuxa3w3iuug" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee5.png" id="7_lk1x7"]
+[ext_resource type="Texture2D" uid="uid://b0frnxioy0wjx" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee6.png" id="8_u68t5"]
+[ext_resource type="Texture2D" uid="uid://bsio7yfcvsmnj" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee7.png" id="9_ghxot"]
+[ext_resource type="Texture2D" uid="uid://dysitsfnlvbac" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee8.png" id="10_7m55m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(26, 79)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e1077"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_p186d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_hphbg")
+"texture": ExtResource("2_c0avf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ojy2y")
+"texture": ExtResource("3_rxfy4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_j776f")
+"texture": ExtResource("4_1melg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_x3c4e")
+"texture": ExtResource("5_1xn8y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ggiai")
+"texture": ExtResource("6_dexmf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_5se7b")
+"texture": ExtResource("7_lk1x7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_ts7pm")
+"texture": ExtResource("8_u68t5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_lg1fu")
+"texture": ExtResource("9_ghxot")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_a43tt")
+"texture": ExtResource("10_7m55m")
 }],
 "loop": true,
 "name": &"default",
 "speed": 12.0
 }]
 
-[node name="Slash" type="Area2D" unique_id=871792930 groups=["Player Attack"]]
+[node name="Slash" type="Area2D" unique_id=871792930 groups=["Enemy Attack"]]
 script = ExtResource("1_rke2x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=166442249]
 position = Vector2(0.40000153, -0.099998474)
 shape = SubResource("RectangleShape2D_d4467")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=560075531]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2141571589]
 position = Vector2(2.4000015, -1.5999985)
 scale = Vector2(0.15, 0.15)
-sprite_frames = SubResource("SpriteFrames_e1077")
+sprite_frames = SubResource("SpriteFrames_p186d")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

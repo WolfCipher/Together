@@ -1,52 +1,48 @@
 [gd_scene format=3 uid="uid://c732b6bjf3b43"]
 
 [ext_resource type="Script" uid="uid://c14i1tymorl4y" path="res://Scenes/Attacks/melee.gd" id="1_mikc6"]
-[ext_resource type="Texture2D" uid="uid://bvdhivw6byekd" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee00.png" id="2_yjua7"]
-[ext_resource type="Texture2D" uid="uid://dvp7y8xxge3kg" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee01.png" id="3_h8y58"]
-[ext_resource type="Texture2D" uid="uid://x4jpu8cjg3kd" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee02.png" id="4_3byx4"]
-[ext_resource type="Texture2D" uid="uid://c0lyco45bh0fg" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee03.png" id="5_5jomr"]
-[ext_resource type="Texture2D" uid="uid://drdk8fjs7podn" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee04.png" id="6_xxepo"]
-[ext_resource type="Texture2D" uid="uid://cx28dcy7dxt4t" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee05.png" id="7_xea8q"]
-[ext_resource type="Texture2D" uid="uid://btqgitqwwy2nc" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee06.png" id="8_o6nb3"]
-[ext_resource type="Texture2D" uid="uid://cljbnmm7ife04" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee07.png" id="9_u2ftu"]
-[ext_resource type="Texture2D" uid="uid://c1a4xuomiebvt" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee08.png" id="10_3q87a"]
-[ext_resource type="Texture2D" uid="uid://b3rj7v21s3l5p" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee09.png" id="11_sa387"]
+[ext_resource type="Texture2D" uid="uid://cgxujfdsqwi2b" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee0.png" id="2_4vfkb"]
+[ext_resource type="Texture2D" uid="uid://bo6x3m3j38let" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee1.png" id="3_lfk67"]
+[ext_resource type="Texture2D" uid="uid://chwv3e1fefcay" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee2.png" id="4_cenkt"]
+[ext_resource type="Texture2D" uid="uid://dav23824i1ea4" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee3.png" id="5_ul6p3"]
+[ext_resource type="Texture2D" uid="uid://cmy4bi065apqq" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee4.png" id="6_qbpde"]
+[ext_resource type="Texture2D" uid="uid://3xuxa3w3iuug" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee5.png" id="7_5gun0"]
+[ext_resource type="Texture2D" uid="uid://b0frnxioy0wjx" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee6.png" id="8_sh4wp"]
+[ext_resource type="Texture2D" uid="uid://bsio7yfcvsmnj" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee7.png" id="9_fbfiu"]
+[ext_resource type="Texture2D" uid="uid://dysitsfnlvbac" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee8.png" id="10_1psne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(26, 79)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e1077"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uni0h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_yjua7")
+"texture": ExtResource("2_4vfkb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_h8y58")
+"texture": ExtResource("3_lfk67")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_3byx4")
+"texture": ExtResource("4_cenkt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_5jomr")
+"texture": ExtResource("5_ul6p3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_xxepo")
+"texture": ExtResource("6_qbpde")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_xea8q")
+"texture": ExtResource("7_5gun0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_o6nb3")
+"texture": ExtResource("8_sh4wp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_u2ftu")
+"texture": ExtResource("9_fbfiu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_3q87a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_sa387")
+"texture": ExtResource("10_1psne")
 }],
 "loop": true,
 "name": &"default",
@@ -63,6 +59,6 @@ shape = SubResource("RectangleShape2D_d4467")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=560075531]
 position = Vector2(2.4000015, -1.5999985)
 scale = Vector2(0.15, 0.15)
-sprite_frames = SubResource("SpriteFrames_e1077")
+sprite_frames = SubResource("SpriteFrames_uni0h")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

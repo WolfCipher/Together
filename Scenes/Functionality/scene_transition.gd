@@ -8,13 +8,14 @@ func _ready() -> void:
 	color_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE # doesn't absorb clicks; allows clicks to go through to buttons
 	SceneCache.scene_change.connect(on_scene_change)
 	
-	color_rect.color = Color(0,0,0,0)
+	color_rect.color = Color(0,0,0,1)
 	visible = true
+	var time = 0
 	
 	if fade_in:
-		color_rect.color = Color(0,0,0,1)
-		var tween = create_tween()
-		tween.tween_property(color_rect, "modulate", Color(0,0,0,0), 0.4)
+		time = 0.4
+	var tween = create_tween()
+	tween.tween_property(color_rect, "modulate", Color(0,0,0,0), time)
 
 func on_scene_change(next_scene):
 	

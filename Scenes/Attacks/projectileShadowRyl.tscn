@@ -1,40 +1,40 @@
 [gd_scene format=3 uid="uid://d38evf5uew82h"]
 
 [ext_resource type="Script" uid="uid://cvyfe7rh4nhi7" path="res://Scenes/Attacks/projectile.gd" id="1_cyuv7"]
-[ext_resource type="Texture2D" uid="uid://ehx8d6voijly" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile0.png" id="2_khkb3"]
-[ext_resource type="Texture2D" uid="uid://lu6cdhej2bj3" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile1.png" id="3_wcnqo"]
-[ext_resource type="Texture2D" uid="uid://j86dl1fj00d" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile2.png" id="4_tfdr8"]
-[ext_resource type="Texture2D" uid="uid://cw2fgysumklj3" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile3.png" id="5_o57da"]
-[ext_resource type="Texture2D" uid="uid://2qbevtns6wab" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile4.png" id="6_gj7dv"]
-[ext_resource type="Texture2D" uid="uid://cccyy3t00hd1e" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile5.png" id="7_bpo7q"]
-[ext_resource type="Texture2D" uid="uid://dq1qxf6frc71x" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile6.png" id="8_0abyu"]
+[ext_resource type="Texture2D" uid="uid://dqsxhtv8io2up" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Projectile/ShadowRyl_Projectile0.png" id="2_nfw51"]
+[ext_resource type="Texture2D" uid="uid://3l84n4cddsfg" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Projectile/ShadowRyl_Projectile1.png" id="3_hwtxj"]
+[ext_resource type="Texture2D" uid="uid://b3xkpg4yq58hn" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Projectile/ShadowRyl_Projectile2.png" id="4_4vj3f"]
+[ext_resource type="Texture2D" uid="uid://dfuij00v0gdtx" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Projectile/ShadowRyl_Projectile3.png" id="5_gec2t"]
+[ext_resource type="Texture2D" uid="uid://osbl2wtqprvx" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Projectile/ShadowRyl_Projectile4.png" id="6_b4fhc"]
+[ext_resource type="Texture2D" uid="uid://bql7ejliiy4aq" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Projectile/ShadowRyl_Projectile5.png" id="7_tu6i4"]
+[ext_resource type="Texture2D" uid="uid://do1qrtg0g8urn" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Projectile/ShadowRyl_Projectile6.png" id="8_pjab0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(26, 79)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e1077"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qw4af"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_khkb3")
+"texture": ExtResource("2_nfw51")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_wcnqo")
+"texture": ExtResource("3_hwtxj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_tfdr8")
+"texture": ExtResource("4_4vj3f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_o57da")
+"texture": ExtResource("5_gec2t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_gj7dv")
+"texture": ExtResource("6_b4fhc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_bpo7q")
+"texture": ExtResource("7_tu6i4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_0abyu")
+"texture": ExtResource("8_pjab0")
 }],
 "loop": true,
 "name": &"default",
@@ -51,7 +51,7 @@ shape = SubResource("RectangleShape2D_d4467")
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=560075531]
 position = Vector2(2.4000015, -1.5999985)
 scale = Vector2(0.15, 0.15)
-sprite_frames = SubResource("SpriteFrames_e1077")
+sprite_frames = SubResource("SpriteFrames_qw4af")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=875168334]
 

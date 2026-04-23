@@ -5,9 +5,16 @@ extends Area2D
 @onready var root: Node2D = $".."
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var animation := sprite.animation
-@onready var walk: AudioStreamPlayer = $AudioStreamPlayer
 @onready var dash_particles := CPUParticles2D.new()
 @onready var tex := load("res://death_particle.png") 
+
+# Audio
+@onready var walk_sfx: AudioStreamPlayer = $WalkSFX
+@onready var melee_sfx: AudioStreamPlayer = $MeleeSFX
+@onready var ability_sfx: AudioStreamPlayer = $AbilitySFX
+@onready var melee_grunt_sfx: AudioStreamPlayer = $MeleeGruntSFX
+@onready var damage_sfx: AudioStreamPlayer = $DamageSFX
+
 
 
 @export var speed = 400
@@ -19,7 +26,7 @@ var health := max_health
 
 # limiting how how different attacks can be used
 @export var shoot_recharge := 0.5
-@export var melee_recharge := 0.0
+@export var melee_recharge := 0.5
 @export var sync_recharge := 10.0
 @export var dash_recharge := 2
 @export var shield_recharge := 10
@@ -165,6 +172,9 @@ func attack_melee() -> void:
 	var melee = melee_scene.instantiate()
 	var dir = get_facing_vector()
 	
+	melee_sfx.play()
+	melee_grunt_sfx.play()
+	
 	# position slightly ahead of player and move in proper direction
 	melee.global_position = global_position + dir * 60
 	melee.rotation = dir.angle() + PI/2
@@ -183,6 +193,7 @@ func dash() -> void:
 		dash_cooldown = dash_recharge
 		speed = 1000
 		print("dash!!!")
+		ability_sfx.play()
 		await get_tree().create_timer(0.25).timeout
 		speed = 400
 		
@@ -207,6 +218,7 @@ func shield() -> void:
 	if Input.is_action_just_pressed("e_shield") and is_in_group('Elvyria') and shield_cooldown <= 0:
 		var tween = create_tween()
 		print("shield!!!")
+		ability_sfx.play()
 		shield_cooldown = shield_recharge
 		speed = 250
 		tween.tween_property(sprite, "modulate", Color(1.0, 1.0, 0.0, 1.0), 0.1)
@@ -268,8 +280,9 @@ func play() -> void:
 	
 # ***************** SOUNDS ********************
 	if animation == "walk_down" || animation ==  "walk_up" || animation == "walk_right" || animation == "walk_left":
-		if walk.playing == false:
-			walk.play()
+		if walk_sfx.playing == false:
+			walk_sfx.pitch_scale = (randf() * .1) + 1
+			walk_sfx.play()
 
 # ************************* DAMAGE & COLLISION ************************************
 func damage_blink():
@@ -289,6 +302,7 @@ func _on_area_entered(area: Area2D) -> void:
 		get_tree().call_group("Cameras", "_on_damaged")
 		health = health - area.damage
 		damage_blink()
+		damage_sfx.play()
 		await get_tree().create_timer(0.2).timeout
 		invulnerable = false
 			

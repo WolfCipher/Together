@@ -40,6 +40,7 @@ position = Vector2(574, 505)
 xp = 3
 
 [node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
+process_mode = 3
 stream = ExtResource("4_kbn7v")
 volume_db = -5.0
 autoplay = true
@@ -57,6 +58,7 @@ spawn_positions = Array[Vector2]([Vector2(0, -300), Vector2(-300, -50), Vector2(
 next_scene = "res://Scenes/UI Scenes/Victory.tscn"
 goes_to_next_scene = false
 can_start = false
+waves = [[0, 0, 1, 0, 0], [0, 1, 1, 0, 0], [0, 2, 0, 0, 0], [1, 1, 0, 0, 0], [2, 0, 0, 0, 0], [2, 2, 0, 0, 0], [1, 1, 1, 0, 0]]
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
 
@@ -297,4 +299,4 @@ dialog_list = [["ryl", 0, "Wait a moment, Elvyria. What's that ahead of us on th
 
 [node name="EmitDialogInRange2" parent="." unique_id=1938153284 instance=ExtResource("24_etuld")]
 position = Vector2(548, 496)
-dialog_list = [["ryl", 0, "Wow, I still can't believe Vyerity lended us her gear! I feel stronger already!", 10], ["elvyria", 0, "Hey, thanks for coming with me, Ryl. It's nice to have a friend.", 8], ["ryl", 0, "No problem! I always wanted to travel and training with you has been fun!", 6], ["elvyria", 0, "Same here! I enjoy enhancing your arrows with my melee and vice versa!", 4], ["ryl", 0, "My favorite tactic is shooting together in all directions!", 2]]
+dialog_list = [["ryl", 0, "Wow, I still can't believe Vyerity lent us her gear! I feel stronger already!", 10], ["elvyria", 0, "Hey, thanks for coming with me, Ryl. It's nice to have a friend.", 8], ["ryl", 0, "No problem! I always wanted to travel and training with you has been fun!", 6], ["elvyria", 0, "Same here! I enjoy enhancing your arrows with my melee and vice versa!", 4], ["ryl", 0, "My favorite tactic is shooting together in all directions!", 2]]

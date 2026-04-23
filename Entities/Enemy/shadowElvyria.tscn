@@ -346,7 +346,7 @@ melee_scene = ExtResource("3_isqlt")
 
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1432958030]
 sprite_frames = SubResource("SpriteFrames_287tu")
-animation = &"walk_up"
+animation = &"idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
 position = Vector2(-3, 0.5)

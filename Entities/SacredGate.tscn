@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dmgvq3thfhtue"]
+
+[ext_resource type="Script" uid="uid://uju6hdryi8ii" path="res://Entities/sacred_gate.gd" id="1_jvmxo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6xp4j"]
+height = 40.0
+
+[node name="SacredGate" type="Area2D" unique_id=922544150]
+scale = Vector2(10, 10)
+script = ExtResource("1_jvmxo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=976559814]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6xp4j")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

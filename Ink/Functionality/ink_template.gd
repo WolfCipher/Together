@@ -53,7 +53,11 @@ func _ready():
 
 	# It's recommended to load the story in the background. On platforms that
 	# don't support threads, the value of this variable is ignored.
-	_ink_player.loads_in_background = true
+	if OS.has_feature("web"):
+		_ink_player.loads_in_background = false
+	else:
+		_ink_player.loads_in_background = true
+
 
 	_ink_player.connect("loaded", Callable(self, "_story_loaded"))
 

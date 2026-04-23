@@ -4,7 +4,14 @@ extends Area2D
 @onready var sprite: AnimatedSprite2D = $Enemy
 @onready var animation := sprite.animation
 @onready var death_particles := CPUParticles2D.new()
-@onready var tex := load("res://death_particle.png") 
+@onready var tex := load("res://death_particle.png")
+@onready var grandparent = $"../.."
+
+#Audio
+@onready var attack_sfx: AudioStreamPlayer = $AttackSFX
+@onready var damage_sfx: AudioStreamPlayer = $DamageSFX
+@onready var passive_sfx: AudioStreamPlayer = $PassiveSFX
+
 
 @export var speed = 200
 @export var max_health := 3
@@ -22,6 +29,7 @@ var health := max_health
 
 @export var mustBeStillToAttack = true # false for AoE enemy that leaves behind harmful magic
 @export var attackDistance := 300 # distance that the enemy needs to attack
+@export var closeAttackDistance := 100 #distance that enemy needs for secondary attack; important for shadow enemies
 @export var attackFrequency := 1 # how frequent the attacks are
 var attack_cooldown := 0.0
 
@@ -38,6 +46,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	if (!passive_sfx.playing):
+		passive_sfx.volume_linear = .1
+		passive_sfx.pitch_scale = (randf() * .1) + 1
+		passive_sfx.play()
+		
 	# enemy can only do something if it's not dead
 	if health > 0:
 		attack_cooldown -= delta
@@ -71,20 +84,20 @@ func _process(delta: float) -> void:
 		# HANDLE ANIMATIONS
 		# Determine the direction and handle animations accordingly
 		var dir = (target_pos - global_position).normalized()
-		animate(dir)
+		animate(dir, continue_moving)
 		
 		# note: attack after handling animation to ensure faceDir is updated
 		if (!continue_moving) || (!mustBeStillToAttack):
 			if attack_cooldown <= 0:
-				attack()
+				attack(target_dist)
 				attack_cooldown = attackFrequency
 
 func play() -> void:
 	sprite.animation = animation
 	sprite.play()
 
-func animate(dir) -> void:
-	if dir == Vector2.ZERO:
+func animate(dir, continue_moving) -> void:
+	if !continue_moving:
 		match faceDir:
 			0: animation = "idle_up"
 			1: animation = "idle_down"
@@ -116,6 +129,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player Attack"):
 		health = health - area.damage
 		damage_blink()
+		damage_sfx.play()
 	if health < 1:
 		spawn_death_particles()
 		# wait 0.5 seconds before despawning
@@ -136,10 +150,18 @@ func damage_blink():
 	else:
 		tween.tween_property(sprite, "modulate", Color(0.286, 0.0, 0.0, 1.0), 0.1)
 
-func attack():
+func attack(target_dist):
 	telegraph()
+	
+	var useCloseAttack = (target_dist <= closeAttackDistance) && self.is_in_group("MeleeEnemy")
+	
 	await get_tree().create_timer(0.35).timeout
-	if self.is_in_group("ProjectileEnemy"):
+	
+	attack_sfx.play()
+	
+	if useCloseAttack:
+		attack_melee()
+	elif self.is_in_group("ProjectileEnemy"):
 		shoot_projectile()
 	elif self.is_in_group("AoE_Enemy"):
 		create_AoE()
@@ -161,7 +183,10 @@ func shoot_projectile() -> void:
 	projectile.damage = projectile_damage
 	
 	# spawn
-	get_tree().current_scene.add_child(projectile)
+	if grandparent:
+		grandparent.add_child(projectile)
+	else:
+		get_tree().current_scene.add_child(projectile)
 
 # spawn AoE attack
 func create_AoE() -> void:
@@ -174,7 +199,10 @@ func create_AoE() -> void:
 	AoE.damage = AoE_damage
 	
 	# spawn
-	get_tree().current_scene.add_child(AoE)
+	if grandparent:
+		grandparent.add_child(AoE)
+	else:
+		get_tree().current_scene.add_child(AoE)
 
 # spawn melee attack
 func attack_melee() -> void:
@@ -183,14 +211,16 @@ func attack_melee() -> void:
 	
 	# position slightly ahead of player and move in proper direction
 	melee.global_position = global_position + dir * 30
-	melee.direction = dir
 	melee.rotation = dir.angle() + PI/2
 	
 	# use enemy's specified damage
 	melee.damage = melee_damage
 	
 	# spawn
-	get_tree().current_scene.add_child(melee)
+	if grandparent:
+		grandparent.add_child(melee)
+	else:
+		get_tree().current_scene.add_child(melee)
 
 # Gives the direction the player is facing
 # Ensures attacks go in the correct direction
