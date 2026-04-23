@@ -187,7 +187,7 @@ func shoot_projectile() -> void:
 		grandparent.add_child(projectile)
 	else:
 		get_tree().current_scene.add_child(projectile)
-
+		
 # spawn AoE attack
 func create_AoE() -> void:
 	var AoE = AoE_scene.instantiate()
@@ -203,6 +203,10 @@ func create_AoE() -> void:
 		grandparent.add_child(AoE)
 	else:
 		get_tree().current_scene.add_child(AoE)
+		
+	await get_tree().create_timer(5).timeout
+	if AoE:
+		AoE.free()
 
 # spawn melee attack
 func attack_melee() -> void:
