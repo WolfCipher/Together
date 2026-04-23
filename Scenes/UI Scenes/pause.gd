@@ -9,7 +9,8 @@ func _ready() -> void:
 	visible = startsVisible
 	if startsVisible:
 		get_tree().paused = true
-		music.volume_db -= volume_change
+		if music:
+			music.volume_db -= volume_change
 		await get_tree().create_timer(2.0).timeout
 
 
@@ -19,10 +20,12 @@ func _process(_delta: float) -> void:
 		if get_tree().paused == false:
 			visible = true
 			get_tree().paused = true
-			music.volume_db -= volume_change
+			if music:
+				music.volume_db -= volume_change
 			await get_tree().create_timer(2.0).timeout
 		else:
 			visible = false
 			get_tree().paused = false
-			music.volume_db += volume_change
+			if music:
+				music.volume_db += volume_change
 			await get_tree().create_timer(2.0).timeout

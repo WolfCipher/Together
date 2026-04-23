@@ -32,6 +32,7 @@ letter = "Q"
 [node name="W" parent="Transform/Row" unique_id=1236671361 instance=ExtResource("1_hgq2m")]
 position = Vector2(40, 0)
 forElvyria = true
+forMovement = true
 letter = "W"
 
 [node name="E" parent="Transform/Row" unique_id=1835907003 instance=ExtResource("1_hgq2m")]
@@ -80,15 +81,18 @@ letter = "]"
 [node name="A" parent="Transform/Row2" unique_id=103469126 instance=ExtResource("1_hgq2m")]
 position = Vector2(5, 40)
 forElvyria = true
+forMovement = true
 letter = "A"
 
 [node name="S" parent="Transform/Row2" unique_id=1791105560 instance=ExtResource("1_hgq2m")]
 position = Vector2(45, 40)
 forElvyria = true
+forMovement = true
 
 [node name="D" parent="Transform/Row2" unique_id=1123331964 instance=ExtResource("1_hgq2m")]
 position = Vector2(85, 40)
 forElvyria = true
+forMovement = true
 letter = "D"
 
 [node name="F" parent="Transform/Row2" unique_id=1632111465 instance=ExtResource("1_hgq2m")]
@@ -125,7 +129,7 @@ letter = "'"
 
 [node name="enter" parent="Transform/Row2" unique_id=248339548 instance=ExtResource("1_hgq2m")]
 position = Vector2(445, 40)
-letter = "enter"
+letter = "ENTER"
 widthScale = 145
 
 [node name="Row3" type="Node2D" parent="Transform" unique_id=1287641437]
@@ -135,7 +139,7 @@ position = Vector2(5, 40)
 position = Vector2(-95, 40)
 forElvyria = true
 forRyl = true
-letter = "shift"
+letter = "SHIFT"
 widthScale = 140
 
 [node name="Z" parent="Transform/Row3" unique_id=266386648 instance=ExtResource("1_hgq2m")]
@@ -186,7 +190,7 @@ letter = "/"
 position = Vector2(445, 40)
 forElvyria = true
 forRyl = true
-letter = "shift"
+letter = "SHIFT"
 widthScale = 140
 
 [node name="Row4" type="Node2D" parent="Transform" unique_id=1896802449]
@@ -194,24 +198,27 @@ position = Vector2(4, 90)
 
 [node name="Space" parent="Transform/Row4" unique_id=924412017 instance=ExtResource("1_hgq2m")]
 position = Vector2(125, 40)
-letter = "Space"
+letter = "SPACE"
 widthScale = 200
 
 [node name="<" parent="Transform/Row4" unique_id=1007443841 instance=ExtResource("1_hgq2m")]
 position = Vector2(425, 80)
 forRyl = true
+forMovement = true
 letter = "<"
 widthScale = 60
 
 [node name=">" parent="Transform/Row4" unique_id=1379866632 instance=ExtResource("1_hgq2m")]
 position = Vector2(525, 80)
 forRyl = true
+forMovement = true
 letter = ">"
 widthScale = 60
 
-[node name="," parent="Transform/Row4" unique_id=1633323812 instance=ExtResource("1_hgq2m")]
+[node name="v" parent="Transform/Row4" unique_id=1633323812 instance=ExtResource("1_hgq2m")]
 position = Vector2(485, 80)
 forRyl = true
+forMovement = true
 letter = "v"
 
 [node name="PgUp" parent="Transform/Row4" unique_id=181259744 instance=ExtResource("1_hgq2m")]
@@ -223,6 +230,7 @@ widthScale = 60
 [node name="^" parent="Transform/Row4" unique_id=947810362 instance=ExtResource("1_hgq2m")]
 position = Vector2(485, 40)
 forRyl = true
+forMovement = true
 letter = "^"
 
 [node name="PgDn" parent="Transform/Row4" unique_id=1098450228 instance=ExtResource("1_hgq2m")]

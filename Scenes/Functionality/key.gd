@@ -7,6 +7,7 @@ var together_color = Color(0.4, 0.8, 0.8, 1.0)
 
 @export var forElvyria = false
 @export var forRyl = false
+@export var forMovement = false
 @export var letter = "S"
 @export var widthScale = 40
 @export var heightScale = 40
@@ -17,6 +18,11 @@ var together_color = Color(0.4, 0.8, 0.8, 1.0)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var color = together_color if (forElvyria && forRyl) else elvyria_color if forElvyria else ryl_color if forRyl else base_color
+	
+	if forMovement:
+		color.r -= 0.3
+		color.g -= 0.3
+		color.b -= 0.3
 	
 	keyRect.size = Vector2(widthScale, heightScale)
 	
