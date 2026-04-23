@@ -4,7 +4,8 @@ extends Area2D
 @onready var sprite: AnimatedSprite2D = $Enemy
 @onready var animation := sprite.animation
 @onready var death_particles := CPUParticles2D.new()
-@onready var tex := load("res://death_particle.png") 
+@onready var tex := load("res://death_particle.png")
+@onready var grandparent = $"../.."
 
 #Audio
 @onready var attack_sfx: AudioStreamPlayer = $AttackSFX
@@ -182,7 +183,10 @@ func shoot_projectile() -> void:
 	projectile.damage = projectile_damage
 	
 	# spawn
-	get_tree().current_scene.add_child(projectile)
+	if grandparent:
+		grandparent.add_child(projectile)
+	else:
+		get_tree().current_scene.add_child(projectile)
 
 # spawn AoE attack
 func create_AoE() -> void:
@@ -195,7 +199,10 @@ func create_AoE() -> void:
 	AoE.damage = AoE_damage
 	
 	# spawn
-	get_tree().current_scene.add_child(AoE)
+	if grandparent:
+		grandparent.add_child(AoE)
+	else:
+		get_tree().current_scene.add_child(AoE)
 
 # spawn melee attack
 func attack_melee() -> void:
@@ -210,7 +217,10 @@ func attack_melee() -> void:
 	melee.damage = melee_damage
 	
 	# spawn
-	get_tree().current_scene.add_child(melee)
+	if grandparent:
+		grandparent.add_child(melee)
+	else:
+		get_tree().current_scene.add_child(melee)
 
 # Gives the direction the player is facing
 # Ensures attacks go in the correct direction

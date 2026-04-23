@@ -79,7 +79,6 @@ y_sort_enabled = true
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("2_vrexv")]
 position = Vector2(516, 505)
-projectile_scene = ExtResource("3_6or7q")
 
 [node name="Ryl" parent="." unique_id=491402063 instance=ExtResource("4_ugllj")]
 position = Vector2(630, 505)

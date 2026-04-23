@@ -58,6 +58,7 @@ spawn_positions = Array[Vector2]([Vector2(0, -300), Vector2(-300, -50), Vector2(
 next_scene = "res://Scenes/UI Scenes/Victory.tscn"
 goes_to_next_scene = false
 can_start = false
+waves = [[0, 0, 1, 0, 0], [0, 1, 1, 0, 0], [0, 2, 0, 0, 0], [1, 1, 0, 0, 0], [2, 0, 0, 0, 0], [2, 2, 0, 0, 0], [1, 1, 1, 0, 0]]
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
 

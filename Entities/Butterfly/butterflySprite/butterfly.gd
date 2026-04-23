@@ -15,6 +15,9 @@ var camera_y_dist = 580 # 1920/4 + 100
 @export var within_bottom = true
 @export var game_over := "res://Scenes/UI Scenes/DeathScene.tscn" # scene caused by being too far from the butterfly
 
+@onready var dialog := $EmitDialogInRange
+var dialog_seen = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if target:
@@ -22,11 +25,18 @@ func _ready() -> void:
 	else:
 		sprite.animation = "default"
 	sprite.play()
+	
+	# if there's no dialog, don't use a false value that turns off checks
+	if !dialog:
+		dialog_seen = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time += delta
+	
+	if dialog && !dialog_seen:
+		dialog_seen = dialog.dialog_already_played
 	
 	if target:
 		var height = sin(time*4 + PI/4) * 1000 + target.global_position.y
@@ -56,5 +66,5 @@ func _process(delta: float) -> void:
 		var break_top = y_dist < 0 && within_top && beyond_y
 		var break_bottom = y_dist > 0 && within_bottom && beyond_y 
 		
-		if break_right || break_left || break_top || break_bottom:
+		if (break_right || break_left || break_top || break_bottom) && dialog_seen:
 			SceneCache.scene_change.emit(game_over)
