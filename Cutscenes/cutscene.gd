@@ -28,7 +28,7 @@ func _ready() -> void:
 
 # Called when any button is pressed
 func _input(event: InputEvent) -> void:
-	if event is InputEvent and event.pressed:
+	if event is InputEventJoypadButton or InputEventKey:
 		if skipLabel.visible and event.is_action_pressed(skip_input):
 			_endCutscene()
 		else:
