@@ -11,3 +11,4 @@ var curr_level : String
 
 signal scene_change(next_scene)
 signal create_dialog(character, emotion, text, duration)
+signal create_fog(to_fade_in, to_fade_out)
