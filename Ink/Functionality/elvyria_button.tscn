@@ -4,6 +4,9 @@
 [ext_resource type="StyleBox" uid="uid://qgnnq00isv8k" path="res://btn-purple-blue.tres" id="2_yit0c"]
 [ext_resource type="StyleBox" uid="uid://10y8hleaclx2" path="res://inky_btn_focus.tres" id="3_ek2im"]
 [ext_resource type="Texture2D" uid="uid://bmuw3kmlea1nn" path="res://Ink/Functionality/elvyria_icon.png" id="3_hi67e"]
+[ext_resource type="Script" uid="uid://d4m6r6e2srug5" path="res://Ink/Functionality/dialog_button.gd" id="5_ahp2k"]
+[ext_resource type="AudioStream" uid="uid://blt3bwumy1v1k" path="res://Sound/SFX/UI_Sounds/Button_Select/UI_Click_1.wav" id="5_gtpe6"]
+[ext_resource type="AudioStream" uid="uid://dog8bfi5c63tl" path="res://Sound/SFX/UI_Sounds/Button_Switch/UI_Switch_1.wav" id="6_gtpe6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68vu5"]
 bg_color = Color(0.1478307, 0.1797997, 0.4194534, 1)
@@ -49,3 +52,12 @@ theme_override_styles/focus = ExtResource("3_ek2im")
 text = "Choice"
 icon = ExtResource("3_hi67e")
 icon_alignment = 2
+script = ExtResource("5_ahp2k")
+
+[node name="BtnClick" type="AudioStreamPlayer" parent="." unique_id=1765771647]
+stream = ExtResource("5_gtpe6")
+bus = &"SFX"
+
+[node name="BtnHover" type="AudioStreamPlayer" parent="." unique_id=1081402437]
+stream = ExtResource("6_gtpe6")
+bus = &"SFX"
