@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dbl8jt4xgbjot"
-path="res://.godot/imported/Ryl_Talk_Attack_1.wav-f7cec343d0447bb519f9312066caf85e.sample"
+path="res://.godot/imported/Ryl_Talk_Attack_1.wav-d1426ffb8468e2fa1efb510985f2e408.sample"
 
 [deps]
 
-source_file="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Talk/Ryl_Talk_Attack_1.wav"
-dest_files=["res://.godot/imported/Ryl_Talk_Attack_1.wav-f7cec343d0447bb519f9312066caf85e.sample"]
+source_file="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Melee/Ryl_Talk_Attack_1.wav"
+dest_files=["res://.godot/imported/Ryl_Talk_Attack_1.wav-d1426ffb8468e2fa1efb510985f2e408.sample"]
 
 [params]
 
