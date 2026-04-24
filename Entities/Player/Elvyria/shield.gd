@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $Sprite
-@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 var direction := Vector2.ZERO
 
@@ -15,4 +14,3 @@ func _process(_delta: float) -> void:
 
 func play() -> void:
 	sprite.play()
-	audio.play()

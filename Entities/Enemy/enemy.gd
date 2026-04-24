@@ -46,7 +46,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if (passive_sfx && !passive_sfx.playing):
+	if (passive_sfx && !passive_sfx.playing && !is_in_group("MeleeEnemy")):
 		passive_sfx.volume_linear = .1
 		passive_sfx.pitch_scale = (randf() * .1) + 1
 		passive_sfx.play()
@@ -95,6 +95,7 @@ func _process(delta: float) -> void:
 func play() -> void:
 	sprite.animation = animation
 	sprite.play()
+		
 
 func animate(dir, continue_moving) -> void:
 	if !continue_moving:
@@ -123,6 +124,11 @@ func animate(dir, continue_moving) -> void:
 			faceDir = 3
 
 	play()
+	# shadow enemy walk sounds
+	if is_in_group("MeleeEnemy") && sprite.animation :
+		if passive_sfx.playing == false:
+			passive_sfx.pitch_scale = (randf() * .1) + 1
+			passive_sfx.play()
 
 # damage
 func _on_area_entered(area: Area2D) -> void:

@@ -75,6 +75,9 @@
 [ext_resource type="Texture2D" uid="uid://c54cwegor0mwu" path="res://Entities/Enemy/Shadow Elvyria Enemy/ShadowElvyria_Back_Walk/ShadowElvyria_Back_Walk07.png" id="71_qve6e"]
 [ext_resource type="Texture2D" uid="uid://4hgjtu1buqdu" path="res://Entities/Enemy/Shadow Elvyria Enemy/ShadowElvyria_Back_Walk/ShadowElvyria_Back_Walk08.png" id="72_sjqlp"]
 [ext_resource type="Texture2D" uid="uid://nfpqru45qes5" path="res://Entities/Enemy/Shadow Elvyria Enemy/ShadowElvyria_Back_Walk/ShadowElvyria_Back_Walk09.png" id="73_5gia2"]
+[ext_resource type="AudioStream" uid="uid://ckgjt5x2oeixp" path="res://Sound/SFX/Enemy_Sounds/Shadow/Elvyria/Shadow_Elvyria_Projectile_1.wav" id="76_60k2e"]
+[ext_resource type="AudioStream" uid="uid://bu7hc7offipsv" path="res://Sound/SFX/Enemy_Sounds/Shadow/Elvyria/Shadow_Elvyria_Talk_Damage_1.wav" id="77_gbvfk"]
+[ext_resource type="AudioStream" uid="uid://c2kehod8ulrb8" path="res://Sound/SFX/Enemy_Sounds/Shadow/Elvyria/Shadow_Elvyria_Walk_1.wav" id="78_jrlxg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_287tu"]
 animations = [{
@@ -351,5 +354,17 @@ animation = &"idle_left"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
 position = Vector2(-3, 0.5)
 shape = SubResource("RectangleShape2D_1f0kj")
+
+[node name="AttackSFX" type="AudioStreamPlayer" parent="." unique_id=1474623213]
+stream = ExtResource("76_60k2e")
+bus = &"SFX"
+
+[node name="DamageSFX" type="AudioStreamPlayer" parent="." unique_id=1967859482]
+stream = ExtResource("77_gbvfk")
+bus = &"SFX"
+
+[node name="PassiveSFX" type="AudioStreamPlayer" parent="." unique_id=1596047886]
+stream = ExtResource("78_jrlxg")
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

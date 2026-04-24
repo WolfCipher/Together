@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b0frnxioy0wjx" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee6.png" id="8_sh4wp"]
 [ext_resource type="Texture2D" uid="uid://bsio7yfcvsmnj" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee7.png" id="9_fbfiu"]
 [ext_resource type="Texture2D" uid="uid://dysitsfnlvbac" path="res://Entities/Enemy/Shadow_Melee/Shadow_Melee8.png" id="10_1psne"]
+[ext_resource type="AudioStream" uid="uid://crr3nvts5b5c1" path="res://Sound/SFX/Enemy_Sounds/Shadow/Ryl/Shadow_Ryl_Melee_1.wav" id="11_cenkt"]
+[ext_resource type="AudioStream" uid="uid://bs80rvcis6klm" path="res://Sound/SFX/Enemy_Sounds/Shadow/Ryl/Shadow_Ryl_Talk_Attack_1.wav" id="12_ul6p3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(26, 79)
@@ -60,5 +62,13 @@ shape = SubResource("RectangleShape2D_d4467")
 position = Vector2(2.4000015, -1.5999985)
 scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_uni0h")
+
+[node name="MeleeSFX" type="AudioStreamPlayer" parent="." unique_id=554344315]
+stream = ExtResource("11_cenkt")
+bus = &"SFX"
+
+[node name="MeleeTalkSFX" type="AudioStreamPlayer" parent="." unique_id=813314153]
+stream = ExtResource("12_ul6p3")
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

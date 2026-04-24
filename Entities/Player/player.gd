@@ -11,9 +11,7 @@ extends Area2D
 
 # Audio
 @onready var walk_sfx: AudioStreamPlayer = $WalkSFX
-@onready var melee_sfx: AudioStreamPlayer = $MeleeSFX
 @onready var ability_sfx: AudioStreamPlayer = $AbilitySFX
-@onready var melee_grunt_sfx: AudioStreamPlayer = $MeleeGruntSFX
 @onready var damage_sfx: AudioStreamPlayer = $DamageSFX
 
 
@@ -179,9 +177,6 @@ func shoot_projectile() -> void:
 func attack_melee() -> void:
 	var melee = melee_scene.instantiate()
 	var dir = get_facing_vector()
-	
-	melee_sfx.play()
-	melee_grunt_sfx.play()
 	
 	# position slightly ahead of player and move in proper direction
 	melee.global_position = global_position + dir * 60
