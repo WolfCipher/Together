@@ -50,6 +50,8 @@
 [ext_resource type="Texture2D" uid="uid://cutmj4fj0k3j7" path="res://Entities/Enemy/Contact Enemy/Contact_Enemy_Back/Contact_Enemy_Back09.png" id="48_2xuam"]
 [ext_resource type="Texture2D" uid="uid://chh08g8tbml8h" path="res://Entities/Enemy/Contact Enemy/Contact_Enemy_Back/Contact_Enemy_Back10.png" id="49_xggh3"]
 [ext_resource type="Texture2D" uid="uid://fpb25dtsaodv" path="res://Entities/Enemy/Contact Enemy/Contact_Enemy_Back/Contact_Enemy_Back11.png" id="50_d1g6y"]
+[ext_resource type="AudioStream" uid="uid://c7ybk667j1t3q" path="res://Sound/SFX/Enemy_Sounds/Spirit/Spirit_Damage_1.wav" id="52_6hm4t"]
+[ext_resource type="AudioStream" uid="uid://cxnects8jqn0y" path="res://Sound/SFX/Enemy_Sounds/Spirit/Spirit_Passive_1.wav" id="52_ry5ru"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_287tu"]
 animations = [{
@@ -398,5 +400,17 @@ animation = &"walk_up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
 position = Vector2(3, 6.5)
 shape = SubResource("RectangleShape2D_1f0kj")
+
+[node name="AttackSFX" type="AudioStreamPlayer" parent="." unique_id=1629159920]
+stream = ExtResource("52_6hm4t")
+bus = &"SFX"
+
+[node name="DamageSFX" type="AudioStreamPlayer" parent="." unique_id=1012430483]
+stream = ExtResource("52_6hm4t")
+bus = &"SFX"
+
+[node name="PassiveSFX" type="AudioStreamPlayer" parent="." unique_id=1152879845]
+stream = ExtResource("52_ry5ru")
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

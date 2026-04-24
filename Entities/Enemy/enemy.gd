@@ -7,6 +7,12 @@ extends Area2D
 @onready var tex := load("res://death_particle.png")
 @onready var grandparent = $"../.."
 
+#Audio
+@onready var attack_sfx: AudioStreamPlayer = $AttackSFX
+@onready var damage_sfx: AudioStreamPlayer = $DamageSFX
+@onready var passive_sfx: AudioStreamPlayer = $PassiveSFX
+
+
 @export var speed = 200
 @export var max_health := 3
 var health := max_health
@@ -40,6 +46,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	if (!passive_sfx.playing):
+		passive_sfx.volume_linear = .1
+		passive_sfx.pitch_scale = (randf() * .1) + 1
+		passive_sfx.play()
+		
 	# enemy can only do something if it's not dead
 	if health > 0:
 		attack_cooldown -= delta
@@ -118,6 +129,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player Attack"):
 		health = health - area.damage
 		damage_blink()
+		damage_sfx.play()
 	if health < 1:
 		spawn_death_particles()
 		# wait 0.5 seconds before despawning
@@ -144,6 +156,8 @@ func attack(target_dist):
 	var useCloseAttack = (target_dist <= closeAttackDistance) && self.is_in_group("MeleeEnemy")
 	
 	await get_tree().create_timer(0.35).timeout
+	
+	attack_sfx.play()
 	
 	if useCloseAttack:
 		attack_melee()

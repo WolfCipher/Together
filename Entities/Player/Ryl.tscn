@@ -76,6 +76,10 @@
 [ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="74_6s84u"]
 [ext_resource type="Texture2D" uid="uid://bj6bk5hwh707i" path="res://Entities/Player/Ryl/Ryl_Back_Walk/Ryl_Back_Walk09.png" id="74_rrncw"]
 [ext_resource type="AudioStream" uid="uid://bd853mpikwjo7" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Walk/Ryl_Walk_1.wav" id="76_keouu"]
+[ext_resource type="AudioStream" uid="uid://bv8w8v7t1tkwm" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Melee/Ryl_Melee_1.wav" id="77_qctxu"]
+[ext_resource type="AudioStream" uid="uid://c2nnn1lejwdjs" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Dodge/Ryl_Dodge_1.wav" id="78_bd1yr"]
+[ext_resource type="AudioStream" uid="uid://dbl8jt4xgbjot" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Melee/Ryl_Talk_Attack_1.wav" id="79_1bbfl"]
+[ext_resource type="AudioStream" uid="uid://bwhs6apg47ftd" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Damage/Ryl_Talk_Damage_1.wav" id="80_cjkuv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6s84u"]
 animations = [{
@@ -358,8 +362,25 @@ animation = &"idle_down"
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_j0bce")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1999462974]
+[node name="WalkSFX" type="AudioStreamPlayer" parent="." unique_id=1999462974]
 stream = ExtResource("76_keouu")
+bus = &"SFX"
+
+[node name="MeleeSFX" type="AudioStreamPlayer" parent="." unique_id=814859332]
+stream = ExtResource("77_qctxu")
+bus = &"SFX"
+
+[node name="AbilitySFX" type="AudioStreamPlayer" parent="." unique_id=1383140835]
+stream = ExtResource("78_bd1yr")
+bus = &"SFX"
+
+[node name="MeleeGruntSFX" type="AudioStreamPlayer" parent="." unique_id=1244052179]
+stream = ExtResource("79_1bbfl")
+bus = &"SFX"
+
+[node name="DamageSFX" type="AudioStreamPlayer" parent="." unique_id=764617771]
+stream = ExtResource("80_cjkuv")
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

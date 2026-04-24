@@ -1,8 +1,7 @@
 extends Control
 
 @export var startsVisible = false # only level 1 is true
-var volume_change = 10
-@onready var music = $"../../CoreLoop"
+var volume_change = .5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,6 +10,7 @@ func _ready() -> void:
 		get_tree().paused = true
 		if music:
 			music.volume_db -= volume_change
+		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"),  AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")) - volume_change)
 		await get_tree().create_timer(2.0).timeout
 
 
@@ -22,10 +22,12 @@ func _process(_delta: float) -> void:
 			get_tree().paused = true
 			if music:
 				music.volume_db -= volume_change
+			AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")) - volume_change)
 			await get_tree().create_timer(2.0).timeout
 		else:
 			visible = false
 			get_tree().paused = false
 			if music:
 				music.volume_db += volume_change
+			AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")) + volume_change)
 			await get_tree().create_timer(2.0).timeout
