@@ -44,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InstructionsPopup" parent="CenterContainer" unique_id=208268712 instance=ExtResource("2_01u6o")]
-position = Vector2(-579.5, -775)
+position = Vector2(-786, -775)
 
 [node name="CenterContainer2" type="CenterContainer" parent="." unique_id=413775079]
 layout_mode = 1
