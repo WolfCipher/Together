@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://tn18p18bguxj" path="res://HUD Assets/Elvyria_Heart.tscn" id="2_j1lq5"]
 
 [node name="ElvyriaHearts" type="HBoxContainer" unique_id=1781464873]
-z_index = 200
+z_index = 100
 size_flags_horizontal = 3
 theme_override_constants/separation = 100
 script = ExtResource("1_ahmsd")

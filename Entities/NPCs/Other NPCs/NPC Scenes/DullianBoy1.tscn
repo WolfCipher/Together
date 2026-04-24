@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dd3wm4bouy6ro"]
+
+[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_5qawj"]
+[ext_resource type="Texture2D" uid="uid://d1do7unhoalcx" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianBoy1_Front_Idle/DullianBoy1_Front_Idle0.png" id="2_ignib"]
+[ext_resource type="Texture2D" uid="uid://gy1kymdkfcf1" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianBoy1_Front_Idle/DullianBoy1_Front_Idle1.png" id="3_6p7st"]
+[ext_resource type="Texture2D" uid="uid://deupx6qa7mmte" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianBoy1_Front_Idle/DullianBoy1_Front_Idle2.png" id="4_dgf2v"]
+[ext_resource type="Texture2D" uid="uid://dyeqfewdexepm" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianBoy1_Front_Idle/DullianBoy1_Front_Idle3.png" id="5_1unts"]
+[ext_resource type="Texture2D" uid="uid://gx6osj7bw65r" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianBoy1_Front_Idle/DullianBoy1_Front_Idle4.png" id="6_y3sgo"]
+[ext_resource type="Texture2D" uid="uid://b7b3pkyesmc4e" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianBoy1_Front_Idle/DullianBoy1_Front_Idle5.png" id="7_vako4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqgx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ignib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6p7st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dgf2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1unts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_y3sgo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vako4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" type="Node2D" unique_id=306726203]
+script = ExtResource("1_5qawj")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1424730897]
+sprite_frames = SubResource("SpriteFrames_iqgx2")

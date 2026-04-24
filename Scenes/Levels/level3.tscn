@@ -26,6 +26,16 @@
 [ext_resource type="PackedScene" uid="uid://u04w5akm8n1j" path="res://Scenes/World Building/treehouse_dullworld.tscn" id="23_v1uej"]
 [ext_resource type="PackedScene" uid="uid://pgjqpf678xkx" path="res://Scenes/World Building/EmitDialogInRange.tscn" id="24_etuld"]
 [ext_resource type="PackedScene" uid="uid://ct51futxpisyi" path="res://Entities/NPCs/Silas.tscn" id="26_f80nq"]
+[ext_resource type="PackedScene" uid="uid://dd3wm4bouy6ro" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianBoy1.tscn" id="27_fl5ni"]
+[ext_resource type="PackedScene" uid="uid://sk753xyp8wxy" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianBoy2.tscn" id="28_bw4uf"]
+[ext_resource type="PackedScene" uid="uid://haic6m4cnqog" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianBoy5.tscn" id="31_js7s8"]
+[ext_resource type="PackedScene" uid="uid://06x581o3fgat" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianGirl2.tscn" id="33_dekm2"]
+[ext_resource type="PackedScene" uid="uid://dgef4toxbmnad" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianGirl5.tscn" id="36_1n4q2"]
+[ext_resource type="PackedScene" uid="uid://mwlh82ilk3pu" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianMan1.tscn" id="37_bptt3"]
+[ext_resource type="PackedScene" uid="uid://db2153hteewdt" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianMan4.tscn" id="40_g0r1h"]
+[ext_resource type="PackedScene" uid="uid://cu0t2qwadkha4" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman3.tscn" id="44_tbfnm"]
+[ext_resource type="PackedScene" uid="uid://bs7j7d2aktf2u" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman4.tscn" id="45_346e7"]
+[ext_resource type="PackedScene" uid="uid://drhyvfayrbau1" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman5.tscn" id="46_1m5nm"]
 
 [node name="Main" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
@@ -300,3 +310,48 @@ dialog_list = [["ryl", 0, "Wait a moment, Elvyria. What's that ahead of us on th
 [node name="EmitDialogInRange2" parent="." unique_id=1938153284 instance=ExtResource("24_etuld")]
 position = Vector2(548, 496)
 dialog_list = [["ryl", 0, "Wow, I still can't believe Vyerity lent us her gear! I feel stronger already!", 10], ["elvyria", 0, "Hey, thanks for coming with me, Ryl. It's nice to have a friend.", 8], ["ryl", 0, "No problem! I always wanted to travel and training with you has been fun!", 6], ["elvyria", 0, "Same here! I enjoy enhancing your arrows with my melee and vice versa!", 4], ["ryl", 0, "My favorite tactic is shooting together in all directions!", 2]]
+
+[node name="NPCs" type="Node2D" parent="." unique_id=777145889]
+position = Vector2(8392, -6085)
+
+[node name="Boys" type="Node2D" parent="NPCs" unique_id=119498010]
+position = Vector2(-187, 0)
+
+[node name="NPC" parent="NPCs/Boys" unique_id=643464089 instance=ExtResource("27_fl5ni")]
+position = Vector2(880, 140)
+
+[node name="NPC2" parent="NPCs/Boys" unique_id=485082861 instance=ExtResource("28_bw4uf")]
+position = Vector2(938, 222)
+
+[node name="NPC5" parent="NPCs/Boys" unique_id=2049269520 instance=ExtResource("31_js7s8")]
+position = Vector2(-1132, -261)
+
+[node name="Girls" type="Node2D" parent="NPCs" unique_id=629884928]
+position = Vector2(243, 0)
+
+[node name="NPC2" parent="NPCs/Girls" unique_id=1237295933 instance=ExtResource("33_dekm2")]
+position = Vector2(-1651, -305)
+
+[node name="NPC5" parent="NPCs/Girls" unique_id=1410030351 instance=ExtResource("36_1n4q2")]
+position = Vector2(574, 156)
+
+[node name="Men" type="Node2D" parent="NPCs" unique_id=1146348464]
+position = Vector2(0, -151)
+
+[node name="NPC" parent="NPCs/Men" unique_id=39634413 instance=ExtResource("37_bptt3")]
+position = Vector2(-349, 700)
+
+[node name="NPC4" parent="NPCs/Men" unique_id=172807045 instance=ExtResource("40_g0r1h")]
+position = Vector2(-424, -312)
+
+[node name="Women" type="Node2D" parent="NPCs" unique_id=2053068537]
+position = Vector2(0, 135)
+
+[node name="NPC3" parent="NPCs/Women" unique_id=476487886 instance=ExtResource("44_tbfnm")]
+position = Vector2(-2857, -339)
+
+[node name="NPC4" parent="NPCs/Women" unique_id=1736532566 instance=ExtResource("45_346e7")]
+position = Vector2(-1510, 177)
+
+[node name="NPC5" parent="NPCs/Women" unique_id=892733504 instance=ExtResource("46_1m5nm")]
+position = Vector2(-2141, -286)
