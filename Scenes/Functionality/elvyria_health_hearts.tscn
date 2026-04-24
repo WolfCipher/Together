@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d4ckemip8a1r5"]
+
+[ext_resource type="Script" uid="uid://bgmikvv1nns3u" path="res://Scenes/Functionality/healthHearts.gd" id="1_ahmsd"]
+[ext_resource type="PackedScene" uid="uid://tn18p18bguxj" path="res://HUD Assets/Elvyria_Heart.tscn" id="2_j1lq5"]
+
+[node name="ElvyriaHearts" type="HBoxContainer" unique_id=1781464873]
+z_index = 200
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+script = ExtResource("1_ahmsd")
+heart = ExtResource("2_j1lq5")

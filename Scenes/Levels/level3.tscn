@@ -11,13 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://owwcqowd8wlq" path="res://Entities/Enemy/shadowElvyria.tscn" id="9_ltrm1"]
 [ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="10_16bue"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="11_rfddm"]
-[ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health.tscn" id="12_c8hbi"]
-[ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health.tscn" id="13_7mxbq"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="14_yk4w0"]
 [ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="15_ummpp"]
 [ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="16_2fc35"]
 [ext_resource type="PackedScene" uid="uid://b5prnshh5emox" path="res://Scenes/Functionality/level_dialog_control.tscn" id="17_sospo"]
 [ext_resource type="PackedScene" uid="uid://b3p0be0qdmx5n" path="res://Scenes/World Building/world_open.tscn" id="18_fl7h5"]
+[ext_resource type="PackedScene" uid="uid://hnaaqwso7imp" path="res://Scenes/Functionality/ryl_health_hearts.tscn" id="18_kbn7v"]
+[ext_resource type="PackedScene" uid="uid://d4ckemip8a1r5" path="res://Scenes/Functionality/elvyria_health_hearts.tscn" id="18_lnl7s"]
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="19_5kt4t"]
 [ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="20_fk02w"]
 [ext_resource type="PackedScene" uid="uid://cuddh2nblhho8" path="res://Scenes/World Building/birch_trees.tscn" id="21_kp1sm"]
@@ -67,20 +67,6 @@ position = Vector2(574, 505)
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
 
-[node name="ElvyriaHealth" parent="Camera_Centered" unique_id=1729412854 node_paths=PackedStringArray("character") instance=ExtResource("12_c8hbi")]
-offset_left = -862.0
-offset_top = -475.0
-offset_right = -555.6936
-offset_bottom = -466.0
-character = NodePath("../../Elvyria")
-
-[node name="RylHealth" parent="Camera_Centered" unique_id=199826155 node_paths=PackedStringArray("character") instance=ExtResource("13_7mxbq")]
-offset_left = 552.00006
-offset_top = -475.0
-offset_right = 858.30646
-offset_bottom = -466.0
-character = NodePath("../../Ryl")
-
 [node name="PauseOverlay" parent="Camera_Centered" unique_id=74393980 instance=ExtResource("14_yk4w0")]
 anchors_preset = 8
 anchor_left = 0.5
@@ -99,6 +85,21 @@ offset_left = -939.0
 offset_top = -516.0
 offset_right = -939.0
 offset_bottom = -516.0
+
+[node name="ElvyriaHearts" parent="Camera_Centered" unique_id=1781464873 node_paths=PackedStringArray("character") instance=ExtResource("18_lnl7s")]
+offset_left = -862.0
+offset_top = -475.0
+offset_right = -788.0
+offset_bottom = -435.0
+character = NodePath("../../Elvyria")
+
+[node name="RylHearts" parent="Camera_Centered" unique_id=603324852 node_paths=PackedStringArray("character") instance=ExtResource("18_kbn7v")]
+offset_left = -862.0
+offset_top = -475.0
+offset_right = -862.0
+offset_bottom = -475.0
+pivot_offset_ratio = Vector2(1, 0)
+character = NodePath("../../Ryl")
 
 [node name="World" parent="." unique_id=519110492 instance=ExtResource("18_fl7h5")]
 position = Vector2(1590, -6053)

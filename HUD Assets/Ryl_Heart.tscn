@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dns6w7ihmm1im"]
+
+[ext_resource type="Texture2D" uid="uid://c1adujgmwq7h3" path="res://HUD Assets/Ryl_Hearts/Ryl_Hearts0.png" id="1_0p4tb"]
+[ext_resource type="Texture2D" uid="uid://bf6w286hdxwun" path="res://HUD Assets/Ryl_Hearts/Ryl_Hearts1.png" id="2_ce0fr"]
+[ext_resource type="Texture2D" uid="uid://cs6kyrqfj8ks8" path="res://HUD Assets/Ryl_Hearts/Ryl_Hearts2.png" id="3_xemv5"]
+[ext_resource type="Texture2D" uid="uid://dxr6xsayn78kd" path="res://HUD Assets/Ryl_Hearts/Ryl_Hearts3.png" id="4_6lov0"]
+[ext_resource type="Texture2D" uid="uid://curojtwfdyptm" path="res://HUD Assets/Ryl_Hearts/Ryl_Hearts4.png" id="5_ce0fr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gv63s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0p4tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ce0fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xemv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6lov0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ce0fr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ryl_Heart" type="Control" unique_id=1846512269]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Heart" type="AnimatedSprite2D" parent="." unique_id=1390263870]
+sprite_frames = SubResource("SpriteFrames_gv63s")

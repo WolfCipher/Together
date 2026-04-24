@@ -6,7 +6,7 @@ extends Node2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 @export var next_scene : String
-@export var skip_input : String = "spacebar"
+@export var skip_input : String = "ui_accept"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,7 +28,7 @@ func _ready() -> void:
 
 # Called when any button is pressed
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed:
+	if event is InputEventJoypadButton or InputEventKey:
 		if skipLabel.visible and event.is_action_pressed(skip_input):
 			_endCutscene()
 		else:
