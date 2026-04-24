@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://n54sfg6vq1e4"]
+
+[ext_resource type="Script" uid="uid://dbw3u86tdavmy" path="res://Entities/Player/Elvyria/shield.gd" id="1_6vofy"]
+[ext_resource type="Texture2D" uid="uid://cwxw0vqf114o5" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield00.png" id="1_8lxqm"]
+[ext_resource type="Texture2D" uid="uid://dsg66e7ie1wrf" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield01.png" id="2_6vofy"]
+[ext_resource type="Texture2D" uid="uid://i83w8lhcnay8" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield02.png" id="3_pvbhh"]
+[ext_resource type="Texture2D" uid="uid://cw3pmlxgm58cg" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield03.png" id="4_plp1c"]
+[ext_resource type="Texture2D" uid="uid://ccstpscj43r21" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield04.png" id="5_nqlpf"]
+[ext_resource type="Texture2D" uid="uid://crrylaoqkgsoi" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield05.png" id="6_4anjl"]
+[ext_resource type="Texture2D" uid="uid://cyoo2cp57c0hf" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield06.png" id="7_ii827"]
+[ext_resource type="Texture2D" uid="uid://b64ighj8xbn7f" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield07.png" id="8_ptfap"]
+[ext_resource type="Texture2D" uid="uid://bfvhv5jla26m4" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield08.png" id="9_80ixs"]
+[ext_resource type="Texture2D" uid="uid://c0kj6nfvccd0f" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield09.png" id="10_gfpb2"]
+[ext_resource type="Texture2D" uid="uid://b075lbiwnfe0j" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield10.png" id="11_rfk1q"]
+[ext_resource type="Texture2D" uid="uid://m1lokbdcm4dw" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield11.png" id="12_1icrp"]
+[ext_resource type="Texture2D" uid="uid://cmgvwmcuusdty" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield12.png" id="13_vr2gv"]
+[ext_resource type="Texture2D" uid="uid://b4r6sbxumq66r" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield13.png" id="14_rwfkf"]
+[ext_resource type="Texture2D" uid="uid://cyhoqkkm0t838" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield14.png" id="15_npfdd"]
+[ext_resource type="Texture2D" uid="uid://c8fdgrg0omyfh" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield15.png" id="16_s34e2"]
+[ext_resource type="Texture2D" uid="uid://dsr26ds1uqe8i" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield16.png" id="17_upj7b"]
+[ext_resource type="AudioStream" uid="uid://rhjienmkwjqm" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Dodge/Elvyria_Dodge_1.wav" id="19_pvbhh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvbhh"]
+size = Vector2(68, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_plp1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8lxqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6vofy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pvbhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_plp1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nqlpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4anjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ii827")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ptfap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_80ixs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gfpb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rfk1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1icrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vr2gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rwfkf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_npfdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_s34e2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_upj7b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Shield" type="Area2D" unique_id=1639666804 groups=["Shield"]]
+script = ExtResource("1_6vofy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=190988787]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_pvbhh")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1331349849]
+scale = Vector2(0.15, 0.125)
+sprite_frames = SubResource("SpriteFrames_plp1c")
+frame_progress = 0.46871996
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1365501537]
+stream = ExtResource("19_pvbhh")

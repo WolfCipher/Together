@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_vedr3"]
 [ext_resource type="PackedScene" uid="uid://ehxy0j6qek17" path="res://Scenes/Attacks/meleeElvyria.tscn" id="3_12riv"]
 [ext_resource type="Texture2D" uid="uid://bl0im5kiwdwbr" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle0.png" id="3_keouu"]
+[ext_resource type="PackedScene" uid="uid://n54sfg6vq1e4" path="res://Entities/Player/Elvyria/Shield.tscn" id="4_imju4"]
 [ext_resource type="Texture2D" uid="uid://5xffrews3nq0" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle1.png" id="4_qctxu"]
 [ext_resource type="Texture2D" uid="uid://bcql2ewolfpim" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle2.png" id="5_bd1yr"]
 [ext_resource type="Texture2D" uid="uid://bijrs2km0xbbq" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle3.png" id="6_y3sj0"]
@@ -355,6 +356,9 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=632128170]
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_j0bce")
+
+[node name="Shield" parent="." unique_id=1639666804 instance=ExtResource("4_imju4")]
+position = Vector2(2, 0)
 
 [node name="WalkSFX" type="AudioStreamPlayer" parent="." unique_id=2105697936]
 stream = ExtResource("76_vedr3")
