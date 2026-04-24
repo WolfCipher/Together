@@ -46,7 +46,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if (!passive_sfx.playing):
+	if (passive_sfx && !passive_sfx.playing):
 		passive_sfx.volume_linear = .1
 		passive_sfx.pitch_scale = (randf() * .1) + 1
 		passive_sfx.play()
@@ -129,7 +129,8 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player Attack"):
 		health = health - area.damage
 		damage_blink()
-		damage_sfx.play()
+		if damage_sfx:
+			damage_sfx.play()
 	if health < 1:
 		spawn_death_particles()
 		# wait 0.5 seconds before despawning
@@ -157,7 +158,8 @@ func attack(target_dist):
 	
 	await get_tree().create_timer(0.35).timeout
 	
-	attack_sfx.play()
+	if attack_sfx:
+		attack_sfx.play()
 	
 	if useCloseAttack:
 		attack_melee()

@@ -238,7 +238,7 @@ target2 = NodePath("../../Ryl")
 
 [node name="Mystia" type="Node2D" parent="." unique_id=312607170]
 process_mode = 4
-visible = false
+y_sort_enabled = true
 
 [node name="World" parent="Mystia" unique_id=914011035 instance=ExtResource("24_it513")]
 position = Vector2(1590, -6053)
@@ -392,11 +392,15 @@ target2 = NodePath("../../Ryl")
 position = Vector2(9631, -3742)
 dialog_list = [["ryl", 0, "What the?!", 7], ["elvyria", 0, "...!", 5]]
 
+[node name="EmitDialogInRange2" parent="Mystia" unique_id=1138713867 instance=ExtResource("25_nvfnq")]
+position = Vector2(9620, 0)
+dialog_list = [["elvyria", 0, "We made it! I must show you around!", 7], ["elvyria", 0, "But first, I need to tell the authorities about the broken Sacred Gate.", 5], ["ryl", 0, "Of course. Wow, Mystia is beautiful!", 3]]
+
 [node name="Butterfly" parent="." unique_id=1961194005 node_paths=PackedStringArray("target", "camera") instance=ExtResource("21_hgq1i")]
 position = Vector2(-401, 603)
 rotation = -3.1415927
 scale = Vector2(0.5, -0.5)
-target = NodePath("../SacredGate")
+target = NodePath("../Target")
 camera = NodePath("../Camera_Centered")
 within_top = false
 within_bottom = false
@@ -406,9 +410,13 @@ position = Vector2(833.99994, -6.000125)
 scale = Vector2(5, 5)
 dialog_list = [["elvyria", 0, "Wait! The butterfly!", 7], ["elvyria", 0, "It must be the guide!", 5], ["ryl", 0, "Okay! We gotta keep it in sight!", 3]]
 
-[node name="SacredGate" parent="." unique_id=1326402143 node_paths=PackedStringArray("to_fade_out", "to_fade_in") instance=ExtResource("22_wbnnf")]
+[node name="Target" type="Node2D" parent="." unique_id=794523434]
 position = Vector2(9890, 210)
 scale = Vector2(25, 25)
+
+[node name="SacredGate" parent="." unique_id=1326402143 node_paths=PackedStringArray("to_fade_out", "to_fade_in") instance=ExtResource("22_wbnnf")]
+position = Vector2(9890, 370)
+scale = Vector2(25, 5)
 to_fade_out = NodePath("../Dullworld")
 to_fade_in = NodePath("../Mystia")
 
@@ -421,8 +429,9 @@ position = Vector2(9935, 508)
 dialog_list = [["ryl", 0, "It really likes it here.", 9], ["elvyria", 0, "The gate must be here.", 7], ["elvyria", 0, "Perhaps I can activate it with my magic.", 5], ["elvyria", 0, "My concentrated close-range magic might be powerful enough.", 3]]
 
 [node name="Azalea" parent="." unique_id=306726203 instance=ExtResource("25_lsqbk")]
-position = Vector2(2990, -4187)
+position = Vector2(2990, -4325)
 
 [node name="EmitDialogInRange" parent="Azalea" unique_id=1793621861 instance=ExtResource("25_nvfnq")]
+position = Vector2(0, 116)
 dialog_list = [["azalea", 0, "Elvyria! Where have you been?!", 11], ["elvyria", 0, "In the Dullworld?", 9], ["azalea", 0, "What...? ...Who's this?", 7], ["ryl", 0, "I'm Ryl of Tamewood... and the Dullworld.", 5]]
 send_to_scene_after_completion = true
