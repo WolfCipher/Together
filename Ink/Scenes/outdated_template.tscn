@@ -55,11 +55,13 @@ centered = false
 [node name="Elvyria" type="Sprite2D" parent="." unique_id=305785085]
 z_index = -10
 position = Vector2(1000, 563)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("6_x6ni4")
 
 [node name="Ryl" type="Sprite2D" parent="." unique_id=196037725]
 z_index = -10
 position = Vector2(1600, 563)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("7_m3v8w")
 
 [node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("8_tj85i")]
