@@ -5,8 +5,8 @@
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_ru5vb"]
 [ext_resource type="Texture2D" uid="uid://bmuw3kmlea1nn" path="res://Ink/Functionality/elvyria_icon.png" id="4_045yl"]
 [ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="5_xc05j"]
-[ext_resource type="Texture2D" uid="uid://b1y3ckrnwajlu" path="res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png" id="6_x6ni4"]
-[ext_resource type="Texture2D" uid="uid://bty68oyjc7pxc" path="res://Ink/Character Expressions/Ryl/Ryl_Shocked.png" id="7_m3v8w"]
+[ext_resource type="Texture2D" uid="uid://2u1jfjep478m" path="res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png" id="6_x6ni4"]
+[ext_resource type="Texture2D" uid="uid://be8xlfbexemwy" path="res://Ink/Character Expressions/Ryl/Ryl_Shocked.png" id="7_m3v8w"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="8_tj85i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cs0ko"]
@@ -55,13 +55,11 @@ centered = false
 [node name="Elvyria" type="Sprite2D" parent="." unique_id=305785085]
 z_index = -10
 position = Vector2(1000, 563)
-scale = Vector2(0.12, 0.12)
 texture = ExtResource("6_x6ni4")
 
 [node name="Ryl" type="Sprite2D" parent="." unique_id=196037725]
 z_index = -10
 position = Vector2(1600, 563)
-scale = Vector2(0.12, 0.12)
 texture = ExtResource("7_m3v8w")
 
 [node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("8_tj85i")]
