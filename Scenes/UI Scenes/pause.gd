@@ -8,9 +8,11 @@ var sfx_volume = AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SF
 func _ready() -> void:
 	visible = startsVisible
 	if startsVisible:
-		get_tree().paused = true
 		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"),  AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")) - volume_change)
 		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"),  0)
+	await get_tree().create_timer(.5).timeout
+	if startsVisible:
+		get_tree().paused = true
 		await get_tree().create_timer(2.0).timeout
 
 
