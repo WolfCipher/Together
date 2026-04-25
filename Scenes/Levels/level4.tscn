@@ -36,11 +36,11 @@ metadata/_edit_horizontal_guides_ = [-1552.0]
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_ftjqm")]
 position = Vector2(516, 505)
-xp = 3
+xp = 4
 
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("2_it513")]
 position = Vector2(574, 505)
-xp = 3
+xp = 4
 
 [node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
 process_mode = 3
@@ -238,6 +238,7 @@ target2 = NodePath("../../Ryl")
 
 [node name="Mystia" type="Node2D" parent="." unique_id=312607170]
 process_mode = 4
+visible = false
 y_sort_enabled = true
 
 [node name="World" parent="Mystia" unique_id=914011035 instance=ExtResource("24_it513")]

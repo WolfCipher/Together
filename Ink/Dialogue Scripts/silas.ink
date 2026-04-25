@@ -69,10 +69,14 @@ Right, right. You came to me for help, not the other way around.
 ~elvyria = 0
 - Unfortunately, that's all I can tell you.
 
-* [I appreciate the help!]
-* [Well, thanks anyway.]
--
--> END
+* [I appreciate the help!] -> Journey
+* [Well, thanks anyway.] -> Journey
+===Journey===
+~ryl = 0
+~elvyria = 1
+- But I can give you something to help you on your journey. Should monsters ambush you, you'll be able to fight them off in close quarters. How's that, eh?
+* [Thank you!] -> END
+* [Awesome.] -> END
 
 ===Mystical===
 ~btn1 = 0
