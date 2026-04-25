@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://rtfk37pq3auo" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile00.png" id="3_707dp"]
 [ext_resource type="Texture2D" uid="uid://btqgitqwwy2nc" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee06.png" id="4_5usjc"]
 [ext_resource type="Texture2D" uid="uid://ehx8d6voijly" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile0.png" id="5_lr7ig"]
+[ext_resource type="Texture2D" uid="uid://c0kj6nfvccd0f" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield09.png" id="6_86p8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lr7ig"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Keyboard" type="Node2D" unique_id=180708723]
 
@@ -22,6 +26,11 @@ letter = "Esc"
 position = Vector2(550, -60)
 forRyl = true
 letter = "Del"
+
+[node name="End" parent="Transform/Pause" unique_id=1113517071 instance=ExtResource("1_hgq2m")]
+position = Vector2(475, -60)
+forRyl = true
+letter = "End"
 
 [node name="Row" type="Node2D" parent="Transform" unique_id=1552351592]
 
@@ -97,6 +106,7 @@ letter = "D"
 
 [node name="F" parent="Transform/Row2" unique_id=1632111465 instance=ExtResource("1_hgq2m")]
 position = Vector2(125, 40)
+forElvyria = true
 letter = "F"
 
 [node name="G" parent="Transform/Row2" unique_id=1491524415 instance=ExtResource("1_hgq2m")]
@@ -162,6 +172,7 @@ letter = "V"
 
 [node name="B" parent="Transform/Row3" unique_id=1235665154 instance=ExtResource("1_hgq2m")]
 position = Vector2(205, 40)
+forElvyria = true
 letter = "B"
 
 [node name="N" parent="Transform/Row3" unique_id=100478 instance=ExtResource("1_hgq2m")]
@@ -184,6 +195,7 @@ letter = "."
 
 [node name="slash" parent="Transform/Row3" unique_id=2123587725 instance=ExtResource("1_hgq2m")]
 position = Vector2(405, 40)
+forRyl = true
 letter = "/"
 
 [node name="Shift2" parent="Transform/Row3" unique_id=2114391478 instance=ExtResource("1_hgq2m")]
@@ -306,3 +318,59 @@ texture = ExtResource("3_707dp")
 position = Vector2(-7269.999, 180)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("5_lr7ig")
+
+[node name="Dash" type="Node2D" parent="." unique_id=1517649590]
+position = Vector2(528, 161)
+scale = Vector2(0.5, 0.5)
+
+[node name="Dash" type="Panel" parent="Dash" unique_id=161366028]
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lr7ig")
+
+[node name="Dash2" type="Panel" parent="Dash" unique_id=275769309]
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lr7ig")
+
+[node name="Dash3" type="Panel" parent="Dash" unique_id=1533832178]
+offset_left = 20.0
+offset_top = 22.0
+offset_right = 30.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lr7ig")
+
+[node name="Dash2" type="Node2D" parent="." unique_id=1007085223]
+position = Vector2(594, 21)
+scale = Vector2(0.5, 0.5)
+
+[node name="Dash" type="Panel" parent="Dash2" unique_id=1194551857]
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lr7ig")
+
+[node name="Dash2" type="Panel" parent="Dash2" unique_id=1511540975]
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lr7ig")
+
+[node name="Dash3" type="Panel" parent="Dash2" unique_id=1057591637]
+offset_left = 20.0
+offset_top = 22.0
+offset_right = 30.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lr7ig")
+
+[node name="ShieldElvyria" type="Sprite2D" parent="." unique_id=1920387423]
+position = Vector2(248, 129)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_86p8w")
+
+[node name="ShieldElvyria2" type="Sprite2D" parent="." unique_id=1244633503]
+position = Vector2(334, 167)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_86p8w")

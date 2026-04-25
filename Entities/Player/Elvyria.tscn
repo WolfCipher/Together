@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_vedr3"]
 [ext_resource type="PackedScene" uid="uid://ehxy0j6qek17" path="res://Scenes/Attacks/meleeElvyria.tscn" id="3_12riv"]
 [ext_resource type="Texture2D" uid="uid://bl0im5kiwdwbr" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle0.png" id="3_keouu"]
+[ext_resource type="PackedScene" uid="uid://n54sfg6vq1e4" path="res://Entities/Player/Elvyria/Shield.tscn" id="4_imju4"]
 [ext_resource type="Texture2D" uid="uid://5xffrews3nq0" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle1.png" id="4_qctxu"]
 [ext_resource type="Texture2D" uid="uid://bcql2ewolfpim" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle2.png" id="5_bd1yr"]
 [ext_resource type="Texture2D" uid="uid://bijrs2km0xbbq" path="res://Entities/Player/Elvyria/Elvyria_Front_Idle/Elvyria_Front_Idle3.png" id="6_y3sj0"]
@@ -76,9 +77,7 @@
 [ext_resource type="Texture2D" uid="uid://bibhx4g3fy86o" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk08.png" id="73_1tt8o"]
 [ext_resource type="Texture2D" uid="uid://dhg2v2ks78i4a" path="res://Entities/Player/Elvyria/Elvyria_Back_Walk/Elvyria_Back_Walk09.png" id="74_2hneu"]
 [ext_resource type="AudioStream" uid="uid://chv7hqprbb7n8" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Walk/Elvyria_Walk_1.wav" id="76_vedr3"]
-[ext_resource type="AudioStream" uid="uid://c0wwsrhdwhm4t" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Melee/Elvyria_Melee_1.wav" id="77_pwxov"]
 [ext_resource type="AudioStream" uid="uid://rhjienmkwjqm" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Dodge/Elvyria_Dodge_1.wav" id="78_h7eq8"]
-[ext_resource type="AudioStream" uid="uid://mdnp7i1g5uyp" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Melee/Elvyria_Talk_Attack_1.wav" id="79_rbrw2"]
 [ext_resource type="AudioStream" uid="uid://dywgytlstpim0" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Damage/Elvyria_Talk_Damage_1.wav" id="80_imju4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cp7f4"]
@@ -356,20 +355,15 @@ animation = &"idle_down"
 position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_j0bce")
 
+[node name="Shield" parent="." unique_id=1639666804 instance=ExtResource("4_imju4")]
+position = Vector2(2, 0)
+
 [node name="WalkSFX" type="AudioStreamPlayer" parent="." unique_id=2105697936]
 stream = ExtResource("76_vedr3")
 bus = &"SFX"
 
-[node name="MeleeSFX" type="AudioStreamPlayer" parent="." unique_id=1354123698]
-stream = ExtResource("77_pwxov")
-bus = &"SFX"
-
 [node name="AbilitySFX" type="AudioStreamPlayer" parent="." unique_id=162858176]
 stream = ExtResource("78_h7eq8")
-bus = &"SFX"
-
-[node name="MeleeGruntSFX" type="AudioStreamPlayer" parent="." unique_id=645568736]
-stream = ExtResource("79_rbrw2")
 bus = &"SFX"
 
 [node name="DamageSFX" type="AudioStreamPlayer" parent="." unique_id=1671798079]

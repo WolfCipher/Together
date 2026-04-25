@@ -6,13 +6,12 @@ extends Area2D
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var animation := sprite.animation
 @onready var dash_particles := CPUParticles2D.new()
-@onready var tex := load("res://death_particle.png") 
+@onready var tex := load("res://death_particle.png")
+
 
 # Audio
 @onready var walk_sfx: AudioStreamPlayer = $WalkSFX
-@onready var melee_sfx: AudioStreamPlayer = $MeleeSFX
 @onready var ability_sfx: AudioStreamPlayer = $AbilitySFX
-@onready var melee_grunt_sfx: AudioStreamPlayer = $MeleeGruntSFX
 @onready var damage_sfx: AudioStreamPlayer = $DamageSFX
 
 
@@ -47,6 +46,9 @@ var shield_cooldown := 0.0
 @export var attack2 := "e_attack2"
 @export var projectile_scene: PackedScene
 @export var melee_scene: PackedScene
+@onready var e_shield:= $Shield
+
+
 
 @export var xp = 0; # originally updated in spawn manager after each wave of enemies, now set in each level
 
@@ -69,6 +71,9 @@ func _ready() -> void:
 	add_to_group("Player")
 	add_child(dash_particles)
 	dash_particles.emitting = false
+	e_shield.visible = false
+	e_shield.monitorable = false
+			
 
 func _process(delta: float) -> void:
 	recharge(delta)
@@ -97,7 +102,8 @@ func _process(delta: float) -> void:
 	
 	# ***** Abilities *****
 	dash()
-	shield()
+	if is_in_group("Elvyria"):
+		shield()
 	
 	# ***** ANIMATIONS *****
 	animate(dir)
@@ -172,15 +178,12 @@ func attack_melee() -> void:
 	var melee = melee_scene.instantiate()
 	var dir = get_facing_vector()
 	
-	melee_sfx.play()
-	melee_grunt_sfx.play()
-	
 	# position slightly ahead of player and move in proper direction
 	melee.global_position = global_position + dir * 60
 	melee.rotation = dir.angle() + PI/2
 	
 	# given enough xp, increase size of melee
-	if xp >= 5:
+	if xp >= 4:
 		melee.scale = Vector2(2,2)
 	
 	# spawn
@@ -215,19 +218,23 @@ func spawn_dash_particles():
 		
 # allows Elvyria to shield
 func shield() -> void:
-	if Input.is_action_just_pressed("e_shield") and is_in_group('Elvyria') and shield_cooldown <= 0:
-		var tween = create_tween()
-		print("shield!!!")
-		ability_sfx.play()
-		shield_cooldown = shield_recharge
-		speed = 250
-		tween.tween_property(sprite, "modulate", Color(1.0, 1.0, 0.0, 1.0), 0.1)
-		invulnerable = true
-		await get_tree().create_timer(1.6).timeout
-		speed = 400
-		tween.kill()
-		invulnerable = false
+		if Input.is_action_just_pressed("e_shield") and is_in_group('Elvyria') and shield_cooldown <= 0:
+			print("shield!!!")
+			ability_sfx.play()
+			e_shield.visible = true
+			e_shield.monitorable = true
+			shield_cooldown = shield_recharge
+			speed = 250
+			await get_tree().create_timer(1.6).timeout
+			speed = 400
+			e_shield.monitorable = false
+			e_shield.visible = false
+		e_shield.rotation = get_facing_vector().angle() + PI/2
+		e_shield.global_position = global_position + get_facing_vector() * 50
 
+
+
+			
 # Gives the direction the player is facing
 # Ensures attacks go in the correct direction
 func get_facing_vector() -> Vector2:

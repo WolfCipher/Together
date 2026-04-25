@@ -46,7 +46,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if (!passive_sfx.playing):
+	if (passive_sfx && !passive_sfx.playing && !is_in_group("MeleeEnemy")):
 		passive_sfx.volume_linear = .1
 		passive_sfx.pitch_scale = (randf() * .1) + 1
 		passive_sfx.play()
@@ -95,6 +95,7 @@ func _process(delta: float) -> void:
 func play() -> void:
 	sprite.animation = animation
 	sprite.play()
+		
 
 func animate(dir, continue_moving) -> void:
 	if !continue_moving:
@@ -123,13 +124,19 @@ func animate(dir, continue_moving) -> void:
 			faceDir = 3
 
 	play()
+	# shadow enemy walk sounds
+	if is_in_group("MeleeEnemy") && sprite.animation :
+		if passive_sfx.playing == false:
+			passive_sfx.pitch_scale = (randf() * .1) + 1
+			passive_sfx.play()
 
 # damage
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Player Attack"):
 		health = health - area.damage
 		damage_blink()
-		damage_sfx.play()
+		if damage_sfx:
+			damage_sfx.play()
 	if health < 1:
 		spawn_death_particles()
 		# wait 0.5 seconds before despawning
@@ -157,7 +164,8 @@ func attack(target_dist):
 	
 	await get_tree().create_timer(0.35).timeout
 	
-	attack_sfx.play()
+	if attack_sfx:
+		attack_sfx.play()
 	
 	if useCloseAttack:
 		attack_melee()
@@ -187,7 +195,7 @@ func shoot_projectile() -> void:
 		grandparent.add_child(projectile)
 	else:
 		get_tree().current_scene.add_child(projectile)
-
+		
 # spawn AoE attack
 func create_AoE() -> void:
 	var AoE = AoE_scene.instantiate()
@@ -203,6 +211,10 @@ func create_AoE() -> void:
 		grandparent.add_child(AoE)
 	else:
 		get_tree().current_scene.add_child(AoE)
+		
+	await get_tree().create_timer(5).timeout
+	if AoE:
+		AoE.free()
 
 # spawn melee attack
 func attack_melee() -> void:
