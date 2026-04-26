@@ -47,7 +47,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if (passive_sfx && !passive_sfx.playing && !is_in_group("MeleeEnemy")):
-		passive_sfx.volume_linear = .1
+		passive_sfx.volume_linear = .001
 		passive_sfx.pitch_scale = (randf() * .1) + 1
 		passive_sfx.play()
 		
@@ -164,7 +164,10 @@ func attack(target_dist):
 	
 	await get_tree().create_timer(0.35).timeout
 	
-	if attack_sfx:
+	
+	if (attack_sfx):
+		attack_sfx.volume_linear = 1
+		attack_sfx.pitch_scale = (randf() * .5) + 1
 		attack_sfx.play()
 	
 	if useCloseAttack:

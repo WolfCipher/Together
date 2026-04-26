@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_ryjqc"]
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_xe7un"]
+[ext_resource type="AudioStream" uid="uid://ccgctp0kumknf" path="res://Sound/Music/Main Combat Loop v2.wav" id="3_syfhk"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="3_v3vqe"]
-[ext_resource type="AudioStream" uid="uid://q4b4iire0ewv" path="res://Sound/SFX/Music/Demo1_Core_Loop.wav" id="4_bvs0b"]
 [ext_resource type="AudioStream" uid="uid://dpburqtcke0yd" path="res://Sound/SFX/Environment_Sounds/Forest_Amb_Loop_1.wav" id="4_syfhk"]
 [ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/Functionality/SpawnManager.gd" id="5_syfhk"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="6_u45xj"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="9_5y6uu"]
 [ext_resource type="PackedScene" uid="uid://dpcocehy7udm3" path="res://Scenes/shadowElvyria.tscn" id="9_syfhk"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_m4h5f"]
+[ext_resource type="Texture2D" uid="uid://ig58802vsyte" path="res://HUD Assets/Dash_Cooldown/Dash_Cooldown2.png" id="12_u45xj"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_60msr"]
 [ext_resource type="PackedScene" uid="uid://cycp817xxkhca" path="res://Scenes/World Building/world_small.tscn" id="14_4xs7e"]
 [ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_bvs0b"]
@@ -33,7 +34,7 @@ xp = 1
 
 [node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
 process_mode = 3
-stream = ExtResource("4_bvs0b")
+stream = ExtResource("3_syfhk")
 volume_db = -5.0
 autoplay = true
 bus = &"Music"
@@ -61,6 +62,13 @@ target2 = NodePath("../Ryl")
 position = Vector2(574, 505)
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
+
+[node name="TextureRect" type="TextureRect" parent="Camera_Centered" unique_id=57332339]
+offset_left = 705.0
+offset_top = 334.0
+offset_right = 858.0
+offset_bottom = 487.0
+texture = ExtResource("12_u45xj")
 
 [node name="PauseOverlay" parent="Camera_Centered" unique_id=74393980 instance=ExtResource("13_60msr")]
 anchors_preset = 8

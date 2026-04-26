@@ -29,3 +29,7 @@ func _process(_delta: float) -> void:
 			AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")) + volume_change)
 			AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), sfx_volume)
 			await get_tree().create_timer(2.0).timeout
+			
+func on_scene_change(next_scene):
+	get_tree().paused = false
+	free()
