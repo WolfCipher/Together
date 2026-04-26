@@ -34,8 +34,9 @@ func _process(_delta: float) -> void:
 	# update hearts
 	if (character.is_in_group("Elvyria")):
 		# fractional heart
-		var fractionalHeart = get_child(fullHearts)
-		fractionalHeart.get_child(0).frame = amountOver;
+		if ( numHearts != fullHearts):
+			var fractionalHeart = get_child(fullHearts)
+			fractionalHeart.get_child(0).frame = amountOver;
 		
 		# full hearts
 		for i in range(0, fullHearts):
@@ -47,8 +48,10 @@ func _process(_delta: float) -> void:
 			nextHeart.get_child(0).frame = 0;
 	if (character.is_in_group("Ryl")):
 		var edgeHeart = numHearts - (fullHearts + 1)
-		var fractionalHeart = get_child(edgeHeart)
-		fractionalHeart.get_child(0).frame = amountOver;
+		
+		if (numHearts != fullHearts):
+			var fractionalHeart = get_child(edgeHeart)
+			fractionalHeart.get_child(0).frame = amountOver;
 		
 		# full hearts
 		for i in range(edgeHeart + 1.0, numHearts):
