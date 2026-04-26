@@ -20,7 +20,7 @@ extends Area2D
 # 0=up, 1=down, 2=right, 3=left; lets idle animations face the right direction
 @export var faceDir = 0
 
-@export var max_health := 10
+@export var max_health := 12
 var health := max_health
 
 # limiting how how different attacks can be used
