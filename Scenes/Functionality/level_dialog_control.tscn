@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ga3egy1d38a2" path="res://Scenes/Functionality/level_dialog_container.gd" id="1_1qm1s"]
 
 [node name="Dialog_Control" type="Control" unique_id=941119838]
+z_index = 101
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
