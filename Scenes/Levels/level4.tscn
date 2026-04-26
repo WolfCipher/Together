@@ -12,8 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_upvnb"]
 [ext_resource type="PackedScene" uid="uid://d4ckemip8a1r5" path="res://Scenes/Functionality/elvyria_health_hearts.tscn" id="11_xuud8"]
 [ext_resource type="PackedScene" uid="uid://hnaaqwso7imp" path="res://Scenes/Functionality/ryl_health_hearts.tscn" id="12_xxul8"]
+[ext_resource type="PackedScene" uid="uid://c4c6dpgcx2qss" path="res://HUD Assets/elvyria_shield_ui.tscn" id="13_14je0"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_dmwli"]
 [ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_2me85"]
+[ext_resource type="PackedScene" uid="uid://b7lkdosi3k5u8" path="res://HUD Assets/ryl_dash_ui.tscn" id="14_5cdvm"]
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="15_j8h45"]
 [ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="16_roghl"]
 [ext_resource type="PackedScene" uid="uid://b5prnshh5emox" path="res://Scenes/Functionality/level_dialog_control.tscn" id="17_tq245"]
@@ -91,6 +93,22 @@ offset_top = -475.0
 offset_right = -862.0
 offset_bottom = -475.0
 pivot_offset_ratio = Vector2(1, 0)
+character = NodePath("../../Ryl")
+
+[node name="ElvyriaShieldUI" parent="Camera_Centered" unique_id=1160471316 node_paths=PackedStringArray("character") instance=ExtResource("13_14je0")]
+z_index = 100
+offset_left = -800.0
+offset_top = 352.0
+offset_right = -700.0
+offset_bottom = 471.99963
+character = NodePath("../../Elvyria")
+
+[node name="RylDashUI" parent="Camera_Centered" unique_id=1709616272 node_paths=PackedStringArray("character") instance=ExtResource("14_5cdvm")]
+z_index = 100
+offset_left = 650.0
+offset_top = 350.0
+offset_right = 786.0
+offset_bottom = 478.0
 character = NodePath("../../Ryl")
 
 [node name="Dullworld" type="Node2D" parent="." unique_id=1828854042]

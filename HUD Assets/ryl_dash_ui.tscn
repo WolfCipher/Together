@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b7lkdosi3k5u8"]
+
+[ext_resource type="Texture2D" uid="uid://ig58802vsyte" path="res://HUD Assets/Dash_Cooldown/Dash_Cooldown2.png" id="1_4ldjv"]
+[ext_resource type="Texture2D" uid="uid://c2cj8ddmmmfcd" path="res://HUD Assets/Dash_Cooldown/Dash_Cooldown1.png" id="2_cl6c4"]
+[ext_resource type="Texture2D" uid="uid://bcptdl1s8bhor" path="res://HUD Assets/Dash_Cooldown/Dash_Cooldown3.png" id="3_cl6c4"]
+[ext_resource type="Script" uid="uid://bjdh2pq18ynjf" path="res://Scenes/Functionality/ability_cooldown.gd" id="4_cjrcw"]
+
+[node name="RylDashUI" type="TextureProgressBar" unique_id=1160471316]
+offset_right = 136.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("1_4ldjv")
+texture_over = ExtResource("2_cl6c4")
+texture_progress = ExtResource("3_cl6c4")
+script = ExtResource("4_cjrcw")

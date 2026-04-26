@@ -19,6 +19,9 @@ script = ExtResource("1_4whnr")
 ink_script = "res://Ink/Dialogue Scripts/silas.json"
 next_scene = "res://Scenes/Levels/level4.tscn"
 
+[node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("5_nrmy3")]
+process_mode = 3
+
 [node name="Panel" type="Panel" parent="." unique_id=110650881]
 offset_left = 40.0
 offset_top = 550.0
@@ -52,8 +55,6 @@ z_index = -100
 scale = Vector2(1.6666667, 1.6790123)
 texture = ExtResource("4_omvaa")
 centered = false
-
-[node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("5_nrmy3")]
 
 [node name="Elvyria" type="Sprite2D" parent="." unique_id=1367904399]
 z_index = -10

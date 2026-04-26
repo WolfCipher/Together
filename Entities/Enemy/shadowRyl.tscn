@@ -75,6 +75,9 @@
 [ext_resource type="Texture2D" uid="uid://c45ie1br8fbpm" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Back_Walk/ShadowRyl_Back_Walk07.png" id="71_oi5r2"]
 [ext_resource type="Texture2D" uid="uid://cr5lh83ciwgfe" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Back_Walk/ShadowRyl_Back_Walk08.png" id="72_njtt1"]
 [ext_resource type="Texture2D" uid="uid://c7vkfxql10knu" path="res://Entities/Enemy/Shadow Ryl Enemy/ShadowRyl_Back_Walk/ShadowRyl_Back_Walk09.png" id="73_qtrvv"]
+[ext_resource type="AudioStream" uid="uid://co67tdwi4y2kv" path="res://Sound/SFX/Enemy_Sounds/Shadow/Ryl/Shadow_Ryl_Projectile_1.wav" id="76_2cjlj"]
+[ext_resource type="AudioStream" uid="uid://bbxgbin02rnff" path="res://Sound/SFX/Enemy_Sounds/Shadow/Ryl/Shadow_Ryl_Talk_Damage_1.wav" id="79_rqo18"]
+[ext_resource type="AudioStream" uid="uid://b0thfq6locqvo" path="res://Sound/SFX/Enemy_Sounds/Shadow/Ryl/Shadow_Ryl_Walk_1.wav" id="80_fnjhs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_287tu"]
 animations = [{
@@ -351,5 +354,17 @@ animation = &"walk_up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1f0kj")
+
+[node name="AttackSFX" type="AudioStreamPlayer" parent="." unique_id=540873694]
+stream = ExtResource("76_2cjlj")
+bus = &"SFX"
+
+[node name="DamageSFX" type="AudioStreamPlayer" parent="." unique_id=306538861]
+stream = ExtResource("79_rqo18")
+bus = &"SFX"
+
+[node name="PassiveSFX" type="AudioStreamPlayer" parent="." unique_id=1026269133]
+stream = ExtResource("80_fnjhs")
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

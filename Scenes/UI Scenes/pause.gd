@@ -2,6 +2,7 @@ extends Control
 
 @export var startsVisible = false # only level 1 is true
 var volume_change = .5
+var sfx_volume = AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("SFX"))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,6 +10,7 @@ func _ready() -> void:
 	if startsVisible:
 		get_tree().paused = true
 		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"),  AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")) - volume_change)
+		AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"),  0)
 		await get_tree().create_timer(2.0).timeout
 
 
@@ -19,9 +21,15 @@ func _process(_delta: float) -> void:
 			visible = true
 			get_tree().paused = true
 			AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")) - volume_change)
+			AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), 0)
 			await get_tree().create_timer(2.0).timeout
 		else:
 			visible = false
 			get_tree().paused = false
 			AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), AudioServer.get_bus_volume_linear(AudioServer.get_bus_index("Music")) + volume_change)
+			AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), sfx_volume)
 			await get_tree().create_timer(2.0).timeout
+			
+func on_scene_change(next_scene):
+	get_tree().paused = false
+	free()
