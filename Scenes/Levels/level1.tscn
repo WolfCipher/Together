@@ -19,9 +19,9 @@
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="15_j5o2p"]
 [ext_resource type="PackedScene" uid="uid://hnaaqwso7imp" path="res://Scenes/Functionality/ryl_health_hearts.tscn" id="16_syfhk"]
 [ext_resource type="PackedScene" uid="uid://dgh6ok0g67o3f" path="res://Scenes/Attacks/projectileRyl.tscn" id="17_bvs0b"]
-[ext_resource type="PackedScene" uid="uid://c8tlq472q0mq7" path="res://Scenes/World Building/azure-berries.tscn" id="20_u45xj"]
 [ext_resource type="PackedScene" uid="uid://b7lkdosi3k5u8" path="res://HUD Assets/ryl_dash_ui.tscn" id="18_u45xj"]
 [ext_resource type="PackedScene" uid="uid://c4c6dpgcx2qss" path="res://HUD Assets/elvyria_shield_ui.tscn" id="19_ay16s"]
+[ext_resource type="PackedScene" uid="uid://c8tlq472q0mq7" path="res://Scenes/World Building/azure-berries.tscn" id="20_u45xj"]
 
 [node name="Main" type="Node2D" unique_id=837400696]
 y_sort_enabled = true

@@ -55,7 +55,6 @@ animations = [{
 }]
 
 [node name="AzureBerries" type="Area2D" unique_id=1116531758]
-z_index = -1
 script = ExtResource("1_cfhmu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=914215498]
