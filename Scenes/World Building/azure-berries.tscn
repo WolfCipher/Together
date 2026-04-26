@@ -1,10 +1,74 @@
 [gd_scene format=3 uid="uid://c8tlq472q0mq7"]
 
+[ext_resource type="Script" uid="uid://cl0w0v2gywj30" path="res://Scenes/World Building/azure_berries.gd" id="1_cfhmu"]
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="1_gfkif"]
+[ext_resource type="Texture2D" uid="uid://dobeq80f0gb77" path="res://Entities/SceneArt/Azureberries/azureberries00.png" id="3_aht5b"]
+[ext_resource type="Texture2D" uid="uid://byxvuxkurs56" path="res://Entities/SceneArt/Azureberries/azureberries01.png" id="4_aqryi"]
+[ext_resource type="Texture2D" uid="uid://c7emqrd18tspd" path="res://Entities/SceneArt/Azureberries/azureberries02.png" id="5_txmx6"]
+[ext_resource type="Texture2D" uid="uid://jxb0kq5rwt75" path="res://Entities/SceneArt/Azureberries/azureberries03.png" id="6_bnh10"]
+[ext_resource type="Texture2D" uid="uid://dlxdgonvubqkt" path="res://Entities/SceneArt/Azureberries/azureberries04.png" id="7_0vvfm"]
+[ext_resource type="Texture2D" uid="uid://c46uqvdrjfrff" path="res://Entities/SceneArt/Azureberries/azureberries05.png" id="8_p8ikt"]
+[ext_resource type="Texture2D" uid="uid://dn2rf3a4vqlrn" path="res://Entities/SceneArt/Azureberries/azureberries06.png" id="9_2g4j5"]
+[ext_resource type="Texture2D" uid="uid://bxcjeirmc36f6" path="res://Entities/SceneArt/Azureberries/azureberries07.png" id="10_2vh54"]
+[ext_resource type="Texture2D" uid="uid://ctendopk0jyay" path="res://Entities/SceneArt/Azureberries/azureberries08.png" id="11_mnv0n"]
+[ext_resource type="Texture2D" uid="uid://deq7govmsq07b" path="res://Entities/SceneArt/Azureberries/azureberries09.png" id="12_1lwr3"]
 
-[node name="AzureBerries" type="Node2D" unique_id=1988277302]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfkif"]
+size = Vector2(39, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfhmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_aht5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aqryi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_txmx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bnh10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0vvfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p8ikt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2g4j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2vh54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mnv0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1lwr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="AzureBerries" type="Area2D" unique_id=1116531758]
 z_index = -1
+script = ExtResource("1_cfhmu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=914215498]
+visible = false
 tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 1, 0, 25, 0, 0, 0)
 tile_set = ExtResource("1_gfkif")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=242268731]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_gfkif")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=987908523]
+position = Vector2(-8, -8)
+sprite_frames = SubResource("SpriteFrames_cfhmu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

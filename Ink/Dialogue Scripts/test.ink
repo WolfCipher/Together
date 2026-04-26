@@ -159,7 +159,7 @@ Phew...
  ~btn3 = 0
  ~btn4 = 0
  ~dialog = 1
- 
+ But first, eat some of these berries. A full stomach makes anything better!
  * Let's go!
  * OK
 
