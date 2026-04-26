@@ -6,10 +6,10 @@
 [ext_resource type="Script" uid="uid://bjdh2pq18ynjf" path="res://Scenes/Functionality/ability_cooldown.gd" id="4_bemb6"]
 
 [node name="ElvyriaShieldUI" type="TextureProgressBar" unique_id=1160471316]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(3, 3)
+offset_right = 100.0
+offset_bottom = 120.0
 fill_mode = 3
+nine_patch_stretch = true
 texture_under = ExtResource("1_7xj5b")
 texture_over = ExtResource("2_nyt2g")
 texture_progress = ExtResource("3_x58n1")

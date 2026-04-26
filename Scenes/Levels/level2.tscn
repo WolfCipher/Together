@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://d4ckemip8a1r5" path="res://Scenes/Functionality/elvyria_health_hearts.tscn" id="10_jydn8"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_keokt"]
 [ext_resource type="PackedScene" uid="uid://hnaaqwso7imp" path="res://Scenes/Functionality/ryl_health_hearts.tscn" id="11_pwvbg"]
+[ext_resource type="PackedScene" uid="uid://c4c6dpgcx2qss" path="res://HUD Assets/elvyria_shield_ui.tscn" id="12_nhqo7"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_0lkii"]
+[ext_resource type="PackedScene" uid="uid://b7lkdosi3k5u8" path="res://HUD Assets/ryl_dash_ui.tscn" id="13_3epes"]
 [ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_56d2c"]
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="15_i6j4t"]
 [ext_resource type="PackedScene" uid="uid://b3p0be0qdmx5n" path="res://Scenes/World Building/world_open.tscn" id="17_hpjhc"]
@@ -89,6 +91,22 @@ offset_top = -475.0
 offset_right = -862.0
 offset_bottom = -475.0
 pivot_offset_ratio = Vector2(1, 0)
+character = NodePath("../../Ryl")
+
+[node name="ElvyriaShieldUI" parent="Camera_Centered" unique_id=1160471316 node_paths=PackedStringArray("character") instance=ExtResource("12_nhqo7")]
+z_index = 100
+offset_left = -800.0
+offset_top = 352.0
+offset_right = -700.0
+offset_bottom = 471.99963
+character = NodePath("../../Elvyria")
+
+[node name="RylDashUI" parent="Camera_Centered" unique_id=501054402 node_paths=PackedStringArray("character") instance=ExtResource("13_3epes")]
+z_index = 100
+offset_left = 650.0
+offset_top = 350.0
+offset_right = 786.0
+offset_bottom = 478.0
 character = NodePath("../../Ryl")
 
 [node name="WorldObjects" type="Node2D" parent="." unique_id=981191973]
