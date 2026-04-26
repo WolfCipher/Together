@@ -436,3 +436,4 @@ position = Vector2(2990, -4325)
 position = Vector2(0, 116)
 dialog_list = [["azalea", 0, "Elvyria! Where have you been?!", 11], ["elvyria", 0, "In the Dullworld?", 9], ["azalea", 0, "What...? ...Who's this?", 7], ["ryl", 0, "I'm Ryl of Tamewood... and the Dullworld.", 5]]
 send_to_scene_after_completion = true
+next_scene = "res://Ink/Scenes/azalea_dialog.tscn"
