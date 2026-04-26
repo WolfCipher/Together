@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://eb7w24rk473j" path="res://Entities/NPCs/Azalea.tscn" id="25_lsqbk"]
 [ext_resource type="PackedScene" uid="uid://pgjqpf678xkx" path="res://Scenes/World Building/EmitDialogInRange.tscn" id="25_nvfnq"]
 [ext_resource type="PackedScene" uid="uid://bdi6gfw14jpjo" path="res://Scenes/World Building/birch_trees_mystia.tscn" id="25_xuud8"]
+[ext_resource type="PackedScene" uid="uid://c8tlq472q0mq7" path="res://Scenes/World Building/azure-berries.tscn" id="30_xxul8"]
 
 [node name="Main" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
@@ -437,3 +438,15 @@ position = Vector2(0, 116)
 dialog_list = [["azalea", 0, "Elvyria! Where have you been?!", 11], ["elvyria", 0, "In the Dullworld?", 9], ["azalea", 0, "What...? ...Who's this?", 7], ["ryl", 0, "I'm Ryl of Tamewood... and the Dullworld.", 5]]
 send_to_scene_after_completion = true
 next_scene = "res://Ink/Scenes/azalea_dialog.tscn"
+
+[node name="AzureBerries" parent="." unique_id=1116531758 instance=ExtResource("30_xxul8")]
+position = Vector2(9323, 364)
+
+[node name="AzureBerries2" parent="." unique_id=1265091079 instance=ExtResource("30_xxul8")]
+position = Vector2(9688, 684)
+
+[node name="AzureBerries3" parent="." unique_id=698611117 instance=ExtResource("30_xxul8")]
+position = Vector2(10070, 367)
+
+[node name="AzureBerries4" parent="." unique_id=1127127929 instance=ExtResource("30_xxul8")]
+position = Vector2(9181, 676)
