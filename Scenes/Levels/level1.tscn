@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cmumeyfum7ths" path="res://Entities/Enemy/shadowRyl.tscn" id="9_5y6uu"]
 [ext_resource type="PackedScene" uid="uid://dpcocehy7udm3" path="res://Scenes/shadowElvyria.tscn" id="9_syfhk"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_m4h5f"]
-[ext_resource type="Texture2D" uid="uid://ig58802vsyte" path="res://HUD Assets/Dash_Cooldown/Dash_Cooldown2.png" id="12_u45xj"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_60msr"]
 [ext_resource type="PackedScene" uid="uid://cycp817xxkhca" path="res://Scenes/World Building/world_small.tscn" id="14_4xs7e"]
 [ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_bvs0b"]
@@ -62,13 +61,6 @@ target2 = NodePath("../Ryl")
 position = Vector2(574, 505)
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
-
-[node name="TextureRect" type="TextureRect" parent="Camera_Centered" unique_id=57332339]
-offset_left = 705.0
-offset_top = 334.0
-offset_right = 858.0
-offset_bottom = 487.0
-texture = ExtResource("12_u45xj")
 
 [node name="PauseOverlay" parent="Camera_Centered" unique_id=74393980 instance=ExtResource("13_60msr")]
 anchors_preset = 8
