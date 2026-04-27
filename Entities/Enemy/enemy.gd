@@ -42,6 +42,15 @@ func _ready() -> void:
 	add_to_group("Enemy")
 	add_child(death_particles)
 	death_particles.emitting = false
+	
+	# set initial facing
+	# Determine target: follow whoever is closer
+	var target_pos = find_target()
+	
+	# HANDLE ANIMATIONS
+	# Determine the direction and handle animations accordingly
+	var dir = (target_pos - global_position).normalized()
+	animate(dir, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -56,28 +65,11 @@ func _process(delta: float) -> void:
 		attack_cooldown -= delta
 		
 		# Determine target: follow whoever is closer
-		var pos1 = target1.global_position
-		var pos2 = target2.global_position
-		var dist1 = global_position.distance_to(pos1)
-		var dist2 = global_position.distance_to(pos2)
-		var target_dist = min(dist1, dist2)
-		var target_pos : Vector2
+		var target_pos = find_target()
+		var target_dist = global_position.distance_to(target_pos)
 		
-		if dist1 < dist2:
-			target_pos = pos1
-		else:
-			target_pos = pos2
-		
-		# TODO some enemies attack while moving!!!!!
-		# Move enemy to target, if the enemy is not within a certain distance
-		# Otherwise, attack
-		
-		var too_far = target_dist > attackDistance
-		var align_dist = 40 # how far off from exactly matched a axis position can be and still hit
-		var vert_aligned = abs(global_position.y - target_pos.y) <= align_dist
-		var horiz_aligned = abs(global_position.x - target_pos.x) <= align_dist
-		var continue_moving = too_far || (!vert_aligned && !horiz_aligned)
-		
+		# determine whether to continue moving
+		var continue_moving = continue_moving(target_pos, target_dist)
 		if continue_moving:
 			global_position = global_position.move_toward(target_pos, speed*delta)
 		
@@ -95,7 +87,29 @@ func _process(delta: float) -> void:
 func play() -> void:
 	sprite.animation = animation
 	sprite.play()
-		
+
+func find_target() -> Vector2:
+	# Determine target: follow whoever is closer
+	var pos1 = target1.global_position
+	var pos2 = target2.global_position
+	var dist1 = global_position.distance_to(pos1)
+	var dist2 = global_position.distance_to(pos2)
+	var target_pos : Vector2
+	
+	if dist1 < dist2:
+		target_pos = pos1
+	else:
+		target_pos = pos2
+	
+	return target_pos
+
+func continue_moving(target_pos, target_dist) -> bool:
+		# determine whether to continue moving
+		var too_far = target_dist > attackDistance
+		var align_dist = 40 # how far off from exactly matched a axis position can be and still hit
+		var vert_aligned = abs(global_position.y - target_pos.y) <= align_dist
+		var horiz_aligned = abs(global_position.x - target_pos.x) <= align_dist
+		return too_far || (!vert_aligned && !horiz_aligned)
 
 func animate(dir, continue_moving) -> void:
 	if !continue_moving:
