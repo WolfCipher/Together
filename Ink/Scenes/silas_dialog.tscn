@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/Functionality/ink_template.gd" id="1_4whnr"]
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_t7iuq"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_5edf3"]
-[ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="4_omvaa"]
+[ext_resource type="Texture2D" uid="uid://8lt6tbjduqey" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd_birch.png" id="5_4whnr"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="5_nrmy3"]
 [ext_resource type="Texture2D" uid="uid://j1jcae3hn752" path="res://Ink/Character Expressions/Elvyria/Elvyria_Neutral.png" id="6_w74ge"]
 [ext_resource type="Texture2D" uid="uid://dh8ebmpkq8nxp" path="res://Ink/Character Expressions/Ryl/Ryl_Neutral.png" id="7_elftc"]
@@ -52,8 +52,9 @@ offset_bottom = 51.0
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1910788515]
 z_index = -100
-scale = Vector2(1.6666667, 1.6790123)
-texture = ExtResource("4_omvaa")
+position = Vector2(-557, -428.00006)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_4whnr")
 centered = false
 
 [node name="Elvyria" type="Sprite2D" parent="." unique_id=1367904399]

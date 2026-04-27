@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bixm84pgxp77u"
-path="res://.godot/imported/tileset.png-feb1a6c828fa210d56a8ae89632697b8.ctex"
+uid="uid://dxl42bfxb21nm"
+path="res://.godot/imported/dialog_bckgrd_v1.png-3d0f7cfa322d4b15d1097afa0b4c6b84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/SceneArt/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-feb1a6c828fa210d56a8ae89632697b8.ctex"]
+source_file="res://Ink/Dialogue Backgrounds/dialog_bckgrd_v1.png"
+dest_files=["res://.godot/imported/dialog_bckgrd_v1.png-3d0f7cfa322d4b15d1097afa0b4c6b84.ctex"]
 
 [params]
 

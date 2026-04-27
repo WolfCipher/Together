@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://bhyoc0r7hjkxm"]
 
-[ext_resource type="Texture2D" uid="uid://df4edxp4vrhc0" path="res://Entities/SceneArt/tileset.png" id="1_gi5ff"]
+[ext_resource type="Texture2D" uid="uid://bixm84pgxp77u" path="res://Entities/SceneArt/tileset.png" id="1_gi5ff"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_gi5ff"]
 tile_data = PackedInt32Array(0, 1966080, 0, 393216, 393216, 0, 786432, 393216, 0, 1179648, 1572864, 0, 6, 1966080, 0, 393222, 393216, 0, 786438, 393216, 0, 1179654, 1572864, 0, 12, 1966080, 0, 393228, 393216, 0, 786444, 393216, 0, 1179660, 1572864, 0, 18, 1966080, 0, 393234, 393216, 0, 786450, 393216, 0, 1179666, 1572864, 0, 24, 1966080, 0, 393240, 393216, 0, 786456, 393216, 0, 1179672, 1572864, 0, 30, 1966080, 0, 393246, 393216, 0, 786462, 393216, 0, 1179678, 1572864, 0)
@@ -88,18 +88,26 @@ texture = ExtResource("1_gi5ff")
 26:32/0 = 0
 31:32/size_in_atlas = Vector2i(3, 3)
 31:32/0 = 0
-0:36/size_in_atlas = Vector2i(6, 6)
-0:36/0 = 0
-0:36/0/y_sort_origin = 30
-6:36/size_in_atlas = Vector2i(6, 6)
-6:36/0 = 0
-6:36/0/y_sort_origin = 30
-12:36/size_in_atlas = Vector2i(6, 6)
-12:36/0 = 0
-12:36/0/y_sort_origin = 20
+30:36/size_in_atlas = Vector2i(6, 6)
+30:36/0 = 0
+30:36/0/y_sort_origin = 20
+24:36/size_in_atlas = Vector2i(6, 6)
+24:36/0 = 0
+24:36/0/y_sort_origin = 20
 18:36/size_in_atlas = Vector2i(6, 6)
 18:36/0 = 0
-18:36/0/y_sort_origin = 20
+18:36/0/y_sort_origin = 30
+0:36/size_in_atlas = Vector2i(6, 6)
+0:36/next_alternative_id = 4
+0:36/0 = 0
+0:36/0/y_sort_origin = 30
+0:36/1 = 1
+0:36/2 = 2
+0:36/3 = 3
+12:36/size_in_atlas = Vector2i(6, 6)
+12:36/0 = 0
+6:36/size_in_atlas = Vector2i(6, 6)
+6:36/0 = 0
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_lm3os")
