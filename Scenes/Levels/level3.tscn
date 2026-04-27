@@ -330,9 +330,11 @@ position = Vector2(548, 496)
 dialog_list = [["ryl", 0, "Wow, I still can't believe Vyerity lent us her gear! I feel stronger already!", 10], ["elvyria", 0, "Hey, thanks for coming with me, Ryl. It's nice to have a friend.", 8], ["ryl", 0, "No problem! I always wanted to travel and training with you has been fun!", 6], ["elvyria", 0, "Same here! I enjoy enhancing your arrows with my melee and vice versa!", 4], ["ryl", 0, "My favorite tactic is shooting together in all directions!", 2]]
 
 [node name="NPCs" type="Node2D" parent="." unique_id=777145889]
+y_sort_enabled = true
 position = Vector2(8392, -6085)
 
 [node name="Boys" type="Node2D" parent="NPCs" unique_id=119498010]
+y_sort_enabled = true
 position = Vector2(-187, 0)
 
 [node name="NPC" parent="NPCs/Boys" unique_id=643464089 instance=ExtResource("27_fl5ni")]
@@ -345,6 +347,7 @@ position = Vector2(938, 222)
 position = Vector2(-1132, -261)
 
 [node name="Girls" type="Node2D" parent="NPCs" unique_id=629884928]
+y_sort_enabled = true
 position = Vector2(243, 0)
 
 [node name="NPC2" parent="NPCs/Girls" unique_id=1237295933 instance=ExtResource("33_dekm2")]
@@ -354,6 +357,7 @@ position = Vector2(-1651, -305)
 position = Vector2(574, 156)
 
 [node name="Men" type="Node2D" parent="NPCs" unique_id=1146348464]
+y_sort_enabled = true
 position = Vector2(0, -151)
 
 [node name="NPC" parent="NPCs/Men" unique_id=39634413 instance=ExtResource("37_bptt3")]
@@ -363,6 +367,7 @@ position = Vector2(-349, 700)
 position = Vector2(-424, -312)
 
 [node name="Women" type="Node2D" parent="NPCs" unique_id=2053068537]
+y_sort_enabled = true
 position = Vector2(0, 135)
 
 [node name="NPC3" parent="NPCs/Women" unique_id=476487886 instance=ExtResource("44_tbfnm")]

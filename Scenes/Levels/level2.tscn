@@ -346,9 +346,11 @@ send_to_scene_after_completion = true
 next_scene = "res://Ink/Scenes/vyerity_dialog.tscn"
 
 [node name="NPCs" type="Node2D" parent="." unique_id=108861848]
+y_sort_enabled = true
 position = Vector2(7864, 3)
 
 [node name="Boys" type="Node2D" parent="NPCs" unique_id=1126109411]
+y_sort_enabled = true
 position = Vector2(-187, 0)
 
 [node name="NPC3" parent="NPCs/Boys" unique_id=1621133178 instance=ExtResource("25_cvw5d")]
@@ -358,6 +360,7 @@ position = Vector2(-323, 1843)
 position = Vector2(561, 101)
 
 [node name="Girls" type="Node2D" parent="NPCs" unique_id=1997053315]
+y_sort_enabled = true
 position = Vector2(243, 0)
 
 [node name="NPC" parent="NPCs/Girls" unique_id=458646505 instance=ExtResource("28_3u6tp")]
@@ -370,6 +373,7 @@ position = Vector2(110, 305)
 position = Vector2(-888, 1797)
 
 [node name="Men" type="Node2D" parent="NPCs" unique_id=1427164965]
+y_sort_enabled = true
 position = Vector2(0, -151)
 
 [node name="NPC2" parent="NPCs/Men" unique_id=524982944 instance=ExtResource("34_n7xd7")]
@@ -382,6 +386,7 @@ position = Vector2(861, -372)
 position = Vector2(190, 1713)
 
 [node name="Women" type="Node2D" parent="NPCs" unique_id=1646070499]
+y_sort_enabled = true
 position = Vector2(0, 135)
 
 [node name="NPC" parent="NPCs/Women" unique_id=2044081949 instance=ExtResource("38_5iiej")]
