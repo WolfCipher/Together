@@ -8,6 +8,7 @@ z_index = 200
 script = ExtResource("1_ysnyp")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=485895552]
+z_index = 100
 offset_left = -35.0
 offset_top = -44.0
 offset_right = 1954.0
