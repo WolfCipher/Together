@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtfwr355yn2d4"
+path="res://.godot/imported/Village Exploration Loop v2.wav-e4e6f698e50f9996948c8e4afb63964a.sample"
+
+[deps]
+
+source_file="res://Sound/Music/Village Exploration Loop v2.wav"
+dest_files=["res://.godot/imported/Village Exploration Loop v2.wav-e4e6f698e50f9996948c8e4afb63964a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

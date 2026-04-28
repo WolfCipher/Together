@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://domx8lrr0iijx"]
+
+[ext_resource type="Script" uid="uid://dwjcuxd18xlb1" path="res://Scenes/Functionality/music_manager.gd" id="1_573r2"]
+[ext_resource type="AudioStream" uid="uid://ccgctp0kumknf" path="res://Sound/Music/Main Combat Loop v2.wav" id="2_papfv"]
+[ext_resource type="AudioStream" uid="uid://dtfwr355yn2d4" path="res://Sound/Music/Village Exploration Loop v2.wav" id="3_papfv"]
+
+[node name="MusicManager" type="Node" unique_id=1356656624]
+process_mode = 3
+script = ExtResource("1_573r2")
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="." unique_id=337877791]
+stream = ExtResource("2_papfv")
+bus = &"Music"
+
+[node name="VillageMusic" type="AudioStreamPlayer" parent="." unique_id=1990046213]
+stream = ExtResource("3_papfv")
+volume_db = -12.0
+bus = &"Music"
+
+[node name="ForestAmbient" type="AudioStreamPlayer" parent="." unique_id=103689061]
+bus = &"Music"

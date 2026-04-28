@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/Functionality/ink_template.gd" id="1_06462"]
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_4fq0e"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="2_hhopj"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_m4axn"]
-[ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="4_hhopj"]
+[ext_resource type="Texture2D" uid="uid://cads3bwymld04" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="4_hhopj"]
 [ext_resource type="Texture2D" uid="uid://bmuw3kmlea1nn" path="res://Ink/Functionality/elvyria_icon.png" id="4_m4axn"]
 [ext_resource type="Texture2D" uid="uid://2u1jfjep478m" path="res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png" id="6_4fq0e"]
 [ext_resource type="Texture2D" uid="uid://be8xlfbexemwy" path="res://Ink/Character Expressions/Ryl/Ryl_Shocked.png" id="7_m4axn"]
@@ -19,6 +20,8 @@ script = ExtResource("1_06462")
 ink_script = "res://Ink/Dialogue Scripts/test.json"
 next_scene = "res://Scenes/Levels/level2.tscn"
 player_only_conversation = true
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("2_hhopj")]
 
 [node name="Panel" type="Panel" parent="." unique_id=110650881]
 offset_left = 40.0

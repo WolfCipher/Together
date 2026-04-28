@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://men8tdluf26"]
 
 [ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/Functionality/ink_template.gd" id="1_ym8p6"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="2_33xoe"]
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_564om"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_33xoe"]
 [ext_resource type="Texture2D" uid="uid://bmuw3kmlea1nn" path="res://Ink/Functionality/elvyria_icon.png" id="4_1q0xp"]
-[ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="5_nh2y6"]
+[ext_resource type="Texture2D" uid="uid://cads3bwymld04" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="5_nh2y6"]
 [ext_resource type="Texture2D" uid="uid://bf2y13k64cswn" path="res://Ink/Character Expressions/Elvyria/Elvyria_Concern.png" id="6_ym8p6"]
 [ext_resource type="Texture2D" uid="uid://cq1o1j82sum7w" path="res://Ink/Character Expressions/Ryl/Ryl_Concern.png" id="7_564om"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="8_4pv0b"]
@@ -20,6 +21,8 @@ ink_script = "res://Ink/Dialogue Scripts/final.json"
 next_scene = "res://Scenes/UI Scenes/Victory.tscn"
 player_only_conversation = true
 position_index = 0
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("2_33xoe")]
 
 [node name="Panel" type="Panel" parent="." unique_id=110650881]
 offset_left = 40.0

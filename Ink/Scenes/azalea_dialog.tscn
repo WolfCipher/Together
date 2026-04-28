@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cim7aoh1inmck"]
 
 [ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/Functionality/ink_template.gd" id="1_1ctk0"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="2_d5pk3"]
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_nt4da"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_2eu5m"]
 [ext_resource type="Texture2D" uid="uid://ek4u0wkbbvmj" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd_mystia.png" id="4_yjmi1"]
@@ -18,6 +19,8 @@ font_color = Color(0.94509804, 1, 0.9490196, 1)
 script = ExtResource("1_1ctk0")
 ink_script = "res://Ink/Dialogue Scripts/azalea.json"
 next_scene = "res://Ink/Scenes/final_dialog.tscn"
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("2_d5pk3")]
 
 [node name="Panel" type="Panel" parent="." unique_id=110650881]
 offset_left = 40.0

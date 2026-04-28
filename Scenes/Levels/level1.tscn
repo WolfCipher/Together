@@ -1,10 +1,9 @@
 [gd_scene format=4 uid="uid://def23c04mji30"]
 
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="1_5y6uu"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_ryjqc"]
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_xe7un"]
-[ext_resource type="AudioStream" uid="uid://ccgctp0kumknf" path="res://Sound/Music/Main Combat Loop v2.wav" id="3_syfhk"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="3_v3vqe"]
-[ext_resource type="AudioStream" uid="uid://dpburqtcke0yd" path="res://Sound/SFX/Environment_Sounds/Forest_Amb_Loop_1.wav" id="4_syfhk"]
 [ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/Functionality/SpawnManager.gd" id="5_syfhk"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="6_u45xj"]
 [ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/FireSpirit_AoE.tscn" id="7_ay16s"]
@@ -26,6 +25,8 @@
 [node name="Main" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
 
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("1_5y6uu")]
+
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_ryjqc")]
 position = Vector2(516, 505)
 xp = 1
@@ -33,19 +34,6 @@ xp = 1
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_v3vqe")]
 position = Vector2(574, 505)
 xp = 1
-
-[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
-process_mode = 3
-stream = ExtResource("3_syfhk")
-volume_db = -5.0
-autoplay = true
-bus = &"Music"
-
-[node name="AmbientLoop" type="AudioStreamPlayer" parent="." unique_id=584040334]
-stream = ExtResource("4_syfhk")
-volume_db = -6.0
-autoplay = true
-bus = &"Music"
 
 [node name="SpawnManager" type="Node2D" parent="." unique_id=708660748 node_paths=PackedStringArray("target1", "target2")]
 script = ExtResource("5_syfhk")

@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://qwj3hgnd6k"]
 
 [ext_resource type="Script" uid="uid://bwy1okp08361v" path="res://Ink/Functionality/ink_template.gd" id="1_ghmdc"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="2_3wkq0"]
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_8cdof"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_fiwdc"]
-[ext_resource type="Texture2D" uid="uid://yrh018uvau6b" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="5_4kta7"]
+[ext_resource type="Texture2D" uid="uid://cads3bwymld04" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="5_4kta7"]
 [ext_resource type="Texture2D" uid="uid://j1jcae3hn752" path="res://Ink/Character Expressions/Elvyria/Elvyria_Neutral.png" id="6_78lc0"]
 [ext_resource type="Texture2D" uid="uid://dh8ebmpkq8nxp" path="res://Ink/Character Expressions/Ryl/Ryl_Neutral.png" id="7_78lc0"]
 [ext_resource type="Texture2D" uid="uid://bue2rr8m2hxla" path="res://Ink/Character Expressions/Vyerity/Vyerity_Neutral.png" id="8_5e8qn"]
@@ -18,6 +19,8 @@ font_color = Color(0.94509804, 1, 0.9490196, 1)
 script = ExtResource("1_ghmdc")
 ink_script = "res://Ink/Dialogue Scripts/vyerity.json"
 next_scene = "res://Scenes/Levels/level3.tscn"
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("2_3wkq0")]
 
 [node name="Panel" type="Panel" parent="." unique_id=110650881]
 offset_left = 40.0
