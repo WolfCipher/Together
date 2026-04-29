@@ -12,6 +12,6 @@ Peyton: Lead Artist, Lead Writer, Secondary Programmer, Secondary Tool Developer
 
 Riley: Lead Programmer, Lead Tool Developer, Secondary Artist, Secondary Writer
 
-Calvin: Producer, Micro-Interaction Designer
+Calvin: Producer, Microinteraction Designer
 
 Noah: Sound Designer, Composer
