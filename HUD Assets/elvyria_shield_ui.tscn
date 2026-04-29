@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c4c6dpgcx2qss"]
+
+[ext_resource type="Texture2D" uid="uid://bi2rpbmnmhd3u" path="res://HUD Assets/Shield_Cooldown/Shield_Cooldown2.png" id="1_7xj5b"]
+[ext_resource type="Texture2D" uid="uid://b5hr78ft6lf0" path="res://HUD Assets/Shield_Cooldown/Shield_Cooldown1.png" id="2_nyt2g"]
+[ext_resource type="Texture2D" uid="uid://dqin8l7v4225d" path="res://HUD Assets/Shield_Cooldown/Shield_Cooldown3.png" id="3_x58n1"]
+[ext_resource type="Script" uid="uid://bjdh2pq18ynjf" path="res://Scenes/Functionality/ability_cooldown.gd" id="4_bemb6"]
+
+[node name="ElvyriaShieldUI" type="TextureProgressBar" unique_id=1160471316]
+offset_right = 100.0
+offset_bottom = 120.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("1_7xj5b")
+texture_over = ExtResource("2_nyt2g")
+texture_progress = ExtResource("3_x58n1")
+script = ExtResource("4_bemb6")

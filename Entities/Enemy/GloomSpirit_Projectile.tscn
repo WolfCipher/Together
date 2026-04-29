@@ -394,7 +394,7 @@ projectile_scene = ExtResource("2_tc8ph")
 
 [node name="Enemy" type="AnimatedSprite2D" parent="." unique_id=1432958030]
 sprite_frames = SubResource("SpriteFrames_287tu")
-animation = &"walk_up"
+animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108988105]
 position = Vector2(3, 6.5)

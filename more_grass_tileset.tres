@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://deje0fewmew38"]
 
-[ext_resource type="Texture2D" uid="uid://l7voi0rqyjj7" path="res://Entities/SceneArt/tileset_more_grass.png" id="1_4f3l1"]
+[ext_resource type="Texture2D" uid="uid://dbek51rd0ljrv" path="res://Entities/SceneArt/tileset_more_grass.png" id="1_4f3l1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_4f3l1"]
 tile_data = PackedInt32Array(0, 786432, 0, 393216, 786432, 0, 786432, 786432, 0, 1179648, 786432, 0, 1572864, 786432, 0, 1966080, 786432, 0, 2359296, 786432, 0, 2752512, 786432, 0, 6, 393216, 0, 393222, 393216, 0, 786438, 393216, 0, 1179654, 393216, 0, 1572870, 393216, 0, 1966086, 393216, 0, 2359302, 393216, 0, 2752518, 393216, 0, 12, 393216, 0, 393228, 393216, 0, 786444, 393216, 0, 1179660, 393216, 0, 1572876, 393216, 0, 1966092, 393216, 0, 2359308, 393216, 0, 2752524, 393216, 0, 18, 1179648, 0, 393234, 1179648, 0, 786450, 1179648, 0, 1179666, 1179648, 0, 1572882, 1179648, 0, 1966098, 1179648, 0, 2359314, 1179648, 0, 2752530, 1179648, 0)

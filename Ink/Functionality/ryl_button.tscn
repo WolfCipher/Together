@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cbyt22vcw0t7m" path="res://Ink/Functionality/ryl_icon.png" id="3_mfbwi"]
 [ext_resource type="Script" uid="uid://d4m6r6e2srug5" path="res://Ink/Functionality/dialog_button.gd" id="5_dyq3x"]
 [ext_resource type="AudioStream" uid="uid://blt3bwumy1v1k" path="res://Sound/SFX/UI_Sounds/Button_Select/UI_Click_1.wav" id="5_kwukr"]
-[ext_resource type="AudioStream" uid="uid://dog8bfi5c63tl" path="res://Sound/SFX/UI_Sounds/Button_Switch/UI_Switch_1.wav" id="6_dyq3x"]
+[ext_resource type="AudioStream" uid="uid://b6kirrllvh3uy" path="res://Sound/SFX/UI_Sounds/Button_Hover/UI_Hover_1.wav" id="7_dyq3x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68vu5"]
 bg_color = Color(0.1478307, 0.1797997, 0.4194534, 1)
@@ -59,5 +59,5 @@ stream = ExtResource("5_kwukr")
 bus = &"SFX"
 
 [node name="BtnHover" type="AudioStreamPlayer" parent="." unique_id=39087875]
-stream = ExtResource("6_dyq3x")
+stream = ExtResource("7_dyq3x")
 bus = &"SFX"

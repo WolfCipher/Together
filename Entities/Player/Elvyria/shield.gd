@@ -10,7 +10,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if direction != Vector2.ZERO:
+		global_position += direction
 
 func play() -> void:
 	sprite.play()

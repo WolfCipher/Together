@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://g00v1rvbsf6p"
+path="res://.godot/imported/azalea.json-9b18049692b9db011033cc3555a0273b.res"
+
+[deps]
+
+source_file="res://Ink/Dialogue Scripts/azalea.json"
+dest_files=["res://.godot/imported/azalea.json-9b18049692b9db011033cc3555a0273b.res"]
+
+[params]
+
+compress=true

@@ -15,9 +15,11 @@ func _ready() -> void:
 	if fade_in:
 		time = 0.4
 	var tween = create_tween()
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(color_rect, "modulate", Color(0,0,0,0), time)
 
 func on_scene_change(next_scene):
+	get_tree().paused = false
 	
 	if (next_scene.contains("level")):
 		SceneCache.curr_level = next_scene

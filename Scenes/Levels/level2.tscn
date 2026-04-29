@@ -1,13 +1,15 @@
 [gd_scene format=4 uid="uid://up7vel5gftcu"]
 
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_hpjhc"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="1_nhqo7"]
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_56d2c"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="3_jywle"]
-[ext_resource type="AudioStream" uid="uid://q4b4iire0ewv" path="res://Sound/SFX/Music/Demo1_Core_Loop.wav" id="4_l1hk4"]
 [ext_resource type="PackedScene" uid="uid://d4ckemip8a1r5" path="res://Scenes/Functionality/elvyria_health_hearts.tscn" id="10_jydn8"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_keokt"]
 [ext_resource type="PackedScene" uid="uid://hnaaqwso7imp" path="res://Scenes/Functionality/ryl_health_hearts.tscn" id="11_pwvbg"]
+[ext_resource type="PackedScene" uid="uid://c4c6dpgcx2qss" path="res://HUD Assets/elvyria_shield_ui.tscn" id="12_nhqo7"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="13_0lkii"]
+[ext_resource type="PackedScene" uid="uid://b7lkdosi3k5u8" path="res://HUD Assets/ryl_dash_ui.tscn" id="13_3epes"]
 [ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_56d2c"]
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="15_i6j4t"]
 [ext_resource type="PackedScene" uid="uid://b3p0be0qdmx5n" path="res://Scenes/World Building/world_open.tscn" id="17_hpjhc"]
@@ -33,9 +35,11 @@
 [ext_resource type="PackedScene" uid="uid://me7lsqk7ov3d" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman1.tscn" id="38_5iiej"]
 [ext_resource type="PackedScene" uid="uid://dpop6337ct1f8" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman2.tscn" id="39_oay1j"]
 
-[node name="Main" type="Node2D" unique_id=837400696]
+[node name="Main2" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
 metadata/_edit_horizontal_guides_ = [-1552.0]
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("1_nhqo7")]
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_hpjhc")]
 position = Vector2(516, 505)
@@ -44,13 +48,6 @@ xp = 2
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_jywle")]
 position = Vector2(574, 505)
 xp = 2
-
-[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
-process_mode = 3
-stream = ExtResource("4_l1hk4")
-volume_db = -5.0
-autoplay = true
-bus = &"Music"
 
 [node name="Camera_Centered" parent="." unique_id=1069394162 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("10_keokt")]
 position = Vector2(574, 505)
@@ -89,6 +86,22 @@ offset_top = -475.0
 offset_right = -862.0
 offset_bottom = -475.0
 pivot_offset_ratio = Vector2(1, 0)
+character = NodePath("../../Ryl")
+
+[node name="ElvyriaShieldUI" parent="Camera_Centered" unique_id=1160471316 node_paths=PackedStringArray("character") instance=ExtResource("12_nhqo7")]
+z_index = 100
+offset_left = -800.0
+offset_top = 352.0
+offset_right = -700.0
+offset_bottom = 471.99963
+character = NodePath("../../Elvyria")
+
+[node name="RylDashUI" parent="Camera_Centered" unique_id=501054402 node_paths=PackedStringArray("character") instance=ExtResource("13_3epes")]
+z_index = 100
+offset_left = 650.0
+offset_top = 350.0
+offset_right = 786.0
+offset_bottom = 478.0
 character = NodePath("../../Ryl")
 
 [node name="WorldObjects" type="Node2D" parent="." unique_id=981191973]
@@ -289,20 +302,16 @@ position = Vector2(9746, 767)
 [node name="Dialog" type="Node2D" parent="." unique_id=1078182772]
 y_sort_enabled = true
 
-[node name="EmitDialogInRange1" parent="Dialog" unique_id=869890286 instance=ExtResource("21_b2fon")]
-position = Vector2(565, 482)
-dialog_list = [["ryl", 0, "C'mon. Let's follow the path.", 2]]
-
 [node name="EmitDialogInRange2" parent="Dialog" unique_id=443726311 instance=ExtResource("21_b2fon")]
-position = Vector2(1528, -340)
-dialog_list = [["elvyria", 0, "Wow, so this is the Dullworld. The flora here is so different!", 5], ["ryl", 0, "Dull... world...", 3], ["elvyria", 0, "We call it that back home.", 1]]
+position = Vector2(565, 482)
+dialog_list = [["ryl", 0, "Wow. You look much better after eating those berries. C'mon. Let's follow the path.", 9], ["elvyria", 0, "Wow, so this is the Dullworld. The flora here is so different!", 7], ["ryl", 0, "Dull... world...", 5], ["elvyria", 0, "We call it that back home.", 3]]
 
 [node name="AzureBerries" parent="Dialog" unique_id=1988277302 instance=ExtResource("23_pwvbg")]
 position = Vector2(4093, -348)
 
 [node name="EmitDialogInRange3" parent="Dialog/AzureBerries" unique_id=189208871 instance=ExtResource("21_b2fon")]
 position = Vector2(0, 45)
-dialog_list = [["elvyria", 0, "That's so pretty!", 10], ["ryl", 0, "It's azureberries!", 8], ["ryl", 0, "Tamewood's fairytales reference them a lot!", 6], ["ryl", 0, "They're said to have healing powers!", 4], ["ryl", 0, "...I use them for dye, though.", 2]]
+dialog_list = [["elvyria", 0, "The berries here are pretty and tasty!", 10], ["ryl", 0, "They're azureberries!", 8], ["ryl", 0, "Tamewood's fairytales reference them a lot!", 6], ["ryl", 0, "Before today, I never believed they had healing powers!", 4], ["ryl", 0, "...I actually used them for dye.", 2]]
 
 [node name="Butterfly" parent="Dialog" unique_id=1961194005 instance=ExtResource("25_t6y87")]
 z_index = 10
@@ -332,9 +341,11 @@ send_to_scene_after_completion = true
 next_scene = "res://Ink/Scenes/vyerity_dialog.tscn"
 
 [node name="NPCs" type="Node2D" parent="." unique_id=108861848]
+y_sort_enabled = true
 position = Vector2(7864, 3)
 
 [node name="Boys" type="Node2D" parent="NPCs" unique_id=1126109411]
+y_sort_enabled = true
 position = Vector2(-187, 0)
 
 [node name="NPC3" parent="NPCs/Boys" unique_id=1621133178 instance=ExtResource("25_cvw5d")]
@@ -344,6 +355,7 @@ position = Vector2(-323, 1843)
 position = Vector2(561, 101)
 
 [node name="Girls" type="Node2D" parent="NPCs" unique_id=1997053315]
+y_sort_enabled = true
 position = Vector2(243, 0)
 
 [node name="NPC" parent="NPCs/Girls" unique_id=458646505 instance=ExtResource("28_3u6tp")]
@@ -356,6 +368,7 @@ position = Vector2(110, 305)
 position = Vector2(-888, 1797)
 
 [node name="Men" type="Node2D" parent="NPCs" unique_id=1427164965]
+y_sort_enabled = true
 position = Vector2(0, -151)
 
 [node name="NPC2" parent="NPCs/Men" unique_id=524982944 instance=ExtResource("34_n7xd7")]
@@ -368,6 +381,7 @@ position = Vector2(861, -372)
 position = Vector2(190, 1713)
 
 [node name="Women" type="Node2D" parent="NPCs" unique_id=1646070499]
+y_sort_enabled = true
 position = Vector2(0, 135)
 
 [node name="NPC" parent="NPCs/Women" unique_id=2044081949 instance=ExtResource("38_5iiej")]
