@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://de62n6bhl1cbp" path="res://Logos/TogetherTitle.png" id="2_tfe55"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_tfe55"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="6_hlaro"]
+[ext_resource type="AudioStream" uid="uid://cc8wod5acq08b" path="res://Sound/Music/Main Menu Loop v2.wav" id="7_55trc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -160,3 +161,7 @@ next_scene = "res://Scenes/UI Scenes/InstructionsScene.tscn"
 return_to_last_level = true
 
 [node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("6_hlaro")]
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=340199688]
+stream = ExtResource("7_55trc")
+autoplay = true
