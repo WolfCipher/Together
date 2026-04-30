@@ -55,10 +55,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if (passive_sfx && !passive_sfx.playing && !is_in_group("MeleeEnemy")):
-		passive_sfx.volume_linear = .001
-		passive_sfx.pitch_scale = (randf() * .1) + 1
-		passive_sfx.play()
+	#if (passive_sfx && !passive_sfx.playing && !is_in_group("MeleeEnemy")):
+		#passive_sfx.volume_linear = .001
+		#passive_sfx.pitch_scale = (randf() * .1) + 1
+		#passive_sfx.play()
 		
 	# enemy can only do something if it's not dead
 	if health > 0:

@@ -15,38 +15,37 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	curr_track = battle_music
+	curr_track_def_vol = .8
+		
 	print(SceneCache.curr_level)
 	if SceneCache.curr_level.contains("res://Scenes/Levels/"):
 		curr_track = battle_music
 		curr_track_def_vol = .8
 	
 	# Gets music for dialogue scenes
-	elif get_node_or_null("../../Ink Manager"):
+	if get_node_or_null("../../Ink Manager"):
 		curr_track = village_music
 		curr_track_def_vol = curr_track.volume_linear
 		
-	elif get_node_or_null("../../Level2"):
+	if get_node_or_null("../../Level2"):
 		curr_track = village_music
 		curr_track_def_vol = curr_track.volume_linear
 		
 	# Gets music for end screen
-	elif get_node_or_null("../../Victory"):
+	if get_node_or_null("../../Victory"):
 		curr_track = victory_music
 		curr_track_def_vol = curr_track.volume_linear
 	
 	# Gets music for DeathScene
-	elif get_node_or_null("../../DeathScene"):
+	if get_node_or_null("../../DeathScene"):
 		curr_track = death_music
 		curr_track_def_vol = curr_track.volume_linear
 		
 	#Gets music for main menu
-	elif get_node_or_null("../../MenuScene"):
+	if get_node_or_null("../../MenuScene"):
 		curr_track = menu_music
 		curr_track_def_vol = curr_track.volume_linear
-	
-	else:
-		curr_track = battle_music
-		curr_track_def_vol = .8
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

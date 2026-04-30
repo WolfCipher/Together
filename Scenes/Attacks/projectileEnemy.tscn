@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bqwskbrgf3v37" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack3.png" id="5_f57rd"]
 [ext_resource type="Texture2D" uid="uid://c0bmgyc1l4x0s" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack4.png" id="6_xgsg6"]
 [ext_resource type="Texture2D" uid="uid://vsxyppk7xmpp" path="res://Entities/Enemy/Projectile Enemy/Projectile_Enemy_Attack/Projectile_Enemy_Attack5.png" id="7_qbekw"]
-[ext_resource type="AudioStream" uid="uid://qhkl6l826ntb" path="res://Sound/SFX/Enemy_Sounds/Spirit/Spirit_AOE_Projectile.wav" id="8_sfbm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
 size = Vector2(44, 69)
@@ -51,6 +50,7 @@ scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_e1077")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1544011552]
-stream = ExtResource("8_sfbm7")
+volume_db = -4.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
