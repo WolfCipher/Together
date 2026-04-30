@@ -39,10 +39,6 @@ func _process(_delta: float) -> void:
 	center() # stay between the players
 	
 	if (frame == last_frame):
-		recharge_played = false
-		if recharge_played:
-			team_recharge_sfx.play()
-			recharge_played = true
 		pause()
 	
 	# TODO make c'mon! sounds when only one player presses SHIFT
@@ -75,11 +71,18 @@ func _process(_delta: float) -> void:
 			shoot_projectile(Vector2(-1,-1).normalized(), projectile2)
 			
 		play()
+		recharge_played = false
+		
+	# Sounds
 	if in_sync && !nearby && frame >= 10 && !team_too_far_sfx.playing:
 		team_too_far_sfx.play()
 	
 	if in_sync && frame < 10 && !team_not_ready.playing:
 			team_not_ready.play()
+			
+	if frame >= 10 && !recharge_played:
+		team_recharge_sfx.play()
+		recharge_played = true
 
 # Spawn projectiles
 func shoot_projectile(dir, projectile_scene) -> void:
