@@ -39,8 +39,8 @@ func on_scene_change(next_scene):
 	
 func fade_in_music() -> void:
 	var fade = create_tween()
-	fade.tween_method(func(vol): AudioServer.set_bus_volume_linear(music_index, vol), music_volume, volume_change, 1.0)
+	fade.tween_method(func(vol): AudioServer.set_bus_volume_linear(music_index, vol), 1.0, volume_change, 1.0)
 	
 func fade_out_music() -> void:
 	var fade = create_tween()
-	fade.tween_method(func(vol): AudioServer.set_bus_volume_linear(music_index, vol), volume_change, music_volume, 1.0)
+	fade.tween_method(func(vol): AudioServer.set_bus_volume_linear(music_index, vol), volume_change, 1.0, 1.0)

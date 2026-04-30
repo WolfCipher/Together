@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://i2hh47upe0cf" path="res://Entities/SceneArt/menuScreen.png" id="1_2cejg"]
 [ext_resource type="Script" uid="uid://bir16hfrrr82o" path="res://Scenes/UI Scenes/menu_scene.gd" id="1_gbywc"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="2_55trc"]
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="2_me15f"]
 [ext_resource type="Texture2D" uid="uid://de62n6bhl1cbp" path="res://Logos/TogetherTitle.png" id="2_tfe55"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_tfe55"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="6_hlaro"]
-[ext_resource type="AudioStream" uid="uid://cc8wod5acq08b" path="res://Sound/Music/Main Menu Loop v2.wav" id="7_55trc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -70,6 +70,8 @@ corner_radius_bottom_left = 10
 
 [node name="MenuScene" type="Node2D" unique_id=1385909618]
 script = ExtResource("1_gbywc")
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("2_55trc")]
 
 [node name="Image" type="Sprite2D" parent="." unique_id=223955600]
 position = Vector2(960.00006, 540)
@@ -161,7 +163,3 @@ next_scene = "res://Scenes/UI Scenes/InstructionsScene.tscn"
 return_to_last_level = true
 
 [node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("6_hlaro")]
-
-[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=340199688]
-stream = ExtResource("7_55trc")
-autoplay = true
