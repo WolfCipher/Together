@@ -4,8 +4,6 @@ extends Node2D
 @onready var start_btn = $Start
 @onready var inst_btn = $Instructions
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_btn.grab_focus()

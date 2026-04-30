@@ -31,7 +31,6 @@ func _process(_delta: float) -> void:
 		cooldown = character.dash_cooldown
 	if character.is_in_group("Elvyria"):
 		cooldown = character.shield_cooldown
-	print(cooldown)
 	if cooldown > 0 and !on_cooldown:
 		start_cooldown(recharge)
 	

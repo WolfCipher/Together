@@ -74,7 +74,6 @@ offset_bottom = -516.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Fog" parent="Camera_Centered" unique_id=1801486910 instance=ExtResource("18_ftjqm")]
-visible = false
 position = Vector2(-967, -528)
 
 [node name="ElvyriaHearts" parent="Camera_Centered" unique_id=1781464873 node_paths=PackedStringArray("character") instance=ExtResource("11_xuud8")]
