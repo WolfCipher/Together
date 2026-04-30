@@ -27,8 +27,8 @@ var health := max_health
 @export var shoot_recharge := 0.5
 @export var melee_recharge := 0.5
 @export var sync_recharge := 10.0
-@export var dash_recharge := 2
-@export var shield_recharge := 10
+@export var dash_recharge := 2.5
+@export var shield_recharge := 5
 
 var shoot_cooldown := 0.0
 var melee_cooldown := 0.0
