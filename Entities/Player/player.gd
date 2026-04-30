@@ -13,7 +13,7 @@ extends Area2D
 @onready var walk_sfx: AudioStreamPlayer = $WalkSFX
 @onready var ability_sfx: AudioStreamPlayer = $AbilitySFX
 @onready var damage_sfx: AudioStreamPlayer = $DamageSFX
-
+@onready var not_ready_sfx: AudioStreamPlayer = $NotReadySFX
 
 
 @export var speed = 400
@@ -200,6 +200,10 @@ func dash() -> void:
 		await get_tree().create_timer(0.25).timeout
 		speed = 400
 		
+	if Input.is_action_just_pressed("r_dash") and is_in_group('Ryl') and dash_cooldown > 0:
+			if !not_ready_sfx.playing:
+				not_ready_sfx.play()
+		
 #handles spawning and creation of dash particles
 func spawn_dash_particles():
 	# Load the image resource
@@ -231,6 +235,10 @@ func shield() -> void:
 			e_shield.visible = false
 		e_shield.rotation = get_facing_vector().angle() + PI/2
 		e_shield.global_position = global_position + get_facing_vector() * 50
+		
+		if Input.is_action_just_pressed("e_shield") and is_in_group('Elvyria') and shield_cooldown > 0:
+			if !not_ready_sfx.playing:
+				not_ready_sfx.play()
 
 
 
