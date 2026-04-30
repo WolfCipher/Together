@@ -401,7 +401,7 @@ shape = SubResource("RectangleShape2D_1f0kj")
 
 [node name="AttackSFX" type="AudioStreamPlayer" parent="." unique_id=2130836787]
 stream = ExtResource("51_d4kp3")
-volume_db = -5.0
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="DamageSFX" type="AudioStreamPlayer" parent="." unique_id=669773651]

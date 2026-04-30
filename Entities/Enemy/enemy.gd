@@ -180,7 +180,6 @@ func attack(target_dist):
 	
 	
 	if (attack_sfx):
-		attack_sfx.volume_linear = 1
 		attack_sfx.pitch_scale = (randf() * .5) + 1
 		attack_sfx.play()
 	
