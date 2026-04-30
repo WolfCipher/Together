@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://db2153hteewdt"]
 
-[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_xtrgi"]
+[ext_resource type="Script" uid="uid://bmkvin4bffm18" path="res://Entities/NPCs/Other NPCs/NPC Scenes/npc.gd" id="1_a3u2p"]
 [ext_resource type="Texture2D" uid="uid://cm4101l3wdahk" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianMan4_Front_Idle/DullianMan4_Front_Idle0.png" id="2_eyck5"]
 [ext_resource type="Texture2D" uid="uid://dw7qf55ugpcdb" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianMan4_Front_Idle/DullianMan4_Front_Idle1.png" id="3_y5t43"]
 [ext_resource type="Texture2D" uid="uid://ddbu47qpcrhq2" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianMan4_Front_Idle/DullianMan4_Front_Idle2.png" id="4_o6u4c"]
 [ext_resource type="Texture2D" uid="uid://bhuxbwog8ic3q" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianMan4_Front_Idle/DullianMan4_Front_Idle3.png" id="5_jq5jq"]
 [ext_resource type="Texture2D" uid="uid://dlop2q5u3lvrr" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianMan4_Front_Idle/DullianMan4_Front_Idle4.png" id="6_xtrgi"]
+[ext_resource type="PackedScene" uid="uid://ce2egmgbow11h" path="res://Entities/NPCs/Other NPCs/NPC Scenes/NPCDialogTrigger.tscn" id="7_tm7ie"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqgx2"]
 animations = [{
@@ -31,7 +32,9 @@ animations = [{
 }]
 
 [node name="NPC" type="Node2D" unique_id=306726203]
-script = ExtResource("1_xtrgi")
+script = ExtResource("1_a3u2p")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1424730897]
 sprite_frames = SubResource("SpriteFrames_iqgx2")
+
+[node name="Trigger" parent="." unique_id=1155089127 instance=ExtResource("7_tm7ie")]
