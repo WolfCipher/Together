@@ -8,6 +8,8 @@ extends TextureProgressBar
 @onready var visual_max: float
 @onready var on_cooldown = false
 
+# Audio
+@onready var recharge_sfx: AudioStreamPlayer = $RechargeSFX
 
 func _ready() -> void:
 	if character.is_in_group("Ryl"):
@@ -31,7 +33,6 @@ func _process(_delta: float) -> void:
 		cooldown = character.dash_cooldown
 	if character.is_in_group("Elvyria"):
 		cooldown = character.shield_cooldown
-	print(cooldown)
 	if cooldown > 0 and !on_cooldown:
 		start_cooldown(recharge)
 	
@@ -43,4 +44,5 @@ func start_cooldown(duration: float):
 	# Tween only across the visible range
 	tween.tween_property(self, "value", visual_max, duration)
 	await get_tree().create_timer(duration).timeout
+	recharge_sfx.play()
 	on_cooldown = false

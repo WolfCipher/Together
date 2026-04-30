@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c4c6dpgcx2qss" path="res://HUD Assets/elvyria_shield_ui.tscn" id="19_ay16s"]
 [ext_resource type="PackedScene" uid="uid://c8tlq472q0mq7" path="res://Scenes/World Building/azure-berries.tscn" id="20_u45xj"]
 
-[node name="Main" type="Node2D" unique_id=837400696]
+[node name="Level1" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
 
 [node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("1_5y6uu")]

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2cj8ddmmmfcd" path="res://HUD Assets/Dash_Cooldown/Dash_Cooldown1.png" id="2_cl6c4"]
 [ext_resource type="Texture2D" uid="uid://bcptdl1s8bhor" path="res://HUD Assets/Dash_Cooldown/Dash_Cooldown3.png" id="3_cl6c4"]
 [ext_resource type="Script" uid="uid://bjdh2pq18ynjf" path="res://Scenes/Functionality/ability_cooldown.gd" id="4_cjrcw"]
+[ext_resource type="AudioStream" uid="uid://318t3j3nvy50" path="res://Sound/SFX/UI_Sounds/Ability/Ryl Recharge.wav" id="5_lx8k4"]
 
 [node name="RylDashUI" type="TextureProgressBar" unique_id=1160471316]
 offset_right = 136.0
@@ -16,3 +17,7 @@ texture_under = ExtResource("1_4ldjv")
 texture_over = ExtResource("2_cl6c4")
 texture_progress = ExtResource("3_cl6c4")
 script = ExtResource("4_cjrcw")
+
+[node name="RechargeSFX" type="AudioStreamPlayer" parent="." unique_id=435365807]
+stream = ExtResource("5_lx8k4")
+bus = &"SFX"

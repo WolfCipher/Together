@@ -79,6 +79,7 @@
 [ext_resource type="AudioStream" uid="uid://chv7hqprbb7n8" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Walk/Elvyria_Walk_1.wav" id="76_vedr3"]
 [ext_resource type="AudioStream" uid="uid://rhjienmkwjqm" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Dodge/Elvyria_Dodge_1.wav" id="78_h7eq8"]
 [ext_resource type="AudioStream" uid="uid://dywgytlstpim0" path="res://Sound/SFX/Player_Sounds/Elvyria/Elvyria_Damage/Elvyria_Talk_Damage_1.wav" id="80_imju4"]
+[ext_resource type="AudioStream" uid="uid://nfm4jf7gb56f" path="res://Sound/SFX/UI_Sounds/Ability/Ability_Not_Ready.wav" id="80_rbrw2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cp7f4"]
 animations = [{
@@ -364,10 +365,15 @@ bus = &"SFX"
 
 [node name="AbilitySFX" type="AudioStreamPlayer" parent="." unique_id=162858176]
 stream = ExtResource("78_h7eq8")
+volume_db = 10.0
 bus = &"SFX"
 
 [node name="DamageSFX" type="AudioStreamPlayer" parent="." unique_id=1671798079]
 stream = ExtResource("80_imju4")
+bus = &"SFX"
+
+[node name="NotReadySFX" type="AudioStreamPlayer" parent="." unique_id=541380810]
+stream = ExtResource("80_rbrw2")
 bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

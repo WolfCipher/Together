@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cxvibrrj1u355" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown09.png" id="10_7mhcv"]
 [ext_resource type="Texture2D" uid="uid://lbfut3jmf18k" path="res://HUD Assets/Shift_Cooldown/Shift_Cooldown10.png" id="11_bomfn"]
 [ext_resource type="Script" uid="uid://dt80ui47wepai" path="res://Scenes/Functionality/sync.gd" id="12_btfw6"]
+[ext_resource type="AudioStream" uid="uid://dpg72jl42arls" path="res://Sound/SFX/UI_Sounds/Ability/Team_Recharge.wav" id="13_crxrk"]
+[ext_resource type="AudioStream" uid="uid://cr624xd6364ka" path="res://Sound/SFX/UI_Sounds/Ability/Group_Too_Far.wav" id="14_jksuf"]
+[ext_resource type="AudioStream" uid="uid://nfm4jf7gb56f" path="res://Sound/SFX/UI_Sounds/Ability/Ability_Not_Ready.wav" id="15_xufuh"]
+[ext_resource type="AudioStream" uid="uid://iu5bi15t02rq" path="res://Sound/SFX/UI_Sounds/Ability/Group_Attack.wav" id="16_xufuh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dwprt"]
 animations = [{
@@ -60,3 +64,19 @@ scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_dwprt")
 offset = Vector2(0, 4000)
 script = ExtResource("12_btfw6")
+
+[node name="TeamRechargeSFX" type="AudioStreamPlayer" parent="." unique_id=1791536957]
+stream = ExtResource("13_crxrk")
+bus = &"SFX"
+
+[node name="TeamTooFarSFX" type="AudioStreamPlayer" parent="." unique_id=1953399970]
+stream = ExtResource("14_jksuf")
+bus = &"SFX"
+
+[node name="TeamNotReady" type="AudioStreamPlayer" parent="." unique_id=681501375]
+stream = ExtResource("15_xufuh")
+bus = &"SFX"
+
+[node name="TeamAttackYell" type="AudioStreamPlayer" parent="." unique_id=1740115738]
+stream = ExtResource("16_xufuh")
+bus = &"SFX"

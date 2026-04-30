@@ -42,7 +42,6 @@ func _process(delta: float) -> void:
 		var height = sin(time*4 + PI/4) * 1000 + target.global_position.y
 		# butterfly rests upon finding target
 		var dist = abs(global_position.x - target.global_position.x)
-		print(dist)
 		if dist <= 50:
 			if sprite.animation == "flying":
 				sprite.animation = "default"

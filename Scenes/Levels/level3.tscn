@@ -333,13 +333,16 @@ y_sort_enabled = true
 position = Vector2(-187, 0)
 
 [node name="NPC" parent="NPCs/Boys" unique_id=643464089 instance=ExtResource("27_fl5ni")]
-position = Vector2(880, 140)
+position = Vector2(794, 27)
+line = "The last one to the crossroads is a broken arrow!"
 
 [node name="NPC2" parent="NPCs/Boys" unique_id=485082861 instance=ExtResource("28_bw4uf")]
-position = Vector2(938, 222)
+position = Vector2(793, 222)
+line = "I'm counting us off this time."
 
 [node name="NPC5" parent="NPCs/Boys" unique_id=2049269520 instance=ExtResource("31_js7s8")]
-position = Vector2(-1132, -261)
+position = Vector2(-1017, -221)
+line = "Hey, look! Strangers!"
 
 [node name="Girls" type="Node2D" parent="NPCs" unique_id=629884928]
 y_sort_enabled = true
@@ -347,9 +350,11 @@ position = Vector2(243, 0)
 
 [node name="NPC2" parent="NPCs/Girls" unique_id=1237295933 instance=ExtResource("33_dekm2")]
 position = Vector2(-1651, -305)
+line = "Yikes. They look like they were pulled through brambles. Backwards."
 
 [node name="NPC5" parent="NPCs/Girls" unique_id=1410030351 instance=ExtResource("36_1n4q2")]
-position = Vector2(574, 156)
+position = Vector2(580, 133)
+line = "I'd never be the broken arrow!"
 
 [node name="Men" type="Node2D" parent="NPCs" unique_id=1146348464]
 y_sort_enabled = true
@@ -357,9 +362,11 @@ position = Vector2(0, -151)
 
 [node name="NPC" parent="NPCs/Men" unique_id=39634413 instance=ExtResource("37_bptt3")]
 position = Vector2(-349, 700)
+line = "Are these kids lost? Hopefully, they ask Silas for help, not me."
 
 [node name="NPC4" parent="NPCs/Men" unique_id=172807045 instance=ExtResource("40_g0r1h")]
 position = Vector2(-424, -312)
+line = "What is Silas doing now?"
 
 [node name="Women" type="Node2D" parent="NPCs" unique_id=2053068537]
 y_sort_enabled = true
@@ -367,9 +374,12 @@ position = Vector2(0, 135)
 
 [node name="NPC3" parent="NPCs/Women" unique_id=476487886 instance=ExtResource("44_tbfnm")]
 position = Vector2(-2857, -339)
+line = "Just a little bit of water... I wish my grandmother could see her garden now."
 
 [node name="NPC4" parent="NPCs/Women" unique_id=1736532566 instance=ExtResource("45_346e7")]
 position = Vector2(-1510, 177)
+line = "Who let these children wander alone?"
 
 [node name="NPC5" parent="NPCs/Women" unique_id=892733504 instance=ExtResource("46_1m5nm")]
 position = Vector2(-2141, -286)
+line = "Silas is standing in the center of town again..."

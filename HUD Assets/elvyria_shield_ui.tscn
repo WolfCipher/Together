@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b5hr78ft6lf0" path="res://HUD Assets/Shield_Cooldown/Shield_Cooldown1.png" id="2_nyt2g"]
 [ext_resource type="Texture2D" uid="uid://dqin8l7v4225d" path="res://HUD Assets/Shield_Cooldown/Shield_Cooldown3.png" id="3_x58n1"]
 [ext_resource type="Script" uid="uid://bjdh2pq18ynjf" path="res://Scenes/Functionality/ability_cooldown.gd" id="4_bemb6"]
+[ext_resource type="AudioStream" uid="uid://skudnemda61d" path="res://Sound/SFX/UI_Sounds/Ability/Elvyria_Recharge.wav" id="5_x58n1"]
 
 [node name="ElvyriaShieldUI" type="TextureProgressBar" unique_id=1160471316]
 offset_right = 100.0
@@ -14,3 +15,7 @@ texture_under = ExtResource("1_7xj5b")
 texture_over = ExtResource("2_nyt2g")
 texture_progress = ExtResource("3_x58n1")
 script = ExtResource("4_bemb6")
+
+[node name="RechargeSFX" type="AudioStreamPlayer" parent="." unique_id=815990223]
+stream = ExtResource("5_x58n1")
+bus = &"SFX"

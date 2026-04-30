@@ -50,5 +50,7 @@ scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_e1077")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1544011552]
+volume_db = -4.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

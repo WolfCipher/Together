@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="1_617t6"]
 [ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_i4gl2"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="2_068ap"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="2_llxt3"]
 [ext_resource type="Texture2D" uid="uid://cnfvbwecbwlfk" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen00.png" id="4_i4gl2"]
 [ext_resource type="Texture2D" uid="uid://ce8du67w6l6t2" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen01.png" id="5_llxt3"]
 [ext_resource type="Texture2D" uid="uid://dsrist8ad2mob" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen02.png" id="6_wnyl3"]
@@ -166,6 +167,8 @@ animations = [{
 
 [node name="Victory" type="Node2D" unique_id=1205401987]
 script = ExtResource("1_i4gl2")
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("2_llxt3")]
 
 [node name="VictoryText" type="Label" parent="." unique_id=1906724505]
 z_index = 100

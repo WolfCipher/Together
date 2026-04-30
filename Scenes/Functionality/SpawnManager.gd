@@ -39,7 +39,16 @@ var pos_index = 0
 
 var waveNum = 0
 
+var audio_player: AudioStreamPlayer
+
 func _ready():
+	# create audio node
+	audio_player = AudioStreamPlayer.new()
+	var sfx = load("res://Sound/SFX/Enemy_Sounds/Spirit/Sprit_Spawn.wav")
+	if sfx:
+		audio_player.stream = sfx
+		add_child(audio_player)
+	
 	# instantiate first wave
 	if can_start:
 		spawn()
@@ -47,7 +56,7 @@ func _ready():
 func _process(_delta: float) -> void:
 	if can_start:
 		# if current wave is over (all enemies are defeated, so self has no children), start new wave
-		if self.get_child_count() == 0:
+		if self.get_child_count() <= 1:
 			# TODO handle finishing level
 			if waveNum >= waves.size():
 				if goes_to_next_scene:
@@ -69,6 +78,9 @@ func _process(_delta: float) -> void:
 			can_start = true
 
 func spawn() -> void:
+	if is_instance_valid(audio_player):
+		audio_player.play()
+
 	# which spawn location to use
 	
 	var wave = waves[waveNum]

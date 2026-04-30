@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bs7j7d2aktf2u"]
 
-[ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_dio7r"]
+[ext_resource type="Script" uid="uid://bmkvin4bffm18" path="res://Entities/NPCs/Other NPCs/NPC Scenes/npc.gd" id="1_8vbu5"]
 [ext_resource type="Texture2D" uid="uid://dnoqpukhqwhrj" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianWoman4_Front_Idle/DullianWoman4_Front_Idle0.png" id="2_p40n5"]
 [ext_resource type="Texture2D" uid="uid://bsejacqsitip5" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianWoman4_Front_Idle/DullianWoman4_Front_Idle1.png" id="3_t1c80"]
 [ext_resource type="Texture2D" uid="uid://b23lokal41rnc" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianWoman4_Front_Idle/DullianWoman4_Front_Idle2.png" id="4_od3bv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d2xh2hyco55it" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianWoman4_Front_Idle/DullianWoman4_Front_Idle5.png" id="7_ffll4"]
 [ext_resource type="Texture2D" uid="uid://iqgvg51emret" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianWoman4_Front_Idle/DullianWoman4_Front_Idle6.png" id="8_q67a4"]
 [ext_resource type="Texture2D" uid="uid://b2wh5wux6xfwi" path="res://Entities/NPCs/Other NPCs/NPC Art/DullianWoman4_Front_Idle/DullianWoman4_Front_Idle7.png" id="9_jmmnk"]
+[ext_resource type="PackedScene" uid="uid://ce2egmgbow11h" path="res://Entities/NPCs/Other NPCs/NPC Scenes/NPCDialogTrigger.tscn" id="10_a4ca0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqgx2"]
 animations = [{
@@ -43,7 +44,9 @@ animations = [{
 }]
 
 [node name="NPC" type="Node2D" unique_id=306726203]
-script = ExtResource("1_dio7r")
+script = ExtResource("1_8vbu5")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1424730897]
 sprite_frames = SubResource("SpriteFrames_iqgx2")
+
+[node name="Trigger" parent="." unique_id=1155089127 instance=ExtResource("10_a4ca0")]
