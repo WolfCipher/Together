@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://up7vel5gftcu"]
 
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_hpjhc"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="1_nhqo7"]
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_56d2c"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="3_jywle"]
-[ext_resource type="AudioStream" uid="uid://q4b4iire0ewv" path="res://Sound/SFX/Music/Demo1_Core_Loop.wav" id="4_l1hk4"]
 [ext_resource type="PackedScene" uid="uid://d4ckemip8a1r5" path="res://Scenes/Functionality/elvyria_health_hearts.tscn" id="10_jydn8"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="10_keokt"]
 [ext_resource type="PackedScene" uid="uid://hnaaqwso7imp" path="res://Scenes/Functionality/ryl_health_hearts.tscn" id="11_pwvbg"]
@@ -35,9 +35,11 @@
 [ext_resource type="PackedScene" uid="uid://me7lsqk7ov3d" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman1.tscn" id="38_5iiej"]
 [ext_resource type="PackedScene" uid="uid://dpop6337ct1f8" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman2.tscn" id="39_oay1j"]
 
-[node name="Main" type="Node2D" unique_id=837400696]
+[node name="Main2" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
 metadata/_edit_horizontal_guides_ = [-1552.0]
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("1_nhqo7")]
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_hpjhc")]
 position = Vector2(516, 505)
@@ -46,13 +48,6 @@ xp = 2
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_jywle")]
 position = Vector2(574, 505)
 xp = 2
-
-[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
-process_mode = 3
-stream = ExtResource("4_l1hk4")
-volume_db = -5.0
-autoplay = true
-bus = &"Music"
 
 [node name="Camera_Centered" parent="." unique_id=1069394162 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("10_keokt")]
 position = Vector2(574, 505)

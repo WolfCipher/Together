@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://cpt1j5cetgmmr"]
 
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_v1uej"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="1_yk4w0"]
 [ext_resource type="PackedScene" uid="uid://b2k8uloh5yjet" path="res://Scenes/Attacks/projectileElvyria.tscn" id="2_f80nq"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="3_lnl7s"]
-[ext_resource type="AudioStream" uid="uid://q4b4iire0ewv" path="res://Sound/SFX/Music/Demo1_Core_Loop.wav" id="4_kbn7v"]
 [ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/Functionality/SpawnManager.gd" id="5_laeu0"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="6_bon45"]
 [ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/FireSpirit_AoE.tscn" id="7_xbb0r"]
@@ -39,9 +39,11 @@
 [ext_resource type="PackedScene" uid="uid://bs7j7d2aktf2u" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman4.tscn" id="45_346e7"]
 [ext_resource type="PackedScene" uid="uid://drhyvfayrbau1" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman5.tscn" id="46_1m5nm"]
 
-[node name="Main" type="Node2D" unique_id=837400696]
+[node name="Main2" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
 metadata/_edit_horizontal_guides_ = [-1552.0]
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("1_yk4w0")]
 
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_v1uej")]
 position = Vector2(516, 505)
@@ -50,13 +52,6 @@ xp = 3
 [node name="Ryl" parent="." unique_id=802610192 instance=ExtResource("3_lnl7s")]
 position = Vector2(574, 505)
 xp = 3
-
-[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
-process_mode = 3
-stream = ExtResource("4_kbn7v")
-volume_db = -5.0
-autoplay = true
-bus = &"Music"
 
 [node name="SpawnManager" type="Node2D" parent="." unique_id=708660748 node_paths=PackedStringArray("target1", "target2")]
 position = Vector2(4721, -2655)

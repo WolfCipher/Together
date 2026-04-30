@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://doqexuppkwryx"]
 
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="1_5cdvm"]
 [ext_resource type="PackedScene" uid="uid://bb5t0ma2u778q" path="res://Entities/Player/Elvyria.tscn" id="1_ftjqm"]
 [ext_resource type="PackedScene" uid="uid://4dgsu2ov4y1i" path="res://Entities/Player/Ryl.tscn" id="2_it513"]
-[ext_resource type="AudioStream" uid="uid://q4b4iire0ewv" path="res://Sound/SFX/Music/Demo1_Core_Loop.wav" id="3_0a0nr"]
 [ext_resource type="Script" uid="uid://dv6yu7qom86g4" path="res://Scenes/Functionality/SpawnManager.gd" id="4_xuud8"]
 [ext_resource type="PackedScene" uid="uid://dlultbfqrgh0r" path="res://Entities/Enemy/GloomSpirit_Projectile.tscn" id="5_xxul8"]
 [ext_resource type="PackedScene" uid="uid://dhfrkl3n4y3a8" path="res://Entities/Enemy/FireSpirit_AoE.tscn" id="6_14je0"]
@@ -37,6 +37,8 @@
 y_sort_enabled = true
 metadata/_edit_horizontal_guides_ = [-1552.0]
 
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("1_5cdvm")]
+
 [node name="Elvyria" parent="." unique_id=1671058189 instance=ExtResource("1_ftjqm")]
 position = Vector2(516, 505)
 xp = 4
@@ -45,19 +47,13 @@ xp = 4
 position = Vector2(574, 505)
 xp = 4
 
-[node name="CoreLoop" type="AudioStreamPlayer" parent="." unique_id=1747297022]
-process_mode = 3
-stream = ExtResource("3_0a0nr")
-volume_db = -5.0
-autoplay = true
-bus = &"Music"
-
 [node name="Camera_Centered" parent="." unique_id=1069394162 node_paths=PackedStringArray("target1", "target2") instance=ExtResource("10_upvnb")]
 position = Vector2(574, 505)
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
 
 [node name="PauseOverlay" parent="Camera_Centered" unique_id=74393980 instance=ExtResource("13_dmwli")]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -78,6 +74,7 @@ offset_bottom = -516.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Fog" parent="Camera_Centered" unique_id=1801486910 instance=ExtResource("18_ftjqm")]
+visible = false
 position = Vector2(-967, -528)
 
 [node name="ElvyriaHearts" parent="Camera_Centered" unique_id=1781464873 node_paths=PackedStringArray("character") instance=ExtResource("11_xuud8")]
