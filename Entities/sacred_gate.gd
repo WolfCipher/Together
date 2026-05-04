@@ -26,7 +26,5 @@ func change_world():
 
 func _on_area_entered(area: Area2D) -> void:
 	# activate on Mystical magic
-	print("Touchie", area)
-	
 	if area.is_in_group("ElvyriaMelee"):
 		change_world()

@@ -19,8 +19,8 @@ config/icon="uid://c0qvf0gq5idkr"
 
 [autoload]
 
-__InkRuntime="*uid://co6cdriqgy3v2"
 SceneCache="*uid://c3pujqtraagig"
+__InkRuntime="*uid://co6cdriqgy3v2"
 
 [display]
 
