@@ -13,7 +13,7 @@ var camera_y_dist = 580 # 1920/4 + 100
 @export var within_left = true
 @export var within_top = true
 @export var within_bottom = true
-@export var game_over := "res://Scenes/UI Scenes/DeathScene.tscn" # scene caused by being too far from the butterfly
+@export var game_over := "res://Scenes/UI Scenes/LostScene.tscn" # scene caused by being too far from the butterfly
 
 @onready var dialog := $EmitDialogInRange
 var dialog_seen = false

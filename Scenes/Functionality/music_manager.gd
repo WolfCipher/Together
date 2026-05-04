@@ -38,7 +38,7 @@ func _ready() -> void:
 		curr_track_def_vol = curr_track.volume_linear
 	
 	# Gets music for DeathScene
-	if get_node_or_null("../../DeathScene"):
+	if get_node_or_null("../../DeathScene") || get_node_or_null("../../LostScene"):
 		curr_track = death_music
 		curr_track_def_vol = curr_track.volume_linear
 		
