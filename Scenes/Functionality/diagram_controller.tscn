@@ -196,7 +196,7 @@ texture = ExtResource("4_to55a")
 
 [node name="start" type="Node2D" parent="." unique_id=47094570]
 position = Vector2(131, -188)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 
 [node name="R" type="Panel" parent="start" unique_id=1785430895]
 offset_top = -11.0

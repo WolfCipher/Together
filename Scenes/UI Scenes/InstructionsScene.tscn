@@ -104,6 +104,7 @@ target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
 
 [node name="PauseOverlay" parent="Camera_Centered" unique_id=624429767 instance=ExtResource("8_wbaon")]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -131,9 +132,16 @@ theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
 text = "ELVYRIA
+
+Keyboard
 Move: WASD
 Shoot: Q or C
 Melee: E or V
+
+Controller
+Move: Left Stick
+Shoot: Left Button
+Melee: Bottom Button
 "
 horizontal_alignment = 1
 
@@ -152,9 +160,16 @@ theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
 text = "RYL
+
+Keyboard
 Move: Arrow Keys
 Shoot: PgUp or ,
-Melee: PgDn or ."
+Melee: PgDn or .
+
+Controller
+Move: Left Stick
+Shoot: Left Button
+Melee: Bottom Button"
 horizontal_alignment = 1
 
 [node name="DashText" type="Label" parent="Camera_Centered" unique_id=1779698522]
@@ -171,15 +186,15 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
-text = "Dash: End or /"
+text = "Dash: End or /, Right Button"
 horizontal_alignment = 1
 
 [node name="ShiftText" type="Label" parent="Camera_Centered" unique_id=1920651720]
 z_index = 100
 offset_left = -310.0
-offset_top = 453.0
+offset_top = 442.0
 offset_right = 310.0
-offset_bottom = 576.0
+offset_bottom = 565.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
 theme_override_constants/line_spacing = 3
@@ -188,15 +203,16 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
-text = "Press SHIFT together for a powerful attack!"
+text = "Sync Shot: SHIFT, Top Button
+Press together for a powerful attack!"
 horizontal_alignment = 1
 
 [node name="PauseText" type="Label" parent="Camera_Centered" unique_id=2068421177]
 z_index = 100
-offset_left = -245.0
-offset_top = -524.0
-offset_right = 237.0
-offset_bottom = -257.0
+offset_left = -328.0
+offset_top = -526.0
+offset_right = 367.0
+offset_bottom = -259.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
 theme_override_constants/line_spacing = 3
@@ -205,7 +221,7 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
-text = "Toggle Pause Mode: Esc or Delete"
+text = "Toggle Pause Mode: Esc or Delete, START Button"
 horizontal_alignment = 1
 
 [node name="ShieldText" type="Label" parent="Camera_Centered" unique_id=35567190]
@@ -222,7 +238,7 @@ theme_override_constants/shadow_offset_y = 4
 theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
-text = "Shield: F or B
+text = "Shield: F or B, Right Button
 "
 horizontal_alignment = 1
 
