@@ -23,14 +23,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	if first_play:
+	if first_play && curr_track:
 		curr_track.volume_linear = 0
 		var fade_in = create_tween()
 		fade_in.tween_property(curr_track,"volume_linear", curr_track_def_vol, 5.0)
 		curr_track.play()
 		first_play = false
 	
-	if !curr_track.playing && !first_play:
+	if curr_track && !curr_track.playing && !first_play:
 		curr_track.play()
 		print("Now Playing: ", curr_track)
 	

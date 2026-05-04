@@ -146,7 +146,7 @@ So...
  // Elvyria
  ===Arrow===
  ~ryl = 0
- ~elvyria = 1
+ ~elvyria = 6
  ~btn1 = 1
  ~btn2 = 1
  ~btn3 = 1
@@ -158,7 +158,7 @@ So...
  // Ryl
  ===Carve===
  ~ryl = 2
- ~elvyria = 4
+ ~elvyria = 9
  ~btn1 = 0
  ~btn2 = 0
  ~btn3 = 0
@@ -169,7 +169,7 @@ So...
 // Elvyria
 ===MadeYourself===
  ~ryl = 0
- ~elvyria = 3
+ ~elvyria = 8
  ~btn1 = 1
  ~btn2 = 1
  ~btn3 = 1
@@ -180,7 +180,7 @@ So...
 // Ryl
 ===Crying===
 ~ryl = 3
- ~elvyria = 0
+ ~elvyria = 5
  ~btn1 = 0
  ~btn2 = 0
  ~btn3 = 0
@@ -191,7 +191,7 @@ So...
 // Elvyria
 ===Ha===
  ~ryl = 0
- ~elvyria = 0
+ ~elvyria = 5
  ~btn1 = 1
  ~btn2 = 1
  ~btn3 = 1
@@ -202,7 +202,7 @@ So...
  // RYL
  ===Cmon===
  ~ryl = 1
- ~elvyria = 0
+ ~elvyria = 5
  ~btn1 = 0
  ~btn2 = 0
  ~btn3 = 0
@@ -215,7 +215,7 @@ So...
 // ELVYRIA
  ===Continue===
  ~ryl = 1
- ~elvyria = 1
+ ~elvyria = 6
  ~btn1 = 1
  ~btn2 = 1
  ~btn3 = 1

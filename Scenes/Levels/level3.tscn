@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://06x581o3fgat" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianGirl2.tscn" id="33_dekm2"]
 [ext_resource type="PackedScene" uid="uid://dgef4toxbmnad" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianGirl5.tscn" id="36_1n4q2"]
 [ext_resource type="PackedScene" uid="uid://mwlh82ilk3pu" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianMan1.tscn" id="37_bptt3"]
+[ext_resource type="PackedScene" uid="uid://c8tlq472q0mq7" path="res://Scenes/World Building/azure-berries.tscn" id="39_ummpp"]
 [ext_resource type="PackedScene" uid="uid://db2153hteewdt" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianMan4.tscn" id="40_g0r1h"]
 [ext_resource type="PackedScene" uid="uid://cu0t2qwadkha4" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman3.tscn" id="44_tbfnm"]
 [ext_resource type="PackedScene" uid="uid://bs7j7d2aktf2u" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman4.tscn" id="45_346e7"]
@@ -383,3 +384,9 @@ line = "Who let these children wander alone?"
 [node name="NPC5" parent="NPCs/Women" unique_id=892733504 instance=ExtResource("46_1m5nm")]
 position = Vector2(-2141, -286)
 line = "Silas is standing in the center of town again..."
+
+[node name="AzureBerries" parent="." unique_id=1116531758 instance=ExtResource("39_ummpp")]
+position = Vector2(5229, -1796)
+
+[node name="AzureBerries2" parent="." unique_id=184695770 instance=ExtResource("39_ummpp")]
+position = Vector2(4356, -2228)

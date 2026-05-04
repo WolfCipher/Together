@@ -17,6 +17,9 @@ func _ready() -> void:
 	btn_hover.stream = hover_sfx
 	add_child(btn_click)
 	add_child(btn_hover)
+	
+	if (focus_next == NodePath(".")):
+		grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
