@@ -21,6 +21,13 @@ var min_y
 var max_y
 var my_global_position
 
+# SFX
+@onready var team_recharge_sfx: AudioStreamPlayer = $TeamRechargeSFX
+@onready var team_too_far_sfx: AudioStreamPlayer = $TeamTooFarSFX
+@onready var team_not_ready: AudioStreamPlayer = $TeamNotReady
+@onready var team_attack_yell: AudioStreamPlayer = $TeamAttackYell
+@onready var recharge_played = true
+
 
 # start between the characters
 func _ready() -> void:
@@ -41,6 +48,7 @@ func _process(_delta: float) -> void:
 	
 	if in_sync && nearby && frame >= 10: # 10th frame is full but not necessarily the final frame; don't use last_frame here
 		frame = 0
+		team_attack_yell.play()
 		for i in range(4):
 			await get_tree().create_timer(.1).timeout
 
@@ -63,6 +71,18 @@ func _process(_delta: float) -> void:
 			shoot_projectile(Vector2(-1,-1).normalized(), projectile2)
 			
 		play()
+		recharge_played = false
+		
+	# Sounds
+	if in_sync && !nearby && frame >= 10 && !team_too_far_sfx.playing:
+		team_too_far_sfx.play()
+	
+	if in_sync && frame < 10 && !team_not_ready.playing:
+			team_not_ready.play()
+			
+	if frame >= 10 && !recharge_played:
+		team_recharge_sfx.play()
+		recharge_played = true
 
 # Spawn projectiles
 func shoot_projectile(dir, projectile_scene) -> void:

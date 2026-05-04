@@ -78,6 +78,7 @@
 [ext_resource type="PackedScene" uid="uid://n54sfg6vq1e4" path="res://Entities/Player/Elvyria/Shield.tscn" id="76_cjkuv"]
 [ext_resource type="AudioStream" uid="uid://bd853mpikwjo7" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Walk/Ryl_Walk_1.wav" id="76_keouu"]
 [ext_resource type="AudioStream" uid="uid://c2nnn1lejwdjs" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Dodge/Ryl_Dodge_1.wav" id="78_bd1yr"]
+[ext_resource type="AudioStream" uid="uid://nfm4jf7gb56f" path="res://Sound/SFX/UI_Sounds/Ability/Ability_Not_Ready.wav" id="80_1bbfl"]
 [ext_resource type="AudioStream" uid="uid://bwhs6apg47ftd" path="res://Sound/SFX/Player_Sounds/Ryl/Ryl_Damage/Ryl_Talk_Damage_1.wav" id="80_cjkuv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6s84u"]
@@ -374,6 +375,10 @@ bus = &"SFX"
 
 [node name="DamageSFX" type="AudioStreamPlayer" parent="." unique_id=764617771]
 stream = ExtResource("80_cjkuv")
+bus = &"SFX"
+
+[node name="NotReadySFX" type="AudioStreamPlayer" parent="." unique_id=1377608440]
+stream = ExtResource("80_1bbfl")
 bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

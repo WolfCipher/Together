@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dwjcuxd18xlb1" path="res://Scenes/Functionality/music_manager.gd" id="1_573r2"]
 [ext_resource type="AudioStream" uid="uid://ccgctp0kumknf" path="res://Sound/Music/Main Combat Loop v2.wav" id="2_papfv"]
 [ext_resource type="AudioStream" uid="uid://dtfwr355yn2d4" path="res://Sound/Music/Village Exploration Loop v2.wav" id="3_papfv"]
+[ext_resource type="AudioStream" uid="uid://dpburqtcke0yd" path="res://Sound/SFX/Environment_Sounds/Forest_Amb_Loop_1.wav" id="4_6ruel"]
+[ext_resource type="AudioStream" uid="uid://bmeqaimnvrvae" path="res://Sound/Music/End Card.wav" id="5_7rw2w"]
 
 [node name="MusicManager" type="Node" unique_id=1356656624]
 process_mode = 3
@@ -18,4 +20,17 @@ volume_db = -12.0
 bus = &"Music"
 
 [node name="ForestAmbient" type="AudioStreamPlayer" parent="." unique_id=103689061]
+stream = ExtResource("4_6ruel")
+bus = &"Music"
+
+[node name="VictoryMusic" type="AudioStreamPlayer" parent="." unique_id=1720674085]
+stream = ExtResource("5_7rw2w")
+bus = &"Music"
+
+[node name="DeathMusic" type="AudioStreamPlayer" parent="." unique_id=670891903]
+stream = ExtResource("5_7rw2w")
+bus = &"Music"
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=1965092868]
+stream = ExtResource("5_7rw2w")
 bus = &"Music"

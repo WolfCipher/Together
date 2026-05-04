@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://me7lsqk7ov3d" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman1.tscn" id="38_5iiej"]
 [ext_resource type="PackedScene" uid="uid://dpop6337ct1f8" path="res://Entities/NPCs/Other NPCs/NPC Scenes/DullianWoman2.tscn" id="39_oay1j"]
 
-[node name="Main2" type="Node2D" unique_id=837400696]
+[node name="Level2" type="Node2D" unique_id=837400696]
 y_sort_enabled = true
 metadata/_edit_horizontal_guides_ = [-1552.0]
 

@@ -46,6 +46,7 @@ next_scene = "res://Scenes/Levels/level1.tscn"
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2090393755]
 offset_right = 1920.0
 offset_bottom = 1080.0
+volume_db = -3.0
 autoplay = true
 expand = true
 
