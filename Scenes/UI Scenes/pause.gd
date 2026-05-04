@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 			fade_out_music()
 			AudioServer.set_bus_volume_linear(sfx_index, 0)
 			await get_tree().create_timer(2.0).timeout
-		if get_tree().paused == true:
+		else:
 			visible = false
 			get_tree().paused = false
 			fade_in_music()
