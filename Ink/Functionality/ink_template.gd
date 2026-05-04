@@ -42,6 +42,12 @@ const elvyria_happy = preload("res://Ink/Character Expressions/Elvyria/Elvyria_H
 const elvyria_determined = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Determined.png")
 const elvyria_concern = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Concern.png")
 const elvyria_shocked = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Shocked.png")
+const elvyria_neutral2 = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Neutral_NoAmulet.png")
+const elvyria_happy2 = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Happy_NoAmulet.png")
+const elvyria_determined2 = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Determined_NoAmulet.png")
+const elvyria_concern2 = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Concern_NoAmulet.png")
+const elvyria_shocked2 = preload("res://Ink/Character Expressions/Elvyria/Elvyria_Shocked_NoAmulet.png")
+
 
 func _ready():
 	
@@ -181,6 +187,11 @@ func _variable_changed(variable_name, new_value):
 				2: elvyria.set_deferred("texture", elvyria_determined)
 				3: elvyria.set_deferred("texture", elvyria_concern)
 				4: elvyria.set_deferred("texture", elvyria_shocked)
+				5: elvyria.set_deferred("texture", elvyria_neutral2)
+				6: elvyria.set_deferred("texture", elvyria_happy2)
+				7: elvyria.set_deferred("texture", elvyria_determined2)
+				8: elvyria.set_deferred("texture", elvyria_concern2)
+				9: elvyria.set_deferred("texture", elvyria_shocked2)
 		"btn1":
 			btn_type[0] = new_value
 		"btn2":

@@ -9,10 +9,13 @@
 [ext_resource type="TileSet" uid="uid://bhyoc0r7hjkxm" path="res://main_tileset.tres" id="6_u84x6"]
 [ext_resource type="TileSet" uid="uid://deje0fewmew38" path="res://more_grass_tileset.tres" id="7_xweua"]
 [ext_resource type="PackedScene" uid="uid://dkhh43nss6cjv" path="res://Scenes/UI Scenes/Pause Overlay.tscn" id="8_wbaon"]
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="11_coy2f"]
 [ext_resource type="PackedScene" uid="uid://c4nwngki156nh" path="res://Scenes/Functionality/camera_centered.tscn" id="11_xweua"]
-[ext_resource type="PackedScene" uid="uid://d7ofx3c55bob" path="res://Scenes/Functionality/elvyria_health_bar.tscn" id="12_wbaon"]
-[ext_resource type="PackedScene" uid="uid://dwngu08ywk4pl" path="res://Scenes/Functionality/ryl_health_bar.tscn" id="13_coy2f"]
+[ext_resource type="PackedScene" uid="uid://d4ckemip8a1r5" path="res://Scenes/Functionality/elvyria_health_hearts.tscn" id="12_wbaon"]
+[ext_resource type="PackedScene" uid="uid://hnaaqwso7imp" path="res://Scenes/Functionality/ryl_health_hearts.tscn" id="13_coy2f"]
 [ext_resource type="PackedScene" uid="uid://rgg7otw5hjkd" path="res://HUD Assets/Shift_Cooldown/shift_cooldown.tscn" id="14_so0q4"]
+[ext_resource type="PackedScene" uid="uid://c4c6dpgcx2qss" path="res://HUD Assets/elvyria_shield_ui.tscn" id="14_ww8kb"]
+[ext_resource type="PackedScene" uid="uid://b7lkdosi3k5u8" path="res://HUD Assets/ryl_dash_ui.tscn" id="15_c3pmv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36iol"]
 bg_color = Color(0.13346192, 0, 0.7465482, 1)
@@ -100,20 +103,6 @@ position = Vector2(574, 505)
 target1 = NodePath("../Elvyria")
 target2 = NodePath("../Ryl")
 
-[node name="ElvyriaHealth" parent="Camera_Centered" unique_id=199826155 node_paths=PackedStringArray("character") instance=ExtResource("12_wbaon")]
-offset_left = -862.0
-offset_top = -475.0
-offset_right = -555.6936
-offset_bottom = -466.0
-character = NodePath("../../Elvyria")
-
-[node name="RylHealth" parent="Camera_Centered" unique_id=1797739133 node_paths=PackedStringArray("character") instance=ExtResource("13_coy2f")]
-offset_left = 552.00006
-offset_top = -475.0
-offset_right = 858.30646
-offset_bottom = -466.0
-character = NodePath("../../Ryl")
-
 [node name="PauseOverlay" parent="Camera_Centered" unique_id=624429767 instance=ExtResource("8_wbaon")]
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,12 +118,11 @@ projectile2 = ExtResource("4_6or7q")
 
 [node name="ElvyriaText" type="Label" parent="Camera_Centered" unique_id=644648842]
 z_index = 100
-offset_left = -857.0
-offset_top = -446.0
-offset_right = -529.0
-offset_bottom = -179.0
+offset_left = -925.0
+offset_top = -430.0
+offset_right = -597.0
+offset_bottom = -163.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
 theme_override_constants/line_spacing = 3
 theme_override_constants/shadow_offset_x = 0
@@ -143,21 +131,19 @@ theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
 text = "ELVYRIA
-Movement: WASD
-Shoot: C or Q
-Melee: V or E
-Shield: B or F
+Move: WASD
+Shoot: Q or C
+Melee: E or V
 "
 horizontal_alignment = 1
 
 [node name="RylText" type="Label" parent="Camera_Centered" unique_id=1295069426]
 z_index = 100
-offset_left = 490.0
-offset_top = -446.0
-offset_right = 878.0
-offset_bottom = -179.0
+offset_left = 570.0
+offset_top = -430.0
+offset_right = 958.0
+offset_bottom = -163.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
 theme_override_constants/line_spacing = 3
 theme_override_constants/shadow_offset_x = 0
@@ -166,10 +152,26 @@ theme_override_constants/outline_size = 23
 theme_override_constants/shadow_outline_size = 60
 theme_override_font_sizes/font_size = 30
 text = "RYL
-Movement: Arrow Keys
-Shoot: , (comma) or PgUp
-Melee: . (period) or PgDn
-Dash: / or End"
+Move: Arrow Keys
+Shoot: PgUp or ,
+Melee: PgDn or ."
+horizontal_alignment = 1
+
+[node name="DashText" type="Label" parent="Camera_Centered" unique_id=1779698522]
+z_index = 100
+offset_left = 518.0
+offset_top = 475.0
+offset_right = 906.0
+offset_bottom = 742.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 30
+text = "Dash: End or /"
 horizontal_alignment = 1
 
 [node name="ShiftText" type="Label" parent="Camera_Centered" unique_id=1920651720]
@@ -179,7 +181,6 @@ offset_top = 453.0
 offset_right = 310.0
 offset_bottom = 576.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
 theme_override_constants/line_spacing = 3
 theme_override_constants/shadow_offset_x = 0
@@ -192,12 +193,11 @@ horizontal_alignment = 1
 
 [node name="PauseText" type="Label" parent="Camera_Centered" unique_id=2068421177]
 z_index = 100
-offset_left = -925.0
-offset_top = 453.0
-offset_right = -443.0
-offset_bottom = 720.0
+offset_left = -245.0
+offset_top = -524.0
+offset_right = 237.0
+offset_bottom = -257.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
 theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
 theme_override_constants/line_spacing = 3
 theme_override_constants/shadow_offset_x = 0
@@ -208,12 +208,32 @@ theme_override_font_sizes/font_size = 30
 text = "Toggle Pause Mode: Esc or Delete"
 horizontal_alignment = 1
 
+[node name="ShieldText" type="Label" parent="Camera_Centered" unique_id=35567190]
+z_index = 100
+offset_left = -913.0
+offset_top = 475.0
+offset_right = -585.0
+offset_bottom = 742.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 30
+text = "Shield: F or B
+"
+horizontal_alignment = 1
+
 [node name="Button" type="Button" parent="Camera_Centered" unique_id=300260568]
 z_index = 100
-offset_left = 482.0
-offset_top = 388.0
-offset_right = 894.0
-offset_bottom = 485.0
+offset_left = -205.0
+offset_top = -472.0
+offset_right = 207.0
+offset_bottom = -375.0
+focus_next = NodePath(".")
+theme_override_fonts/font = ExtResource("11_coy2f")
 theme_override_font_sizes/font_size = 63
 theme_override_styles/normal = SubResource("StyleBoxFlat_36iol")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xx56i")
@@ -223,3 +243,34 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_u7fmy")
 text = "Main Menu"
 script = ExtResource("1_dgi2s")
 next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"
+
+[node name="ElvyriaHearts" parent="Camera_Centered" unique_id=1781464873 node_paths=PackedStringArray("character") instance=ExtResource("12_wbaon")]
+offset_left = -862.0
+offset_top = -475.0
+offset_right = -788.0
+offset_bottom = -435.0
+character = NodePath("../../Elvyria")
+
+[node name="RylHearts" parent="Camera_Centered" unique_id=266056166 node_paths=PackedStringArray("character") instance=ExtResource("13_coy2f")]
+offset_left = -862.0
+offset_top = -475.0
+offset_right = -862.0
+offset_bottom = -475.0
+pivot_offset_ratio = Vector2(1, 0)
+character = NodePath("../../Ryl")
+
+[node name="ElvyriaShieldUI" parent="Camera_Centered" unique_id=1160471316 node_paths=PackedStringArray("character") instance=ExtResource("14_ww8kb")]
+z_index = 100
+offset_left = -800.0
+offset_top = 352.0
+offset_right = -700.0
+offset_bottom = 471.99963
+character = NodePath("../../Elvyria")
+
+[node name="RylDashUI" parent="Camera_Centered" unique_id=863666128 node_paths=PackedStringArray("character") instance=ExtResource("15_c3pmv")]
+z_index = 100
+offset_left = 650.0
+offset_top = 350.0
+offset_right = 786.0
+offset_bottom = 478.0
+character = NodePath("../../Ryl")

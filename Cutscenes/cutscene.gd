@@ -11,14 +11,14 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if OS.has_feature("web"):
-		var webm = load("res://Cutscenes/FinalCutscene.ogv")
+		var webm = load("res://Cutscenes/VideoScoreSync.ogv")
 		video.stream = webm
 		# ffmpeg has no support for web right now, so skip cutscene
 		#_endCutscene()
 	else:
 		var ffmpeg = ClassDB.instantiate("FFmpegVideoStream")
 		if ffmpeg:
-			ffmpeg.file = "res://Cutscenes/FinalCutsceneH264.mp4"
+			ffmpeg.file = "res://Cutscenes/VideoScoreSync.mp4"
 			$VideoStreamPlayer.stream = ffmpeg
 	
 	skipLabel.visible = false
