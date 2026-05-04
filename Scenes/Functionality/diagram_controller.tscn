@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://dij6iy1wyur6s"]
+
+[ext_resource type="Texture2D" uid="uid://b1a6l5pjsuw63" path="res://Scenes/Functionality/controller.png" id="1_i7bur"]
+[ext_resource type="PackedScene" uid="uid://cu4bdy0pwlyoy" path="res://Scenes/Functionality/diagram_action_btn.tscn" id="2_8o7b1"]
+[ext_resource type="PackedScene" uid="uid://di3yenhfxicxd" path="res://Scenes/Functionality/diagram_move_btn.tscn" id="3_1ncl4"]
+[ext_resource type="Texture2D" uid="uid://ehx8d6voijly" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile0.png" id="4_to55a"]
+[ext_resource type="Texture2D" uid="uid://rtfk37pq3auo" path="res://Entities/Player/Elvyria/Elvyria_Projectile/Elvyria_Projectile00.png" id="5_huwo4"]
+[ext_resource type="Texture2D" uid="uid://btqgitqwwy2nc" path="res://Entities/Player/Ryl/Ryl_Melee/Ryl_Melee06.png" id="6_n6q5w"]
+[ext_resource type="Texture2D" uid="uid://dt31fa4pydshx" path="res://Entities/Player/Elvyria/Elvyria_Melee/Slash5.png" id="7_5ku6v"]
+[ext_resource type="Texture2D" uid="uid://c0kj6nfvccd0f" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield09.png" id="8_5ku6v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ncl4"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7h6k"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.050980393, 0.050980393, 0.050980393, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4saq"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8o7b1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.4, 0.8, 0.8, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ku6v"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.314, 0.635, 0.902, 1)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dybpb"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.443, 0.9, 0.498, 1)
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg5kg"]
+bg_color = Color(0.5647059, 0.15686275, 0.1764706, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="DiagramController" type="Node2D" unique_id=1030936998]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=207343610]
+visible = false
+polygon = PackedVector2Array(-76.6376, 47.071262, -70.32181, 16.01696, -59.30255, -7.023361, -41.270996, -13.0338745, 0, 0, 33.35962, -13.0338745, 51.89203, -8.525986, 70.925354, 12.510826, 84.94989, 50.577435, 75.43323, 60.59496, 56.900818, 74.11862, 33.860474, 75.62126, 19.335083, 50.577435, -17.729797, 50.577435, -24.742065, 72.616, -44.7771, 71.61424, -69.82095, 58.591457)
+uv = PackedVector2Array(1.8043823, -0.5119629, 8.315796, -31.566303, 19.335052, -54.60662, 37.366608, -60.617134, 78.93936, -48.095226, 111.99722, -60.617134, 130.52963, -56.10925, 149.56296, -35.072437, 163.5875, 2.9941711, 154.07083, 13.011696, 135.53842, 26.535362, 112.49808, 28.037994, 97.97269, 2.9941711, 60.907806, 2.9941711, 53.89554, 25.03273, 33.860504, 24.030983, 8.81665, 11.008194)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1505789928]
+texture = ExtResource("1_i7bur")
+
+[node name="Stick" type="Panel" parent="." unique_id=264920152]
+offset_left = 78.0
+offset_top = -80.0
+offset_right = 118.0
+offset_bottom = -40.0
+scale = Vector2(4, 4)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ncl4")
+
+[node name="MoveStick" parent="." unique_id=1733523456 instance=ExtResource("3_1ncl4")]
+position = Vector2(-372, -174)
+scale = Vector2(4, 4)
+
+[node name="Plus" type="Node2D" parent="." unique_id=1815095823]
+position = Vector2(-168, 0)
+
+[node name="PlusVert" type="Panel" parent="Plus" unique_id=1210513103]
+offset_left = -21.0
+offset_top = -58.0
+offset_right = -6.0
+offset_bottom = -18.0
+scale = Vector2(3, 3)
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7h6k")
+
+[node name="PlusHoriz" type="Panel" parent="Plus" unique_id=1783778982]
+offset_left = 62.0
+offset_top = -22.000002
+offset_right = 77.0
+offset_bottom = 17.999998
+rotation = 1.5707964
+scale = Vector2(3, 3)
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7h6k")
+
+[node name="Btn" type="Node2D" parent="." unique_id=1507869570]
+position = Vector2(358, -162)
+scale = Vector2(2, 2)
+
+[node name="ProjectileBtn" parent="Btn" unique_id=1454061130 instance=ExtResource("2_8o7b1")]
+position = Vector2(-40, 0)
+
+[node name="ProjectileRyl" type="Sprite2D" parent="Btn/ProjectileBtn" unique_id=85776353]
+position = Vector2(9.999996, 8.999992)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_to55a")
+
+[node name="ProjectileElvyria" type="Sprite2D" parent="Btn/ProjectileBtn" unique_id=482985946]
+position = Vector2(-20.000004, 3.9999926)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_huwo4")
+
+[node name="MeleeBtn" parent="Btn" unique_id=1430806912 instance=ExtResource("2_8o7b1")]
+position = Vector2(0, 30)
+
+[node name="MeleeRyl" type="Sprite2D" parent="Btn/MeleeBtn" unique_id=472936653]
+position = Vector2(12.499996, 8.6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_n6q5w")
+
+[node name="MeleeElvyria" type="Sprite2D" parent="Btn/MeleeBtn" unique_id=625148658]
+position = Vector2(-12.500004, 9.6)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_5ku6v")
+
+[node name="ShieldDashBtn" parent="Btn" unique_id=683782195 instance=ExtResource("2_8o7b1")]
+position = Vector2(40, 0)
+
+[node name="ShieldElvyria" type="Sprite2D" parent="Btn/ShieldDashBtn" unique_id=1983678387]
+position = Vector2(-17, 1.000001)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_5ku6v")
+
+[node name="Dash" type="Node2D" parent="Btn/ShieldDashBtn" unique_id=203759523]
+position = Vector2(4, -16)
+
+[node name="Dash" type="Panel" parent="Btn/ShieldDashBtn/Dash" unique_id=401780989]
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a4saq")
+
+[node name="Dash2" type="Panel" parent="Btn/ShieldDashBtn/Dash" unique_id=1969055785]
+offset_left = 10.0
+offset_top = 11.0
+offset_right = 20.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a4saq")
+
+[node name="Dash3" type="Panel" parent="Btn/ShieldDashBtn/Dash" unique_id=519509181]
+offset_left = 20.0
+offset_top = 22.0
+offset_right = 30.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a4saq")
+
+[node name="SyncButton" type="Panel" parent="Btn" unique_id=1076731214]
+offset_left = -20.0
+offset_top = -50.0
+offset_right = 20.0
+offset_bottom = -10.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8o7b1")
+
+[node name="ProjectileElvyria3" type="Sprite2D" parent="Btn/SyncButton" unique_id=1303166536]
+position = Vector2(20.600006, 7.600006)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("5_huwo4")
+
+[node name="ProjectileRyl3" type="Sprite2D" parent="Btn/SyncButton" unique_id=867348154]
+position = Vector2(20.600006, 19.600006)
+scale = Vector2(0.099999994, 0.099999994)
+texture = ExtResource("4_to55a")
+
+[node name="start" type="Node2D" parent="." unique_id=47094570]
+position = Vector2(131, -188)
+scale = Vector2(1.5, 1.5)
+
+[node name="R" type="Panel" parent="start" unique_id=1785430895]
+offset_top = -11.0
+offset_right = 10.0
+offset_bottom = 9.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ku6v")
+
+[node name="E" type="Panel" parent="start" unique_id=1277698968]
+offset_top = 9.0
+offset_right = 10.0
+offset_bottom = 29.0
+scale = Vector2(-1, -1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_dybpb")
+
+[node name="PauseBox" type="Panel" parent="." unique_id=334935023]
+offset_left = 111.0
+offset_top = -184.0
+offset_right = 151.0
+offset_bottom = -144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lg5kg")

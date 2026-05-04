@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ehx8d6voijly" path="res://Entities/Player/Ryl/Ryl_Projectile/Ryl_Projectile0.png" id="5_p7172"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="6_7klpb"]
 [ext_resource type="Texture2D" uid="uid://c0kj6nfvccd0f" path="res://Entities/Player/Elvyria/Elvyria_Shield/Elvyria_Shield09.png" id="7_6etyc"]
+[ext_resource type="PackedScene" uid="uid://dij6iy1wyur6s" path="res://Scenes/Functionality/diagram_controller.tscn" id="8_p7172"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6etyc"]
 bg_color = Color(1, 1, 1, 1)
@@ -22,7 +23,7 @@ corner_radius_bottom_left = 5
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=265768892]
 offset_right = 1380.0
-offset_bottom = 600.0
+offset_bottom = 900.0
 color = Color(0.57566136, 0.51367635, 0.8477375, 1)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=734621645]
@@ -36,27 +37,24 @@ offset_right = 181.0
 offset_bottom = 71.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("6_7klpb")
-theme_override_font_sizes/font_size = 50
-text = "Instructions"
+theme_override_font_sizes/font_size = 60
+text = "INSTRUCTIONS"
 horizontal_alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1154128001]
 offset_left = 1380.0
 offset_right = 1780.0
-offset_bottom = 600.0
+offset_bottom = 900.0
 color = Color(0.2908834, 0.21700002, 0.62, 1)
-
-[node name="Keyboard" parent="." unique_id=180708723 instance=ExtResource("1_1gqp1")]
-scale = Vector2(2, 2)
 
 [node name="Key" type="Node2D" parent="." unique_id=1687899468]
 position = Vector2(-15, 0)
 
 [node name="Projectile" type="Label" parent="Key" unique_id=1058636525]
 offset_left = 1505.0
-offset_top = 66.0
+offset_top = 150.0
 offset_right = 1686.0
-offset_bottom = 108.0
+offset_bottom = 192.0
 theme_override_fonts/font = ExtResource("6_7klpb")
 theme_override_font_sizes/font_size = 30
 text = "Projectile"
@@ -73,9 +71,9 @@ texture = ExtResource("3_7klpb")
 
 [node name="Melee" type="Label" parent="Key" unique_id=1572133640]
 offset_left = 1505.0
-offset_top = 142.0
+offset_top = 250.0
 offset_right = 1641.0
-offset_bottom = 184.0
+offset_bottom = 292.0
 theme_override_fonts/font = ExtResource("6_7klpb")
 theme_override_font_sizes/font_size = 30
 text = "Melee"
@@ -92,9 +90,9 @@ texture = ExtResource("2_ge2r2")
 
 [node name="Sync Shot" type="Label" parent="Key" unique_id=581568624]
 offset_left = 1505.0
-offset_top = 207.0
+offset_top = 350.0
 offset_right = 1902.0
-offset_bottom = 272.0
+offset_bottom = 415.0
 theme_override_fonts/font = ExtResource("6_7klpb")
 theme_override_font_sizes/font_size = 30
 text = "Sync Shot
@@ -112,9 +110,9 @@ texture = ExtResource("5_p7172")
 
 [node name="Shield" type="Label" parent="Key" unique_id=800078820]
 offset_left = 1505.0
-offset_top = 311.0
+offset_top = 450.0
 offset_right = 1613.0
-offset_bottom = 376.0
+offset_bottom = 515.0
 theme_override_fonts/font = ExtResource("6_7klpb")
 theme_override_font_sizes/font_size = 30
 text = "Shield
@@ -127,9 +125,9 @@ texture = ExtResource("7_6etyc")
 
 [node name="Dash" type="Label" parent="Key" unique_id=698037066]
 offset_left = 1505.0
-offset_top = 370.0
+offset_top = 550.0
 offset_right = 1577.0
-offset_bottom = 435.0
+offset_bottom = 615.0
 theme_override_fonts/font = ExtResource("6_7klpb")
 theme_override_font_sizes/font_size = 30
 text = "Dash
@@ -159,9 +157,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6etyc")
 
 [node name="Pause" type="Label" parent="Key" unique_id=1976110411]
 offset_left = 1505.0
-offset_top = 433.0
+offset_top = 650.0
 offset_right = 1721.0
-offset_bottom = 532.0
+offset_bottom = 749.0
 theme_override_fonts/font = ExtResource("6_7klpb")
 theme_override_font_sizes/font_size = 30
 text = "Toggle Pause
@@ -178,34 +176,54 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7klpb")
 
 [node name="Move" type="Label" parent="Key" unique_id=1021794865]
 offset_left = 1230.0
-offset_top = 496.0
+offset_top = 750.0
 offset_right = 1952.0
-offset_bottom = 561.0
+offset_bottom = 849.0
 theme_override_fonts/font = ExtResource("6_7klpb")
 theme_override_font_sizes/font_size = 30
 text = "Move with WASD and
-arrow keys"
+arrow keys OR
+left stick"
 horizontal_alignment = 1
 
-[node name="Pause" type="Panel" parent="." unique_id=1965584360]
+[node name="Key" type="Label" parent="Key" unique_id=1150625171]
+offset_left = 1230.0
+offset_top = 20.0
+offset_right = 1952.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("6_7klpb")
+theme_override_font_sizes/font_size = 60
+text = "KEY"
+horizontal_alignment = 1
+
+[node name="DiagramController" parent="." unique_id=1030936998 instance=ExtResource("8_p7172")]
+position = Vector2(683, 705)
+scale = Vector2(0.6, 0.6)
+
+[node name="KeyboardInfo" type="Node2D" parent="." unique_id=1287743536]
+
+[node name="Keyboard" parent="KeyboardInfo" unique_id=180708723 instance=ExtResource("1_1gqp1")]
+scale = Vector2(2, 2)
+
+[node name="Pause" type="Panel" parent="KeyboardInfo" unique_id=1965584360]
 offset_left = 59.0
 offset_top = 97.0
 offset_right = 99.0
 offset_bottom = 137.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7klpb")
 
-[node name="Pause2" type="Panel" parent="." unique_id=404726576]
+[node name="Pause2" type="Panel" parent="KeyboardInfo" unique_id=404726576]
 offset_left = 1335.0
 offset_top = 101.0
 offset_right = 1375.0
 offset_bottom = 141.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7klpb")
 
-[node name="Made for" type="Label" parent="." unique_id=1123320339]
-offset_left = 25.0
-offset_top = 546.0
-offset_right = 747.0
-offset_bottom = 611.0
+[node name="Made for" type="Label" parent="KeyboardInfo" unique_id=1123320339]
+offset_left = 327.0
+offset_top = 110.0
+offset_right = 1049.0
+offset_bottom = 170.0
 theme_override_fonts/font = ExtResource("6_7klpb")
 theme_override_font_sizes/font_size = 30
 text = "Made for both one- and two-handed play."
