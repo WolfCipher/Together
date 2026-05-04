@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="1_617t6"]
 [ext_resource type="Script" uid="uid://cdsvpelefvt8d" path="res://Entities/sprite.gd" id="1_i4gl2"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="2_068ap"]
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="2_llxt3"]
 [ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="2_llxt3"]
 [ext_resource type="Texture2D" uid="uid://cnfvbwecbwlfk" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen00.png" id="4_i4gl2"]
 [ext_resource type="Texture2D" uid="uid://ce8du67w6l6t2" path="res://Entities/SceneArt/VictoryScreen/VictoryScreen01.png" id="5_llxt3"]
@@ -194,6 +195,8 @@ offset_left = 1450.0
 offset_top = 926.0
 offset_right = 1862.0
 offset_bottom = 1023.0
+focus_next = NodePath(".")
+theme_override_fonts/font = ExtResource("2_llxt3")
 theme_override_font_sizes/font_size = 63
 theme_override_styles/normal = SubResource("StyleBoxFlat_068ap")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_a2pru")
