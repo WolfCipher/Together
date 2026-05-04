@@ -26,6 +26,7 @@ position = Vector2(403, 3003.5)
 shape = SubResource("RectangleShape2D_tfdjb")
 
 [node name="TreeLeft" type="TileMapLayer" parent="LeftBoundary" unique_id=1394172449]
+visible = false
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(4020, 7400)
@@ -41,6 +42,7 @@ position = Vector2(-288, 3004)
 shape = SubResource("RectangleShape2D_tfdjb")
 
 [node name="TreeRight" type="TileMapLayer" parent="RightBoundary" unique_id=1941401502]
+visible = false
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(-10867, 7400)
@@ -56,6 +58,7 @@ position = Vector2(3859, 339.5)
 shape = SubResource("RectangleShape2D_lm3os")
 
 [node name="TreeTop" type="TileMapLayer" parent="TopBoundary" unique_id=586569515]
+visible = false
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 10622)
@@ -71,6 +74,7 @@ position = Vector2(3830, -391)
 shape = SubResource("RectangleShape2D_lm3os")
 
 [node name="TreeBottom" type="TileMapLayer" parent="BottomBoundary" unique_id=1984600524]
+visible = false
 z_index = 10
 y_sort_enabled = true
 texture_filter = 1

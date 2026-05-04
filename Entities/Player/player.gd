@@ -109,7 +109,8 @@ func _process(delta: float) -> void:
 	animate(dir)
 	
 	# ***** GOD MODE *****
-	god()
+	# should comment out before export
+	# god()
 
 # ******************* ATTACKS **********************
 func recharge(delta):

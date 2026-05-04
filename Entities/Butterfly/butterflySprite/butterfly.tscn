@@ -97,9 +97,16 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Butterfly" type="Node2D" unique_id=1961194005]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l84fu"]
+size = Vector2(99, 93)
+
+[node name="Butterfly" type="Area2D" unique_id=1109090777 groups=["Butterfly"]]
 script = ExtResource("1_l84fu")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=834199376]
 sprite_frames = SubResource("SpriteFrames_fyu0i")
 animation = &"flying"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=603912802]
+position = Vector2(-2.5, -0.5)
+shape = SubResource("RectangleShape2D_l84fu")

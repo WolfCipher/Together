@@ -10,10 +10,20 @@ var dialog_already_played = false # ensures this only plays once
 @export var send_to_scene_after_completion = false
 @export var next_scene = "res://Scenes/UI Scenes/Victory.tscn"
 
+@export var waiting_for_butterfly = false
+var num_players = 0
+
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if(area.is_in_group("Player") && !dialog_already_played):
-		dialog_already_played = true
-		play_dialog()
+	if(area.is_in_group("Player")):
+		num_players += 1
+		if !dialog_already_played && !waiting_for_butterfly:
+			dialog_already_played = true
+			play_dialog()
+	if(area.is_in_group("Butterfly")):
+		waiting_for_butterfly = false
+		if !dialog_already_played && num_players > 0:
+			dialog_already_played = true
+			play_dialog()
 
 func play_dialog():
 	for i in dialog_list.size():
@@ -22,3 +32,8 @@ func play_dialog():
 	
 	if send_to_scene_after_completion:
 		SceneCache.scene_change.emit(next_scene)
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if(area.is_in_group("Player")):
+		num_players -= 1

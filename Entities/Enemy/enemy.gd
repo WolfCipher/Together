@@ -69,8 +69,8 @@ func _process(delta: float) -> void:
 		var target_dist = global_position.distance_to(target_pos)
 		
 		# determine whether to continue moving
-		var continue_moving = continue_moving(target_pos, target_dist)
-		if continue_moving:
+		var move = continue_moving(target_pos, target_dist)
+		if move:
 			global_position = global_position.move_toward(target_pos, speed*delta)
 		
 		# HANDLE ANIMATIONS
