@@ -5,10 +5,10 @@
 [ext_resource type="StyleBox" uid="uid://dwhlm8slx03e3" path="res://dialog_box_v1.tres" id="2_564om"]
 [ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="3_33xoe"]
 [ext_resource type="Texture2D" uid="uid://bmuw3kmlea1nn" path="res://Ink/Functionality/elvyria_icon.png" id="4_1q0xp"]
-[ext_resource type="Texture2D" uid="uid://cads3bwymld04" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd.png" id="5_nh2y6"]
 [ext_resource type="Texture2D" uid="uid://bf2y13k64cswn" path="res://Ink/Character Expressions/Elvyria/Elvyria_Concern.png" id="6_ym8p6"]
 [ext_resource type="Texture2D" uid="uid://cq1o1j82sum7w" path="res://Ink/Character Expressions/Ryl/Ryl_Concern.png" id="7_564om"]
 [ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="8_4pv0b"]
+[ext_resource type="Texture2D" uid="uid://ek4u0wkbbvmj" path="res://Ink/Dialogue Backgrounds/dialog_bckgrd_mystia.png" id="9_564om"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cs0ko"]
 font = ExtResource("3_33xoe")
@@ -51,12 +51,6 @@ offset_left = 940.0
 offset_right = 1090.0
 offset_bottom = 51.0
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1910788515]
-z_index = -100
-scale = Vector2(1.6666667, 1.6790123)
-texture = ExtResource("5_nh2y6")
-centered = false
-
 [node name="Elvyria" type="Sprite2D" parent="." unique_id=305785085]
 z_index = -10
 position = Vector2(500, 563)
@@ -70,3 +64,9 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("7_564om")
 
 [node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("8_4pv0b")]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=27729607]
+z_index = -100
+scale = Vector2(1.6666667, 1.6790123)
+texture = ExtResource("9_564om")
+centered = false

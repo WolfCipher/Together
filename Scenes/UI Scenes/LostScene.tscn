@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://djtllgvprwbce"]
+
+[ext_resource type="Script" uid="uid://h48trjwfv2ix" path="res://Scenes/UI Scenes/UI.gd" id="1_p4nyx"]
+[ext_resource type="PackedScene" uid="uid://domx8lrr0iijx" path="res://Scenes/Functionality/MusicManager.tscn" id="2_rf047"]
+[ext_resource type="Texture2D" uid="uid://s6wikn3lqb07" path="res://Entities/SceneArt/GameOverScreen.png" id="3_mf6h0"]
+[ext_resource type="FontFile" uid="uid://lb7nvt2wd8x1" path="res://Lucida Console Regular/Lucida Console Regular.ttf" id="4_8qtif"]
+[ext_resource type="Script" uid="uid://dujd3fge8kvuu" path="res://Scenes/UI Scenes/scene_button.gd" id="5_withr"]
+[ext_resource type="PackedScene" uid="uid://dc7wvcnkhserj" path="res://Scenes/Functionality/SceneTransition.tscn" id="6_tmsmb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5edoe"]
+bg_color = Color(0.13346192, 0, 0.7465482, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.02021429, 9.62615e-08, 0.24905872, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhf65"]
+bg_color = Color(0.045101725, 9.62615e-08, 0.3707431, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.019607844, 0, 0.2509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wexvb"]
+bg_color = Color(0.0645, 4.813075e-08, 0.45324594, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.019607844, 0, 0.2509804, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1chw"]
+bg_color = Color(0.27837503, 0.17250001, 0.75, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.13346192, 0, 0.7465482, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnhai"]
+bg_color = Color(0.13346192, 0, 0.7465482, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.90715146, 0.6109639, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="LostScene" type="Node2D" unique_id=239976417]
+script = ExtResource("1_p4nyx")
+
+[node name="MusicManager" parent="." unique_id=1356656624 instance=ExtResource("2_rf047")]
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1685628677]
+scale = Vector2(1.6667002, 1.6667002)
+texture = ExtResource("3_mf6h0")
+offset = Vector2(576, 324)
+
+[node name="Label" type="Label" parent="." unique_id=320621780]
+z_index = 1
+offset_right = 1919.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(1, 0.09019608, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.19607843, 0.6392157, 0.40784314)
+theme_override_colors/font_outline_color = Color(0.13346192, 0, 0.7465482, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 23
+theme_override_constants/shadow_outline_size = 60
+theme_override_font_sizes/font_size = 125
+text = "You lost track of the butterfly!"
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="." unique_id=1293751695]
+z_index = 1
+offset_left = 330.0
+offset_top = 926.0
+offset_right = 742.0
+offset_bottom = 1023.0
+focus_neighbor_right = NodePath("../Menu")
+theme_override_fonts/font = ExtResource("4_8qtif")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_5edoe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qhf65")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wexvb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_n1chw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qnhai")
+text = "Continue"
+script = ExtResource("5_withr")
+next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"
+return_to_last_level = true
+
+[node name="Menu" type="Button" parent="." unique_id=45521042]
+z_index = 1
+custom_minimum_size = Vector2(800, 0)
+offset_left = 830.0
+offset_top = 926.0
+offset_right = 1630.0
+offset_bottom = 1023.0
+focus_neighbor_left = NodePath("../Retry")
+theme_override_fonts/font = ExtResource("4_8qtif")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_5edoe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qhf65")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wexvb")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_n1chw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qnhai")
+text = "Exit to Main Menu"
+script = ExtResource("5_withr")
+next_scene = "res://Scenes/UI Scenes/MenuScene.tscn"
+
+[node name="SceneTransition" parent="." unique_id=1801486910 instance=ExtResource("6_tmsmb")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=206498683]
+custom_minimum_size = Vector2(412, 97)
+offset_left = 960.0
+offset_top = 926.0
+offset_right = 1000.0
+offset_bottom = 966.0
+mouse_filter = 2

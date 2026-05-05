@@ -13,36 +13,35 @@ var camera_y_dist = 580 # 1920/4 + 100
 @export var within_left = true
 @export var within_top = true
 @export var within_bottom = true
-@export var game_over := "res://Scenes/UI Scenes/DeathScene.tscn" # scene caused by being too far from the butterfly
+@export var game_over := "res://Scenes/UI Scenes/LostScene.tscn" # scene caused by being too far from the butterfly
 
 @onready var dialog := $EmitDialogInRange
 var dialog_seen = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if target:
+	# if there's no dialog, don't use a false value that turns off checks
+	if !dialog:
+		dialog_seen = true
+	
+	if target && dialog_seen:
 		sprite.animation = "flying"
 	else:
 		sprite.animation = "default"
 	sprite.play()
-	
-	# if there's no dialog, don't use a false value that turns off checks
-	if !dialog:
-		dialog_seen = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time += delta
-	
 	if dialog && !dialog_seen:
 		dialog_seen = dialog.dialog_already_played
 	
 	if target:
 		var height = sin(time*4 + PI/4) * 1000 + target.global_position.y
-		# butterfly rests upon finding target
+		# butterfly rests upon finding target or while dialog isn't seen
 		var dist = abs(global_position.x - target.global_position.x)
-		if dist <= 50:
+		if dist <= 50 || !dialog_seen:
 			if sprite.animation == "flying":
 				sprite.animation = "default"
 				sprite.play()
@@ -51,6 +50,9 @@ func _process(delta: float) -> void:
 				within_top = false
 				within_bottom = false
 		else:
+			if sprite.animation == "default":
+				sprite.animation = "flying"
+				time = 0 # keep behavior consistent whenever flying starts
 			var new_pos = Vector2(target.global_position.x, height)
 			global_position = global_position.move_toward(new_pos, speed*delta)
 	if camera:
